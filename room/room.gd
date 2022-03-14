@@ -11,10 +11,12 @@ var roomtype = "loot"
 var roomlevel = 0
 
 func generateloot():
-	var loot = ["cookie", "wooden stick", "healing drop", "wooden sword"]
+	var loot = ['wooden stick', 'healing drop', 'cookie', 'wooden sword', 'health pot', 'choco cookie', 'clothes', 'stone sword', 'leather padding', 'apple pie', 'stone axe', 'health potion', 'sharp flint']
 	
 	# create the loot and instance it into scene
-	for thing in loot:
+	for i in range(0, 4):
+		var thing = loot[randi() % loot.size()]
+		
 		var curitem = item.instance()
 		curitem.itemname = thing
 		add_child(curitem)

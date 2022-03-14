@@ -130,4 +130,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Tween" type="Tween" parent="."]
+
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

@@ -3,7 +3,6 @@ extends Node
 var endgames = []
 
 var coords = Vector2()
-var chest = []
 var places = {
 			Vector2(0, 0) :[],
 			Vector2(1, 0): ['cookie'],

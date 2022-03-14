@@ -4,8 +4,11 @@ export var itemname:String
 onready var label = $label/label
 onready var anim = $AnimationPlayer
 onready var sprite = $sprite
+onready var player = get_node("/root/base/player")
+onready var tween = $Tween
 
 var isitem = false setget is_show
+var slidedist = 20
 
 func _ready():
 	# set up the label
@@ -32,3 +35,19 @@ func is_show(val):
 func _on_Area2D_area_exited(area):
 	if area.is_in_group("player_pickup"):
 		is_show(false)
+
+# picking up items
+func _input(event):
+	if Input.is_action_just_pressed("pickup") && isitem:
+		anim.play_backwards("highlight")
+		Persistent.carrying.append(itemname)
+		Persistent.places[Persistent.coords].erase(itemname)
+		
+		
+		# item disappearing animation
+		tween.interpolate_property(self, "global_position",
+				self.global_position, player.global_position, 0.1,
+				Tween.TRANS_LINEAR)
+		tween.start()
+		yield(tween, "tween_all_completed")
+		queue_free()

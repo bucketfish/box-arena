@@ -22,7 +22,7 @@ var genbosses = {
 				'-10 -10': {'name': 'puffpuffiepuff', 'alive': true}}
 var seenbosses = []
 
-var carrying = ["stone sword"]
+var carrying = ["clothes", "clothes", "clothes", "clothes", "healing drop", "healing drop", "healing drop", "cookie", "cookie", "cookie"]
 var health = 5
 var energy = 5
 var damage = 0
@@ -31,3 +31,5 @@ var defeated = false
 
 var coward = 0
 var isCoward = false
+
+var weapon = ""

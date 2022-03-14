@@ -8,6 +8,8 @@ onready var highlight = $highlight
 onready var sprite = $sprite
 onready var count = $count
 
+onready var inv = get_node("/root/base/gui/inventory")
+
 var itemname
 var countint = 1
 
@@ -22,15 +24,18 @@ var focused = false setget highlight
 func _ready():
 	highlight(false) # Replace with function body.
 	
-	
 func prep_display():
+
 	if itemname:
 		sprite.texture = load("res://assets/items/" + itemname + ".png")
-	if countint == 1:
+	else:
+		sprite.texture = null
+		
+	if countint == 1 || !itemname:
 		count.text = ""
 	else:
 		count.text = str(countint)
-
+	
 
 func highlight(value):
 	highlight.visible = value

@@ -1,15 +1,14 @@
 extends Control
 
 
-onready var max_health = $health/overlay
-onready var health = $health/bar
-onready var energy = $energy/bar
+onready var health = $health/value
+onready var energy = $energy/value
 
 func _ready():
 	update_bars()
 
 
 func update_bars():
-	max_health.rect_size.x = 2 * Persistent.max_health
-	health.rect_size.x = 2 * Persistent.health
-	energy.rect_size.x = 2 * Persistent.energy
+	health.text = str(Persistent.health) + '/' + str(Persistent.max_health)
+	energy.text = str(Persistent.energy)
+

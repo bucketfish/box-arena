@@ -7,15 +7,22 @@ extends Node2D
 
 onready var player = $player
 onready var anim = $anim
+
+onready var coordslabel = $gui/coords
+onready var inventory = $gui/inventory
+onready var shade = $gui/shade
 const room = preload("res://room/middle_room.tscn")
 
 var curroom
 var comefrom
+var trans = false
+
 
 func _ready():
 	curroom = $room
 	
 func goto(dirfrom):
+	trans = true
 	# update new room coordinates
 	if dirfrom == "up":
 		Persistent.coords.y += 1
@@ -50,7 +57,7 @@ func goto(dirfrom):
 	curroom.queue_free()
 	
 	# update coordinates tag
-	$CanvasLayer/coords.text = str(Persistent.coords.x) + " " + str(Persistent.coords.y)
+	coordslabel.text = str(Persistent.coords.x) + " " + str(Persistent.coords.y)
 	
 	# update player position (new door)
 	player.position = get_node(dirfrom).position
@@ -76,4 +83,11 @@ func goto(dirfrom):
 	
 	# continue the game
 	player.canmove = true
+	trans = false
 	
+func _input(event):
+	if !trans && Input.is_action_just_pressed("inventory"):
+		inventory.toggle()
+		shade.visible = inventory.visible
+		player.canmove = !inventory.visible
+			

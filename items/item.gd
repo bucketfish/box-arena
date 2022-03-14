@@ -8,7 +8,6 @@ onready var player = get_node("/root/base/player")
 onready var tween = $Tween
 
 var isitem = false setget is_show
-var slidedist = 20
 
 func _ready():
 	# set up the label
@@ -38,11 +37,10 @@ func _on_Area2D_area_exited(area):
 
 # picking up items
 func _input(event):
-	if Input.is_action_just_pressed("pickup") && isitem:
+	if Input.is_action_just_pressed("pickup") && isitem && player.canmove:
 		anim.play_backwards("highlight")
-		Persistent.carrying.append(itemname)
+		Persistent.carrying.insert(0, itemname)
 		Persistent.places[Persistent.coords].erase(itemname)
-		
 		
 		# item disappearing animation
 		tween.interpolate_property(self, "global_position",
@@ -50,4 +48,5 @@ func _input(event):
 				Tween.TRANS_LINEAR)
 		tween.start()
 		yield(tween, "tween_all_completed")
+		
 		queue_free()

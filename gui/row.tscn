@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/gui/row.png" type="Texture" id=1]
+[ext_resource path="res://gui/row.gd" type="Script" id=2]
+[ext_resource path="res://gui/item.tscn" type="PackedScene" id=3]
+
+[node name="row" type="HBoxContainer"]
+margin_right = 448.0
+margin_bottom = 112.0
+rect_min_size = Vector2( 448, 112 )
+custom_constants/separation = 0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="row" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="item" parent="." instance=ExtResource( 3 )]
+right = NodePath("../item2")
+
+[node name="item2" parent="." instance=ExtResource( 3 )]
+margin_left = 112.0
+margin_right = 224.0
+left = NodePath("../item")
+right = NodePath("../item3")
+
+[node name="item3" parent="." instance=ExtResource( 3 )]
+margin_left = 224.0
+margin_right = 336.0
+left = NodePath("../item2")
+right = NodePath("../item4")
+
+[node name="item4" parent="." instance=ExtResource( 3 )]
+margin_left = 336.0
+margin_right = 448.0
+left = NodePath("../item3")

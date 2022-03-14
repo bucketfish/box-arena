@@ -55,7 +55,7 @@ func move(direction, delta):
 		state = "idle"
 	
 	# attack animation
-	if Input.is_action_just_pressed('attack'):
+	if Input.is_action_just_pressed('attack') && canmove:
 		state = "attack"
 
 		

@@ -23,3 +23,30 @@ func generate_loot(coords):#contents
 	
 	Persistent.places[Persistent.coords] = contents
 	return contents
+
+
+func array_unique(array: Array) -> Array:
+	var unique: Array = []
+	for item in array:
+		if not unique.has(item):
+			unique.append(item)
+	return unique
+	
+func count_array(array: Array) -> Dictionary:
+	var dict: Dictionary = {}
+	for item in array:
+		if item in dict.keys():
+			dict[item] += 1
+		else:
+			dict[item] = 1
+	return dict
+
+func items_custcomp(a, b):
+	return Data.itemsorder.find( a ) < Data.itemsorder.find( b )
+		
+
+func sort_inventory(items) -> Dictionary:
+	var dict = count_array(items)
+	
+	return dict
+

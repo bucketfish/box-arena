@@ -13,6 +13,10 @@ onready var itemdisplay_name = $info/itemname
 onready var itemdisplay_sprite = $itemdisplay/sprite
 onready var itemdisplay_count = $itemdisplay/count
 
+onready var val_energy = $info/holder/values/energy
+onready var val_health = $info/holder/values/health
+onready var val_damage = $info/holder/values/damage
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -85,3 +89,24 @@ func focus_on(newfocus):
 		else:
 			itemdisplay_count.text = str(curhighlight.countint)
 		itemdisplay_name.text = curhighlight.itemname
+		
+		if "energy" in Data.items[curhighlight.itemname].keys():
+			val_energy.visible = true
+			val_energy.text.text = str(Data.items[curhighlight.itemname]["energy"])
+		else:
+			val_energy.visible = false
+			
+		if "health" in Data.items[curhighlight.itemname].keys():
+			val_health.visible = true
+			val_health.text.text = str(Data.items[curhighlight.itemname]["health"])
+		else:
+			val_health.visible = false
+			
+		if "damage" in Data.items[curhighlight.itemname].keys():
+			val_damage.visible = true
+			val_damage.text.text = str(Data.items[curhighlight.itemname]["damage"])
+		else:
+			val_damage.visible = false
+			
+		
+		

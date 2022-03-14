@@ -33,7 +33,7 @@ var items = {
 
 	'cookie':      {
 					'energy': 2,
-					'desc': 'it’s a cookie. congrats. you now have a cookie.',
+					'desc': 'this game uses cookies to give you a better user experience.',
 					},
 
 
@@ -95,7 +95,7 @@ var items = {
 
 	'health potion':{
 					'health': 3,
-					'desc': 'I hear drinking this is good for your health.',
+					'desc': 'i hear drinking this is good for your health.',
 					},
 
 
@@ -105,7 +105,7 @@ var items = {
 					'energy': -3,
 					'weapon': true,
 					'fusion': 'battle axe',
-					'desc': 'trust me, paper cuts are NOTHING compared to devastation you get from trying to hold this. don\'t hold it. don\'t put it in your pocket. all it does is cause pain. just...trust us on this.',
+					'desc': 'trust me, paper cuts are NOTHING compared to devastation you get from trying to hold this. all it does is cause pain.',
 					},
 
 	'steak':{
@@ -145,7 +145,7 @@ var items = {
 					'energy': -15,
 					'weapon': true,
 					'fusion': 'iron rapier',
-					'desc': 'there\'s probably a sound argument to be made on its usefulness, but I don\'t want to hear it.',
+					'desc': 'there\'s probably a sound argument to be made on its usefulness, but i don\'t want to hear it.',
 					},
 
 	'chainmail armor':{
@@ -394,7 +394,7 @@ var bosses = {
 	}
 
 var cowardmessage = [
-				'huh. I thought you were braver than that.',
+				'huh. i thought you were braver than that.',
 				'c\'mon, you could’ve handled that.',
 				'what\'s the point of coming in here if you\'re just running away?',
 				'okay. this is getting on my nerves now. last chance. don\'t let me down.',

@@ -26,7 +26,7 @@ var carrying = ["stone sword"]
 var health = 5
 var energy = 5
 var damage = 0
-var total_health = 5
+var max_health = 5
 var defeated = false
 
 var coward = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://room/middle_room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,16 @@
 [ext_resource path="res://assets/gui/inventory.png" type="Texture" id=6]
 [ext_resource path="res://gui/inventory.gd" type="Script" id=7]
 [ext_resource path="res://gui/row.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/items/choco cookie.png" type="Texture" id=9]
+[ext_resource path="res://Retron2000.ttf" type="DynamicFontData" id=10]
+
+[sub_resource type="DynamicFont" id=8]
+size = 26
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 14
+font_data = ExtResource( 10 )
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -212,6 +222,76 @@ margin_bottom = 442.0
 [node name="row5" parent="gui/inventory/scroll/rowbox" instance=ExtResource( 8 )]
 margin_top = 440.0
 margin_bottom = 552.0
+
+[node name="itemdisplay" type="Control" parent="gui/inventory"]
+margin_left = 695.0
+margin_top = 132.0
+margin_right = 807.0
+margin_bottom = 244.0
+rect_min_size = Vector2( 112, 112 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sprite" type="Sprite" parent="gui/inventory/itemdisplay"]
+position = Vector2( 56, 56 )
+scale = Vector2( 0.18, 0.18 )
+texture = ExtResource( 9 )
+
+[node name="count" type="Label" parent="gui/inventory/itemdisplay"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -33.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "10"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="info" type="VBoxContainer" parent="gui/inventory"]
+margin_left = 653.0
+margin_top = 257.0
+margin_right = 853.0
+margin_bottom = 420.0
+rect_min_size = Vector2( 200, 0 )
+custom_constants/separation = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="itemname" type="Label" parent="gui/inventory/info"]
+margin_right = 200.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = 0
+custom_fonts/font = SubResource( 8 )
+text = "wooden sword"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="values" type="HBoxContainer" parent="gui/inventory/info"]
+margin_top = 37.0
+margin_right = 200.0
+margin_bottom = 37.0
+
+[node name="itemdesc" type="Label" parent="gui/inventory/info"]
+margin_top = 39.0
+margin_right = 200.0
+margin_bottom = 128.0
+custom_colors/font_color = Color( 1, 1, 1, 0.862745 )
+custom_fonts/font = SubResource( 7 )
+text = "it's a cookie, just that it has chocolate on it. congrats. you now have a choco cookie."
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="fade" type="CanvasLayer" parent="."]
 

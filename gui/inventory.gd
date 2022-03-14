@@ -8,6 +8,11 @@ onready var row = [$scroll/rowbox/row, $scroll/rowbox/row2, $scroll/rowbox/row3,
 var row_scene = preload("res://gui/row.tscn")
 
 onready var curhighlight = $scroll/rowbox/row/item
+onready var itemdesc = $info/itemdesc
+onready var itemdisplay_name = $info/itemname
+onready var itemdisplay_sprite = $itemdisplay/sprite
+onready var itemdisplay_count = $itemdisplay/count
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,9 +24,7 @@ func toggle():
 	shade.visible = visible
 	display(Persistent.carrying)
 	
-	curhighlight.focused = false
-	row[0].col[0].focused = true
-	curhighlight = row[0].col[0]
+	focus_on(row[0].col[0])
 	
 func display(items):
 	var items_dict = Functions.sort_inventory(items)
@@ -58,19 +61,27 @@ func connect_rows():
 func _input(event):
 	if visible == true:
 		if Input.is_action_just_pressed("ui_up") && curhighlight.up:
-			curhighlight.focused = false
-			curhighlight.up.focused = true
-			curhighlight = curhighlight.up
+			focus_on(curhighlight.up)
+			
 		elif Input.is_action_just_pressed("ui_down") && curhighlight.down:
-			curhighlight.focused = false
-			curhighlight.down.focused = true
-			curhighlight = curhighlight.down
+			focus_on(curhighlight.down)
 		elif Input.is_action_just_pressed("ui_left") && curhighlight.left:
-			curhighlight.focused = false
-			curhighlight.left.focused = true
-			curhighlight = curhighlight.left
+			focus_on(curhighlight.left)
 		elif Input.is_action_just_pressed("ui_right") && curhighlight.right:
-			curhighlight.focused = false
-			curhighlight.right.focused = true
-			curhighlight = curhighlight.right
+			focus_on(curhighlight.right)
 		
+
+func focus_on(newfocus):
+	curhighlight.focused = false
+	newfocus.focused = true
+	curhighlight = newfocus
+	
+	if curhighlight.itemname:
+		itemdesc.text = Data.items[curhighlight.itemname]["desc"]
+		
+		itemdisplay_sprite.texture = load("res://assets/items/" + curhighlight.itemname + ".png")
+		if curhighlight.countint == 1:
+			itemdisplay_count.text = ""
+		else:
+			itemdisplay_count.text = str(curhighlight.countint)
+		itemdisplay_name.text = curhighlight.itemname

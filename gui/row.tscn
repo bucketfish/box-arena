@@ -20,21 +20,15 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="item" parent="." instance=ExtResource( 3 )]
-right_path = NodePath("../item2")
 
 [node name="item2" parent="." instance=ExtResource( 3 )]
 margin_left = 112.0
 margin_right = 224.0
-left_path = NodePath("../item")
-right_path = NodePath("../item3")
 
 [node name="item3" parent="." instance=ExtResource( 3 )]
 margin_left = 224.0
 margin_right = 336.0
-left_path = NodePath("../item2")
-right_path = NodePath("../item4")
 
 [node name="item4" parent="." instance=ExtResource( 3 )]
 margin_left = 336.0
 margin_right = 448.0
-left_path = NodePath("../item3")

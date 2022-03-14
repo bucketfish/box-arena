@@ -9,7 +9,6 @@ onready var player = $player
 onready var anim = $anim
 const room = preload("res://room/middle_room.tscn")
 
-var curcoords = Vector2()
 var curroom
 var comefrom
 
@@ -19,13 +18,13 @@ func _ready():
 func goto(dirfrom):
 	# update new room coordinates
 	if dirfrom == "up":
-		curcoords.y += 1
+		Persistent.coords.y += 1
 	elif dirfrom == "left":
-		curcoords.x -= 1
+		Persistent.coords.x -= 1
 	elif dirfrom == "right":
-		curcoords.x += 1
+		Persistent.coords.x += 1
 	elif dirfrom == "down":
-		curcoords.y -= 1
+		Persistent.coords.y -= 1
 	
 	comefrom = dirfrom
 	
@@ -51,7 +50,7 @@ func goto(dirfrom):
 	curroom.queue_free()
 	
 	# update coordinates tag
-	$CanvasLayer/coords.text = str(curcoords.x) + " " + str(curcoords.y)
+	$CanvasLayer/coords.text = str(Persistent.coords.x) + " " + str(Persistent.coords.y)
 	
 	# update player position (new door)
 	player.position = get_node(dirfrom).position

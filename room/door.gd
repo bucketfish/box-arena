@@ -8,7 +8,7 @@ export(String) var doorpos
 
 
 func _ready():
-	target = base.curcoords
+	target = Persistent.coords
 	
 # when player enters the door area, go to the next room
 func _on_door_body_entered(body):

@@ -1,16 +1,34 @@
 extends Node
 
+var endgames = []
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var coords = Vector2()
+var chest = []
+var places = {
+			Vector2(0, 0) :[],
+			Vector2(1, 0): ['cookie'],
+			Vector2(1, 1): ['wooden stick'],
+			Vector2(0, 1): ['cookie'],
+			Vector2(0, -1): ['wooden stick'],
+			Vector2(-1, -1): ['wooden stick'],
+			Vector2(-1, 0): ['healing drop'],
+			Vector2(-1, 1):['cookie'],
+			Vector2(1, -1):['healing drop']}
 
+var beenplaces  = [Vector2()]
+var genbosses = {
+				'10 -10': {'name': 'poinkydirtie', 'alive': true},
+				'10 10': {'name': 'swooshymooshy', 'alive': true},
+				'-10 10': {'name': 'foofeefoofee', 'alive': true},
+				'-10 -10': {'name': 'puffpuffiepuff', 'alive': true}}
+var seenbosses = []
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var carrying = []
+var health = 5
+var energy = 5
+var damage = 0
+var total_health = 5
+var defeated = false
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+var coward = 0
+var isCoward = false

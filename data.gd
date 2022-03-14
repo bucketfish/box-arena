@@ -3,15 +3,15 @@ extends Node
 
 #loot tables
 var loot = {
-	1:['wooden stick', 'healing drop', 'cookie'],
-	2:['wooden sword', 'health pot', 'choco cookie', 'clothes'],
-	3:['stone sword', 'leather padding', 'apple pie'],
-	4:['stone axe', 'health potion'],
-	5:['sharp flint', 'steak', 'iron armor'],
-	6:['battle axe', 'golden apple', 'grilled porkchop'],
-	7:['spiked mace', 'chainmail armor', 'pumpkin pie'],
-	8:['iron rapier', 'iron heart', 'nano-vest', 'cake'],
-	9:['silver katana', 'diamond hoe', 'golden carrot'],
+	'1':['wooden stick', 'healing drop', 'cookie'],
+	'2':['wooden sword', 'health pot', 'choco cookie', 'clothes'],
+	'3':['stone sword', 'leather padding', 'apple pie'],
+	'4':['stone axe', 'health potion'],
+	'5':['sharp flint', 'steak', 'iron armor'],
+	'6':['battle axe', 'golden apple', 'grilled porkchop'],
+	'7':['spiked mace', 'chainmail armor', 'pumpkin pie'],
+	'8':['iron rapier', 'iron heart', 'nano-vest', 'cake'],
+	'9':['silver katana', 'diamond hoe', 'golden carrot'],
 		}
 
 var items = {

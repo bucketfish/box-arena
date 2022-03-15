@@ -13,7 +13,9 @@ onready var pickup_area = $pickup_area
 
 onready var base = get_node("/root/base")
 
+var fx_swing = preload("res://effects/swinganim.tscn")
 
+var facing = "left"
 var state = "idle"
 
 func _ready():
@@ -92,6 +94,18 @@ func _physics_process(delta):
 	check_items()
 	
 	
-
+func swing(dir:String, size:float):
+	var fx = fx_swing.instance()
+	fx.swingdir = 1 if sprite.scale.x > 0 else -1
+	
+	if Input.is_action_pressed("up"):
+		fx.dir = "up"
+	elif Input.is_action_pressed("down"):
+		fx.dir = "down"
+	else:
+		fx.dir = "none"
+	
+	fx.global_position = global_position
+	get_parent().add_child(fx)
 
 

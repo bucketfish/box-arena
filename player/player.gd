@@ -10,6 +10,7 @@ onready var animtree = $animtree
 onready var anim = $animtree.get("parameters/playback")
 onready var sprite = $Sprite
 onready var pickup_area = $pickup_area
+onready var weapon = $Sprite/weapon
 
 onready var base = get_node("/root/base")
 
@@ -98,14 +99,26 @@ func swing(dir:String, size:float):
 	var fx = fx_swing.instance()
 	fx.swingdir = 1 if sprite.scale.x > 0 else -1
 	
+	
+	
 	if Input.is_action_pressed("up"):
 		fx.dir = "up"
 	elif Input.is_action_pressed("down"):
 		fx.dir = "down"
 	else:
 		fx.dir = "none"
-	
+		
 	fx.global_position = global_position
 	get_parent().add_child(fx)
+		
+#	if fx.dir == "up":
+#		weapon.rotation_degrees = 90 * fx.swingdir
+#	elif fx.dir == "down":
+#		weapon.rotation_degrees = 90 * fx.swingdir
+#		weapon.scale.x = -weapon.scale.x
+#	else:
+#		weapon.rotation_degrees = 0
+		
+
 
 

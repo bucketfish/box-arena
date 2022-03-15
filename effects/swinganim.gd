@@ -2,7 +2,7 @@ extends Node2D
 
 
 var dir = "left"
-var swingsize = 0.3
+var swingsize = 0.4
 var swingdir = 1
 
 onready var sprite = $swing

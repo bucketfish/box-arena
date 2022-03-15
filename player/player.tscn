@@ -33,6 +33,30 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite/weapon:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -40, 35 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite/weapon:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -28.0 ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "attack"
@@ -74,6 +98,18 @@ tracks/2/keys = {
 "args": [ "left", 0.3 ],
 "method": "swing"
 } ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite/weapon:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ -90.0, -51.6, -13.2, -38.1, -28.0 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -161,11 +197,12 @@ hframes = 3
 vframes = 3
 
 [node name="weapon" type="Sprite" parent="Sprite"]
-visible = false
 show_behind_parent = true
-position = Vector2( -170, 30 )
+position = Vector2( -40, 35 )
+rotation = -0.488692
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
+offset = Vector2( -180, -210 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 2.5 )

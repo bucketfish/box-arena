@@ -111,14 +111,10 @@ func swing(dir:String, size:float):
 	fx.global_position = global_position
 	get_parent().add_child(fx)
 		
-#	if fx.dir == "up":
-#		weapon.rotation_degrees = 90 * fx.swingdir
-#	elif fx.dir == "down":
-#		weapon.rotation_degrees = 90 * fx.swingdir
-#		weapon.scale.x = -weapon.scale.x
-#	else:
-#		weapon.rotation_degrees = 0
-		
-
+func update_weapon():
+	if Persistent.weapon != "":
+		weapon.texture = load("res://assets/items/" + Persistent.weapon + ".png")
+	else:
+		weapon.texture = null
 
 

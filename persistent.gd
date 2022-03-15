@@ -1,5 +1,7 @@
 extends Node
 
+onready var player = get_node("/root/base/player")
+
 var endgames = []
 
 var coords = Vector2()
@@ -32,4 +34,9 @@ var defeated = false
 var coward = 0
 var isCoward = false
 
-var weapon = ""
+var weapon = "" setget set_weapon
+
+func set_weapon(newval):
+	weapon = newval
+	player.update_weapon()
+	

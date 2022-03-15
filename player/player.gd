@@ -12,7 +12,11 @@ onready var sprite = $Sprite
 onready var pickup_area = $pickup_area
 onready var weapon = $Sprite/weapon
 
+onready var hitbox = $hitbox
+onready var hurtbox = $hurtbox
+
 onready var base = get_node("/root/base")
+onready var bars = get_node("/root/base/gui/bars")
 
 var fx_swing = preload("res://effects/swinganim.tscn")
 
@@ -49,8 +53,10 @@ func move(direction, delta):
 		# horizontal flips
 		if direction.x > 0:
 			sprite.scale.x = -abs(sprite.scale.x)
+			hitbox.scale.x = -abs(hitbox.scale.x)
 		elif direction.x < 0:
 			sprite.scale.x = abs(sprite.scale.x)
+			hitbox.scale.x = abs(hitbox.scale.x)
 			
 	# if the player is not moving, slowing down & friction
 	else:
@@ -95,26 +101,38 @@ func _physics_process(delta):
 	check_items()
 	
 	
-func swing(dir:String, size:float):
-	var fx = fx_swing.instance()
-	fx.swingdir = 1 if sprite.scale.x > 0 else -1
-	
-	
-	
-	if Input.is_action_pressed("up"):
-		fx.dir = "up"
-	elif Input.is_action_pressed("down"):
-		fx.dir = "down"
-	else:
-		fx.dir = "none"
+func swing():
+	hitbox.monitorable = true
+	if Persistent.weapon != "":
 		
-	fx.global_position = global_position
-	get_parent().add_child(fx)
+		# spawn the swing effect
+		var fx = fx_swing.instance()
+		fx.swingdir = 1 if sprite.scale.x > 0 else -1
 		
+		if Input.is_action_pressed("up"):
+			fx.dir = "up"
+			hitbox.rotation_degrees = 90 * fx.swingdir
+		elif Input.is_action_pressed("down"):
+			fx.dir = "down"
+			hitbox.rotation_degrees = -90 * fx.swingdir
+		else:
+			fx.dir = "none"
+			hitbox.rotation_degrees = 0
+			
+		fx.global_position = global_position
+		get_parent().add_child(fx)
+		
+		# deduct energy
+		Persistent.energy += Data.items[Persistent.weapon]["energy"]
+		bars.update_bars()
+		
+			
 func update_weapon():
 	if Persistent.weapon != "":
 		weapon.texture = load("res://assets/items/" + Persistent.weapon + ".png")
 	else:
 		weapon.texture = null
 
+func take_damage():
+	print("OUCH")
 

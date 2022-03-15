@@ -24,7 +24,7 @@ var genbosses = {
 				'-10 -10': {'name': 'puffpuffiepuff', 'alive': true}}
 var seenbosses = []
 
-var carrying = ["cookie", "clothes", "clothes", "clothes", "clothes", "healing drop", "healing drop", "healing drop", "cookie", "cookie" ] setget sort_inv
+var carrying = ["wooden stick"] setget sort_inv
 
 var health = 5
 var energy = 5

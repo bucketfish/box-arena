@@ -10,6 +10,7 @@ export var canmove = true
 
 onready var animtree = $animtree
 onready var anim = $animtree.get("parameters/playback")
+onready var hurtanim = $damageanim
 onready var sprite = $Sprite
 onready var pickup_area = $pickup_area
 onready var weapon = $Sprite/weapon
@@ -133,9 +134,14 @@ func swing():
 func update_weapon():
 	if Persistent.weapon != "":
 		weapon.texture = load("res://assets/items/" + Persistent.weapon + ".png")
+		hitbox.damage = Data.items[Persistent.weapon]["damage"]
 	else:
 		weapon.texture = null
+		hitbox.damage = 0
 
-func take_damage():
-	print("OUCH")
+func take_damage(damageval):
+	hurtanim.play("hurt")
+	Persistent.health -= damageval
+	bars.update_bars()
+	hurtbox.start_invincibility(0.5)
 

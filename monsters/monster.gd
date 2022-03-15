@@ -7,18 +7,19 @@ var invincible = false
 export var type = "nyam"
 const item = preload("res://items/item.tscn")
 onready var base = get_node("/root/base")
+onready var hitbox = $hitbox
 
 func _ready():
 	health = Data.bosses[type]["health"]
 	damage = Data.bosses[type]["damage"]
+	hitbox.damage = damage
 	
-func hurt():
-	health -= Data.items[Persistent.weapon]['damage']
+func hurt(damageval):
+	health -= damageval
 	if health <= 0:
 		die()
 	
-	
-	
+
 func die():
 	for i in Data.bosses[type]["drop"]:
 		var curitem = item.instance()

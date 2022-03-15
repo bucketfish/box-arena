@@ -1,8 +1,17 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://monsters/monster.tscn" type="PackedScene" id=1]
 [ext_resource path="res://monsters/sol.gd" type="Script" id=2]
 [ext_resource path="res://monsters/player_detect.gd" type="Script" id=3]
+[ext_resource path="res://monsters/light.png" type="Texture" id=4]
+[ext_resource path="res://combat/hitbox.tscn" type="PackedScene" id=5]
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 99.0051
+
+[sub_resource type="CapsuleShape2D" id=13]
+radius = 31.0
+height = 80.0
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -18,11 +27,34 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("hitbox:monitorable")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite2:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.784314, 0.541176, 0.937255, 0 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "charge"
 length = 1.6
-step = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -34,6 +66,30 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 4, 5, 6, 7, 8, 9, 10, 11 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("hitbox:monitorable")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.8, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite2:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.7, 0.9, 1.5, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.784314, 0.541176, 0.937255, 0 ), Color( 0.784314, 0.541176, 0.937255, 0.796078 ), Color( 0.784314, 0.541176, 0.937255, 0.796078 ), Color( 0.784314, 0.541176, 0.937255, 0 ) ]
 }
 
 [sub_resource type="Animation" id=1]
@@ -64,6 +120,7 @@ animation = "idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=9]
 switch_mode = 2
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachine" id=6]
 states/charge/node = SubResource( 4 )
@@ -75,33 +132,99 @@ start_node = "idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=7]
 
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "hurt"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.08, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.411765, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="monster" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 type = "sol"
 
-[node name="hitbox" parent="." index="2"]
+[node name="Sprite2" type="Sprite" parent="." index="0"]
+self_modulate = Color( 0.784314, 0.541176, 0.937255, 0 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" parent="." index="2"]
+visible = false
+
+[node name="hitbox" parent="." index="3"]
 collision_layer = 32
 collision_mask = 4
+monitorable = false
 
-[node name="hurtbox" parent="." index="3"]
+[node name="CollisionShape2D" parent="hitbox" index="0"]
+position = Vector2( 0, 0 )
+shape = SubResource( 10 )
+
+[node name="hurtbox" parent="." index="4"]
+visible = false
 collision_layer = 16
 collision_mask = 8
 
-[node name="anim" type="AnimationPlayer" parent="." index="4"]
+[node name="hitbox2" parent="." index="5" instance=ExtResource( 5 )]
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="hitbox2" index="0"]
+position = Vector2( 0, 0 )
+shape = SubResource( 13 )
+
+[node name="anim" type="AnimationPlayer" parent="." index="6"]
 anims/RESET = SubResource( 2 )
 anims/charge = SubResource( 3 )
 anims/idle = SubResource( 1 )
 
-[node name="animtree" type="AnimationTree" parent="." index="5"]
+[node name="animtree" type="AnimationTree" parent="." index="7"]
 tree_root = SubResource( 6 )
 anim_player = NodePath("../anim")
 active = true
 parameters/playback = SubResource( 7 )
 
-[node name="player_detect" parent="." index="6"]
+[node name="damage_anim" type="AnimationPlayer" parent="." index="8"]
+anims/RESET = SubResource( 11 )
+anims/hurt = SubResource( 12 )
+
+[node name="player_detect" parent="." index="9"]
+visible = false
 script = ExtResource( 3 )
+
+[node name="damage" type="Timer" parent="." index="10"]
+wait_time = 3.0
+autostart = true
 
 [connection signal="body_entered" from="player_detect" to="player_detect" method="_on_player_detect_body_entered"]
 [connection signal="body_exited" from="player_detect" to="player_detect" method="_on_player_detect_body_exited"]
+[connection signal="timeout" from="damage" to="." method="_on_damage_timeout"]
 
+[editable path="hitbox"]
 [editable path="hurtbox"]
+[editable path="hitbox2"]

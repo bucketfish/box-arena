@@ -45,9 +45,9 @@ func move(direction, delta):
 		
 		# horizontal flips
 		if direction.x > 0:
-			sprite.flip_h = true
+			sprite.scale.x = -abs(sprite.scale.x)
 		elif direction.x < 0:
-			sprite.flip_h = false
+			sprite.scale.x = abs(sprite.scale.x)
 			
 	# if the player is not moving, slowing down & friction
 	else:

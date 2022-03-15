@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://room/middle_room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -15,6 +15,10 @@
 [ext_resource path="res://assets/gui/health.png" type="Texture" id=13]
 [ext_resource path="res://assets/gui/max health.png" type="Texture" id=14]
 [ext_resource path="res://gui/bars.gd" type="Script" id=16]
+
+[sub_resource type="DynamicFont" id=12]
+size = 28
+font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=11]
 size = 28
@@ -162,11 +166,13 @@ position = Vector2( 855, 300 )
 [node name="gui" type="CanvasLayer" parent="."]
 
 [node name="coords" type="Label" parent="gui"]
-margin_left = 57.0
+margin_left = 67.0
 margin_top = 117.0
-margin_right = 97.0
+margin_right = 107.0
 margin_bottom = 150.0
-custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.752941, 0.776471, 0.847059, 1 )
+custom_fonts/font = SubResource( 12 )
 text = "0 0"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -242,6 +248,7 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="inventory" type="Control" parent="gui"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 7 )
@@ -265,7 +272,7 @@ __meta__ = {
 }
 
 [node name="rowbox" type="VBoxContainer" parent="gui/inventory/scroll"]
-margin_right = 448.0
+margin_right = 460.0
 margin_bottom = 552.0
 size_flags_horizontal = 3
 size_flags_vertical = 3

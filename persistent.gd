@@ -24,7 +24,8 @@ var genbosses = {
 				'-10 -10': {'name': 'puffpuffiepuff', 'alive': true}}
 var seenbosses = []
 
-var carrying = ["clothes", "clothes", "clothes", "clothes", "healing drop", "healing drop", "healing drop", "cookie", "cookie", "cookie"]
+var carrying = ["cookie", "clothes", "clothes", "clothes", "clothes", "healing drop", "healing drop", "healing drop", "cookie", "cookie" ] setget sort_inv
+
 var health = 5
 var energy = 5
 var damage = 0
@@ -40,3 +41,13 @@ func set_weapon(newval):
 	weapon = newval
 	player.update_weapon()
 	
+
+func items_custcomp(a, b):
+	return Data.itemsorder.find( a ) < Data.itemsorder.find( b )
+
+func sort_inv(newval):
+	newval.sort_custom(self, "items_custcomp")
+	carrying = newval
+	
+func _ready():
+	sort_inv(carrying)

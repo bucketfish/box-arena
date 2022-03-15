@@ -40,6 +40,8 @@ func _input(event):
 	if Input.is_action_just_pressed("pickup") && isitem && player.canmove:
 		anim.play_backwards("highlight")
 		Persistent.carrying.insert(0, itemname)
+		Persistent.sort_inv(Persistent.carrying)
+		
 		Persistent.places[Persistent.coords].erase(itemname)
 		
 		# item disappearing animation

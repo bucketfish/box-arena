@@ -40,9 +40,6 @@ func count_array(array: Array) -> Dictionary:
 		else:
 			dict[item] = 1
 	return dict
-
-func items_custcomp(a, b):
-	return Data.itemsorder.find( a ) < Data.itemsorder.find( b )
 		
 
 func sort_inventory(items) -> Dictionary:

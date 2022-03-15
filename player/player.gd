@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 var velocity = Vector2()
+var knockback_vector = Vector2()
+
 export var speed = 300
 export var friction = 0.4
 export var acceleration = 0.6
@@ -44,9 +46,10 @@ func get_input():
 func move(direction, delta):
 	if !canmove: # make it not move if the player isn't supposed to
 		velocity = Vector2()
-		
+	
 	# if the player is moving
 	elif direction.length() > 0:
+		knockback_vector = direction
 		velocity = lerp(velocity, direction.normalized() * speed, acceleration * delta * 100)
 		state = "walk"
 		
@@ -64,7 +67,7 @@ func move(direction, delta):
 		state = "idle"
 	
 	# attack animation
-	if Input.is_action_just_pressed('attack') && canmove:
+	if Input.is_action_just_pressed('attack') && canmove && Persistent.weapon:
 		state = "attack"
 
 		

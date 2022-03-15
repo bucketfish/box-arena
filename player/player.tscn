@@ -1,8 +1,7 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/player/spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://player/player.gd" type="Script" id=2]
-[ext_resource path="res://assets/items/battle axe.png" type="Texture" id=3]
 [ext_resource path="res://combat/hurtbox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://combat/hitbox.tscn" type="PackedScene" id=5]
 
@@ -212,8 +211,17 @@ graph_offset = Vector2( -91.35, -9.2025 )
 [sub_resource type="CircleShape2D" id=17]
 radius = 80.0
 
+[sub_resource type="CapsuleShape2D" id=18]
+radius = 23.0
+height = 22.0
+
+[sub_resource type="CapsuleShape2D" id=19]
+radius = 53.0
+height = 60.0
+
 [node name="player" type="KinematicBody2D" groups=["player"]]
 z_index = 10
+collision_layer = 64
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -227,7 +235,6 @@ show_behind_parent = true
 position = Vector2( -40, 75 )
 rotation = -0.488692
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 3 )
 offset = Vector2( -180, -210 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -265,5 +272,14 @@ shape = SubResource( 17 )
 [node name="hurtbox" parent="." instance=ExtResource( 4 )]
 collision_mask = 32
 
+[node name="CollisionShape2D" parent="hurtbox" index="0"]
+shape = SubResource( 18 )
+
 [node name="hitbox" parent="." instance=ExtResource( 5 )]
 monitorable = false
+
+[node name="CollisionShape2D" parent="hitbox" index="0"]
+shape = SubResource( 19 )
+
+[editable path="hurtbox"]
+[editable path="hitbox"]

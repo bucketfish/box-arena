@@ -75,12 +75,13 @@ inventory={
 
 [layer_names]
 
-2d_physics/layer_1="player and room"
+2d_physics/layer_1="room"
 2d_physics/layer_2="items pickup area"
 2d_physics/layer_3="player hurtbox"
 2d_physics/layer_4="player hitbox"
 2d_physics/layer_5="enemy hurtbox"
 2d_physics/layer_6="enemy hitbox"
+2d_physics/layer_7="player"
 
 [physics]
 

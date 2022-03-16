@@ -19,7 +19,7 @@
 [ext_resource path="res://combat/hitbox.tscn" type="PackedScene" id=17]
 [ext_resource path="res://combat/hurtbox.tscn" type="PackedScene" id=18]
 [ext_resource path="res://test.gd" type="Script" id=19]
-[ext_resource path="res://monsters/sol.tscn" type="PackedScene" id=20]
+[ext_resource path="res://monsters/nyam.tscn" type="PackedScene" id=20]
 
 [sub_resource type="DynamicFont" id=12]
 size = 28
@@ -587,7 +587,7 @@ anims/fromright = SubResource( 3 )
 anims/fromup = SubResource( 6 )
 
 [node name="monster" parent="." instance=ExtResource( 20 )]
-position = Vector2( 295, 272 )
+position = Vector2( 282, 310 )
 
 [editable path="gui/inventory/info/holder/values/damage"]
 [editable path="gui/inventory/info/holder/values/energy"]

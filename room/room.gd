@@ -24,6 +24,10 @@ func generateloot():
 		curitem.position.x = rand_range(412, 612)
 		curitem.position.y = rand_range(200, 400)
 	
+	
+func generateboss():
+	pass
+	
 func _ready():
 	#check if it's a boss room
 	if abs(Persistent.coords.x) in Data.fightplaces or abs(Persistent.coords.y) in Data.fightplaces:
@@ -32,7 +36,7 @@ func _ready():
 	if roomtype == "loot":
 		generateloot()
 	elif roomtype == "boss":
-		pass
+		generateboss()
 	else:
 		pass
 	

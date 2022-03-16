@@ -32,6 +32,7 @@ func _ready():
 	damage = Data.bosses[type]["damage"]
 	speed = Data.bosses[type]['speed']
 	knockback_val = Data.bosses[type]['knockback']
+
 	
 	hitbox.damage = damage
 	

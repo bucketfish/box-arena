@@ -316,7 +316,7 @@ var bosses = {
 				'damage': 1,
 				'health': 7,
 				'level': 1,
-				'speed': 120,
+				'speed': 100,
 				'knockback': 500,
 				'drop':['wooden stick', 'wooden stick', 'wooden stick', 'wooden stick', 'wooden stick', 'wooden stick', 'wooden stick', 'wooden stick'],
 				'desc': 'just... be nice and pretend its hits hurt.'},

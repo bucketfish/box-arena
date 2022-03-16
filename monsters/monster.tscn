@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/monsters/sol.png" type="Texture" id=1]
 [ext_resource path="res://combat/hurtbox.tscn" type="PackedScene" id=2]
@@ -6,10 +6,7 @@
 [ext_resource path="res://monsters/monster.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 40, 87.5 )
-
-[sub_resource type="CircleShape2D" id=2]
-radius = 201.122
+extents = Vector2( 68, 88 )
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -59,16 +56,13 @@ shape = SubResource( 1 )
 
 [node name="hitbox" parent="." instance=ExtResource( 3 )]
 visible = false
+collision_layer = 32
+collision_mask = 4
 
 [node name="hurtbox" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 10 )
-
-[node name="player_detect" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 64
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player_detect"]
-shape = SubResource( 2 )
+collision_layer = 16
+collision_mask = 8
 
 [node name="damage_anim" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 3 )

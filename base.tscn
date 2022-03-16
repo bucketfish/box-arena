@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://room/middle_room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -19,7 +19,6 @@
 [ext_resource path="res://combat/hitbox.tscn" type="PackedScene" id=17]
 [ext_resource path="res://combat/hurtbox.tscn" type="PackedScene" id=18]
 [ext_resource path="res://test.gd" type="Script" id=19]
-[ext_resource path="res://monsters/nyam.tscn" type="PackedScene" id=20]
 
 [sub_resource type="DynamicFont" id=12]
 size = 28
@@ -83,6 +82,7 @@ tracks/3/keys = {
 [sub_resource type="Animation" id=14]
 resource_name = "no_energy"
 length = 0.4
+loop = true
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("sprite:scale")
@@ -586,8 +586,10 @@ anims/fromleft = SubResource( 5 )
 anims/fromright = SubResource( 3 )
 anims/fromup = SubResource( 6 )
 
-[node name="monster" parent="." instance=ExtResource( 20 )]
-position = Vector2( 282, 310 )
+[node name="bosspause_timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="bosspause_timer" to="." method="_on_bosspause_timer_timeout"]
 
 [editable path="gui/inventory/info/holder/values/damage"]
 [editable path="gui/inventory/info/holder/values/energy"]

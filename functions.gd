@@ -24,6 +24,31 @@ func generate_loot(coords):#contents
 	Persistent.places[Persistent.coords] = contents
 	return contents
 
+func generate_boss(coords):
+	var boss = ""
+	var contents = []
+	
+	if coords in Persistent.genbosses.keys():
+		if Persistent.genbosses[coords]['alive'] == true:
+			boss = Persistent.genbosses[coords]['name']
+		else:
+			contents = Persistent.places[coords]
+	else:
+		var boss_level = pick_fightcoords(coords)
+		Persistent.places[coords] = []
+		
+
+		print(Data.bosslist[str(boss_level)][randi()%Data.bosslist[str(boss_level)].size()])
+		
+		boss = Data.bosslist[str(boss_level)][randi()%Data.bosslist[str(boss_level)].size()]
+		
+		Persistent.genbosses[coords] = {
+			"name": boss,
+			"alive": true
+		}
+		
+		
+	return {"boss": boss, "contents": contents}
 
 func array_unique(array: Array) -> Array:
 	var unique: Array = []
@@ -47,3 +72,8 @@ func sort_inventory(items) -> Dictionary:
 	
 	return dict
 
+
+func pick_fightcoords(coords):
+	var bigger = max(abs(coords.y), abs(coords.x))
+	var smaller = min(abs(coords.y), abs(coords.x))
+	return bigger if bigger in Data.fightplaces else smaller

@@ -16,7 +16,8 @@ func update_bars():
 	health.text = str(Persistent.health) + '/' + str(Persistent.max_health)
 	energy.text = str(Persistent.energy)
 	
+	if Persistent.energy <= 0:
+		anim.play("no_energy")
+	else:
+		anim.play("RESET")
 	
-
-func no_energy():
-	anim.play("no_energy")

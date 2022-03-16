@@ -11,18 +11,24 @@ onready var anim = $anim
 onready var coordslabel = $gui/bars/coords
 onready var inventory = $gui/inventory
 onready var shade = $gui/shade
+onready var bosspause_timer = $bosspause_timer
 const room = preload("res://room/middle_room.tscn")
 
 var curroom
 var comefrom
-var trans = false
+var trans = false setget update_trans
+
+var state = "play" setget update_state
+
+var boss_move = true
+# states: play, inv, pause
 
 
 func _ready():
 	curroom = $room
 	
 func goto(dirfrom):
-	trans = true
+	update_trans(true)
 	# update new room coordinates
 	if dirfrom == "up":
 		Persistent.coords.y += 1
@@ -37,7 +43,6 @@ func goto(dirfrom):
 	
 	#save current room // todo!
 	
-	player.canmove = false
 	
 	# run "fade-out" animation
 	if dirfrom == "up":
@@ -82,12 +87,38 @@ func goto(dirfrom):
 	yield(anim, "animation_finished")
 	
 	# continue the game
-	player.canmove = true
-	trans = false
+	update_trans(false)
 	
 func _input(event):
 	if !trans && Input.is_action_just_pressed("inventory"):
 		inventory.toggle()
 		shade.visible = inventory.visible
-		player.canmove = !inventory.visible
+		if inventory.visible:
+			update_state("inv")
+		else:
+			update_state('play')
 			
+			
+func update_state(newstate):
+	if newstate == "play":
+		player.canmove = true
+	else:
+		player.canmove = false
+	state = newstate
+	
+func update_trans(newval):
+	if newval:
+		player.canmove = false
+		update_state("pause")
+	else:
+		player.canmove = true
+		update_state("play")
+		boss_move = false
+		bosspause_timer.start()
+		
+		
+	trans = newval
+
+
+func _on_bosspause_timer_timeout():
+	boss_move = true

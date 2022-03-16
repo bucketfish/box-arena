@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://room/room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://room/door.tscn" type="PackedScene" id=2]
+
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( 1, -73 )
+b = Vector2( 1, 65 )
 
 [node name="room" instance=ExtResource( 1 )]
 doors = [ NodePath("door"), NodePath("door2"), NodePath("door3"), NodePath("door4") ]
@@ -50,3 +54,25 @@ doorpos = "left"
 position = Vector2( 924, 300 )
 rotation = 1.5708
 doorpos = "right"
+
+[node name="boss_container" type="StaticBody2D" parent="." index="7"]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boss_container" index="0"]
+position = Vector2( 159, 305 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="boss_container" index="1"]
+position = Vector2( 865, 305 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="boss_container" index="2"]
+position = Vector2( 512, 74 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="boss_container" index="3"]
+position = Vector2( 512, 526 )
+rotation = 1.5708
+shape = SubResource( 1 )

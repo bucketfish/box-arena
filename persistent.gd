@@ -18,10 +18,10 @@ var places = {
 
 var beenplaces  = [Vector2()]
 var genbosses = {
-				'10 -10': {'name': 'poinkydirtie', 'alive': true},
-				'10 10': {'name': 'swooshymooshy', 'alive': true},
-				'-10 10': {'name': 'foofeefoofee', 'alive': true},
-				'-10 -10': {'name': 'puffpuffiepuff', 'alive': true}}
+				Vector2(10, -10): {'name': 'poinkydirtie', 'alive': true},
+				Vector2(10, 10): {'name': 'swooshymooshy', 'alive': true},
+				Vector2(-10, 10): {'name': 'foofeefoofee', 'alive': true},
+				Vector2(-10, -10): {'name': 'puffpuffiepuff', 'alive': true}}
 var seenbosses = []
 
 var carrying = ["wooden stick"] setget sort_inv

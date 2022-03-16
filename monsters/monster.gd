@@ -21,7 +21,7 @@ var knockback = Vector2()
 export var speed = 130
 export var knockback_val = 500
 var friction = 0.4
-var acceleration = 0.4
+var acceleration = 0.3
 
 
 
@@ -32,9 +32,9 @@ func _ready():
 	damage = Data.bosses[type]["damage"]
 	speed = Data.bosses[type]['speed']
 	knockback_val = Data.bosses[type]['knockback']
-
 	
 	hitbox.damage = damage
+	
 	
 func hurt(damageval):
 	knockback = player.knockback_vector * knockback_val
@@ -55,11 +55,16 @@ func die():
 		
 		Persistent.places[Persistent.coords].append(i)
 		
+	Persistent.genbosses[Persistent.coords]['alive'] = false
+	
 	queue_free()
 
 
 
 func _physics_process(delta):
+	if base.state != "play" || base.boss_move == false:
+		return
+	
 	knockback = lerp(knockback, Vector2(), friction * delta * 10)
 	
 	knockback = move_and_slide(knockback)

@@ -10,23 +10,34 @@ const item = preload("res://items/item.tscn")
 var roomtype = "loot"
 var roomlevel = 0
 
-func generateloot():
-	var loot = ['wooden stick', 'healing drop', 'cookie', 'wooden sword', 'health pot', 'choco cookie', 'clothes', 'stone sword', 'leather padding', 'apple pie', 'stone axe', 'health potion', 'sharp flint', 'steak', 'iron armor']
+func generate_loot():
+	var loot = Functions.generate_loot(Persistent.coords)
 	
-	loot = Functions.generate_loot(Persistent.coords)
+	spawn_loot(loot)
 	
+	
+func generate_boss():
+	var gen = Functions.generate_boss(Persistent.coords)
+	
+	spawn_loot(gen["contents"])
+	
+	if gen["boss"] != "":
+		spawn_boss(gen["boss"])
+		
+func spawn_loot(listof):
 	# create the loot and instance it into scene
-	for thing in loot:
+	for thing in listof:
 		var curitem = item.instance()
 		curitem.itemname = thing
 		add_child(curitem)
-		# randomly generate position of loot // sometime update this to like. reflect past positions of stuff?? or nah
+
 		curitem.position.x = rand_range(412, 612)
 		curitem.position.y = rand_range(200, 400)
-	
-	
-func generateboss():
-	pass
+		
+func spawn_boss(bossname):
+	var curboss = Data.boss_scenes[bossname].instance()
+	curboss.position = Vector2(512, 300)
+	add_child(curboss)
 	
 func _ready():
 	#check if it's a boss room
@@ -34,9 +45,9 @@ func _ready():
 		roomtype = "boss"
 	
 	if roomtype == "loot":
-		generateloot()
+		generate_loot()
 	elif roomtype == "boss":
-		generateboss()
+		generate_boss()
 	else:
 		pass
 	

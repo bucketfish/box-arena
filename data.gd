@@ -269,29 +269,15 @@ var items = {
 }
 
 var bosslist = {
-	2:[
-		'nyam',
-		'sol',
-		'pionk'],
-
-	6:[
-		'flickflack',
-		'ticktack',
-		'kickee'],
-
-	10:[
-		'slurpydoo',
-		'conkydonk',
-		'tictactoe',
-		'fishymoo'],
-
-	'end':[
-		'poinkydirtie', #earth
+	'2':['nyam', 'sol', 'pionk'],
+	'6':[ 'flickflack', 'ticktack', 'kickee'],
+	'10':[ 'slurpydoo', 'conkydonk', 'tictactoe', 'fishymoo'],
+	'end':[ 'poinkydirtie', #earth
 		'swooshymooshy', #water
 		'foofeefoofee', #fire
 		"puffpuffiepuff" #air
-		 ]
-	}
+		] }
+		
 var bosses = {
 	#level 3 bosses
 	'nyam':{
@@ -300,7 +286,7 @@ var bosses = {
 				'level': 1,
 				'speed': 200,
 				'knockback': 1500,
-				'drop':['steak', 'steak', 'steak', 'steak', 'choco cookie'],
+				'drop':['steak', 'steak', 'steak', 'health pot', 'choco cookie'],
 				'desc': 'it eats a lot. not that we\'re judging, or anything.'},
 
 	'sol':{
@@ -398,6 +384,12 @@ var bosses = {
 				'level':'endgame',
 				'desc':'incomplete description'}
 	}
+
+var boss_scenes = {
+	'nyam': preload("res://monsters/nyam.tscn"),
+	'sol': preload("res://monsters/sol.tscn"),
+	'pionk': preload("res://monsters/pionk.tscn")
+}
 
 var cowardmessage = [
 				'huh. i thought you were braver than that.',

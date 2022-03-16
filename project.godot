@@ -82,6 +82,7 @@ inventory={
 2d_physics/layer_5="enemy hurtbox"
 2d_physics/layer_6="enemy hitbox"
 2d_physics/layer_7="player"
+2d_physics/layer_8="boss container room"
 
 [physics]
 

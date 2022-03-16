@@ -32,7 +32,7 @@ var items = {
 					},
 
 	'cookie':      {
-					'energy': 2,
+					'energy': 4,
 					'desc': 'this game uses cookies to give you a better user experience.',
 					},
 
@@ -52,7 +52,7 @@ var items = {
 					},
 
 	'choco cookie':{
-					'energy': 3,
+					'energy': 6,
 					'desc': 'it\'s a cookie, just that it has chocolate on it. congrats. you now have a choco cookie.',
 					},
 
@@ -78,7 +78,7 @@ var items = {
 					},
 
 	'apple pie':    {
-					'energy': 3,
+					'energy': 6,
 					'health':2,
 					'desc': 'it might just smell vaguely of happiness if you just hold your breath.',
 					},
@@ -109,7 +109,7 @@ var items = {
 					},
 
 	'steak':{
-					'energy': 5,
+					'energy': 10,
 					'desc': 'finally, some good ol\' overcooked steak.',
 					},
 
@@ -134,7 +134,7 @@ var items = {
 					},
 
 	'grilled porkchop':{
-					'energy': 6,
+					'energy': 12,
 					'desc': 'it\'s grilled, it\'s pork, and it\'s a chop. pretty self-explanatory, if you ask me.',
 					},
 
@@ -154,7 +154,7 @@ var items = {
 					},
 
 	'pumpkin pie':  {
-					'energy': 8,
+					'energy': 16,
 					'desc': 'if the taste of apple pies doesn\'t suit you, this definitely won\'t!',
 					},
 
@@ -179,7 +179,7 @@ var items = {
 					},
 
 	'cake':         {
-					'energy': 10,
+					'energy': 20,
 					'health': 7,
 					'desc': 'is a lie and marie antoinette is the liar.',
 					},
@@ -202,7 +202,7 @@ var items = {
 					},
 
 	'golden carrot':{
-					'energy': 15,
+					'energy': 30,
 					'health': 10,
 					'desc': 'oink oink you capitalist pig. bring back the guillotine.',
 					},
@@ -263,7 +263,7 @@ var items = {
 	#misc
 	'fishcow':      {
 					'health': -10,
-					'energy': 10,
+					'energy': 20,
 					'desc': 'why.',
 					}
 }
@@ -298,12 +298,16 @@ var bosses = {
 				'damage': 2,
 				'health': 5,
 				'level': 1,
+				'speed': 200,
+				'knockback': 1500,
 				'drop':['steak', 'steak', 'steak', 'steak', 'choco cookie'],
 				'desc': 'it eats a lot. not that we\'re judging, or anything.'},
 
 	'sol':{
 				'damage': 4,
 				'health': 2,
+				'speed': 150,
+				'knockback': 700,
 				'level': 1,
 				'drop':['golden apple', 'golden apple'],
 				'desc': 'its future is almost blinding. a pity you have to cut it short.'},
@@ -312,6 +316,8 @@ var bosses = {
 				'damage': 1,
 				'health': 7,
 				'level': 1,
+				'speed': 120,
+				'knockback': 500,
 				'drop':['wooden stick', 'wooden stick', 'wooden stick', 'wooden stick', 'wooden stick', 'wooden stick', 'wooden stick', 'wooden stick'],
 				'desc': 'just... be nice and pretend its hits hurt.'},
 

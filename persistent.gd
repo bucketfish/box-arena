@@ -27,7 +27,7 @@ var seenbosses = []
 var carrying = ["wooden stick"] setget sort_inv
 
 var health = 5
-var energy = 5
+var energy = 10
 var damage = 0
 var max_health = 5
 var defeated = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://monsters/monster.tscn" type="PackedScene" id=1]
 [ext_resource path="res://monsters/sol.gd" type="Script" id=2]
@@ -132,41 +132,11 @@ start_node = "idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=7]
 
-[sub_resource type="Animation" id=11]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=12]
-resource_name = "hurt"
-length = 0.2
-step = 0.01
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.08, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.411765, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
-}
-
 [node name="monster" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-type = "sol"
+type = "pionk"
+speed = 150
+knockback_val = 700
 
 [node name="Sprite2" type="Sprite" parent="." index="0"]
 self_modulate = Color( 0.784314, 0.541176, 0.937255, 0 )
@@ -209,17 +179,12 @@ anim_player = NodePath("../anim")
 active = true
 parameters/playback = SubResource( 7 )
 
-[node name="damage_anim" type="AnimationPlayer" parent="." index="8"]
-anims/RESET = SubResource( 11 )
-anims/hurt = SubResource( 12 )
-
-[node name="player_detect" parent="." index="9"]
+[node name="player_detect" parent="." index="8"]
 visible = false
 script = ExtResource( 3 )
 
-[node name="damage" type="Timer" parent="." index="10"]
+[node name="damage" type="Timer" parent="." index="9"]
 wait_time = 3.0
-autostart = true
 
 [connection signal="body_entered" from="player_detect" to="player_detect" method="_on_player_detect_body_entered"]
 [connection signal="body_exited" from="player_detect" to="player_detect" method="_on_player_detect_body_exited"]

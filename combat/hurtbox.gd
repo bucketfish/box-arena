@@ -10,6 +10,6 @@ func _on_hurtbox_area_entered(area):
 		get_parent().take_damage(area.damage)
 		
 func start_invincibility(time):
-	monitoring = false
+	set_deferred("monitoring", false)
 	yield(get_tree().create_timer(time), "timeout")
-	monitoring = true
+	set_deferred("monitoring", true)

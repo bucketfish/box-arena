@@ -3,7 +3,6 @@ extends KinematicBody2D
 
 var health
 var damage
-var invincible = false
 export var type = "nyam"
 const item = preload("res://items/item.tscn")
 onready var base = get_node("/root/base")
@@ -39,7 +38,7 @@ func _ready():
 func hurt(damageval):
 	knockback = player.knockback_vector * knockback_val
 	hurtanim.play("hurt")
-	hurtbox.start_invincibility(0.8)
+	hurtbox.start_invincibility(0.6)
 	
 	health -= damageval
 	if health <= 0:

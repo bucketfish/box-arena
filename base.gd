@@ -8,7 +8,7 @@ extends Node2D
 onready var player = $player
 onready var anim = $anim
 
-onready var coordslabel = $gui/coords
+onready var coordslabel = $gui/bars/coords
 onready var inventory = $gui/inventory
 onready var shade = $gui/shade
 const room = preload("res://room/middle_room.tscn")

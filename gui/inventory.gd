@@ -191,6 +191,8 @@ func use_item():
 	if use:
 		bars.update_bars()
 		Persistent.carrying.erase(item)
+		Persistent.sort_inv(Persistent.carrying)
+		
 		display()
 		
 
@@ -204,5 +206,7 @@ func fuse_item():
 		Persistent.carrying.erase(item)
 		Persistent.carrying.erase(item)
 		Persistent.carrying.erase(item)
+		
+		Persistent.sort_inv(Persistent.carrying)
 		
 		display()

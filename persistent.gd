@@ -46,6 +46,9 @@ func items_custcomp(a, b):
 	return Data.itemsorder.find( a ) < Data.itemsorder.find( b )
 
 func sort_inv(newval):
+	if !(weapon in newval) && weapon != "":
+		set_weapon("")
+		
 	newval.sort_custom(self, "items_custcomp")
 	carrying = newval
 	

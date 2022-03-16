@@ -68,8 +68,11 @@ func move(direction, delta):
 		state = "idle"
 	
 	# attack animation
-	if Input.is_action_just_pressed('attack') && canmove && Persistent.weapon:
+	if Input.is_action_just_pressed('attack') && canmove && Persistent.weapon && Persistent.energy >= abs(Data.items[Persistent.weapon]["energy"]):
 		state = "attack"
+		
+	elif Input.is_action_just_pressed('attack') && canmove && Persistent.weapon && Persistent.energy < abs(Data.items[Persistent.weapon]["energy"]):
+		bars.no_energy()
 
 		
 	anim.travel(state)
@@ -129,6 +132,9 @@ func swing():
 		# deduct energy
 		Persistent.energy += Data.items[Persistent.weapon]["energy"]
 		bars.update_bars()
+		
+	else:
+		bars.no_energy()
 		
 			
 func update_weapon():

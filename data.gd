@@ -32,7 +32,7 @@ var items = {
 					},
 
 	'cookie':      {
-					'energy': 4,
+					'energy': 2,
 					'desc': 'this game uses cookies to give you a better user experience.',
 					},
 
@@ -52,7 +52,7 @@ var items = {
 					},
 
 	'choco cookie':{
-					'energy': 6,
+					'energy': 5,
 					'desc': 'it\'s a cookie, just that it has chocolate on it. congrats. you now have a choco cookie.',
 					},
 
@@ -78,7 +78,7 @@ var items = {
 					},
 
 	'apple pie':    {
-					'energy': 6,
+					'energy': 5,
 					'health':2,
 					'desc': 'it might just smell vaguely of happiness if you just hold your breath.',
 					},
@@ -109,7 +109,7 @@ var items = {
 					},
 
 	'steak':{
-					'energy': 10,
+					'energy': 8,
 					'desc': 'finally, some good ol\' overcooked steak.',
 					},
 
@@ -134,7 +134,7 @@ var items = {
 					},
 
 	'grilled porkchop':{
-					'energy': 12,
+					'energy': 10,
 					'desc': 'it\'s grilled, it\'s pork, and it\'s a chop. pretty self-explanatory, if you ask me.',
 					},
 
@@ -154,7 +154,7 @@ var items = {
 					},
 
 	'pumpkin pie':  {
-					'energy': 16,
+					'energy': 12,
 					'desc': 'if the taste of apple pies doesn\'t suit you, this definitely won\'t!',
 					},
 
@@ -179,7 +179,7 @@ var items = {
 					},
 
 	'cake':         {
-					'energy': 20,
+					'energy': 15,
 					'health': 7,
 					'desc': 'is a lie and marie antoinette is the liar.',
 					},
@@ -202,7 +202,7 @@ var items = {
 					},
 
 	'golden carrot':{
-					'energy': 30,
+					'energy': 20,
 					'health': 10,
 					'desc': 'oink oink you capitalist pig. bring back the guillotine.',
 					},
@@ -263,7 +263,7 @@ var items = {
 	#misc
 	'fishcow':      {
 					'health': -10,
-					'energy': 20,
+					'energy': 15,
 					'desc': 'why.',
 					}
 }
@@ -293,9 +293,9 @@ var bosses = {
 				'damage': 4,
 				'health': 2,
 				'speed': 150,
-				'knockback': 700,
+				'knockback': 800,
 				'level': 1,
-				'drop':['golden apple', 'golden apple'],
+				'drop':['golden apple', 'clothes'],
 				'desc': 'its future is almost blinding. a pity you have to cut it short.'},
 
 	'pionk':{
@@ -303,7 +303,7 @@ var bosses = {
 				'health': 7,
 				'level': 1,
 				'speed': 100,
-				'knockback': 500,
+				'knockback': 700,
 				'drop':['wooden stick', 'wooden stick', 'wooden stick', 'wooden stick', 'wooden stick', 'wooden stick', 'wooden stick', 'wooden stick'],
 				'desc': 'just... be nice and pretend its hits hurt.'},
 

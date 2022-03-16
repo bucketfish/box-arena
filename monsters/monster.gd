@@ -62,7 +62,7 @@ func die():
 
 
 func _physics_process(delta):
-	if base.state != "play" || base.boss_move == false:
+	if !base.state in ["play", "inv"] || base.boss_move == false:
 		return
 	
 	knockback = lerp(knockback, Vector2(), friction * delta * 10)

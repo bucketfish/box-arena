@@ -70,6 +70,9 @@ func move(direction, delta):
 	# attack animation
 	if Input.is_action_just_pressed('attack') && canmove && Persistent.weapon && Persistent.energy >= abs(Data.items[Persistent.weapon]["energy"]):
 		state = "attack"
+		
+	elif Input.is_action_just_pressed('attack') && canmove && Persistent.weapon && Persistent.energy < abs(Data.items[Persistent.weapon]["energy"]) && Persistent.energy > 0:
+		bars.no_energy()
 
 		
 	anim.travel(state)

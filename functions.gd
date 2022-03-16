@@ -37,8 +37,6 @@ func generate_boss(coords):
 		var boss_level = pick_fightcoords(coords)
 		Persistent.places[coords] = []
 		
-
-		print(Data.bosslist[str(boss_level)][randi()%Data.bosslist[str(boss_level)].size()])
 		
 		boss = Data.bosslist[str(boss_level)][randi()%Data.bosslist[str(boss_level)].size()]
 		

@@ -39,7 +39,7 @@ func _ready():
 func hurt(damageval):
 	knockback = player.knockback_vector * knockback_val
 	hurtanim.play("hurt")
-	hurtbox.start_invincibility(0.5)
+	hurtbox.start_invincibility(0.8)
 	
 	health -= damageval
 	if health <= 0:

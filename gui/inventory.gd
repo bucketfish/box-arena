@@ -89,7 +89,7 @@ func _input(event):
 		elif Input.is_action_just_pressed("use item"):
 			use_item()
 		elif Input.is_action_just_pressed("fuse item"):
-			pass
+			fuse_item()
 
 func focus_on(newfocus):
 	curhighlight.focused = false
@@ -193,3 +193,16 @@ func use_item():
 		Persistent.carrying.erase(item)
 		display()
 		
+
+func fuse_item():
+	var item = curhighlight.itemname
+	if !item:
+		return
+		
+	if 'fusion' in Data.items[item].keys() && Persistent.carrying.count(item) >= 3:
+		Persistent.carrying.append(Data.items[item]['fusion'])
+		Persistent.carrying.erase(item)
+		Persistent.carrying.erase(item)
+		Persistent.carrying.erase(item)
+		
+		display()

@@ -143,5 +143,5 @@ func take_damage(damageval):
 	hurtanim.play("hurt")
 	Persistent.health -= damageval
 	bars.update_bars()
-	hurtbox.start_invincibility(0.5)
+	hurtbox.start_invincibility(0.8)
 

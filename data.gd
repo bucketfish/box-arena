@@ -315,7 +315,7 @@ var bosses = {
 				'speed': 120,
 				'knockback': 800,
 				'drop':['sharp flint', 'sharp flint', 'sharp flint'],
-				'desc': 'you... don\'t want to be anywhere near it about five seconds after you\'ve defeated it. trust me.'},
+				'desc': 'it\'s like a slap bracelet. vibrant and pointless.'},
 
 	'ticktack':{
 				'damage':7,
@@ -323,7 +323,7 @@ var bosses = {
 				'level': 2,
 				'speed': 200,
 				'knockback': 1500,
-				'drop':['nano-vest', 'nano-vest', 'iron heart'],
+				'drop':['chainmail armor', 'spiked mace', 'iron heart'],
 				'desc': 'its skin is sharp enough to be made into armour (for the masochist).'},
 
 	'kickee':{

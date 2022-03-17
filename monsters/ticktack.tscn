@@ -75,6 +75,7 @@ tracks/1/keys = {
 
 [node name="monster" instance=ExtResource( 1 )]
 script = ExtResource( 5 )
+type = "ticktack"
 
 [node name="Sprite2" type="Sprite" parent="." index="0"]
 scale = Vector2( 0.4, 0.4 )

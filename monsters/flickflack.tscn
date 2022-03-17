@@ -1,0 +1,151 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://combat/hitbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://monsters/monster.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/monsters/flickflack.png" type="Texture" id=3]
+[ext_resource path="res://monsters/flickflack.gd" type="Script" id=4]
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 51.0
+height = 22.0
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 47, 58 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 43.0
+height = 30.0
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 54.0
+height = 36.0
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite/hitbox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 58, -51 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite/hitbox:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "idle"
+length = 1.2
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite/hitbox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 117.5, -115 ), Vector2( 130, -152.5 ), Vector2( -172.5, -275 ), Vector2( -175, -155 ), Vector2( 120, -147.5 ), Vector2( 90, -250 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite/hitbox:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0.0, 90.0, 0.0, 0.0, 90.0, 0.0 ]
+}
+
+[node name="monster" instance=ExtResource( 2 )]
+script = ExtResource( 4 )
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 3 )
+offset = Vector2( -20, 0 )
+hframes = 2
+vframes = 3
+
+[node name="hitbox" parent="Sprite" index="0" instance=ExtResource( 1 )]
+position = Vector2( 58, -51 )
+scale = Vector2( 2.5, 2.5 )
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Sprite/hitbox" index="0"]
+position = Vector2( 7, 59 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 0, 47 )
+scale = Vector2( 0.875, 0.875 )
+shape = SubResource( 1 )
+
+[node name="hitbox" parent="." index="2"]
+position = Vector2( 0, 49 )
+scale = Vector2( 0.875, 0.875 )
+
+[node name="CollisionShape2D" parent="hitbox" index="0"]
+position = Vector2( 0, 0 )
+shape = SubResource( 2 )
+
+[node name="hurtbox" parent="." index="3"]
+position = Vector2( 1, 47 )
+scale = Vector2( 0.875, 0.875 )
+
+[node name="CollisionShape2D" parent="hurtbox" index="0"]
+shape = SubResource( 3 )
+
+[node name="anim" type="AnimationPlayer" parent="." index="5"]
+autoplay = "idle"
+anims/RESET = SubResource( 4 )
+anims/idle = SubResource( 5 )
+
+[editable path="Sprite/hitbox"]
+[editable path="hitbox"]
+[editable path="hurtbox"]

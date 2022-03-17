@@ -10,7 +10,6 @@ onready var player = get_node("/root/base/player")
 
 
 onready var hitbox = $hitbox
-onready var player_detect = $player_detect
 onready var sprite = $Sprite
 onready var hurtanim = $damage_anim
 onready var hurtbox = $hurtbox
@@ -81,6 +80,3 @@ func _physics_process(delta):
 			
 	velocity = move_and_slide(velocity)
 
-func seek_player():
-	if player_detect.can_see_player():
-		state = "chase"

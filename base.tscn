@@ -351,7 +351,6 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="inventory" type="Control" parent="gui"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 7 )
@@ -375,7 +374,7 @@ __meta__ = {
 }
 
 [node name="rowbox" type="VBoxContainer" parent="gui/inventory/scroll"]
-margin_right = 460.0
+margin_right = 448.0
 margin_bottom = 552.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -520,8 +519,9 @@ text = "1"
 [node name="itemdesc" type="Label" parent="gui/inventory/info"]
 margin_top = 79.0
 margin_right = 200.0
-margin_bottom = 122.0
+margin_bottom = 116.0
 custom_colors/font_color = Color( 1, 1, 1, 0.862745 )
+custom_constants/line_spacing = -3
 custom_fonts/font = SubResource( 7 )
 text = "item description things here!!!!!!!!"
 align = 1

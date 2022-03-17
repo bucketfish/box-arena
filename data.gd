@@ -312,6 +312,8 @@ var bosses = {
 				'damage':5,
 				'health': 8,
 				'level': 2,
+				'speed': 120,
+				'knockback': 800,
 				'drop':['sharp flint', 'sharp flint', 'sharp flint'],
 				'desc': 'you... don\'t want to be anywhere near it about five seconds after you\'ve defeated it. trust me.'},
 
@@ -319,6 +321,8 @@ var bosses = {
 				'damage':7,
 				'health': 4,
 				'level': 2,
+				'speed': 200,
+				'knockback': 1500,
 				'drop':['nano-vest', 'nano-vest', 'iron heart'],
 				'desc': 'its skin is sharp enough to be made into armour (for the masochist).'},
 
@@ -326,6 +330,8 @@ var bosses = {
 				'damage': 2,
 				'health': 15,
 				'level': 2,
+				'speed': 120,
+				'knockback': 1200,
 				'drop':['cake', 'cake', 'cake'],
 				'desc': 'its legs are entirely made out of cake. don\'t ask me how i know this.'},
 
@@ -388,7 +394,10 @@ var bosses = {
 var boss_scenes = {
 	'nyam': preload("res://monsters/nyam.tscn"),
 	'sol': preload("res://monsters/sol.tscn"),
-	'pionk': preload("res://monsters/pionk.tscn")
+	'pionk': preload("res://monsters/pionk.tscn"),
+	'ticktack': preload("res://monsters/ticktack.tscn"),
+	'flickflack': preload("res://monsters/flickflack.tscn"),
+	'kickee': preload("res://monsters/kickee.tscn")
 }
 
 var cowardmessage = [

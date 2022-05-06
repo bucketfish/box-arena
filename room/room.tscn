@@ -1,6 +1,5 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/room/mid.png" type="Texture" id=1]
 [ext_resource path="res://room/room.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=1]
@@ -82,14 +81,12 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 300 ) ]
 }
 
+[sub_resource type="SegmentShape2D" id=6]
+a = Vector2( 1, -73 )
+b = Vector2( 1, 65 )
+
 [node name="room" type="Node2D"]
 script = ExtResource( 2 )
-
-[node name="back" type="Sprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
-z_index = -50
-texture = ExtResource( 1 )
-centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )
@@ -97,3 +94,25 @@ anims/fromdown = SubResource( 2 )
 anims/fromleft = SubResource( 3 )
 anims/fromright = SubResource( 4 )
 anims/fromup = SubResource( 5 )
+
+[node name="boss_container" type="StaticBody2D" parent="."]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boss_container"]
+position = Vector2( 159, 305 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="boss_container"]
+position = Vector2( 865, 305 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="boss_container"]
+position = Vector2( 512, 74 )
+rotation = 1.5708
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="boss_container"]
+position = Vector2( 512, 526 )
+rotation = 1.5708
+shape = SubResource( 6 )

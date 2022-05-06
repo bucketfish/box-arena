@@ -12,7 +12,7 @@ onready var coordslabel = $gui/bars/coords
 onready var inventory = $gui/inventory
 onready var shade = $gui/shade
 onready var bosspause_timer = $bosspause_timer
-const room = preload("res://room/middle_room.tscn")
+const room = preload("res://room/room.tscn")
 
 var curroom
 var comefrom

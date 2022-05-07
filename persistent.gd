@@ -24,7 +24,7 @@ var genbosses = {
 				Vector2(-10, -10): {'name': 'puffpuffiepuff', 'alive': true}}
 var seenbosses = []
 
-var carrying = ["wooden stick", "cookie", "cookie", "cookie", "cookie"] setget sort_inv
+var carrying = [] setget sort_inv
 
 var health = 5
 var energy = 10
@@ -53,4 +53,59 @@ func sort_inv(newval):
 	carrying = newval
 	
 func _ready():
+	sort_inv(carrying)
+
+
+
+func save_game():
+	#prepares the file
+	var saves = File.new()
+	saves.open("user://saves.save", File.WRITE)
+	
+	#vars to save
+	var vals = {
+		"endgames": endgames,
+		"coords": coords,
+		"beenplaces": beenplaces,
+		"genbosses": genbosses,
+		"seenbosses": seenbosses,
+		"carrying": carrying,
+		"health": health,
+		"energy": energy,
+		"damage": damage,
+		"max_health": max_health,
+		"defeated": defeated,
+		"coward": coward,
+		"isCoward": isCoward,
+		"weapon": weapon
+	}
+
+	saves.store_line(to_json(vals))
+	
+	print("game saved!")
+	saves.close()
+	#emit_signal("finish_save")
+	
+
+func load_game():
+	var save_game = File.new()
+	if not save_game.file_exists("user://saves.save"):
+		return # Error! We don't have a save to load.
+
+
+	# Load the file line by line and process that dictionary to restore
+	# the object it represents.
+	save_game.open("user://saves.save", File.READ)
+
+	# Get the saved dictionary from the next line in the save file
+	var vals = parse_json(save_game.get_line())
+	
+	for i in vals.keys():
+		set(i, vals[i])
+
+	save_game.close()
+	print("loaded!")
+	#emit_signal("finish_load")
+
+
 	sort_inv(carrying)

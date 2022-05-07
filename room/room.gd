@@ -5,8 +5,6 @@ onready var base = get_node("/root/base")
 export(Array, NodePath) var doors := []
 onready var anim = $AnimationPlayer
 
-const roomsize = 2
-
 const item = preload("res://items/item.tscn")
 const layouts = {
 	"middle": preload("res://room/layouts/middle.tscn"),
@@ -36,13 +34,13 @@ func _ready():
 	else:
 		pass
 	var layout = ""
-	if Persistent.coords.x == -roomsize:
+	if Persistent.coords.x == -Data.roomsize:
 		layout += "left"
-	if Persistent.coords.x == roomsize:
+	if Persistent.coords.x == Data.roomsize:
 		layout += "right"
-	if Persistent.coords.y == -roomsize:
+	if Persistent.coords.y == -Data.roomsize:
 		layout += "down"
-	if Persistent.coords.y == roomsize:
+	if Persistent.coords.y == Data.roomsize:
 		layout += "up"
 	if layout == "":
 		layout = "middle"

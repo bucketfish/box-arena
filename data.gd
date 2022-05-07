@@ -1,5 +1,6 @@
 extends Node
 
+const roomsize = 9
 
 #loot tables
 var loot = {

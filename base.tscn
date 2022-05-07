@@ -388,9 +388,8 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 60.0
-margin_top = 600.0
 margin_right = 670.0
-margin_bottom = 840.0
+margin_bottom = 240.0
 grow_vertical = 0
 alignment = 2
 __meta__ = {
@@ -399,7 +398,7 @@ __meta__ = {
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 72.0
-margin_right = 610.0
+margin_right = 1634.0
 margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
@@ -414,7 +413,7 @@ __meta__ = {
 
 [node name="desc" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 163.0
-margin_right = 610.0
+margin_right = 1634.0
 margin_bottom = 196.0
 custom_fonts/font = SubResource( 16 )
 text = "aklsjfajkdjkda"
@@ -423,7 +422,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 610.0
+margin_right = 1634.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -520,7 +519,6 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="inventory" type="Control" parent="gui"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 7 )
@@ -539,12 +537,14 @@ margin_top = 86.0
 margin_right = 627.0
 margin_bottom = 514.0
 rect_min_size = Vector2( 460, 0 )
+follow_focus = true
+scroll_horizontal_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="rowbox" type="VBoxContainer" parent="gui/inventory/scroll"]
-margin_right = 460.0
+margin_right = 448.0
 margin_bottom = 552.0
 size_flags_horizontal = 3
 size_flags_vertical = 3

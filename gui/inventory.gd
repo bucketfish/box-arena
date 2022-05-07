@@ -19,6 +19,8 @@ onready var val_health = $info/holder/values/health
 onready var val_damage = $info/holder/values/damage
 onready var val_maxh = $info/holder/values/max_health
 
+onready var scroll = $scroll
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	visible = false
@@ -31,6 +33,27 @@ func toggle():
 	
 	focus_on(row[0].col[0])
 	
+	
+	
+
+func _on_focus_change():
+	# https://godotengine.org/qa/5990/follow-focus-going-through-entries-inside-scroll-container
+	var focused = curhighlight.get_parent()
+	var focus_size = focused.rect_size.y
+	var focus_top = focused.rect_position.y
+
+	var scroll_size = scroll.rect_size.y
+	var scroll_top = scroll.scroll_vertical
+	var scroll_bottom = scroll_top + scroll_size - focus_size
+
+	if focus_top < scroll_top:
+		scroll.scroll_vertical = focus_top
+
+	if focus_top > scroll_bottom:
+		var scroll_offset = scroll_top + focus_top - scroll_bottom
+		scroll.scroll_vertical = scroll_offset
+
+
 func display():
 	var items = Persistent.carrying
 	var items_dict = Functions.sort_inventory(items)
@@ -96,6 +119,7 @@ func focus_on(newfocus):
 	newfocus.focused = true
 	curhighlight = newfocus
 	update_info()
+	_on_focus_change()
 	
 func update_info():
 	if curhighlight.itemname:

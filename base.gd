@@ -10,6 +10,7 @@ onready var anim = $anim
 
 onready var coordslabel = $gui/bars/coords
 onready var inventory = $gui/inventory
+onready var bossui = $gui/boss
 onready var shade = $gui/shade
 onready var bosspause_timer = $bosspause_timer
 const room = preload("res://room/room.tscn")
@@ -43,6 +44,8 @@ func goto(dirfrom):
 	
 	#save current room // todo!
 	
+	#deactivate prev room stuff
+	bossui.animon = false
 	
 	# run "fade-out" animation
 	if dirfrom == "up":
@@ -88,6 +91,8 @@ func goto(dirfrom):
 	
 	# continue the game
 	update_trans(false)
+	if curroom.roomtype == "boss" && Persistent.genbosses[Persistent.coords]["alive"] == true:
+		boss_room(Persistent.genbosses[Persistent.coords]['name'])
 	
 func _input(event):
 	if !trans && Input.is_action_just_pressed("inventory"):
@@ -119,6 +124,8 @@ func update_trans(newval):
 		
 	trans = newval
 
+func boss_room(boss):
+	bossui.set_boss(boss)
 
 func _on_bosspause_timer_timeout():
 	boss_move = true

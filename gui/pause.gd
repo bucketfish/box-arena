@@ -21,6 +21,9 @@ func toggle():
 		anim.play("pause")
 	else:
 		anim.play_backwards("pause")
+		
+	yield(anim, "animation_finished")
+	
 
 
 func _on_continue_pressed():

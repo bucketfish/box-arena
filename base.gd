@@ -22,6 +22,7 @@ var comefrom
 var trans = false setget update_trans
 
 var state = "play" setget update_state
+var paused = false setget update_pause
 
 var boss_move = true
 # states: play, inv, pause
@@ -107,6 +108,7 @@ func _input(event):
 			
 	if Input.is_action_just_pressed("pause"):
 		pause.toggle()
+		update_pause(pause.on)
 #		if inventory.visible:
 #			update_state("inv")
 #		else:
@@ -119,6 +121,26 @@ func update_state(newstate):
 	else:
 		player.canmove = false
 	state = newstate
+	
+
+var bosspause_prev = true
+func update_pause(newpause):
+	if newpause == false:
+		player.canmove = true
+		
+		if bosspause_prev:
+			boss_move = true
+		else:
+			bosspause_timer.paused = false
+			
+	else: #is paused
+		player.canmove = false
+		bosspause_prev = boss_move
+		bosspause_timer.paused = true
+		boss_move = false
+		
+		
+	paused = newpause
 	
 func update_trans(newval):
 	if newval:

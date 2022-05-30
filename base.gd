@@ -15,6 +15,8 @@ onready var shade = $gui/shade
 onready var bosspause_timer = $bosspause_timer
 const room = preload("res://room/room.tscn")
 
+onready var pause = $gui/pause
+
 var curroom
 var comefrom
 var trans = false setget update_trans
@@ -102,6 +104,13 @@ func _input(event):
 			update_state("inv")
 		else:
 			update_state('play')
+			
+	if Input.is_action_just_pressed("pause"):
+		pause.toggle()
+#		if inventory.visible:
+#			update_state("inv")
+#		else:
+#			update_state('play')
 			
 			
 func update_state(newstate):

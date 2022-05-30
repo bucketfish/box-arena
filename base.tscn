@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://room/room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -17,6 +17,9 @@
 [ext_resource path="res://assets/gui/damage.png" type="Texture" id=15]
 [ext_resource path="res://gui/bars.gd" type="Script" id=16]
 [ext_resource path="res://gui/boss.gd" type="Script" id=17]
+[ext_resource path="res://gui/menu_button.tscn" type="PackedScene" id=18]
+[ext_resource path="res://gui/pause.gd" type="Script" id=19]
+[ext_resource path="res://assets/decoration/sleep.png" type="Texture" id=20]
 
 [sub_resource type="DynamicFont" id=12]
 size = 28
@@ -132,6 +135,200 @@ font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=9]
 size = 12
+font_data = ExtResource( 10 )
+
+[sub_resource type="Animation" id=19]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("less:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1429, -18 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("color:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1263, -18 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("paused:anchor_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -0.5 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("main/continue:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 665, -200 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("main/options:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 561, -200 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("main/quit:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 432, -200 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sleep:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 221, -252 ) ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "pause"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("color:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1263, -18 ), Vector2( 401, -18 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("less:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1429, -18 ), Vector2( -755, -18 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("paused:anchor_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.261466, 0.481617 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -0.5, -0.5, 0.05, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("main/continue:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.100063, 0.302805, 0.385051 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 657, -200 ), Vector2( 657, -200 ), Vector2( 657, 150 ), Vector2( 657, 132 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("main/options:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.134689, 0.358474, 0.432452 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 569, -200 ), Vector2( 569, -200 ), Vector2( 569, 300 ), Vector2( 569, 265 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("main/quit:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.163188, 0.400348, 0.481617 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 488, -200 ), Vector2( 488, -200 ), Vector2( 488, 450 ), Vector2( 488, 405 ) ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("main/continue")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.00275177 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "grab_focus"
+} ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Sleep:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.272884, 0.306917 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 221, -252 ), Vector2( 221, 380 ), Vector2( 221, 346 ) ]
+}
+
+[sub_resource type="DynamicFont" id=21]
+size = 80
 font_data = ExtResource( 10 )
 
 [sub_resource type="Animation" id=1]
@@ -708,6 +905,85 @@ margin_bottom = 520.0
 custom_fonts/font = SubResource( 9 )
 text = "z to use/equip, x to fuse"
 
+[node name="pause" type="Control" parent="gui"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="less" type="Polygon2D" parent="gui/pause"]
+position = Vector2( -1429, -18 )
+scale = Vector2( 1.25879, 1.27934 )
+color = Color( 0.211765, 0.215686, 0.305882, 0.588235 )
+polygon = PoolVector2Array( 200, 0, 1118.53, 0, 800, 500, -118.368, 500 )
+
+[node name="color" type="Polygon2D" parent="gui/pause"]
+position = Vector2( 1263, -18 )
+scale = Vector2( 1.25879, 1.27934 )
+color = Color( 0.505882, 0.611765, 0.756863, 1 )
+polygon = PoolVector2Array( 200, 0, 1064, 0, 800, 500, -118.368, 500 )
+
+[node name="anim" type="AnimationPlayer" parent="gui/pause"]
+anims/RESET = SubResource( 19 )
+anims/pause = SubResource( 20 )
+
+[node name="paused" type="Label" parent="gui/pause"]
+anchor_top = -0.5
+anchor_bottom = 0.74905
+margin_left = 101.0
+margin_top = 42.0
+margin_right = 498.0
+margin_bottom = 177.0
+custom_colors/font_color_shadow = Color( 0.635294, 0.839216, 0.976471, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+custom_fonts/font = SubResource( 21 )
+text = "paused"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="main" type="Control" parent="gui/pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="continue" parent="gui/pause/main" instance=ExtResource( 18 )]
+margin_left = 665.0
+margin_top = -200.0
+margin_right = 1225.0
+margin_bottom = 24.0
+focus_neighbour_top = NodePath("../quit")
+focus_neighbour_bottom = NodePath("../options")
+button_text = "continue"
+
+[node name="options" parent="gui/pause/main" instance=ExtResource( 18 )]
+margin_left = 561.0
+margin_top = -200.0
+margin_right = 1121.0
+margin_bottom = 24.0002
+focus_neighbour_top = NodePath("../continue")
+focus_neighbour_bottom = NodePath("../quit")
+button_text = "options"
+
+[node name="quit" parent="gui/pause/main" instance=ExtResource( 18 )]
+margin_left = 432.0
+margin_top = -200.0
+margin_right = 992.0
+margin_bottom = 24.0001
+focus_neighbour_top = NodePath("../options")
+focus_neighbour_bottom = NodePath("../continue")
+button_text = "quit"
+
+[node name="Sleep" type="Sprite" parent="gui/pause"]
+position = Vector2( 221, -252 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 20 )
+
 [node name="fade" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="fade"]
@@ -738,6 +1014,7 @@ anims/fromup = SubResource( 6 )
 [node name="bosspause_timer" type="Timer" parent="."]
 one_shot = true
 
+[connection signal="pressed" from="gui/pause/main/continue" to="gui/pause" method="_on_continue_pressed"]
 [connection signal="timeout" from="bosspause_timer" to="." method="_on_bosspause_timer_timeout"]
 
 [editable path="gui/inventory/info/holder/values/damage"]

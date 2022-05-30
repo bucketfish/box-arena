@@ -106,7 +106,7 @@ func _input(event):
 		else:
 			update_state('play')
 			
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause") && !pause.on:
 		pause.toggle()
 		update_pause(pause.on)
 #		if inventory.visible:

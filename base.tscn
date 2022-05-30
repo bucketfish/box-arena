@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://room/room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -140,6 +140,155 @@ font_data = ExtResource( 10 )
 [sub_resource type="Animation" id=19]
 length = 0.001
 tracks/0/type = "value"
+tracks/0/path = NodePath("main/continue:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 665, -200 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main/options:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 561, -200 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("main/quit:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 432, -200 ) ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "main"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("main/continue:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 657, -200 ), Vector2( 657, 150 ), Vector2( 657, 132 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main/options:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.25, 0.35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 569, -200 ), Vector2( 569, -200 ), Vector2( 569, 300 ), Vector2( 569, 265 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("main/quit:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.05, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 488, -200 ), Vector2( 488, -200 ), Vector2( 488, 450 ), Vector2( 488, 405 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("main/continue")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "grab_focus"
+} ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "options"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("options/controls:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 657, -200 ), Vector2( 657, 150 ), Vector2( 657, 132 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("options/audio:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.25, 0.35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 569, -200 ), Vector2( 569, -200 ), Vector2( 569, 300 ), Vector2( 569, 265 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("options/back:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.05, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 488, -200 ), Vector2( 488, -200 ), Vector2( 488, 450 ), Vector2( 488, 405 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("options/back")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "grab_focus"
+} ]
+}
+
+[sub_resource type="Animation" id=22]
+length = 0.001
+tracks/0/type = "value"
 tracks/0/path = NodePath("less:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -176,7 +325,7 @@ tracks/2/keys = {
 "values": [ -0.5 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("main/continue:rect_position")
+tracks/3/path = NodePath("Sleep:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -185,46 +334,20 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 665, -200 ) ]
+"values": [ Vector2( 221, -252 ) ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("main/options:rect_position")
+tracks/4/type = "animation"
+tracks/4/path = NodePath("anim")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 561, -200 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("main/quit:rect_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 432, -200 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("Sleep:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 221, -252 ) ]
+"clips": PoolStringArray( "RESET" ),
+"times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=23]
 resource_name = "pause"
 length = 0.5
 step = 0.05
@@ -265,66 +388,107 @@ tracks/2/keys = {
 "values": [ -0.5, -0.5, 0.05, 0.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("main/continue:rect_position")
+tracks/3/path = NodePath("Sleep:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.100063, 0.302805, 0.385051 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.272884, 0.306917 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 657, -200 ), Vector2( 657, -200 ), Vector2( 657, 150 ), Vector2( 657, 132 ) ]
+"values": [ Vector2( 221, -252 ), Vector2( 221, 380 ), Vector2( 221, 346 ) ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("main/options:rect_position")
+tracks/4/type = "animation"
+tracks/4/path = NodePath("anim")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.134689, 0.358474, 0.432452 ),
+"clips": PoolStringArray( "main" ),
+"times": PoolRealArray( 0.1 )
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "unpause"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("color:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.35, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 401, -18 ), Vector2( 1263, -18 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("less:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.35, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -755, -18 ), Vector2( -1429, -18 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("paused:anchor_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 569, -200 ), Vector2( 569, -200 ), Vector2( 569, 300 ), Vector2( 569, 265 ) ]
+"values": [ 0.0, 0.05, -0.5, -0.5 ]
 }
-tracks/5/type = "value"
-tracks/5/path = NodePath("main/quit:rect_position")
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sleep:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.2, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 221, 346 ), Vector2( 221, 380 ), Vector2( 221, -252 ) ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("anim")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "main", -1 ],
+"method": "play_backwards"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("../..")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 0.163188, 0.400348, 0.481617 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 488, -200 ), Vector2( 488, -200 ), Vector2( 488, 450 ), Vector2( 488, 405 ) ]
-}
-tracks/6/type = "method"
-tracks/6/path = NodePath("main/continue")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0.00275177 ),
+"times": PoolRealArray( 0.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [  ],
-"method": "grab_focus"
+"args": [ false ],
+"method": "update_pause"
 } ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("Sleep:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0, 0.272884, 0.306917 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 221, -252 ), Vector2( 221, 380 ), Vector2( 221, 346 ) ]
 }
 
 [sub_resource type="DynamicFont" id=21]
@@ -927,7 +1091,13 @@ polygon = PoolVector2Array( 200, 0, 1064, 0, 800, 500, -118.368, 500 )
 
 [node name="anim" type="AnimationPlayer" parent="gui/pause"]
 anims/RESET = SubResource( 19 )
-anims/pause = SubResource( 20 )
+anims/main = SubResource( 20 )
+anims/options = SubResource( 25 )
+
+[node name="backanim" type="AnimationPlayer" parent="gui/pause"]
+anims/RESET = SubResource( 22 )
+anims/pause = SubResource( 23 )
+anims/unpause = SubResource( 24 )
 
 [node name="paused" type="Label" parent="gui/pause"]
 anchor_top = -0.5
@@ -956,7 +1126,7 @@ __meta__ = {
 margin_left = 665.0
 margin_top = -200.0
 margin_right = 1225.0
-margin_bottom = 24.0
+margin_bottom = 24.0001
 focus_neighbour_top = NodePath("../quit")
 focus_neighbour_bottom = NodePath("../options")
 button_text = "continue"
@@ -965,10 +1135,11 @@ button_text = "continue"
 margin_left = 561.0
 margin_top = -200.0
 margin_right = 1121.0
-margin_bottom = 24.0002
+margin_bottom = 24.0001
 focus_neighbour_top = NodePath("../continue")
 focus_neighbour_bottom = NodePath("../quit")
 button_text = "options"
+nextmenu = "options"
 
 [node name="quit" parent="gui/pause/main" instance=ExtResource( 18 )]
 margin_left = 432.0
@@ -978,6 +1149,41 @@ margin_bottom = 24.0001
 focus_neighbour_top = NodePath("../options")
 focus_neighbour_bottom = NodePath("../continue")
 button_text = "quit"
+
+[node name="options" type="Control" parent="gui/pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="controls" parent="gui/pause/options" instance=ExtResource( 18 )]
+margin_left = 657.0
+margin_top = -200.0
+margin_right = 1217.0
+margin_bottom = 24.0001
+focus_neighbour_top = NodePath("../back")
+focus_neighbour_bottom = NodePath("../audio")
+button_text = "controls"
+
+[node name="audio" parent="gui/pause/options" instance=ExtResource( 18 )]
+margin_left = 569.0
+margin_top = -200.0
+margin_right = 1129.0
+margin_bottom = 24.0001
+focus_neighbour_top = NodePath("../controls")
+focus_neighbour_bottom = NodePath("../back")
+button_text = "audio"
+
+[node name="back" parent="gui/pause/options" instance=ExtResource( 18 )]
+margin_left = 488.0
+margin_top = -200.0
+margin_right = 1048.0
+margin_bottom = 24.0001
+focus_neighbour_top = NodePath("../audio")
+focus_neighbour_bottom = NodePath("../controls")
+button_text = "back"
+nextmenu = "main"
 
 [node name="Sleep" type="Sprite" parent="gui/pause"]
 position = Vector2( 221, -252 )
@@ -1015,6 +1221,8 @@ anims/fromup = SubResource( 6 )
 one_shot = true
 
 [connection signal="pressed" from="gui/pause/main/continue" to="gui/pause" method="_on_continue_pressed"]
+[connection signal="goto_screen" from="gui/pause/main/options" to="gui/pause" method="_on_goto_screen"]
+[connection signal="goto_screen" from="gui/pause/options/back" to="gui/pause" method="_on_goto_screen"]
 [connection signal="timeout" from="bosspause_timer" to="." method="_on_bosspause_timer_timeout"]
 
 [editable path="gui/inventory/info/holder/values/damage"]

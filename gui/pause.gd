@@ -17,6 +17,7 @@ var on = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	backanim.play("RESET")
+	anim.play("RESET")
 	
 
 
@@ -56,7 +57,8 @@ func _on_continue_pressed():
 	
 
 func _on_goto_screen(scenename):
-	anim.play_backwards(curscreen)
-	yield(anim, "animation_finished")
+	if curscreen != "none":
+		anim.play_backwards(curscreen)
+		yield(anim, "animation_finished")
 	anim.play(scenename)
 	curscreen = scenename

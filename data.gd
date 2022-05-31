@@ -15,7 +15,7 @@ var loot = {
 	'9':['silver katana', 'diamond hoe', 'golden carrot'],
 		}
 		
-const itemsorder = ["healing drop", "health pot", "health potion", "iron heart", "cookie", "choco cookie", "apple pie", "steak", "golden apple", "grilled porkchop", "pumpkin pie", "cake", "golden carrot", "fishcow", "clothes", "leather padding", "iron armor", "chainmail armor", "nano-vest", "wooden stick", "wooden sword", "stone sword", "stone axe", "sharp flint", "battle axe", "spiked mace", "iron rapier", "silver katana", "diamond how", "ruby scythe", "emerald greatsword", "sapphire saber", "axe of perun", "blade of fire", "elemental blade"]
+const itemsorder = ["healing drop", "health pot", "health potion", "iron heart", "cookie", "choco cookie", "apple pie", "steak", "golden apple", "grilled porkchop", "pumpkin pie", "cake", "golden carrot", "fishcow", "clothes", "leather padding", "iron armor", "chainmail armor", "nano-vest", "wooden stick", "wooden sword", "stone sword", "stone axe", "sharp flint", "battle axe", "spiked mace", "iron rapier", "silver katana", "diamond hoe", "ruby scythe", "emerald greatsword", "sapphire saber", "axe of perun", "blade of fire", "elemental blade"]
 
 var items = {
 	#level 1 itms

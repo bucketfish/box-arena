@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://room/room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -175,11 +175,47 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( 432, -200 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("options/controls:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 657, -200 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("options/audio:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 569, -200 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("options/back:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 488, -200 ) ]
+}
 
 [sub_resource type="Animation" id=20]
 resource_name = "main"
-length = 0.4
-step = 0.05
+length = 0.25
+step = 0.025
 tracks/0/type = "value"
 tracks/0/path = NodePath("main/continue:rect_position")
 tracks/0/interp = 1
@@ -187,7 +223,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.3 ),
+"times": PoolRealArray( 0, 0.125, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 657, -200 ), Vector2( 657, 150 ), Vector2( 657, 132 ) ]
@@ -199,7 +235,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.05, 0.25, 0.35 ),
+"times": PoolRealArray( 0, 0.05, 0.15, 0.225 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 569, -200 ), Vector2( 569, -200 ), Vector2( 569, 300 ), Vector2( 569, 265 ) ]
@@ -211,7 +247,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.05, 0.3, 0.4 ),
+"times": PoolRealArray( 0, 0.05, 0.175, 0.25 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 488, -200 ), Vector2( 488, -200 ), Vector2( 488, 450 ), Vector2( 488, 405 ) ]
@@ -233,8 +269,8 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id=25]
 resource_name = "options"
-length = 0.4
-step = 0.05
+length = 0.25
+step = 0.025
 tracks/0/type = "value"
 tracks/0/path = NodePath("options/controls:rect_position")
 tracks/0/interp = 1
@@ -242,7 +278,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.3 ),
+"times": PoolRealArray( 0, 0.125, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 657, -200 ), Vector2( 657, 150 ), Vector2( 657, 132 ) ]
@@ -254,7 +290,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.05, 0.25, 0.35 ),
+"times": PoolRealArray( 0, 0.05, 0.15, 0.225 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 569, -200 ), Vector2( 569, -200 ), Vector2( 569, 300 ), Vector2( 569, 265 ) ]
@@ -266,13 +302,13 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.05, 0.3, 0.4 ),
+"times": PoolRealArray( 0, 0.05, 0.175, 0.25 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 488, -200 ), Vector2( 488, -200 ), Vector2( 488, 450 ), Vector2( 488, 405 ) ]
 }
 tracks/3/type = "method"
-tracks/3/path = NodePath("options/back")
+tracks/3/path = NodePath("options/controls")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -349,7 +385,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=23]
 resource_name = "pause"
-length = 0.5
+length = 0.4
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("color:position")
@@ -382,7 +418,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.261466, 0.481617 ),
+"times": PoolRealArray( 0, 0.1, 0.261466, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ -0.5, -0.5, 0.05, 0.0 ]
@@ -406,13 +442,13 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"clips": PoolStringArray( "main" ),
-"times": PoolRealArray( 0.1 )
+"clips": PoolStringArray( "RESET", "main" ),
+"times": PoolRealArray( 0, 0.1 )
 }
 
 [sub_resource type="Animation" id=24]
 resource_name = "unpause"
-length = 0.5
+length = 0.4
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("color:position")
@@ -421,7 +457,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.35, 0.5 ),
+"times": PoolRealArray( 0.25, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 401, -18 ), Vector2( 1263, -18 ) ]
@@ -433,7 +469,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.35, 0.5 ),
+"times": PoolRealArray( 0.25, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -755, -18 ), Vector2( -1429, -18 ) ]
@@ -445,7 +481,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.1, 0.2, 0.4, 0.5 ),
+"times": PoolRealArray( 0, 0.1, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.05, -0.5, -0.5 ]
@@ -457,7 +493,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.2, 0.25, 0.5 ),
+"times": PoolRealArray( 0.1, 0.15, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 221, 346 ), Vector2( 221, 380 ), Vector2( 221, -252 ) ]
@@ -469,11 +505,14 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ "main", -1 ],
 "method": "play_backwards"
+}, {
+"args": [ "RESET", -1, 1.0, false ],
+"method": "play"
 } ]
 }
 tracks/5/type = "method"
@@ -483,7 +522,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0.5 ),
+"times": PoolRealArray( 0.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ false ],
@@ -494,6 +533,38 @@ tracks/5/keys = {
 [sub_resource type="DynamicFont" id=21]
 size = 80
 font_data = ExtResource( 10 )
+
+[sub_resource type="Animation" id=26]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sleep:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -50 ) ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "bounce"
+length = 1.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sleep:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 20 ), Vector2( 0, -20 ) ]
+}
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -1145,7 +1216,7 @@ nextmenu = "options"
 margin_left = 432.0
 margin_top = -200.0
 margin_right = 992.0
-margin_bottom = 24.0001
+margin_bottom = 24.0
 focus_neighbour_top = NodePath("../options")
 focus_neighbour_bottom = NodePath("../continue")
 button_text = "quit"
@@ -1189,6 +1260,12 @@ nextmenu = "main"
 position = Vector2( 221, -252 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 20 )
+offset = Vector2( 0, -50 )
+
+[node name="sleepbounce" type="AnimationPlayer" parent="gui/pause"]
+autoplay = "bounce"
+anims/RESET = SubResource( 26 )
+anims/bounce = SubResource( 27 )
 
 [node name="fade" type="CanvasLayer" parent="."]
 

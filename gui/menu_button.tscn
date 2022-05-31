@@ -19,6 +19,7 @@ fallback/0 = ExtResource( 6 )
 
 [node name="play" type="TextureButton"]
 rect_scale = Vector2( 0.5, 0.5 )
+mouse_filter = 2
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 1 )
 texture_hover = ExtResource( 1 )

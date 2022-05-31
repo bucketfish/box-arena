@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://room/room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -21,6 +21,8 @@
 [ext_resource path="res://gui/pause.gd" type="Script" id=19]
 [ext_resource path="res://assets/decoration/sleep.png" type="Texture" id=20]
 [ext_resource path="res://gui/controls.gd" type="Script" id=21]
+[ext_resource path="res://theme.tres" type="Theme" id=22]
+[ext_resource path="res://MPLUSRounded1c-ExtraBold.ttf" type="DynamicFontData" id=23]
 
 [sub_resource type="DynamicFont" id=12]
 size = 28
@@ -137,6 +139,7 @@ font_data = ExtResource( 10 )
 [sub_resource type="DynamicFont" id=9]
 size = 12
 font_data = ExtResource( 10 )
+fallback/0 = ExtResource( 23 )
 
 [sub_resource type="Animation" id=19]
 length = 0.001
@@ -936,7 +939,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 60.0
-margin_right = 6814.0
+margin_right = 7838.0
 margin_bottom = 240.0
 grow_vertical = 0
 alignment = 2
@@ -946,7 +949,7 @@ __meta__ = {
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 72.0
-margin_right = 7778.0
+margin_right = 8802.0
 margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
@@ -961,7 +964,7 @@ __meta__ = {
 
 [node name="desc" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 163.0
-margin_right = 7778.0
+margin_right = 8802.0
 margin_bottom = 196.0
 custom_fonts/font = SubResource( 16 )
 text = "aklsjfajkdjkda"
@@ -970,7 +973,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 7778.0
+margin_right = 8802.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -1085,6 +1088,7 @@ margin_top = 86.0
 margin_right = 627.0
 margin_bottom = 514.0
 rect_min_size = Vector2( 460, 0 )
+theme = ExtResource( 22 )
 follow_focus = true
 scroll_horizontal_enabled = false
 __meta__ = {
@@ -1092,7 +1096,7 @@ __meta__ = {
 }
 
 [node name="rowbox" type="VBoxContainer" parent="gui/inventory/scroll"]
-margin_right = 448.0
+margin_right = 450.0
 margin_bottom = 552.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1102,21 +1106,26 @@ __meta__ = {
 }
 
 [node name="row" parent="gui/inventory/scroll/rowbox" instance=ExtResource( 8 )]
+margin_right = 450.0
 
 [node name="row2" parent="gui/inventory/scroll/rowbox" instance=ExtResource( 8 )]
 margin_top = 110.0
+margin_right = 450.0
 margin_bottom = 222.0
 
 [node name="row3" parent="gui/inventory/scroll/rowbox" instance=ExtResource( 8 )]
 margin_top = 220.0
+margin_right = 450.0
 margin_bottom = 332.0
 
 [node name="row4" parent="gui/inventory/scroll/rowbox" instance=ExtResource( 8 )]
 margin_top = 330.0
+margin_right = 450.0
 margin_bottom = 442.0
 
 [node name="row5" parent="gui/inventory/scroll/rowbox" instance=ExtResource( 8 )]
 margin_top = 440.0
+margin_right = 450.0
 margin_bottom = 552.0
 
 [node name="itemdisplay" type="Control" parent="gui/inventory"]
@@ -1248,13 +1257,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="placeholder instructions" type="Label" parent="gui/inventory"]
-margin_left = 665.0
-margin_top = 498.0
-margin_right = 889.0
-margin_bottom = 520.0
+[node name="instructions" type="Label" parent="gui/inventory"]
+margin_left = 637.0
+margin_top = 499.0
+margin_right = 861.0
+margin_bottom = 521.0
 custom_fonts/font = SubResource( 9 )
 text = "z to use/equip, x to fuse"
+align = 1
 
 [node name="invtween" type="Tween" parent="gui/inventory"]
 
@@ -1392,6 +1402,7 @@ margin_top = -684.0
 margin_right = 111.0
 margin_bottom = -861.0
 rect_rotation = 30.0
+theme = ExtResource( 22 )
 scroll_horizontal_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false

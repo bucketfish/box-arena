@@ -24,6 +24,8 @@ onready var base = get_node("/root/base")
 onready var scroll = $scroll
 onready var scrolltween = $invtween
 
+onready var instructions = $instructions
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	visible = false
@@ -63,6 +65,23 @@ func _on_focus_change():
 
 
 func display():
+	var thing = {
+		"Left": "←",
+		"Right":"→",
+		"Up":"↑",
+		"Down":"↓",
+		"Shift": "⇧",
+		"Tab": "↹"
+	}
+	var usee = InputMap.get_action_list("use")[0].as_text()
+	var fusee = InputMap.get_action_list("fuse")[0].as_text()
+	if usee in thing.keys():
+		usee = thing[usee]
+	if fusee in thing.keys():
+		fusee = thing[fusee]
+		
+	instructions.text = "%s to use/equip, %s to fuse" % [usee.to_lower(), fusee.to_lower()]
+	
 	var items = Persistent.carrying
 	var items_dict = Functions.sort_inventory(items)
 	var rowc = 0

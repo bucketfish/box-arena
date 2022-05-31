@@ -26,14 +26,16 @@ func _ready():
 			"Tab": "↹"
 		}
 		
-		print(InputMap.get_action_list(button_text))
+		print(InputMap.get_action_list(button_text)[0])
 		print(button_text)
 		
 		var keystroke = InputMap.get_action_list(button_text)[0].as_text()
+		print(keystroke)
 		if keystroke in thing.keys():
 			keystroke = thing[keystroke]
 			
-		keytext = keystroke
+		keytext.text = keystroke.to_lower()
+		print(keystroke)
 
 
 func _on_play_pressed():

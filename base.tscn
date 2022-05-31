@@ -236,6 +236,54 @@ tracks/7/keys = {
 "update": 0,
 "values": [ Vector2( 409, -200 ) ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("controls/scroll:margin_left")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 723.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("controls/scroll:margin_top")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -684.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("controls/scroll:margin_right")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 111.0 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("controls/scroll:margin_bottom")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -861.0 ]
+}
 
 [sub_resource type="Animation" id=28]
 resource_name = "controls"
@@ -888,8 +936,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 60.0
-margin_right = 2718.0
-margin_bottom = 240.0
+margin_top = 600.0
+margin_right = 5790.0
+margin_bottom = 840.0
 grow_vertical = 0
 alignment = 2
 __meta__ = {
@@ -898,7 +947,7 @@ __meta__ = {
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 72.0
-margin_right = 3682.0
+margin_right = 5730.0
 margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
@@ -913,7 +962,7 @@ __meta__ = {
 
 [node name="desc" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 163.0
-margin_right = 3682.0
+margin_right = 5730.0
 margin_bottom = 196.0
 custom_fonts/font = SubResource( 16 )
 text = "aklsjfajkdjkda"
@@ -922,7 +971,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 3682.0
+margin_right = 5730.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 

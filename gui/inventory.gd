@@ -117,9 +117,9 @@ func _input(event):
 			focus_on(curhighlight.right)
 			
 			
-		elif Input.is_action_just_pressed("use item"):
+		elif Input.is_action_just_pressed("use"):
 			use_item()
-		elif Input.is_action_just_pressed("fuse item"):
+		elif Input.is_action_just_pressed("fuse"):
 			fuse_item()
 
 func focus_on(newfocus):

@@ -38,7 +38,7 @@ func _on_Area2D_area_exited(area):
 
 # picking up items
 func _input(event):
-	if Input.is_action_just_pressed("pickup") && isitem && base.state != "pause" && base.paused == false:
+	if Input.is_action_just_pressed("take") && isitem && base.state != "pause" && base.paused == false:
 		anim.play_backwards("highlight")
 		Persistent.carrying.insert(0, itemname)
 		Persistent.sort_inv(Persistent.carrying)

@@ -160,3 +160,7 @@ func boss_room(boss):
 
 func _on_bosspause_timer_timeout():
 	boss_move = true
+
+
+func _on_goto_screen(name):
+	pass # Replace with function body.

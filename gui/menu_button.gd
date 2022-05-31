@@ -2,6 +2,8 @@ extends TextureButton
 
 export var button_text: String
 export var nextmenu: String
+export var control_button: bool
+
 
 onready var label = $Label
 

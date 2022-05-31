@@ -19,7 +19,10 @@ onready var val_health = $info/holder/values/health
 onready var val_damage = $info/holder/values/damage
 onready var val_maxh = $info/holder/values/max_health
 
+onready var base = get_node("/root/base")
+
 onready var scroll = $scroll
+onready var scrolltween = $invtween
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,12 +49,17 @@ func _on_focus_change():
 	var scroll_top = scroll.scroll_vertical
 	var scroll_bottom = scroll_top + scroll_size - focus_size
 
+	var scroll_offset = 0
 	if focus_top < scroll_top:
-		scroll.scroll_vertical = focus_top
+		scroll_offset = focus_top
 
 	if focus_top > scroll_bottom:
-		var scroll_offset = scroll_top + focus_top - scroll_bottom
-		scroll.scroll_vertical = scroll_offset
+		scroll_offset = scroll_top + focus_top - scroll_bottom
+		
+	scrolltween.interpolate_property(scroll, "scroll_vertical",
+		scroll.scroll_vertical, scroll_offset, 0.2,
+		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	scrolltween.start()
 
 
 func display():
@@ -97,7 +105,7 @@ func connect_rows():
 				box.down = row[currow+1].col[curbox]
 
 func _input(event):
-	if visible == true:
+	if visible == true && base.paused == false:
 		if Input.is_action_just_pressed("ui_up") && curhighlight.up:
 			focus_on(curhighlight.up)
 			

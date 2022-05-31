@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 Data="*res://data.gd"
 Persistent="*res://persistent.gd"
 Functions="*res://functions.gd"
+Options="*res://options.gd"
 
 [display]
 

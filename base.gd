@@ -98,7 +98,7 @@ func goto(dirfrom):
 		boss_room(Persistent.genbosses[Persistent.coords]['name'])
 	
 func _input(event):
-	if !trans && Input.is_action_just_pressed("inventory"):
+	if !trans && !paused && Input.is_action_just_pressed("inventory"):
 		inventory.toggle()
 		shade.visible = inventory.visible
 		if inventory.visible:

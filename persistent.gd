@@ -4,7 +4,7 @@ onready var player = get_node("/root/base/player")
 
 var endgames = []
 
-var coords = Vector2()
+var coords = Vector2(5, 9)
 var places = {
 			Vector2(0, 0) :[],
 			Vector2(1, 0): ['cookie'],

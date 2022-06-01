@@ -1,4 +1,9 @@
 extends Node
+var rng = RandomNumberGenerator.new()
+
+func _ready():
+	rng.randomize()
+
 
 func generate_loot(coords):#contents
 	if coords in Persistent.places:
@@ -16,8 +21,8 @@ func generate_loot(coords):#contents
 	var contents = []
 	
 	while price > 0:
-		var randomnum = randi()%int(price)+1
-		var item = Data.loot[str(randomnum)][randi()%Data.loot[str(randomnum)].size()]
+		var randomnum = rng.randi()%int(price)+1
+		var item = Data.loot[str(randomnum)][rng.randi()%Data.loot[str(randomnum)].size()]
 		price -= randomnum
 		contents.append(item)
 	
@@ -38,7 +43,7 @@ func generate_boss(coords):
 		Persistent.places[coords] = []
 		
 		
-		boss = Data.bosslist[str(boss_level)][randi()%Data.bosslist[str(boss_level)].size()]
+		boss = Data.bosslist[str(boss_level)][rng.randi()%Data.bosslist[str(boss_level)].size()]
 		
 		Persistent.genbosses[coords] = {
 			"name": boss,

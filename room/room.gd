@@ -23,6 +23,7 @@ var roomtype = "loot"
 var roomlevel = 0
 
 func _ready():
+	
 	#check if it's a boss room
 	if abs(Persistent.coords.x) in Data.fightplaces or abs(Persistent.coords.y) in Data.fightplaces:
 		roomtype = "boss"

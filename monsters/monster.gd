@@ -8,6 +8,7 @@ const item = preload("res://items/item.tscn")
 onready var base = get_node("/root/base")
 onready var player = get_node("/root/base/player")
 
+var call_phyproc = true
 
 onready var hitbox = $hitbox
 onready var sprite = $Sprite
@@ -61,6 +62,9 @@ func die():
 
 
 func _physics_process(delta):
+	if !call_phyproc:
+		return
+		
 	if !base.state in ["play", "inv"] || base.boss_move == false:
 		return
 	

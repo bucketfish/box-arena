@@ -1,6 +1,6 @@
 extends Node
 
-const roomsize = 9
+const roomsize = 10
 
 #loot tables
 var loot = {
@@ -341,6 +341,8 @@ var bosses = {
 				'damage':10,
 				'health':12,
 				'level':3,
+				'speed': 150,
+				'knockback': 800,
 				'drop':['silver katana','silver katana','silver katana','silver katana','silver katana','silver katana','silver katana','ruby scythe'],
 				'desc': 'consuming metal you can\'t digest probably isn’t the best of ideas, but neither is consuming swords that could slice you in half. it does both.'},
 
@@ -348,6 +350,8 @@ var bosses = {
 				'damage':15,
 				'health':6,
 				'level':3,
+				'speed': 180,
+				'knockback': 1500,
 				'drop':['emerald greatsword','ruby scythe'],
 				'desc': 'if you beat it up, it\'ll help you beat other monsters up. beat it up.'},
 
@@ -355,6 +359,8 @@ var bosses = {
 				'damage':3,
 				'health':20,
 				'level':3,
+				'speed': 100,
+				'knockback': 1000,
 				'drop':['ruby scythe', 'golden carrot', 'golden carrot'],
 				'desc': 'it\'s won ten carrot-eating competitions, and the fame\'s really gotten to his head.'},
 
@@ -398,7 +404,11 @@ var boss_scenes = {
 	'pionk': preload("res://monsters/pionk.tscn"),
 	'ticktack': preload("res://monsters/ticktack.tscn"),
 	'flickflack': preload("res://monsters/flickflack.tscn"),
-	'kickee': preload("res://monsters/kickee.tscn")
+	'kickee': preload("res://monsters/kickee.tscn"),
+	'slurpydoo': preload("res://monsters/slurpydoo.tscn"),
+	'conkydonk': preload("res://monsters/conkydonk.tscn"),
+	'tictactoe': preload("res://monsters/tictactoe.tscn"),
+	'fishymoo': preload("res://monsters/tictactoe.tscn")
 }
 
 var cowardmessage = [

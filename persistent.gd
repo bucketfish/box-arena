@@ -24,7 +24,7 @@ var genbosses = {
 				Vector2(-10, -10): {'name': 'puffpuffiepuff', 'alive': true}}
 var seenbosses = []
 
-var carrying = ['diamond hoe'] setget sort_inv
+var carrying = [] setget sort_inv
 
 var health = 5
 var energy = 10

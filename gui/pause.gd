@@ -18,15 +18,27 @@ var on = false
 func _ready():
 	backanim.play("RESET")
 	anim.play("RESET")
+	visible = false
 	
 
 
 func toggle():
 	on = !on
 	if on:
-		backanim.play("pause")
-		curscreen = "main"
+		turnon()
 	
+func turnon():
+	visible = true
+	backanim.play("pause")
+	curscreen = "main"
+	on = true
+	
+func turnoff():
+	backanim.play("unpause")
+	curscreen = "none"
+	yield(anim, "animation_finished")
+	on = false
+	visible = false
 	
 func _input(event):
 	if Input.is_action_just_pressed("pause") && curscreen != "main" && curscreen != "none":
@@ -42,17 +54,13 @@ func _input(event):
 		curscreen = nextscreen
 	
 	elif Input.is_action_just_pressed("pause") && curscreen == "main":
-		backanim.play("unpause")
-		curscreen = "none"
-		yield(anim, "animation_finished")
-		on = false
+		turnoff()
+		
 		
 
 func _on_continue_pressed():
 	if on:
-		backanim.play("unpause")
-		on = false
-		curscreen = "none"
+		turnoff()
 
 	
 

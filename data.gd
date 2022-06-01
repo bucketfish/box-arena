@@ -359,7 +359,7 @@ var bosses = {
 				'damage':3,
 				'health':20,
 				'level':3,
-				'speed': 100,
+				'speed': 200,
 				'knockback': 1000,
 				'drop':['ruby scythe', 'golden carrot', 'golden carrot'],
 				'desc': 'it\'s won ten carrot-eating competitions, and the fame\'s really gotten to his head.'},
@@ -368,6 +368,8 @@ var bosses = {
 				'damage':42,
 				'health': 11,
 				'level': 3,
+				'speed': 180,
+				'knockback': 1300,
 				'drop':['fishcow', 'fishcow', 'fishcow'],
 				'desc': 'this is the worst thing you will ever have the misfortune of meeting.'},
 
@@ -408,7 +410,7 @@ var boss_scenes = {
 	'slurpydoo': preload("res://monsters/slurpydoo.tscn"),
 	'conkydonk': preload("res://monsters/conkydonk.tscn"),
 	'tictactoe': preload("res://monsters/tictactoe.tscn"),
-	'fishymoo': preload("res://monsters/tictactoe.tscn")
+	'fishymoo': preload("res://monsters/fishymoo.tscn")
 }
 
 var cowardmessage = [

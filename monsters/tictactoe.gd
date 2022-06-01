@@ -10,10 +10,15 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	rng.randomize()
 
-	velocity = Vector2(speed, 0)
-	call_phyproc = false
+
+
 	rng.randomize()
 	rotation += rng.randf_range(-PI / 4, PI / 4)
+	
+	fliph = false
+	call_phyproc = false
+		
+	velocity = Vector2(speed, 0)
 #
 #func _physics_process(delta):
 #
@@ -30,7 +35,7 @@ func _physics_process(delta):
 	if !base.state in ["play", "inv"] || base.boss_move == false:
 		return
 	
-	rotation = velocity.angle()
+	rotation = (velocity + knockback).angle()
 		
 	knockback = lerp(knockback, Vector2(), friction * delta * 10)
 	knockback = move_and_slide(knockback)
@@ -43,9 +48,9 @@ func _physics_process(delta):
 		handle_collision(collision)
 
 func handle_collision(collision : KinematicCollision2D):
-	velocity = velocity.bounce(collision.normal)
-	
+	velocity = velocity.bounce(collision.normal).rotated(rng.randf_range(-PI / 4, PI / 4))
 
+	
 func take_damage(damageval):
 	hurt(damageval)
 

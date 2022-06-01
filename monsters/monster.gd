@@ -9,6 +9,7 @@ onready var base = get_node("/root/base")
 onready var player = get_node("/root/base/player")
 
 var call_phyproc = true
+var fliph = true
 
 onready var hitbox = $hitbox
 onready var sprite = $Sprite
@@ -80,7 +81,8 @@ func _physics_process(delta):
 	else:
 		velocity = lerp(velocity, Vector2(), friction * delta * 100)
 		
-	sprite.flip_h = velocity.x < 0
+	if fliph:
+		sprite.flip_h = velocity.x < 0
 			
 	velocity = move_and_slide(velocity)
 

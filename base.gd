@@ -123,23 +123,22 @@ func update_state(newstate):
 	state = newstate
 	
 
-var bosspause_prev = true
+var bossmove_prev = true
 func update_pause(newpause):
 	if newpause == false:
 		player.canmove = true
 		
-		if bosspause_prev:
+		if bossmove_prev:
 			boss_move = true
 		else:
 			bosspause_timer.paused = false
 			
 	else: #is paused
 		player.canmove = false
-		bosspause_prev = boss_move
+		bossmove_prev = boss_move
 		bosspause_timer.paused = true
 		boss_move = false
-		
-		
+
 	paused = newpause
 	
 func update_trans(newval):

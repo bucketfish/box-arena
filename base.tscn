@@ -1012,9 +1012,8 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 60.0
-margin_top = 600.0
-margin_right = 960.0
-margin_bottom = 840.0
+margin_right = -64.0
+margin_bottom = 240.0
 grow_vertical = 0
 alignment = 2
 __meta__ = {
@@ -1171,7 +1170,7 @@ __meta__ = {
 
 [node name="rowbox" type="VBoxContainer" parent="gui/inventory/scroll"]
 margin_right = 450.0
-margin_bottom = 552.0
+margin_bottom = 992.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = -2
@@ -1201,6 +1200,26 @@ margin_bottom = 442.0
 margin_top = 440.0
 margin_right = 450.0
 margin_bottom = 552.0
+
+[node name="row6" parent="gui/inventory/scroll/rowbox" instance=ExtResource( 8 )]
+margin_top = 550.0
+margin_right = 450.0
+margin_bottom = 662.0
+
+[node name="row7" parent="gui/inventory/scroll/rowbox" instance=ExtResource( 8 )]
+margin_top = 660.0
+margin_right = 450.0
+margin_bottom = 772.0
+
+[node name="row8" parent="gui/inventory/scroll/rowbox" instance=ExtResource( 8 )]
+margin_top = 770.0
+margin_right = 450.0
+margin_bottom = 882.0
+
+[node name="row9" parent="gui/inventory/scroll/rowbox" instance=ExtResource( 8 )]
+margin_top = 880.0
+margin_right = 450.0
+margin_bottom = 992.0
 
 [node name="itemdisplay" type="Control" parent="gui/inventory"]
 margin_left = 695.0

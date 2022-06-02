@@ -22,7 +22,7 @@ func _on_focus_changed():
 	var scroll_top = scroll.scroll_vertical
 	var scroll_bottom = scroll_top + scroll_size - focus_size
 	
-	var scroll_offset = 0
+	var scroll_offset = scroll.scroll_vertical
 
 	if focus_top < scroll_top || focus_top > scroll_bottom:
 		scroll_offset = scroll_top + focus_top - scroll_bottom

@@ -4,7 +4,7 @@ onready var shade = $"../shade"
 onready var bars = $"../bars"
 onready var rowbox = $scroll/rowbox
 
-onready var row = [$scroll/rowbox/row, $scroll/rowbox/row2, $scroll/rowbox/row3, $scroll/rowbox/row4, $scroll/rowbox/row5]
+onready var row = [$scroll/rowbox/row, $scroll/rowbox/row2, $scroll/rowbox/row3, $scroll/rowbox/row4, $scroll/rowbox/row5, $scroll/rowbox/row6, $scroll/rowbox/row7, $scroll/rowbox/row8, $scroll/rowbox/row9]
 
 var row_scene = preload("res://gui/row.tscn")
 
@@ -51,7 +51,7 @@ func _on_focus_change():
 	var scroll_top = scroll.scroll_vertical
 	var scroll_bottom = scroll_top + scroll_size - focus_size
 
-	var scroll_offset = 0
+	var scroll_offset = scroll.scroll_vertical
 	if focus_top < scroll_top:
 		scroll_offset = focus_top
 

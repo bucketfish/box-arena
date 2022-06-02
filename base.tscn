@@ -167,6 +167,7 @@ tracks/2/keys = {
 [sub_resource type="DynamicFont" id=8]
 size = 26
 font_data = ExtResource( 10 )
+fallback/0 = ExtResource( 23 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 14
@@ -1011,8 +1012,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 60.0
-margin_right = -64.0
-margin_bottom = 240.0
+margin_top = 600.0
+margin_right = 960.0
+margin_bottom = 840.0
 grow_vertical = 0
 alignment = 2
 __meta__ = {
@@ -1021,7 +1023,7 @@ __meta__ = {
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 72.0
-margin_right = 900.0
+margin_right = 1924.0
 margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
@@ -1045,7 +1047,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 900.0
+margin_right = 1924.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -1142,7 +1144,6 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="inventory" type="Control" parent="gui"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 7 )
@@ -1169,7 +1170,7 @@ __meta__ = {
 }
 
 [node name="rowbox" type="VBoxContainer" parent="gui/inventory/scroll"]
-margin_right = 460.0
+margin_right = 450.0
 margin_bottom = 552.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1248,7 +1249,7 @@ margin_bottom = 35.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/line_spacing = 0
 custom_fonts/font = SubResource( 8 )
-text = "wooden sword"
+text = "item name!"
 align = 1
 valign = 1
 autowrap = true

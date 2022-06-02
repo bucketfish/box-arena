@@ -501,6 +501,18 @@ tracks/4/keys = {
 "clips": PoolStringArray( "RESET" ),
 "times": PoolRealArray( 0 )
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath(".:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=23]
 resource_name = "pause"
@@ -563,6 +575,18 @@ tracks/4/enabled = true
 tracks/4/keys = {
 "clips": PoolStringArray( "RESET", "main" ),
 "times": PoolRealArray( 0, 0.1 )
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath(".:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=24]
@@ -647,6 +671,18 @@ tracks/5/keys = {
 "args": [ false ],
 "method": "update_pause"
 } ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath(".:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="DynamicFont" id=21]
@@ -939,7 +975,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 60.0
-margin_right = 11934.0
+margin_right = 980.0
 margin_bottom = 240.0
 grow_vertical = 0
 alignment = 2
@@ -949,7 +985,7 @@ __meta__ = {
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 72.0
-margin_right = 12898.0
+margin_right = 1944.0
 margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
@@ -964,16 +1000,16 @@ __meta__ = {
 
 [node name="desc" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 163.0
-margin_right = 12898.0
+margin_right = 1944.0
 margin_bottom = 196.0
 custom_fonts/font = SubResource( 16 )
-text = "aklsjfajkdjkda"
+text = "aklsjfgkag"
 valign = 2
 autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 12898.0
+margin_right = 1944.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -1269,6 +1305,7 @@ align = 1
 [node name="invtween" type="Tween" parent="gui/inventory"]
 
 [node name="pause" type="Control" parent="gui"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 19 )

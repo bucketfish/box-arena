@@ -57,6 +57,7 @@ hue_variation_random = 1.0
 
 [node name="monster" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+type = "fishymoo"
 
 [node name="Sprite" parent="." index="0"]
 rotation = 0.698132

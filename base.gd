@@ -130,8 +130,7 @@ func update_pause(newpause):
 		
 		if bossmove_prev:
 			boss_move = true
-		else:
-			bosspause_timer.paused = false
+		bosspause_timer.paused = false
 			
 	else: #is paused
 		player.canmove = false

@@ -12,8 +12,7 @@ var isitem = false setget is_show
 
 func _ready():
 	# set up the label
-	label.bbcode_enabled = true
-	label.bbcode_text = "[center]" + itemname
+	label.text = itemname
 	sprite.rotation_degrees = randi()%360+1 # random rotation!
 
 	# set up sprite texture from sprite name

@@ -99,6 +99,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("VBoxContainer:rect_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 900, 240 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("VBoxContainer/desc:rect_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 900, 33 ) ]
+}
 
 [sub_resource type="Animation" id=18]
 resource_name = "show"
@@ -126,6 +150,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("VBoxContainer/desc:rect_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 900, 33 ) ]
 }
 
 [sub_resource type="DynamicFont" id=8]
@@ -975,7 +1011,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 60.0
-margin_right = 980.0
+margin_right = -64.0
 margin_bottom = 240.0
 grow_vertical = 0
 alignment = 2
@@ -985,7 +1021,7 @@ __meta__ = {
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 72.0
-margin_right = 1944.0
+margin_right = 900.0
 margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
@@ -1000,16 +1036,16 @@ __meta__ = {
 
 [node name="desc" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 163.0
-margin_right = 1944.0
+margin_right = 900.0
 margin_bottom = 196.0
 custom_fonts/font = SubResource( 16 )
-text = "aklsjfgkag"
+text = "aklsjfgkag WHY DO YOU GO OVER WHY DO YOU??"
 valign = 2
 autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 1944.0
+margin_right = 900.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -1106,6 +1142,7 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="inventory" type="Control" parent="gui"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 7 )
@@ -1132,7 +1169,7 @@ __meta__ = {
 }
 
 [node name="rowbox" type="VBoxContainer" parent="gui/inventory/scroll"]
-margin_right = 450.0
+margin_right = 460.0
 margin_bottom = 552.0
 size_flags_horizontal = 3
 size_flags_vertical = 3

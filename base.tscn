@@ -1296,6 +1296,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( -80, -810 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("fade/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "fade"
@@ -1311,6 +1323,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0.505882, 0.611765, 0.756863, 0 ), Color( 0.505882, 0.611765, 0.756863, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fade/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -1328,6 +1352,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( -80, 798 ), Vector2( -80, 30 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("fade/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "fromleft"
@@ -1343,6 +1379,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -1296, 30 ), Vector2( -80, 30 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fade/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -1360,6 +1408,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 1130, 30 ), Vector2( -80, 30 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("fade/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "fromup"
@@ -1375,6 +1435,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -80, -714 ), Vector2( -80, 30 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fade/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [node name="base" type="Node2D"]
@@ -2088,7 +2160,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 476.0
 margin_bottom = 200.0
-color = Color( 0.505882, 0.611765, 0.756863, 0 )
+color = Color( 0.505882, 0.611765, 0.756863, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2100,6 +2172,7 @@ color = Color( 0.635294, 0.839216, 0.976471, 1 )
 polygon = PoolVector2Array( 61, -59, 1064, -163, 882, 484, -110, 563 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
+pause_mode = 2
 anims/RESET = SubResource( 1 )
 anims/fade = SubResource( 2 )
 anims/fromdown = SubResource( 4 )
@@ -2122,6 +2195,7 @@ one_shot = true
 [connection signal="goto_screen" from="gui/mainmenu/options/back" to="gui/mainmenu" method="_on_goto_screen"]
 [connection signal="pressed" from="gui/mainmenu/main/play" to="gui/mainmenu" method="_on_play_pressed"]
 [connection signal="goto_screen" from="gui/mainmenu/main/options" to="gui/mainmenu" method="_on_goto_screen"]
+[connection signal="pressed" from="gui/mainmenu/main/quit" to="gui/mainmenu" method="_on_quit_pressed"]
 [connection signal="timeout" from="bosspause_timer" to="." method="_on_bosspause_timer_timeout"]
 
 [editable path="gui/inventory/info/holder/values/damage"]

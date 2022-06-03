@@ -4,6 +4,7 @@ onready var anim = $anim
 onready var backanim = $backanim
 
 onready var base = get_node("/root/base")
+onready var fadeanim = $"../../anim"
 
 var curscreen = "main"
 var onscreen = true
@@ -54,3 +55,12 @@ func _input(event):
 		yield(anim, "animation_finished")
 		anim.play(nextscreen)
 		curscreen = nextscreen
+
+
+func _on_quit_pressed():
+	quit_game()
+	
+func quit_game():
+	fadeanim.play("fade")
+	yield(fadeanim, "animation_finished")
+	get_tree().quit()

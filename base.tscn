@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://room/room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -20,9 +20,10 @@
 [ext_resource path="res://gui/menu_button.tscn" type="PackedScene" id=18]
 [ext_resource path="res://gui/pause.gd" type="Script" id=19]
 [ext_resource path="res://assets/decoration/sleep.png" type="Texture" id=20]
-[ext_resource path="res://gui/controls.gd" type="Script" id=21]
+[ext_resource path="res://gui/options.tscn" type="PackedScene" id=21]
 [ext_resource path="res://theme.tres" type="Theme" id=22]
 [ext_resource path="res://MPLUSRounded1c-ExtraBold.ttf" type="DynamicFontData" id=23]
+[ext_resource path="res://gui/mainmenu.gd" type="Script" id=24]
 
 [sub_resource type="DynamicFont" id=12]
 size = 28
@@ -205,7 +206,7 @@ tracks/1/keys = {
 "values": [ Vector2( 561, -200 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("main/quit:rect_position")
+tracks/2/path = NodePath("main/exit:rect_position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -253,7 +254,7 @@ tracks/5/keys = {
 "values": [ Vector2( 488, -200 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("controls/scroll:rect_position")
+tracks/6/path = NodePath("options/controls_screen/scroll:rect_position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -265,7 +266,7 @@ tracks/6/keys = {
 "values": [ Vector2( 723, -684 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("controls/back:rect_position")
+tracks/7/path = NodePath("options/controls_screen/back:rect_position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -277,7 +278,7 @@ tracks/7/keys = {
 "values": [ Vector2( 409, -200 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("controls/scroll:margin_left")
+tracks/8/path = NodePath("options/controls_screen/scroll:margin_left")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -289,7 +290,7 @@ tracks/8/keys = {
 "values": [ 723.0 ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("controls/scroll:margin_top")
+tracks/9/path = NodePath("options/controls_screen/scroll:margin_top")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -301,7 +302,7 @@ tracks/9/keys = {
 "values": [ -684.0 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("controls/scroll:margin_right")
+tracks/10/path = NodePath("options/controls_screen/scroll:margin_right")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -313,7 +314,7 @@ tracks/10/keys = {
 "values": [ 111.0 ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("controls/scroll:margin_bottom")
+tracks/11/path = NodePath("options/controls_screen/scroll:margin_bottom")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -330,7 +331,7 @@ resource_name = "controls"
 length = 0.25
 step = 0.025
 tracks/0/type = "value"
-tracks/0/path = NodePath("controls/back:rect_position")
+tracks/0/path = NodePath("options/controls_screen/back:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -342,7 +343,7 @@ tracks/0/keys = {
 "values": [ Vector2( 409, -200 ), Vector2( 409, -200 ), Vector2( 409, 500 ), Vector2( 409, 462 ) ]
 }
 tracks/1/type = "method"
-tracks/1/path = NodePath("controls/scroll/Control/use")
+tracks/1/path = NodePath("options/controls_screen/scroll/Control/use")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -356,7 +357,7 @@ tracks/1/keys = {
 } ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("controls/scroll:rect_position")
+tracks/2/path = NodePath("options/controls_screen/scroll:rect_position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -397,7 +398,7 @@ tracks/1/keys = {
 "values": [ Vector2( 569, -200 ), Vector2( 569, -200 ), Vector2( 569, 300 ), Vector2( 569, 265 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("main/quit:rect_position")
+tracks/2/path = NodePath("main/exit:rect_position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -758,6 +759,529 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 20 ), Vector2( 0, -20 ) ]
 }
 
+[sub_resource type="DynamicFont" id=29]
+size = 120
+font_data = ExtResource( 10 )
+fallback/0 = ExtResource( 23 )
+
+[sub_resource type="Animation" id=30]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("main/play:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 665, -200 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main/options:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 561, -200 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("main/quit:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 432, -200 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("options/controls:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 657, -200 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("options/audio:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 569, -200 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("options/back:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 488, -200 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("options/controls_screen/scroll:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 723, -684 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("options/controls_screen/back:rect_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 409, -200 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("options/controls_screen/scroll:margin_left")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 723.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("options/controls_screen/scroll:margin_top")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -684.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("options/controls_screen/scroll:margin_right")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 111.0 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("options/controls_screen/scroll:margin_bottom")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -861.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("main/credits:rect_position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 545, -200 ) ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "controls"
+length = 0.25
+step = 0.025
+tracks/0/type = "value"
+tracks/0/path = NodePath("options/controls_screen/back:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.175, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 409, -200 ), Vector2( 409, -200 ), Vector2( 409, 500 ), Vector2( 409, 462 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("options/controls_screen/scroll/Control/use")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "grab_focus"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("options/controls_screen/scroll:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.15, 0.225 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 723, -684 ), Vector2( 723, -100 ), Vector2( 723, -123 ) ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "main"
+length = 0.25
+step = 0.003
+tracks/0/type = "value"
+tracks/0/path = NodePath("main/play:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.171, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 680, -200 ), Vector2( 680, 128 ), Vector2( 680, 65 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main/options:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.033, 0.204, 0.225 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 617, -200 ), Vector2( 617, -200 ), Vector2( 617, 220 ), Vector2( 617, 186 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("main/quit:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.078, 0.231, 0.249 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 472, -200 ), Vector2( 472, -200 ), Vector2( 472, 500 ), Vector2( 472, 435 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("main/play")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "grab_focus"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("main/credits:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.048, 0.219, 0.234261 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 545, -200 ), Vector2( 545, -200 ), Vector2( 545, 350 ), Vector2( 545, 309 ) ]
+}
+
+[sub_resource type="Animation" id=33]
+resource_name = "options"
+length = 0.25
+step = 0.025
+tracks/0/type = "value"
+tracks/0/path = NodePath("options/controls:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 657, -200 ), Vector2( 657, 150 ), Vector2( 657, 132 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("options/audio:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.225 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 569, -200 ), Vector2( 569, -200 ), Vector2( 569, 300 ), Vector2( 569, 265 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("options/back:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.05, 0.175, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 488, -200 ), Vector2( 488, -200 ), Vector2( 488, 450 ), Vector2( 488, 405 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("options/controls")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "grab_focus"
+} ]
+}
+
+[sub_resource type="Animation" id=34]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("less:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1429, -18 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("color:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1263, -18 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("paused:anchor_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -0.5 ]
+}
+tracks/3/type = "animation"
+tracks/3/path = NodePath("anim")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": PoolStringArray( "RESET", "RESET" ),
+"times": PoolRealArray( 0, 0.00145311 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=36]
+resource_name = "hide"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("color:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.25, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 401, -18 ), Vector2( 1263, -18 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("less:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.25, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -755, -18 ), Vector2( -1429, -18 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("title:anchor_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.05, -0.5, -0.5 ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("anim")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "main", -1 ],
+"method": "play_backwards"
+}, {
+"args": [ "RESET", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=35]
+resource_name = "show"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("color:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1263, -18 ), Vector2( 401, -18 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("less:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1429, -18 ), Vector2( -755, -18 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("title:anchor_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.261466, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -0.5, -0.5, 0.05, 0.0 ]
+}
+tracks/3/type = "animation"
+tracks/3/path = NodePath("anim")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": PoolStringArray( "RESET", "main" ),
+"times": PoolRealArray( 0, 0.1 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
 [sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
@@ -854,6 +1378,7 @@ tracks/0/keys = {
 }
 
 [node name="base" type="Node2D"]
+pause_mode = 1
 script = ExtResource( 3 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
@@ -1022,7 +1547,7 @@ __meta__ = {
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 72.0
-margin_right = 1924.0
+margin_right = 900.0
 margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
@@ -1046,7 +1571,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 1924.0
+margin_right = 900.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -1143,6 +1668,7 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="inventory" type="Control" parent="gui"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 7 )
@@ -1169,7 +1695,7 @@ __meta__ = {
 }
 
 [node name="rowbox" type="VBoxContainer" parent="gui/inventory/scroll"]
-margin_right = 450.0
+margin_right = 460.0
 margin_bottom = 992.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1421,7 +1947,7 @@ margin_left = 665.0
 margin_top = -200.0
 margin_right = 1225.0
 margin_bottom = 24.0001
-focus_neighbour_top = NodePath("../quit")
+focus_neighbour_top = NodePath("../exit")
 focus_neighbour_bottom = NodePath("../options")
 button_text = "continue"
 
@@ -1431,195 +1957,20 @@ margin_top = -200.0
 margin_right = 1121.0
 margin_bottom = 24.0001
 focus_neighbour_top = NodePath("../continue")
-focus_neighbour_bottom = NodePath("../quit")
+focus_neighbour_bottom = NodePath("../exit")
 button_text = "options"
 nextmenu = "options"
 
-[node name="quit" parent="gui/pause/main" instance=ExtResource( 18 )]
+[node name="exit" parent="gui/pause/main" instance=ExtResource( 18 )]
 margin_left = 432.0
 margin_top = -200.0
 margin_right = 992.0
 margin_bottom = 24.0
 focus_neighbour_top = NodePath("../options")
 focus_neighbour_bottom = NodePath("../continue")
-button_text = "quit"
+button_text = "exit"
 
-[node name="options" type="Control" parent="gui/pause"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="controls" parent="gui/pause/options" instance=ExtResource( 18 )]
-margin_left = 657.0
-margin_top = -200.0
-margin_right = 1217.0
-margin_bottom = 24.0002
-focus_neighbour_top = NodePath("../back")
-focus_neighbour_bottom = NodePath("../audio")
-button_text = "controls"
-nextmenu = "controls"
-
-[node name="audio" parent="gui/pause/options" instance=ExtResource( 18 )]
-margin_left = 569.0
-margin_top = -200.0
-margin_right = 1129.0
-margin_bottom = 24.0001
-focus_neighbour_top = NodePath("../controls")
-focus_neighbour_bottom = NodePath("../back")
-button_text = "audio"
-
-[node name="back" parent="gui/pause/options" instance=ExtResource( 18 )]
-margin_left = 488.0
-margin_top = -200.0
-margin_right = 1048.0
-margin_bottom = 24.0001
-focus_neighbour_top = NodePath("../audio")
-focus_neighbour_bottom = NodePath("../controls")
-button_text = "back"
-nextmenu = "main"
-
-[node name="controls" type="Control" parent="gui/pause"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource( 21 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="scroll" type="ScrollContainer" parent="gui/pause/controls"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 723.0
-margin_top = -684.0
-margin_right = 111.0
-margin_bottom = -861.0
-rect_rotation = 30.0
-theme = ExtResource( 22 )
-scroll_horizontal_enabled = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Control" type="Control" parent="gui/pause/controls/scroll"]
-margin_right = 400.0
-margin_bottom = 1600.0
-rect_min_size = Vector2( 400, 1600 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="use" parent="gui/pause/controls/scroll/Control" instance=ExtResource( 18 )]
-margin_left = 48.0
-margin_top = 169.0
-margin_right = 608.0
-margin_bottom = 393.0
-rect_rotation = -30.0
-focus_neighbour_top = NodePath("../../../back")
-focus_neighbour_bottom = NodePath("../fuse")
-button_text = "use"
-control_button = true
-
-[node name="fuse" parent="gui/pause/controls/scroll/Control" instance=ExtResource( 18 )]
-margin_left = 49.0
-margin_top = 327.0
-margin_right = 609.0
-margin_bottom = 551.0
-rect_rotation = -30.0
-focus_neighbour_top = NodePath("../use")
-focus_neighbour_bottom = NodePath("../take")
-button_text = "fuse"
-control_button = true
-
-[node name="take" parent="gui/pause/controls/scroll/Control" instance=ExtResource( 18 )]
-margin_left = 49.0
-margin_top = 487.0
-margin_right = 609.0
-margin_bottom = 711.0
-rect_rotation = -30.0
-focus_neighbour_top = NodePath("../fuse")
-focus_neighbour_bottom = NodePath("../attack")
-button_text = "take"
-control_button = true
-
-[node name="attack" parent="gui/pause/controls/scroll/Control" instance=ExtResource( 18 )]
-margin_left = 51.0
-margin_top = 652.0
-margin_right = 611.0
-margin_bottom = 876.0
-rect_rotation = -30.0
-focus_neighbour_top = NodePath("../take")
-focus_neighbour_bottom = NodePath("../inventory")
-button_text = "attack"
-control_button = true
-
-[node name="inventory" parent="gui/pause/controls/scroll/Control" instance=ExtResource( 18 )]
-margin_left = 51.0
-margin_top = 828.0
-margin_right = 611.0
-margin_bottom = 1052.0
-rect_rotation = -30.0
-focus_neighbour_top = NodePath("../attack")
-focus_neighbour_bottom = NodePath("../up")
-button_text = "inventory"
-control_button = true
-
-[node name="up" parent="gui/pause/controls/scroll/Control" instance=ExtResource( 18 )]
-margin_left = 53.0
-margin_top = 1000.0
-margin_right = 613.0
-margin_bottom = 1224.0
-rect_rotation = -30.0
-focus_neighbour_top = NodePath("../inventory")
-focus_neighbour_bottom = NodePath("../down")
-button_text = "up"
-control_button = true
-
-[node name="down" parent="gui/pause/controls/scroll/Control" instance=ExtResource( 18 )]
-margin_left = 50.0
-margin_top = 1163.0
-margin_right = 610.0
-margin_bottom = 1387.0
-rect_rotation = -30.0
-focus_neighbour_top = NodePath("../up")
-focus_neighbour_bottom = NodePath("../left")
-button_text = "down"
-control_button = true
-
-[node name="left" parent="gui/pause/controls/scroll/Control" instance=ExtResource( 18 )]
-margin_left = 49.0
-margin_top = 1333.0
-margin_right = 609.0
-margin_bottom = 1557.0
-rect_rotation = -30.0
-focus_neighbour_top = NodePath("../down")
-focus_neighbour_bottom = NodePath("../right")
-button_text = "left"
-control_button = true
-
-[node name="right" parent="gui/pause/controls/scroll/Control" instance=ExtResource( 18 )]
-margin_left = 53.0
-margin_top = 1499.0
-margin_right = 613.0
-margin_bottom = 1723.0
-rect_rotation = -30.0
-focus_neighbour_top = NodePath("../left")
-focus_neighbour_bottom = NodePath("../../../back")
-button_text = "right"
-control_button = true
-
-[node name="back" parent="gui/pause/controls" instance=ExtResource( 18 )]
-margin_left = 409.0
-margin_top = -200.0
-margin_right = 969.0
-margin_bottom = 24.0
-focus_neighbour_top = NodePath("../scroll/Control/right")
-focus_neighbour_bottom = NodePath("../scroll/Control/use")
-button_text = "back"
-nextmenu = "options"
-
-[node name="scrolltween" type="Tween" parent="gui/pause/controls"]
+[node name="options" parent="gui/pause" instance=ExtResource( 21 )]
 
 [node name="Sleep" type="Sprite" parent="gui/pause"]
 position = Vector2( 221, -252 )
@@ -1631,6 +1982,103 @@ offset = Vector2( 0, -50 )
 autoplay = "bounce"
 anims/RESET = SubResource( 26 )
 anims/bounce = SubResource( 27 )
+
+[node name="mainmenu" type="Control" parent="gui"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="less" type="Polygon2D" parent="gui/mainmenu"]
+position = Vector2( -1429, -18 )
+scale = Vector2( 1.25879, 1.27934 )
+color = Color( 0.505882, 0.611765, 0.756863, 1 )
+polygon = PoolVector2Array( 200, 0, 1118.53, 0, 800, 500, -118.368, 500 )
+
+[node name="color" type="Polygon2D" parent="gui/mainmenu"]
+position = Vector2( 1263, -18 )
+scale = Vector2( 1.25879, 1.27934 )
+color = Color( 0.211765, 0.215686, 0.305882, 1 )
+polygon = PoolVector2Array( 200, 0, 1064, 0, 800, 500, -118.368, 500 )
+
+[node name="title" type="Label" parent="gui/mainmenu"]
+anchor_bottom = 0.0484162
+margin_left = 19.0
+margin_top = 18.0
+margin_right = 468.0
+margin_bottom = 343.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.211765, 0.215686, 0.305882, 0.827451 )
+custom_constants/shadow_offset_x = 10
+custom_constants/line_spacing = -70
+custom_constants/shadow_offset_y = 10
+custom_fonts/font = SubResource( 29 )
+text = "box
+arena"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="options" parent="gui/mainmenu" instance=ExtResource( 21 )]
+
+[node name="anim" type="AnimationPlayer" parent="gui/mainmenu"]
+anims/RESET = SubResource( 30 )
+anims/controls = SubResource( 31 )
+anims/main = SubResource( 32 )
+anims/options = SubResource( 33 )
+
+[node name="backanim" type="AnimationPlayer" parent="gui/mainmenu"]
+anims/RESET = SubResource( 34 )
+anims/hide = SubResource( 36 )
+anims/show = SubResource( 35 )
+
+[node name="main" type="Control" parent="gui/mainmenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="play" parent="gui/mainmenu/main" instance=ExtResource( 18 )]
+margin_left = 665.0
+margin_top = -200.0
+margin_right = 1225.0
+margin_bottom = 24.0
+focus_neighbour_top = NodePath("../quit")
+focus_neighbour_bottom = NodePath("../options")
+button_text = "play"
+
+[node name="options" parent="gui/mainmenu/main" instance=ExtResource( 18 )]
+margin_left = 561.0
+margin_top = -200.0
+margin_right = 1121.0
+margin_bottom = 24.0001
+focus_neighbour_top = NodePath("../play")
+focus_neighbour_bottom = NodePath("../credits")
+button_text = "options"
+nextmenu = "options"
+
+[node name="credits" parent="gui/mainmenu/main" instance=ExtResource( 18 )]
+margin_left = 545.0
+margin_top = -200.0
+margin_right = 1105.0
+margin_bottom = 24.0
+focus_neighbour_top = NodePath("../options")
+focus_neighbour_bottom = NodePath("../quit")
+button_text = "credits"
+
+[node name="quit" parent="gui/mainmenu/main" instance=ExtResource( 18 )]
+margin_left = 432.0
+margin_top = -200.0
+margin_right = 992.0
+margin_bottom = 24.0002
+focus_neighbour_top = NodePath("../credits")
+focus_neighbour_bottom = NodePath("../play")
+button_text = "quit"
 
 [node name="fade" type="CanvasLayer" parent="."]
 
@@ -1664,21 +2112,17 @@ one_shot = true
 
 [connection signal="pressed" from="gui/pause/main/continue" to="gui/pause" method="_on_continue_pressed"]
 [connection signal="goto_screen" from="gui/pause/main/options" to="gui/pause" method="_on_goto_screen"]
+[connection signal="pressed" from="gui/pause/main/exit" to="gui/pause" method="_on_exit_pressed"]
+[connection signal="goto_screen" from="gui/pause/options/controls_screen/back" to="gui/pause" method="_on_goto_screen"]
 [connection signal="goto_screen" from="gui/pause/options/controls" to="gui/pause" method="_on_goto_screen"]
 [connection signal="goto_screen" from="gui/pause/options/back" to="gui/pause" method="_on_goto_screen"]
-[connection signal="focus_entered" from="gui/pause/controls/scroll/Control/use" to="gui/pause/controls" method="_on_focus_changed"]
-[connection signal="focus_entered" from="gui/pause/controls/scroll/Control/fuse" to="gui/pause/controls" method="_on_focus_changed"]
-[connection signal="focus_entered" from="gui/pause/controls/scroll/Control/take" to="gui/pause/controls" method="_on_focus_changed"]
-[connection signal="focus_entered" from="gui/pause/controls/scroll/Control/attack" to="gui/pause/controls" method="_on_focus_changed"]
-[connection signal="focus_entered" from="gui/pause/controls/scroll/Control/inventory" to="gui/pause/controls" method="_on_focus_changed"]
-[connection signal="focus_entered" from="gui/pause/controls/scroll/Control/up" to="gui/pause/controls" method="_on_focus_changed"]
-[connection signal="focus_entered" from="gui/pause/controls/scroll/Control/down" to="gui/pause/controls" method="_on_focus_changed"]
-[connection signal="focus_entered" from="gui/pause/controls/scroll/Control/left" to="gui/pause/controls" method="_on_focus_changed"]
-[connection signal="focus_entered" from="gui/pause/controls/scroll/Control/right" to="gui/pause/controls" method="_on_focus_changed"]
-[connection signal="goto_screen" from="gui/pause/controls/back" to="gui/pause" method="_on_goto_screen"]
+[connection signal="focus_entered" from="gui/mainmenu/options/controls_screen/scroll/Control/use" to="gui/mainmenu/options/controls_screen" method="_on_focus_entered"]
+[connection signal="pressed" from="gui/mainmenu/main/play" to="gui/mainmenu" method="_on_play_pressed"]
 [connection signal="timeout" from="bosspause_timer" to="." method="_on_bosspause_timer_timeout"]
 
 [editable path="gui/inventory/info/holder/values/damage"]
 [editable path="gui/inventory/info/holder/values/energy"]
 [editable path="gui/inventory/info/holder/values/health"]
 [editable path="gui/inventory/info/holder/values/max_health"]
+[editable path="gui/pause/options"]
+[editable path="gui/mainmenu/options"]

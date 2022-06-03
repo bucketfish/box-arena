@@ -16,16 +16,14 @@ var on = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	reset()
+	
+func reset():
 	backanim.play("RESET")
 	anim.play("RESET")
 	visible = false
-	
-
-
-func toggle():
-	on = !on
-	if on:
-		turnon()
+	on = false
+	curscreen = "none"
 	
 func turnon():
 	visible = true
@@ -62,11 +60,13 @@ func _on_continue_pressed():
 	if on:
 		turnoff()
 
-	
-
 func _on_goto_screen(scenename):
 	if curscreen != "none":
 		anim.play_backwards(curscreen)
 		yield(anim, "animation_finished")
 	anim.play(scenename)
 	curscreen = scenename
+
+
+func _on_exit_pressed():
+	base.save_and_quit()

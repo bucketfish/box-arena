@@ -19,6 +19,8 @@ fallback/0 = ExtResource( 6 )
 
 [node name="play" type="TextureButton"]
 rect_scale = Vector2( 0.5, 0.5 )
+focus_neighbour_left = NodePath(".")
+focus_neighbour_right = NodePath(".")
 mouse_filter = 2
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 1 )

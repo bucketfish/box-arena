@@ -16,6 +16,7 @@ onready var bosspause_timer = $bosspause_timer
 const room = preload("res://room/room.tscn")
 
 onready var pause = $gui/pause
+onready var mainmenu = $gui/mainmenu
 
 var curroom
 var comefrom
@@ -30,6 +31,20 @@ var boss_move = true
 
 func _ready():
 	curroom = $room
+	update_pause(true)
+	update_state("paused")
+	
+	
+func start_game():
+	update_pause(false)
+	update_state("play")
+	propagate_call("reset")
+	
+func save_and_quit():
+	update_pause(true)
+	update_state("paused")
+	mainmenu.returnto()
+	
 	
 func goto(dirfrom):
 	update_trans(true)
@@ -107,7 +122,7 @@ func _input(event):
 			update_state('play')
 			
 	if Input.is_action_just_pressed("pause") && !pause.on:
-		pause.toggle()
+		pause.turnon()
 		update_pause(pause.on)
 #		if inventory.visible:
 #			update_state("inv")

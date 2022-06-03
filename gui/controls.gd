@@ -32,5 +32,7 @@ func _on_focus_changed():
 		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	scrolltween.start()
 
-		
 
+
+func _on_focus_entered():
+	pass # Replace with function body.

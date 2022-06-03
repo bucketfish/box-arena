@@ -16,9 +16,9 @@ var on = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	reset()
+	reset_item()
 	
-func reset():
+func reset_item():
 	backanim.play("RESET")
 	anim.play("RESET")
 	visible = false

@@ -38,7 +38,7 @@ func _ready():
 func start_game():
 	update_pause(false)
 	update_state("play")
-	propagate_call("reset")
+	propagate_call("reset_item")
 	
 func save_and_quit():
 	update_pause(true)

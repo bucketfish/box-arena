@@ -181,6 +181,7 @@ focus_neighbour_bottom = NodePath("../controls")
 button_text = "back"
 nextmenu = "main"
 
+[connection signal="focus_entered" from="controls_screen/scroll/Control/use" to="controls_screen" method="_on_use_focus_entered"]
 [connection signal="focus_entered" from="controls_screen/scroll/Control/use" to="controls_screen" method="_on_focus_changed"]
 [connection signal="focus_entered" from="controls_screen/scroll/Control/fuse" to="controls_screen" method="_on_focus_changed"]
 [connection signal="focus_entered" from="controls_screen/scroll/Control/take" to="controls_screen" method="_on_focus_changed"]

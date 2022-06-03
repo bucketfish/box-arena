@@ -1004,7 +1004,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.078, 0.231, 0.249 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 472, -200 ), Vector2( 472, -200 ), Vector2( 472, 500 ), Vector2( 472, 435 ) ]
+"values": [ Vector2( 472, -200 ), Vector2( 472, -200 ), Vector2( 472, 460 ), Vector2( 472, 435 ) ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath("main/play")
@@ -1547,7 +1547,7 @@ __meta__ = {
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 72.0
-margin_right = 900.0
+margin_right = 1924.0
 margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
@@ -1571,7 +1571,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 900.0
+margin_right = 1924.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -2047,7 +2047,7 @@ __meta__ = {
 margin_left = 665.0
 margin_top = -200.0
 margin_right = 1225.0
-margin_bottom = 24.0
+margin_bottom = 24.0001
 focus_neighbour_top = NodePath("../quit")
 focus_neighbour_bottom = NodePath("../options")
 button_text = "play"
@@ -2056,7 +2056,7 @@ button_text = "play"
 margin_left = 561.0
 margin_top = -200.0
 margin_right = 1121.0
-margin_bottom = 24.0001
+margin_bottom = 24.0
 focus_neighbour_top = NodePath("../play")
 focus_neighbour_bottom = NodePath("../credits")
 button_text = "options"
@@ -2117,7 +2117,11 @@ one_shot = true
 [connection signal="goto_screen" from="gui/pause/options/controls" to="gui/pause" method="_on_goto_screen"]
 [connection signal="goto_screen" from="gui/pause/options/back" to="gui/pause" method="_on_goto_screen"]
 [connection signal="focus_entered" from="gui/mainmenu/options/controls_screen/scroll/Control/use" to="gui/mainmenu/options/controls_screen" method="_on_focus_entered"]
+[connection signal="goto_screen" from="gui/mainmenu/options/controls_screen/back" to="gui/mainmenu" method="_on_goto_screen"]
+[connection signal="goto_screen" from="gui/mainmenu/options/controls" to="gui/mainmenu" method="_on_goto_screen"]
+[connection signal="goto_screen" from="gui/mainmenu/options/back" to="gui/mainmenu" method="_on_goto_screen"]
 [connection signal="pressed" from="gui/mainmenu/main/play" to="gui/mainmenu" method="_on_play_pressed"]
+[connection signal="goto_screen" from="gui/mainmenu/main/options" to="gui/mainmenu" method="_on_goto_screen"]
 [connection signal="timeout" from="bosspause_timer" to="." method="_on_bosspause_timer_timeout"]
 
 [editable path="gui/inventory/info/holder/values/damage"]

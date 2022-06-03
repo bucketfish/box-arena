@@ -33,6 +33,5 @@ func _on_focus_changed():
 	scrolltween.start()
 
 
-
-func _on_focus_entered():
-	pass # Replace with function body.
+func _on_use_focus_entered():
+	propagate_call("prep_button")

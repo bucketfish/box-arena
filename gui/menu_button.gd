@@ -17,31 +17,33 @@ var selecting = false
 func _ready():
 	label.text = button_text
 	key.visible = control_button
-	if control_button:
-		if control_button in Options.keybinds:
-			InputMap.action_erase_event(button_text, InputMap.get_action_list(button_text)[0])
-		
-			var event = InputEventKey.new()
-			event.scancode = Options.keybinds(button_text)
-			InputMap.action_add_event(button_text, event)
-		prep_button()
+	prep_button()
 	
 func prep_button():
+	if !control_button:
+		return
+		
+	if control_button in Options.keybinds:
+		InputMap.action_erase_event(button_text, InputMap.get_action_list(button_text)[0])
+		
+		var event = InputEventKey.new()
+		event.scancode = Options.keybinds(button_text)
+		InputMap.action_add_event(button_text, event)
 
-		var thing = {
-			"Left": "←",
-			"Right":"→",
-			"Up":"↑",
-			"Down":"↓",
-			"Shift": "⇧",
-			"Tab": "↹"
+	var thing = {
+		"Left": "←",
+		"Right":"→",
+		"Up":"↑",
+		"Down":"↓",
+		"Shift": "⇧",
+		"Tab": "↹"
 		}
 		
-		var keystroke = InputMap.get_action_list(button_text)[0].as_text()
-		if keystroke in thing.keys():
-			keystroke = thing[keystroke]
+	var keystroke = InputMap.get_action_list(button_text)[0].as_text()
+	if keystroke in thing.keys():
+		keystroke = thing[keystroke]
 			
-		keytext.text = keystroke.to_lower()
+	keytext.text = keystroke.to_lower()
 
 
 func _on_play_pressed():

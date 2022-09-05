@@ -13,10 +13,13 @@ onready var inventory = $gui/inventory
 onready var bossui = $gui/boss
 onready var shade = $gui/shade
 onready var bosspause_timer = $bosspause_timer
+onready var bars = $gui/bars
 const room = preload("res://room/room.tscn")
 
 onready var pause = $gui/pause
 onready var mainmenu = $gui/mainmenu
+
+onready var keyhints = $gui/keyhints
 
 var curroom
 var comefrom
@@ -26,6 +29,14 @@ var state = "play" setget update_state
 var paused = false setget update_pause
 
 var boss_move = true
+
+var canuse = {
+	"use": false,
+	"fuse": false,
+	"take": false,
+	"attack": false,
+	"inventory": true
+}
 # states: play, inv, pause
 
 
@@ -133,11 +144,22 @@ func _input(event):
 func update_state(newstate):
 	if newstate == "play":
 		player.canmove = true
+
 	else:
 		player.canmove = false
 	state = newstate
 	
+func update_weapon():
+	if Persistent.weapon:
+		canuse["attack"] = true
+	else:
+		canuse["attack"] = false
+	keyhints.update_keyhints()
 
+func update_pickup(can): #whether player is able to pick up anything
+	canuse["take"] = can
+	keyhints.update_keyhints()
+	
 var bossmove_prev = true
 func update_pause(newpause):
 	if newpause == false:

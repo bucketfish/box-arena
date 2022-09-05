@@ -1,6 +1,7 @@
 extends Node
 
 onready var player = get_node("/root/base/player")
+onready var base = get_node("/root/base")
 
 var endgames = []
 
@@ -26,10 +27,10 @@ var seenbosses = []
 
 var carrying = [] setget sort_inv
 
-var health = 5
-var energy = 10
+var health = 5 setget update_health
+var energy = 10 setget update_energy
 var damage = 0
-var max_health = 5
+var max_health = 5 setget update_maxhealth
 var defeated = false
 
 var coward = 0
@@ -37,10 +38,22 @@ var isCoward = false
 
 var weapon = "" setget set_weapon
 
+func update_health(newval):
+	health = newval
+	base.bars.update_bars()
+
+func update_energy(newval):
+	energy = newval
+	base.bars.update_bars()
+	
+func update_maxhealth(newval):
+	max_health = newval
+	base.bars.update_bars()
+	
 func set_weapon(newval):
 	weapon = newval
 	player.update_weapon()
-	
+	base.update_weapon()
 
 func items_custcomp(a, b):
 	return Data.itemsorder.find( a ) < Data.itemsorder.find( b )

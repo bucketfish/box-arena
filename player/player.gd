@@ -82,6 +82,7 @@ func move(direction, delta):
 func check_items():
 	# check items around to show animation
 	if pickup_area.get_overlapping_areas().size() > 0:
+		base.update_pickup(true)
 		var cl_area:Node2D # closest area
 		var cl_dist = INF
 		
@@ -99,6 +100,8 @@ func check_items():
 		
 		# set whether that item should be activated
 		cl_area.isitem = true
+	else:
+		base.update_pickup(false)
 	
 	
 func _physics_process(delta):
@@ -131,7 +134,7 @@ func swing():
 		
 		# deduct energy
 		Persistent.energy += Data.items[Persistent.weapon]["energy"]
-		bars.update_bars()
+#		bars.update_bars()
 
 		
 			
@@ -146,6 +149,6 @@ func update_weapon():
 func take_damage(damageval):
 	hurtanim.play("hurt")
 	Persistent.health -= damageval
-	bars.update_bars()
+#	bars.update_bars()
 	hurtbox.start_invincibility(0.8)
 

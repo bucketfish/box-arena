@@ -240,7 +240,7 @@ func use_item():
 			use = true
 			
 	if use:
-		bars.update_bars()
+#		bars.update_bars()
 		Persistent.carrying.erase(item)
 		Persistent.sort_inv(Persistent.carrying)
 		

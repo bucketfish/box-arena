@@ -63,5 +63,3 @@ func throw_knife():
 	yield(tween, "tween_completed")
 	has_knife = true
 	anim.play("spin")
-	
-	

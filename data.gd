@@ -344,7 +344,7 @@ var bosses = {
 				'speed': 150,
 				'knockback': 800,
 				'drop':['silver katana','silver katana','silver katana','silver katana','silver katana','silver katana','silver katana','ruby scythe'],
-				'desc': 'consuming metal you can\'t digest probably isn’t the best of ideas, but neither is consuming swords that could slice you in half. it does both.'},
+				'desc': 'consuming metal you can\'t digest probably isn\'t the best of ideas, but neither is consuming swords that could slice you in half. it does both.'},
 
 	'conkydonk':{
 				'damage':15,
@@ -371,7 +371,7 @@ var bosses = {
 				'speed': 180,
 				'knockback': 1300,
 				'drop':['fishcow', 'fishcow', 'fishcow'],
-				'desc': 'this is the worst thing you will ever have the misfortune of meeting.'},
+				'desc': 'it go moo..mo.. m m mooo......'},
 
 	#endgame
 	'poinkydirtie':{
@@ -380,7 +380,7 @@ var bosses = {
 				'speed': 50,
 				'knockback': 1000,
 				'level':'endgame',
-				'desc':'incomplete description'},
+				'desc':'young man, hand knife rock door gun.'},
 
 	'swooshymooshy':{
 				'damage':30,
@@ -399,7 +399,7 @@ var bosses = {
 				'damage':30,
 				'health':50,
 				'level':'endgame',
-				'desc':'incomplete description'}
+				'desc':'it all changed when the fire nation attacked.'}
 	}
 
 var boss_scenes = {

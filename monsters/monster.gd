@@ -82,7 +82,10 @@ func _physics_process(delta):
 		velocity = lerp(velocity, Vector2(), friction * delta * 100)
 		
 	if fliph:
-		sprite.flip_h = velocity.x < 0
+		if velocity.x < 0:
+			sprite.scale.x = -0.4
+		else:
+			sprite.scale.x = 0.4
 			
 	velocity = move_and_slide(velocity)
 

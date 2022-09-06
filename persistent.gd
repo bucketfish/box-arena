@@ -5,7 +5,7 @@ onready var base = get_node("/root/base")
 
 var endgames = []
 
-var coords = Vector2()
+var coords = Vector2(10, -6)
 var places = {
 			Vector2(0, 0) :[],
 			Vector2(1, 0): ['cookie'],
@@ -25,7 +25,7 @@ var genbosses = {
 				Vector2(-10, -10): {'name': 'puffpuffiepuff', 'alive': true}}
 var seenbosses = []
 
-var carrying = [] setget sort_inv
+var carrying = ['wooden stick'] setget sort_inv
 
 var health = 5 setget update_health
 var energy = 10 setget update_energy

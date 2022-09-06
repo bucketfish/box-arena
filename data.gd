@@ -377,6 +377,8 @@ var bosses = {
 	'poinkydirtie':{
 				'damage':30,
 				'health':70,
+				'speed': 50,
+				'knockback': 1000,
 				'level':'endgame',
 				'desc':'incomplete description'},
 
@@ -410,7 +412,8 @@ var boss_scenes = {
 	'slurpydoo': preload("res://monsters/slurpydoo.tscn"),
 	'conkydonk': preload("res://monsters/conkydonk.tscn"),
 	'tictactoe': preload("res://monsters/tictactoe.tscn"),
-	'fishymoo': preload("res://monsters/fishymoo.tscn")
+	'fishymoo': preload("res://monsters/fishymoo.tscn"),
+	"poinkydirtie": preload("res://monsters/poinkydirtie.tscn")
 }
 
 var cowardmessage = [

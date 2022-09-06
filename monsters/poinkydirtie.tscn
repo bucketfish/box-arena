@@ -1,0 +1,275 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://monsters/monster.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/monsters/poinkydirtie.png" type="Texture" id=2]
+[ext_resource path="res://assets/monsters/poinkydirtie/knife.png" type="Texture" id=3]
+[ext_resource path="res://monsters/poinkydirtie.gd" type="Script" id=4]
+[ext_resource path="res://combat/hitbox.tscn" type="PackedScene" id=5]
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 18.769
+height = 53.0806
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 69, 69 )
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 65.0
+height = 0.0
+
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 72.0
+height = 16.0
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "idle"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Knife:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 35, 104 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Knife:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("knife_throw:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Knife:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "spin"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Knife:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Knife:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("knife_throw:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Knife:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "throw"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Knife:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("knife_throw:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[node name="monster" instance=ExtResource( 1 )]
+script = ExtResource( 4 )
+type = "poinkydirtie"
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+hframes = 1
+vframes = 2
+
+[node name="Knife" type="Sprite" parent="." index="1"]
+position = Vector2( 35, 104 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 3 )
+offset = Vector2( -74.4912, -291.598 )
+
+[node name="hitbox" parent="Knife" index="0" instance=ExtResource( 5 )]
+position = Vector2( 265, -280 )
+scale = Vector2( 2.5, 2.5 )
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Knife/hitbox" index="0"]
+position = Vector2( -52, 7.99999 )
+rotation = 0.390408
+shape = SubResource( 5 )
+
+[node name="knife_throw" type="Node2D" parent="." index="2"]
+visible = false
+
+[node name="knife_throw" type="Sprite" parent="knife_throw" index="0"]
+position = Vector2( -47, 1.99999 )
+rotation = 4.31445
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 3 )
+offset = Vector2( -249.491, 80.9019 )
+
+[node name="hitbox" parent="knife_throw/knife_throw" index="0" instance=ExtResource( 5 )]
+position = Vector2( 92.5001, 92.5 )
+scale = Vector2( 2.5, 2.5 )
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="knife_throw/knife_throw/hitbox" index="0"]
+position = Vector2( -52, 7.99999 )
+rotation = 0.390408
+shape = SubResource( 5 )
+
+[node name="RayCast2D" type="RayCast2D" parent="knife_throw" index="1"]
+cast_to = Vector2( 0, 100 )
+
+[node name="CollisionShape2D" parent="." index="3"]
+position = Vector2( 1, -2 )
+shape = SubResource( 6 )
+
+[node name="hitbox2" parent="." index="4" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="hitbox2" index="0"]
+position = Vector2( 0, 0 )
+shape = SubResource( 7 )
+
+[node name="hitbox" parent="." index="5"]
+visible = false
+
+[node name="CollisionShape2D" parent="hurtbox" index="0"]
+position = Vector2( 0, -9 )
+shape = SubResource( 8 )
+
+[node name="idle_anim" type="AnimationPlayer" parent="." index="7"]
+autoplay = "idle"
+anims/RESET = SubResource( 1 )
+anims/idle = SubResource( 2 )
+
+[node name="anim" type="AnimationPlayer" parent="." index="8"]
+anims/RESET = SubResource( 3 )
+anims/spin = SubResource( 4 )
+anims/throw = SubResource( 9 )
+
+[node name="tween" type="Tween" parent="." index="10"]
+
+[node name="Node2D" type="Node2D" parent="." index="11"]
+
+[editable path="Knife/hitbox"]
+[editable path="knife_throw/knife_throw/hitbox"]
+[editable path="hitbox2"]
+[editable path="hitbox"]
+[editable path="hurtbox"]

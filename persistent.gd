@@ -5,7 +5,7 @@ onready var base = get_node("/root/base")
 
 var endgames = []
 
-var coords = Vector2(10, -6)
+var coords = Vector2(10, 9)
 var places = {
 			Vector2(0, 0) :[],
 			Vector2(1, 0): ['cookie'],
@@ -28,7 +28,7 @@ var seenbosses = []
 var carrying = ['wooden stick'] setget sort_inv
 
 var health = 5 setget update_health
-var energy = 10 setget update_energy
+var energy = 100 setget update_energy
 var damage = 0
 var max_health = 5 setget update_maxhealth
 var defeated = false

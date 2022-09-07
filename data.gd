@@ -385,6 +385,16 @@ var bosses = {
 	'swooshymooshy':{
 				'damage':30,
 				'health':50,
+				'speed': 70,
+				'knockback': 1000,
+				'level':'endgame',
+				'desc':'incomplete description'},
+				
+	'swooshymooshy_spawn':{
+				'damage':2,
+				'health':5,
+				'speed': 150,
+				'knockback': 2000,
 				'level':'endgame',
 				'desc':'incomplete description'},
 
@@ -413,7 +423,8 @@ var boss_scenes = {
 	'conkydonk': preload("res://monsters/conkydonk.tscn"),
 	'tictactoe': preload("res://monsters/tictactoe.tscn"),
 	'fishymoo': preload("res://monsters/fishymoo.tscn"),
-	"poinkydirtie": preload("res://monsters/poinkydirtie.tscn")
+	"poinkydirtie": preload("res://monsters/poinkydirtie.tscn"),
+	'swooshymooshy': preload("res://monsters/swooshymooshy.tscn")
 }
 
 var cowardmessage = [

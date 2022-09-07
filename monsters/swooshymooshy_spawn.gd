@@ -4,7 +4,6 @@ extends KinematicBody2D
 var health
 var damage
 export var type = "nyam"
-export var width = 0.4
 const item = preload("res://items/item.tscn")
 onready var base = get_node("/root/base")
 onready var player = get_node("/root/base/player")
@@ -25,7 +24,7 @@ export var knockback_val = 500
 var friction = 0.4
 var acceleration = 0.3
 
-
+onready var anim = $anim
 
 var state = "idle"
 
@@ -36,6 +35,10 @@ func _ready():
 	knockback_val = Data.bosses[type]['knockback']
 	
 	hitbox.damage = damage
+	
+	anim.play("spawn")
+	yield(anim, "animation_finished")
+	anim.play("idle")
 	
 	
 func hurt(damageval):
@@ -49,18 +52,10 @@ func hurt(damageval):
 	
 
 func die():
-	for i in Data.bosses[type]["drop"]:
-		var curitem = item.instance()
-		curitem.itemname = i
-		curitem.global_position = global_position + Vector2(rand_range(-40, 40), rand_range(-40, 40))
-		base.curroom.call_deferred("add_child", curitem)
-		
-		Persistent.places[Persistent.coords].append(i)
-		
-	Persistent.genbosses[Persistent.coords]['alive'] = false
-	
 	queue_free()
-
+	
+func take_damage(damageval):
+	hurt(damageval)
 
 
 func _physics_process(delta):
@@ -84,9 +79,9 @@ func _physics_process(delta):
 		
 	if fliph:
 		if velocity.x < 0:
-			sprite.scale.x = -width
+			sprite.scale.x = -0.2
 		else:
-			sprite.scale.x = width
+			sprite.scale.x = 0.2
 			
 	velocity = move_and_slide(velocity)
 

@@ -104,6 +104,7 @@ tracks/2/keys = {
 [node name="monster" instance=ExtResource( 2 )]
 script = ExtResource( 4 )
 type = "flickflack"
+width = 0.35
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 0.35, 0.35 )

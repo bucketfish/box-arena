@@ -1593,9 +1593,8 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 60.0
-margin_top = 600.0
-margin_right = 774.0
-margin_bottom = 840.0
+margin_right = -250.0
+margin_bottom = 240.0
 grow_vertical = 0
 alignment = 2
 
@@ -2194,6 +2193,7 @@ anims/fromright = SubResource( 3 )
 anims/fromup = SubResource( 6 )
 
 [node name="bosspause_timer" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 
 [connection signal="pressed" from="gui/pause/main/continue" to="gui/pause" method="_on_continue_pressed"]

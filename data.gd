@@ -401,6 +401,8 @@ var bosses = {
 	'foofeefoofee':{
 				'damage':50,
 				'health':50,
+				'speed': 90,
+				'knockback': 1000, 
 				'level':'endgame',
 				'drop':['blade of fire'],
 				'desc':'incomplete description'},
@@ -424,7 +426,8 @@ var boss_scenes = {
 	'tictactoe': preload("res://monsters/tictactoe.tscn"),
 	'fishymoo': preload("res://monsters/fishymoo.tscn"),
 	"poinkydirtie": preload("res://monsters/poinkydirtie.tscn"),
-	'swooshymooshy': preload("res://monsters/swooshymooshy.tscn")
+	'swooshymooshy': preload("res://monsters/swooshymooshy.tscn"),
+	'foofeefoofee': preload("res://monsters/foofeefoofee.tscn")
 }
 
 var cowardmessage = [

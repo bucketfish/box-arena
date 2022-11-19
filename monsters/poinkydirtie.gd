@@ -4,13 +4,16 @@ var has_knife = true
 
 onready var anim = $anim
 onready var knife = $knife_throw
+onready var hitbox2 = $hitbox2
+onready var hitboxknife = $knife_throw/knife_throw/hitbox
 
 func _ready():
 	call_phyproc = false
+	hitbox2.damage = damage
+	hitboxknife.damage = damage
 
 func take_damage(damageval):
 	hurt(damageval)
-	
 
 func _physics_process(delta):
 	if !base.state in ["play", "inv"] || base.boss_move == false:

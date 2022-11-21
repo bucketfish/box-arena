@@ -52,7 +52,7 @@ h1 {
 
 p {
   font-size: 2vw;
-  color: var(--white);
+  color: var(--black);
 }
 
 p.subtitle {

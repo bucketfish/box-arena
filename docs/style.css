@@ -5,6 +5,9 @@
 
 * {
   font-family: Retron2000, Courier New, monospace, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   /* border: 1px solid blue; */
 }
 :root {

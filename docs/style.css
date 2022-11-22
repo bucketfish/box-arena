@@ -27,7 +27,8 @@
   --margin-left: 1.01;
   --more-right: 5vw;
 
-  --rainbowright: linear-gradient(to right, #ffcaca 0%, #ffedc1 20%, #feffb8 40%, #c4ffcb 60%, #add8ff 80%,  #ccafe9 100%)
+  --rainbowright: linear-gradient(to right, #ffcaca 0%, #ffedc1 20%, #feffb8 40%, #c4ffcb 60%, #add8ff 80%,  #ccafe9 100%);
+  --gradient-border: linear-gradient(to right, transparent 0%, var(--lightblue) 20%, var(--lightblue) 80%, transparent 100%);
   /* --margin-right: 98vw; */
 }
 
@@ -52,12 +53,20 @@ h1 {
 }
 
 p {
-  font-size: 2vw;
+  font-size: 1.5vw;
   color: var(--black);
 }
 
 p.subtitle {
+  font-size: 2vw;
   color: var(--black);
+}
+
+p.poem {
+  color: var(--lightgray);
+  font-style: italic;
+  width: 75%;
+  margin: 0 auto;
 }
 
 a {
@@ -72,6 +81,37 @@ strong {
   text-shadow: 2px 2px var(--red);
   font-weight: normal;
 }
+
+hr {
+  border: none;
+  /* background-image: var(--gradient-border); */
+  /* background-clip: border-box; */
+  background-color: var(--lightblue);
+  border-radius: 25px;
+  /* border-top: 5px transparent solid; */
+  height: 5px;
+  overflow: visible;
+  margin: 2vw 10%;
+}
+hr::after {
+  content: "";
+  background-image: url('assets/hr.png');
+  background-size: 12vw;
+  display: inline-block;
+  position: relative;
+  top: -1.5vw;
+  font-size: 1.5em;
+  height: 3vw;
+  width: 100%;
+  padding: 0 0.5em;
+  background-repeat: no-repeat;
+  /* background-origin: 50% 0; */
+  background-position: 50% 50%;
+  border: none;
+}
+
+
+
 
 #backimg {
   position: absolute;
@@ -226,6 +266,7 @@ background-image: url('assets/button_focus.png');
   position: absolute;
   margin-top: calc(var(--pad-left) * var(--triangle-h));
   width: 100%;
+  z-index: 5;
 
 
   /* width: calc((var(--margin-right) - ((var(--margin-left) - var(--pad-left)) * var(--triangle-w)))); */
@@ -239,13 +280,14 @@ section {
   width: 100%;
   padding: 20px 0;
   box-sizing: border-box;
+  overflow: visible;
 
 }
+
 
 section:nth-child(even){
   text-align: right;
   /* background-color: var(--darkgray); */
-  ;
 }
 
 section:nth-child(odd){
@@ -253,7 +295,7 @@ section:nth-child(odd){
   color: var(--white);
 }
 
-section:nth-child(odd) p{
+section:nth-child(odd) p:not(.poem){
   color: var(--white);
 }
 
@@ -289,6 +331,7 @@ img.deco {
   display: inline-block;
   margin-bottom: -.5vw;
   padding: 0 20px;
+  /* transform: rotateY(180deg); */
 }
 /*
 @keyframes rainbow{

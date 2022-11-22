@@ -60,7 +60,7 @@ p.subtitle {
 }
 
 a {
-  font-size: 2vw;
+  font-size: inherit;
   color: var(--white);
   text-decoration: none;
 }
@@ -87,7 +87,7 @@ strong {
   height: 0;
   border-bottom: var(--triangle-h) solid var(--blue);
   border-left: var(--triangle-w) solid transparent;
-  filter: drop-shadow(-10px -10px 10vw var(--black));
+  filter: drop-shadow(-3vw -3vw 8vw var(--black));
   clip: rect(0, calc(var(--triangle-w) - 1px), calc(var(--triangle-h) - 1px), 0);
   z-index: -4;
 }
@@ -192,6 +192,7 @@ strong {
 
 
 a.button {
+  font-size: 2vw;
   display: flex;
   width: 14vw;
   height: 5.5vw;
@@ -217,9 +218,8 @@ background-image: url('assets/button_focus.png');
 
   position: absolute;
   margin-top: calc(var(--pad-left) * var(--triangle-h));
-  margin-left: calc((var(--margin-left) - var(--pad-left)) * var(--triangle-w));
+  width: 100%;
 
-  width: calc((var(--text-middle) - ((var(--margin-left) - var(--pad-left)) * var(--triangle-w)))*2);
 
   /* width: calc((var(--margin-right) - ((var(--margin-left) - var(--pad-left)) * var(--triangle-w)))); */
 
@@ -228,13 +228,52 @@ background-image: url('assets/button_focus.png');
   /* padding-bottom: 5000px; */
 }
 section {
-  padding: 0 5vw;
+
+  width: 100%;
+  padding: 20px 0;
   box-sizing: border-box;
+
 }
 
 section:nth-child(even){
   text-align: right;
   /* background-color: var(--darkgray); */
+  ;
+}
+
+section:nth-child(odd){
+  background-color: var(--darkgray);
+  color: var(--white);
+}
+
+section:nth-child(odd) p{
+  color: var(--white);
+}
+
+section:nth-child(odd) h1{
+  /* color: var(--gray); */
+  text-shadow: .5vw .5vw var(--blue);
+}
+
+section:nth-child(1) {
+  --pad-left: 0.95;
+  clip-path: polygon(calc(10/6 * 0.05 * var(--triangle-h)) 0%, 100% 0, 100% 100%, 0 100%, 0% calc(0.05 * var(--triangle-h)));
+  /* background-color: red; */
+}
+
+section:nth-child(1) h1 {
+  margin-top: 0;
+}
+
+.sect-inner {
+  --pad-left: 0.95;
+  --text-middle: 50vw;
+  margin-left: calc((var(--margin-left) - var(--pad-left)) * var(--triangle-w));
+  padding: 0 5vw;
+
+  width: calc((var(--text-middle) - ((var(--margin-left) - var(--pad-left)) * var(--triangle-w)))*2);
+  box-sizing: border-box;
+
 }
 /*
 @keyframes rainbow{

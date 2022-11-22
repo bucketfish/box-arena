@@ -113,6 +113,7 @@ strong {
   background-color: var(--darkgray);
   /* color: var(--white); */
   padding: 5px;
+  padding-bottom: 10px;
   border-radius: 20px;
   animation: bounce 0.4s ease-in alternate infinite;
 }

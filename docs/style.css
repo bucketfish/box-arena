@@ -116,15 +116,10 @@ hr::after {
 
 
 
-
 #backimg {
   position: absolute;
   max-width: calc(var(--triangle-w) - 1px);
   z-index: -5;
-}
-
-.front-col {
-  /* padding-top: 100px;*/
 }
 
 .triangle {
@@ -136,10 +131,6 @@ hr::after {
   filter: drop-shadow(-3vw -3vw 8vw var(--black));
   clip: rect(0, calc(var(--triangle-w) - 1px), calc(var(--triangle-h) - 1px), 0);
   z-index: -4;
-}
-
-.text-pad {
-
 }
 
 #comingsoon {
@@ -248,7 +239,7 @@ a.button {
   width: 14vw;
   height: 5.5vw;
   /* border: 6px solid var(--lightblue); */
-  border-radius: 20px;
+  /* border-radius: 20px; */
   justify-content: center;
   align-items: center;
   text-shadow: 4px 4px var(--gray);
@@ -347,3 +338,171 @@ img.deco {
   83% {color: #ccafe9;}
   100% {color: #ffcaca;}
 } */
+
+
+@media (max-width: 1200px) {
+  :root {
+    --triangle-w: 90vw;
+    --more-right: 1vw;
+  }
+
+  #comingsoon {
+    font-size: 2.5vw;
+    border-radius: 15px;
+  }
+
+}
+
+
+
+@media (max-width: 1000px)
+{
+  :root {
+    --triangle-w: 100vw;
+    --more-right: 0vw;
+    --margin-left: 0.95;
+
+    --triangle-h: calc(4/10 * var(--triangle-w));
+    --text-middle: 0.8 * var(--triangle-w);
+
+  }
+
+  .triangle {
+    top: 22vw;
+    clip: auto;
+  }
+
+  p, a.button {
+    font-size: 18px;
+  }
+
+
+  #comingsoon {
+    margin-top: calc(25vw + var(--pad-left) * var(--triangle-h));
+  }
+
+  #title {
+    margin-top: calc(25vw + var(--pad-left) * var(--triangle-h));
+  }
+
+  #description {
+    margin-top: calc(27vw + var(--pad-left) * var(--triangle-h));
+  }
+
+  #navbar {
+    margin-top: calc(26vw + var(--pad-left) * var(--triangle-h));
+
+  }
+
+
+  .text-pad {
+    margin-top: calc(22vw + var(--triangle-h));
+
+  }
+
+}
+
+
+@media (max-width: 800px) {
+  /* phone screen! */
+
+  :root {
+    --triangle-h: calc(2/10 * var(--triangle-w));
+  }
+
+  p, a.button, p.subtitle, #comingsoon {
+    font-size: 16px;
+  }
+
+  p.poem {
+    font-size: 3vw;
+  }
+
+  h1 {
+    font-size: 40px;
+    text-shadow: .5vw .5vw var(--darkgray);
+  }
+
+  img.deco {
+    height: 40px;
+  }
+
+  .triangle {
+    top: 40vw;
+    clip: rect(-300px, 100vw, calc(var(--triangle-h) - 1px), 0);
+  }
+
+  #comingsoon, #title, #description, #navbar, .text-pad {
+    position: relative;
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  #cmspos {
+    padding-top: 51vw;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #comingsoon {
+    width: 60%;
+    float: right;
+    padding-bottom: 5px;
+  }
+
+
+  #title {
+    font-size: 48px;
+  }
+
+  #title, #description, #navbar {
+    width: 90%;
+    margin: 5px auto;
+  }
+
+  #navbar {
+    justify-content: space-between;
+  }
+  #navbar a.button{
+    width: 27vw;
+    height: 10.6vw;
+    text-shadow: 3px 3px var(--gray);
+
+  }
+
+  .text-pad {
+    padding-top: 20px;
+    width: 100%;
+    /* margin-top: 300px; */
+  }
+
+  section:nth-child(1) {
+    clip-path: none;
+  }
+
+  .sect-inner {
+    /* width: 90%; */
+    margin: 0 auto;
+  }
+
+
+  hr {
+
+  }
+
+  hr::after {
+    background-size: 96px;
+    height: 32px;
+    top: -16px;
+  }
+
+
+
+
+
+
+
+
+}

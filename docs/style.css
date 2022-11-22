@@ -65,8 +65,9 @@ p.subtitle {
 p.poem {
   color: var(--lightgray);
   font-style: italic;
-  width: 75%;
-  margin: 0 auto;
+  /* width: 75%; */
+  /* margin: 0 auto; */
+  text-align: center;
 }
 
 a {

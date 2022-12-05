@@ -36,6 +36,7 @@ func generate_boss(coords):
 	if coords in Persistent.genbosses.keys():
 		if Persistent.genbosses[coords]['alive'] == true:
 			boss = Persistent.genbosses[coords]['name']
+			Persistent.places[coords] = []
 		else:
 			contents = Persistent.places[coords]
 	else:

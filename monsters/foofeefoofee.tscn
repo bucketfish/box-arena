@@ -53,6 +53,7 @@ tracks/0/keys = {
 
 [node name="monster" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+type = "foofeefoofee"
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 0.3, 0.3 )

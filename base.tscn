@@ -1741,6 +1741,9 @@ margin_top = 52.0
 margin_bottom = 100.0
 control_button = "inventory"
 
+[node name="actionname" parent="gui/keyhints/VBoxContainer/inventory" index="1"]
+text = "inventory"
+
 [node name="shade" type="Control" parent="gui"]
 visible = false
 anchor_right = 1.0
@@ -2211,6 +2214,7 @@ one_shot = true
 [connection signal="pressed" from="gui/mainmenu/main/quit" to="gui/mainmenu" method="_on_quit_pressed"]
 [connection signal="timeout" from="bosspause_timer" to="." method="_on_bosspause_timer_timeout"]
 
+[editable path="gui/keyhints/VBoxContainer/inventory"]
 [editable path="gui/inventory/info/holder/values/damage"]
 [editable path="gui/inventory/info/holder/values/energy"]
 [editable path="gui/inventory/info/holder/values/health"]

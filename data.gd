@@ -396,7 +396,7 @@ var bosses = {
 				'speed': 150,
 				'knockback': 2000,
 				'level':'endgame',
-				'desc':'incomplete description'},
+				'desc':''},
 
 	'foofeefoofee':{
 				'damage':50,
@@ -405,13 +405,13 @@ var bosses = {
 				'knockback': 1000, 
 				'level':'endgame',
 				'drop':['blade of fire'],
-				'desc':'incomplete description'},
+				'desc':'it all changed when the fire nation attacked.'},
 
 	'puffpuffiepuff':{
 				'damage':30,
 				'health':50,
 				'level':'endgame',
-				'desc':'it all changed when the fire nation attacked.'}
+				'desc':'incomplete desc!'}
 	}
 
 var boss_scenes = {

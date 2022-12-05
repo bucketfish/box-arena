@@ -20,6 +20,7 @@ onready var pause = $gui/pause
 onready var mainmenu = $gui/mainmenu
 
 onready var keyhints = $gui/keyhints
+onready var minimap = $gui/minimap
 
 var curroom
 var comefrom
@@ -101,6 +102,9 @@ func goto(dirfrom):
 	
 	curroom = room.instance()
 	add_child(curroom)
+	
+	#update minimap
+	minimap.update_minimap()
 	
 	# "fade-in" transition
 	if dirfrom == "up":
@@ -199,3 +203,4 @@ func _on_bosspause_timer_timeout():
 
 func _on_goto_screen(name):
 	pass # Replace with function body.
+	# WHAT IS THIS>

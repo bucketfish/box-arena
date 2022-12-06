@@ -11,7 +11,7 @@ func _ready():
 	pass # Replace with function body.
 
 func update_minimap():
-	pass
+	print("IMPLEMENT THIS!")
 	# 1. check what's in each room
 	# 2. do we need .. . like monster icons... argh i guess so
 	# icon for LOOT

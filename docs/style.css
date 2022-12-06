@@ -265,6 +265,40 @@ img.deco {
 
 
 
+
+
+
+.gallery {
+  display: flex;
+  overflow-x: scroll;
+  gap: 25px;
+  width: 50vw;
+  margin: 50px auto;
+  scroll-snap-type: x mandatory;
+}
+
+.gallery div{
+  scroll-snap-align: start;
+  padding-bottom: 20px;
+}
+
+.gallery img {
+  width: 50vw;
+  border-radius: 20px;
+  box-sizing: border-box;
+  border: 5px solid var(--lightblue);
+}
+
+.gallery p {
+  color: var(--white);
+  font-style: italic;
+  text-align: center;
+  margin: 0;
+}
+
+
+
+
 @media (max-width: 1200px) {
   :root {
     --triangle-w: 90vw;

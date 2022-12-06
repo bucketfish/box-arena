@@ -79,6 +79,7 @@ func save_game():
 	var vals = {
 		"endgames": endgames,
 		"coords": coords,
+		"places": places,
 		"beenplaces": beenplaces,
 		"genbosses": genbosses,
 		"seenbosses": seenbosses,
@@ -122,3 +123,7 @@ func load_game():
 
 
 	sort_inv(carrying)
+
+
+
+# OH WAHT I ALREADY DID SAVING AND LOADING. OK I GUESS

@@ -388,7 +388,7 @@ var bosses = {
 				'speed': 70,
 				'knockback': 1000,
 				'level':'endgame',
-				'desc':'incomplete description'},
+				'desc':'OH GOD THERE ARE SO MANY OF THEM.'},
 				
 	'swooshymooshy_spawn':{
 				'damage':2,
@@ -411,7 +411,7 @@ var bosses = {
 				'damage':30,
 				'health':50,
 				'level':'endgame',
-				'desc':'incomplete desc!'}
+				'desc':'it will blow you away. maybe you should run.'}
 	}
 
 var boss_scenes = {

@@ -5,7 +5,7 @@ onready var base = get_node("/root/base")
 
 var endgames = []
 
-var coords = Vector2(9, 9)
+var coords = Vector2(0, 0)
 var places = {
 			Vector2(0, 0) :[],
 			Vector2(1, 0): ['cookie'],
@@ -25,7 +25,7 @@ var genbosses = {
 				Vector2(-10, -10): {'name': 'puffpuffiepuff', 'alive': true}}
 var seenbosses = []
 
-var carrying = ['wooden stick', 'diamond hoe'] setget sort_inv
+var carrying = [] setget sort_inv
 
 var health = 5 setget update_health
 var energy = 100 setget update_energy
@@ -105,7 +105,6 @@ func load_game():
 	if not save_game.file_exists("user://saves.save"):
 		return # Error! We don't have a save to load.
 
-
 	# Load the file line by line and process that dictionary to restore
 	# the object it represents.
 	save_game.open("user://saves.save", File.READ)
@@ -114,6 +113,8 @@ func load_game():
 	var vals = parse_json(save_game.get_line())
 	
 	for i in vals.keys():
+		print(i, vals[i])
+		
 		set(i, vals[i])
 
 	save_game.close()

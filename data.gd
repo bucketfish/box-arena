@@ -196,7 +196,7 @@ var items = {
 					},
 
 	'diamond hoe':  {
-					'damage': 10,
+					'damage': 4,
 					'energy': 0,
 					'weapon': true,
 					'desc': 'till your crops with this for extra damage to your soul!',
@@ -246,7 +246,7 @@ var items = {
 	'blade of fire':{
 					'plural': 'blades of fire',
 					'damage': 35,
-					'energy': -30,
+					'energy': -10,
 					'weapon': true,
 					'desc': 'do you know why it\'s so hot in here? because you decided to carry a blade of FIRE into this room, that\'s why.',
 					},

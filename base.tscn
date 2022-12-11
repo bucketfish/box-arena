@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://room/room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -27,8 +27,9 @@
 [ext_resource path="res://gui/action.tscn" type="PackedScene" id=25]
 [ext_resource path="res://gui/keyhints.gd" type="Script" id=26]
 [ext_resource path="res://minimap.gd" type="Script" id=27]
-[ext_resource path="res://assets/gui/small_button_repeat.png" type="Texture" id=28]
+[ext_resource path="res://assets/gui/mapback.png" type="Texture" id=28]
 [ext_resource path="res://assets/gui/button_frame.png" type="Texture" id=29]
+[ext_resource path="res://assets/player/player0002.png" type="Texture" id=30]
 
 [sub_resource type="DynamicFont" id=12]
 size = 28
@@ -2168,6 +2169,7 @@ focus_neighbour_bottom = NodePath("../play")
 button_text = "quit"
 
 [node name="minimap" type="MarginContainer" parent="gui"]
+visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -186.0
@@ -2235,6 +2237,11 @@ scale = Vector2( 1.05, 1.05 )
 texture = ExtResource( 29 )
 centered = false
 offset = Vector2( -10, -10 )
+
+[node name="player" type="Sprite" parent="gui/minimap"]
+position = Vector2( 64, 66 )
+scale = Vector2( 0.07, 0.07 )
+texture = ExtResource( 30 )
 
 [node name="fade" type="CanvasLayer" parent="."]
 

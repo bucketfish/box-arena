@@ -42,6 +42,7 @@ var canuse = {
 
 
 func _ready():
+	print(Data.bosses.keys().size())
 	curroom = $room
 	update_pause(true)
 	update_state("paused")

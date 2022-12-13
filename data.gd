@@ -196,7 +196,7 @@ var items = {
 					},
 
 	'diamond hoe':  {
-					'damage': 10,
+					'damage': 3,
 					'energy': 0,
 					'weapon': true,
 					'desc': 'till your crops with this for extra damage to your soul!',

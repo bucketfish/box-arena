@@ -59,6 +59,14 @@ func start_game():
 	update_state("play")
 	propagate_call("reset_item")
 	
+	
+	minimap.update_minimap()
+	bossui.animon = false
+	coordslabel.text = str(Persistent.coords.x) + " " + str(Persistent.coords.y)
+	# check if got save or not
+	
+	
+	
 func save_and_quit():
 	update_pause(true)
 	update_state("paused")

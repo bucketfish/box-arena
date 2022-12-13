@@ -40,7 +40,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.411765, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="monster" type="KinematicBody2D"]
+[node name="monster2" type="KinematicBody2D"]
 collision_layer = 0
 collision_mask = 129
 script = ExtResource( 4 )

@@ -5,7 +5,7 @@ onready var base = get_node("/root/base")
 
 var endgames = []
 
-var coords = Vector2(0, 0)
+var coords = Vector2(-9, -9)
 var places = {
 			Vector2(0, 0) :[],
 			Vector2(1, 0): ['cookie'],
@@ -79,6 +79,7 @@ func save_game():
 	var vals = {
 		"endgames": endgames,
 		"coords": coords,
+		"places": places,
 		"beenplaces": beenplaces,
 		"genbosses": genbosses,
 		"seenbosses": seenbosses,
@@ -123,3 +124,7 @@ func load_game():
 
 
 	sort_inv(carrying)
+
+
+
+# OH WAHT I ALREADY DID SAVING AND LOADING. OK I GUESS

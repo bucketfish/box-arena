@@ -196,7 +196,7 @@ var items = {
 					},
 
 	'diamond hoe':  {
-					'damage': 4,
+					'damage': 3,
 					'energy': 0,
 					'weapon': true,
 					'desc': 'till your crops with this for extra damage to your soul!',
@@ -410,6 +410,8 @@ var bosses = {
 	'puffpuffiepuff':{
 				'damage':30,
 				'health':50,
+				'speed': 50,
+				'knockback': 900,
 				'level':'endgame',
 				'desc':'it will blow you away. maybe you should run.'}
 	}
@@ -427,7 +429,8 @@ var boss_scenes = {
 	'fishymoo': preload("res://monsters/fishymoo.tscn"),
 	"poinkydirtie": preload("res://monsters/poinkydirtie.tscn"),
 	'swooshymooshy': preload("res://monsters/swooshymooshy.tscn"),
-	'foofeefoofee': preload("res://monsters/foofeefoofee.tscn")
+	'foofeefoofee': preload("res://monsters/foofeefoofee.tscn"),
+	'puffpuffiepuff': preload("res://monsters/puffpuffiepuff.tscn")
 }
 
 var cowardmessage = [

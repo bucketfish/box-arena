@@ -33,7 +33,7 @@ var items = {
 					},
 
 	'cookie':      {
-					'energy': 2,
+					'energy': 10,
 					'desc': 'this game uses cookies to give you a better user experience.',
 					},
 
@@ -53,7 +53,7 @@ var items = {
 					},
 
 	'choco cookie':{
-					'energy': 5,
+					'energy': 20,
 					'desc': 'it\'s a cookie, just that it has chocolate on it. congrats. you now have a choco cookie.',
 					},
 
@@ -67,7 +67,7 @@ var items = {
 	#level 3 items
 	'stone sword': {
 					'damage': 3,
-					'energy': -5,
+					'energy': -3,
 					'weapon': true,
 					'fusion':'stone axe',
 					'desc': 'now we’re getting somewhere! ‘somewhere’ is probably a fiery pit of lava, but, y\'know, it’s somewhere.',
@@ -79,7 +79,7 @@ var items = {
 					},
 
 	'apple pie':    {
-					'energy': 5,
+					'energy': 20,
 					'health':2,
 					'desc': 'it might just smell vaguely of happiness if you just hold your breath.',
 					},
@@ -88,7 +88,7 @@ var items = {
 	#level 4 items
 	'stone axe':    {
 					'damage': 4,
-					'energy': -4,
+					'energy': -3,
 					'weapon': true,
 					'fusion':'sharp flint',
 					'desc': 'if you\'ve an axe to grind with someone, give them this axe.',
@@ -103,14 +103,14 @@ var items = {
 	#level 5 items
 	'sharp flint':{
 					'damage': 4,
-					'energy': -3,
+					'energy': -2,
 					'weapon': true,
 					'fusion': 'battle axe',
 					'desc': 'trust me, paper cuts are NOTHING compared to devastation you get from trying to hold this. all it does is cause pain.',
 					},
 
 	'steak':{
-					'energy': 8,
+					'energy': 30,
 					'desc': 'finally, some good ol\' overcooked steak.',
 					},
 
@@ -123,7 +123,7 @@ var items = {
 	#level 6 items
 	'battle axe':   {
 					'damage': 6,
-					'energy':-5,
+					'energy':-4,
 					'weapon': true,
 					'fusion': 'spiked mace',
 					'desc': 'this is the axe you use to lightly graze your mortal enemy with. just be grateful it\'s made of something better than stone.',
@@ -135,7 +135,7 @@ var items = {
 					},
 
 	'grilled porkchop':{
-					'energy': 10,
+					'energy': 40,
 					'desc': 'it\'s grilled, it\'s pork, and it\'s a chop. pretty self-explanatory, if you ask me.',
 					},
 
@@ -143,7 +143,7 @@ var items = {
 	#level 7 items
 	'spiked mace':  {
 					'damage': 10,
-					'energy': -15,
+					'energy': -8,
 					'weapon': true,
 					'fusion': 'iron rapier',
 					'desc': 'there\'s probably a sound argument to be made on its usefulness, but i don\'t want to hear it.',
@@ -155,7 +155,7 @@ var items = {
 					},
 
 	'pumpkin pie':  {
-					'energy': 12,
+					'energy': 50,
 					'desc': 'if the taste of apple pies doesn\'t suit you, this definitely won\'t!',
 					},
 
@@ -163,14 +163,14 @@ var items = {
 	#level 8 items
 	'iron rapier':  {
 					'damage': 12,
-					'energy': -7,
+					'energy': -4,
 					'weapon': true,
 					'fusion': 'silver katana',
 					'desc': 'look how it gleams! look how COOL and AWESOME it is! look how it stabs - hang on - look how it stabs! look. okay. look how it - y\'know what? just...look away.',
 					},
 
 	'iron heart':   {
-					'health': 7,
+					'health': 15,
 					'desc': 'don\'t think about where it came from and you\'ll be fine - if you’re fine living as an accomplice to MURDER, you MURDERER.',
 					},
 
@@ -180,7 +180,7 @@ var items = {
 					},
 
 	'cake':         {
-					'energy': 15,
+					'energy': 66,
 					'health': 7,
 					'desc': 'is a lie and marie antoinette is the liar.',
 					},
@@ -189,7 +189,7 @@ var items = {
 	#level 9 items
 	'silver katana':{
 					'damage': 20,
-					'energy': -17,
+					'energy': -16,
 					'weapon': true,
 					'fusion': 'emerald greatsword',
 					'desc': 'now you look like a ninja - just worse!',
@@ -203,7 +203,7 @@ var items = {
 					},
 
 	'golden carrot':{
-					'energy': 20,
+					'energy': 30,
 					'health': 10,
 					'desc': 'oink oink you capitalist pig. bring back the guillotine.',
 					},
@@ -212,7 +212,7 @@ var items = {
 	#fusion only items
 	'emerald greatsword':{
 					'damage': 25,
-					'energy': -20,
+					'energy': -10,
 					'weapon': true,
 					'fusion': 'sapphire saber',
 					'desc': 'villagers won\'t be able to get ENOUGH of this!',
@@ -220,7 +220,7 @@ var items = {
 
 	'sapphire saber':{
 					'damage':30,
-					'energy': -30,
+					'energy': -10,
 					'weapon': true,
 					'fusion': 'axe of perun',
 					'desc': 'it\'s just like a light saber - just...less.',
@@ -229,7 +229,7 @@ var items = {
 	'axe of perun': {
 					'plural': 'axes of perun',
 					'damage':40,
-					'energy': -35,
+					'energy': -25,
 					'weapon': true,
 					'desc': 'you really didn\'t need to flex this hard on us.',
 					},
@@ -238,7 +238,7 @@ var items = {
 	#boss drops
 	'ruby scythe':  {
 					'damage': 15,
-					'energy': -10,
+					'energy': -7,
 					'weapon': true,
 					'desc': 'you killed someone. now you have a scythe. and the scent of death.',
 					},
@@ -301,11 +301,11 @@ var bosses = {
 
 	'pionk':{
 				'damage': 1,
-				'health': 7,
+				'health': 5,
 				'level': 1,
 				'speed': 100,
 				'knockback': 700,
-				'drop':['wooden stick', 'wooden stick', 'wooden stick', 'wooden stick', 'wooden stick', 'wooden stick', 'wooden stick', 'wooden stick'],
+				'drop':['wooden stick', 'wooden stick', 'wooden stick', 'cookie', 'healing drop'],
 				'desc': 'just... be nice and pretend its hits hurt.'},
 
 	#level 6 bosses
@@ -315,16 +315,16 @@ var bosses = {
 				'level': 2,
 				'speed': 120,
 				'knockback': 800,
-				'drop':['sharp flint', 'sharp flint', 'sharp flint'],
+				'drop':['sharp flint', 'sharp flint', 'sharp flint', 'steak'],
 				'desc': 'it\'s like a slap bracelet. vibrant and pointless.'},
 
 	'ticktack':{
 				'damage':7,
-				'health': 4,
+				'health': 11,
 				'level': 2,
 				'speed': 200,
 				'knockback': 1500,
-				'drop':['chainmail armor', 'spiked mace', 'iron heart'],
+				'drop':['chainmail armor', 'spiked mace', 'iron heart', 'iron heart'],
 				'desc': 'its skin is sharp enough to be made into armour (for the masochist).'},
 
 	'kickee':{
@@ -333,22 +333,22 @@ var bosses = {
 				'level': 2,
 				'speed': 120,
 				'knockback': 1200,
-				'drop':['cake', 'cake', 'cake'],
+				'drop':['cake', 'cake', 'cake', 'cake', 'cake'],
 				'desc': 'its legs are entirely made out of cake. don\'t ask me how i know this.'},
 
 	#level 10 bosses
 	'slurpydoo':{
 				'damage':10,
-				'health':12,
+				'health':60,
 				'level':3,
 				'speed': 150,
 				'knockback': 800,
-				'drop':['silver katana','silver katana','silver katana','silver katana','silver katana','silver katana','silver katana','ruby scythe'],
+				'drop':['silver katana','silver katana', 'nano-vest', 'iron heart', 'ruby scythe'],
 				'desc': 'consuming metal you can\'t digest probably isn\'t the best of ideas, but neither is consuming swords that could slice you in half. it does both.'},
 
 	'conkydonk':{
 				'damage':15,
-				'health':6,
+				'health':30,
 				'level':3,
 				'speed': 180,
 				'knockback': 1500,
@@ -357,7 +357,7 @@ var bosses = {
 
 	'tictactoe':{
 				'damage':3,
-				'health':20,
+				'health':50,
 				'level':3,
 				'speed': 200,
 				'knockback': 1000,
@@ -375,8 +375,8 @@ var bosses = {
 
 	#endgame
 	'poinkydirtie':{
-				'damage':30,
-				'health':70,
+				'damage':10,
+				'health':700,
 				'speed': 50,
 				'knockback': 1000,
 				'level':'endgame',
@@ -384,7 +384,7 @@ var bosses = {
 
 	'swooshymooshy':{
 				'damage':30,
-				'health':50,
+				'health':250,
 				'speed': 70,
 				'knockback': 1000,
 				'level':'endgame',
@@ -400,7 +400,7 @@ var bosses = {
 
 	'foofeefoofee':{
 				'damage':50,
-				'health':50,
+				'health':250,
 				'speed': 90,
 				'knockback': 1000, 
 				'level':'endgame',
@@ -409,7 +409,7 @@ var bosses = {
 
 	'puffpuffiepuff':{
 				'damage':30,
-				'health':50,
+				'health':300,
 				'speed': 50,
 				'knockback': 900,
 				'level':'endgame',

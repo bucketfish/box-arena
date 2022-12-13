@@ -23,6 +23,13 @@ func generate_loot(coords):#contents
 	while price > 0:
 		var randomnum = rng.randi()%int(price)+1
 		var item = Data.loot[str(randomnum)][rng.randi()%Data.loot[str(randomnum)].size()]
+		
+		# higher chance to get item
+		if 'damage' in Data.items[item]:
+			var change = rng.randi()%2
+			if change == 1:
+				item = Data.loot[str(randomnum)][rng.randi()%Data.loot[str(randomnum)].size()]
+		
 		price -= randomnum
 		contents.append(item)
 	

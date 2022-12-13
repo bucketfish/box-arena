@@ -21,5 +21,5 @@ func spawn_child():
 
 func _on_timer_timeout():
 	spawn_child()
-	timer.wait_time = rand_range(5, 10)
+	timer.wait_time = rand_range(2, 7)
 	timer.start()

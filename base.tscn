@@ -1982,6 +1982,102 @@ align = 1
 
 [node name="invtween" type="Tween" parent="gui/inventory"]
 
+[node name="minimap" type="MarginContainer" parent="gui"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -186.0
+margin_top = 38.0
+margin_right = -58.0
+margin_bottom = 166.0
+script = ExtResource( 27 )
+
+[node name="ColorRect" type="ColorRect" parent="gui/minimap"]
+margin_right = 128.0
+margin_bottom = 128.0
+color = Color( 0.505882, 0.611765, 0.756863, 1 )
+
+[node name="Control" type="Control" parent="gui/minimap"]
+margin_right = 128.0
+margin_bottom = 128.0
+rect_clip_content = true
+
+[node name="TextureRect" type="TextureRect" parent="gui/minimap/Control"]
+margin_left = -96.0
+margin_top = -32.0
+margin_right = 96.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 192, 192 )
+texture = ExtResource( 28 )
+stretch_mode = 2
+
+[node name="1" type="Sprite" parent="gui/minimap" groups=["mapicon"]]
+position = Vector2( 16, 15 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 31 )
+hframes = 5
+vframes = 4
+
+[node name="2" type="Sprite" parent="gui/minimap" groups=["mapicon"]]
+position = Vector2( 64, 15 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 31 )
+hframes = 5
+vframes = 4
+
+[node name="3" type="Sprite" parent="gui/minimap" groups=["mapicon"]]
+position = Vector2( 112, 15 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 31 )
+hframes = 5
+vframes = 4
+
+[node name="4" type="Sprite" parent="gui/minimap" groups=["mapicon"]]
+position = Vector2( 112, 65 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 31 )
+hframes = 5
+vframes = 4
+
+[node name="5" type="Sprite" parent="gui/minimap" groups=["mapicon"]]
+position = Vector2( 112, 112 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 31 )
+hframes = 5
+vframes = 4
+
+[node name="6" type="Sprite" parent="gui/minimap" groups=["mapicon"]]
+position = Vector2( 64, 112 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 31 )
+hframes = 5
+vframes = 4
+
+[node name="7" type="Sprite" parent="gui/minimap" groups=["mapicon"]]
+position = Vector2( 16, 112 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 31 )
+hframes = 5
+vframes = 4
+
+[node name="8" type="Sprite" parent="gui/minimap" groups=["mapicon"]]
+position = Vector2( 16, 65 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 31 )
+hframes = 5
+vframes = 4
+
+[node name="frame" type="Sprite" parent="gui/minimap"]
+position = Vector2( -2, -2 )
+scale = Vector2( 1.07, 1.07 )
+texture = ExtResource( 29 )
+centered = false
+offset = Vector2( -10, -10 )
+
+[node name="player" type="Sprite" parent="gui/minimap"]
+position = Vector2( 64, 66 )
+scale = Vector2( 0.07, 0.07 )
+texture = ExtResource( 30 )
+
 [node name="pause" type="Control" parent="gui"]
 visible = false
 anchor_right = 1.0
@@ -2168,102 +2264,6 @@ margin_bottom = 24.0002
 focus_neighbour_top = NodePath("../credits")
 focus_neighbour_bottom = NodePath("../play")
 button_text = "quit"
-
-[node name="minimap" type="MarginContainer" parent="gui"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -186.0
-margin_top = 38.0
-margin_right = -58.0
-margin_bottom = 166.0
-script = ExtResource( 27 )
-
-[node name="ColorRect" type="ColorRect" parent="gui/minimap"]
-margin_right = 128.0
-margin_bottom = 128.0
-color = Color( 0.505882, 0.611765, 0.756863, 1 )
-
-[node name="Control" type="Control" parent="gui/minimap"]
-margin_right = 128.0
-margin_bottom = 128.0
-rect_clip_content = true
-
-[node name="TextureRect" type="TextureRect" parent="gui/minimap/Control"]
-margin_left = -96.0
-margin_top = -32.0
-margin_right = 96.0
-margin_bottom = 160.0
-rect_min_size = Vector2( 192, 192 )
-texture = ExtResource( 28 )
-stretch_mode = 2
-
-[node name="1" type="Sprite" parent="gui/minimap" groups=["mapicon"]]
-position = Vector2( 16, 15 )
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 31 )
-hframes = 5
-vframes = 4
-
-[node name="2" type="Sprite" parent="gui/minimap" groups=["mapicon"]]
-position = Vector2( 64, 15 )
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 31 )
-hframes = 5
-vframes = 4
-
-[node name="3" type="Sprite" parent="gui/minimap" groups=["mapicon"]]
-position = Vector2( 112, 15 )
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 31 )
-hframes = 5
-vframes = 4
-
-[node name="4" type="Sprite" parent="gui/minimap" groups=["mapicon"]]
-position = Vector2( 112, 65 )
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 31 )
-hframes = 5
-vframes = 4
-
-[node name="5" type="Sprite" parent="gui/minimap" groups=["mapicon"]]
-position = Vector2( 112, 112 )
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 31 )
-hframes = 5
-vframes = 4
-
-[node name="6" type="Sprite" parent="gui/minimap" groups=["mapicon"]]
-position = Vector2( 64, 112 )
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 31 )
-hframes = 5
-vframes = 4
-
-[node name="7" type="Sprite" parent="gui/minimap" groups=["mapicon"]]
-position = Vector2( 16, 112 )
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 31 )
-hframes = 5
-vframes = 4
-
-[node name="8" type="Sprite" parent="gui/minimap" groups=["mapicon"]]
-position = Vector2( 16, 65 )
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 31 )
-hframes = 5
-vframes = 4
-
-[node name="frame" type="Sprite" parent="gui/minimap"]
-position = Vector2( -2, -2 )
-scale = Vector2( 1.07, 1.07 )
-texture = ExtResource( 29 )
-centered = false
-offset = Vector2( -10, -10 )
-
-[node name="player" type="Sprite" parent="gui/minimap"]
-position = Vector2( 64, 66 )
-scale = Vector2( 0.07, 0.07 )
-texture = ExtResource( 30 )
 
 [node name="fade" type="CanvasLayer" parent="."]
 

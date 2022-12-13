@@ -24,9 +24,11 @@ var positions = [Vector2(-1, -1)]
 onready var texture = $Control/TextureRect
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 func update_minimap():
+#	visible = true
+	
 	for node in sprites:
 		node.visible = true
 	
@@ -65,6 +67,8 @@ func update_minimap():
 			if curloc in Persistent.genbosses.keys():
 				if Persistent.genbosses[curloc]['alive'] == true:
 					frame = find.find(Persistent.genbosses[curloc]['name'])
+				else:
+					frame = 16
 			
 			elif abs(curloc.x) in Data.fightplaces or abs(curloc.y) in Data.fightplaces:
 				frame = 14

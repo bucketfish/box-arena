@@ -41,7 +41,13 @@ var canuse = {
 # states: play, inv, pause
 
 
+
 func _ready():
+	# DEBUG
+	OS.set_current_screen(0)
+	
+	
+	
 	print(Data.bosses.keys().size())
 	curroom = $room
 	update_pause(true)

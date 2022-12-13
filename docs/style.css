@@ -81,6 +81,15 @@ a {
   cursor: url("assets/cursor_link.png"), auto;
 }
 
+p a {
+  text-decoration: underline;
+}
+
+
+p a:hover {
+  color: var(--blue);
+}
+
 strong {
   color: var(--lightred);
   text-shadow: 2px 2px var(--red);

@@ -5,7 +5,7 @@ onready var base = get_node("/root/base")
 
 var endgames = []
 
-var coords = Vector2(-9, 9)
+var coords = Vector2(-9, -9)
 var places = {
 			Vector2(0, 0) :[],
 			Vector2(1, 0): ['cookie'],

@@ -410,6 +410,8 @@ var bosses = {
 	'puffpuffiepuff':{
 				'damage':30,
 				'health':50,
+				'speed': 50,
+				'knockback': 900,
 				'level':'endgame',
 				'desc':'incomplete desc!'}
 	}
@@ -427,7 +429,8 @@ var boss_scenes = {
 	'fishymoo': preload("res://monsters/fishymoo.tscn"),
 	"poinkydirtie": preload("res://monsters/poinkydirtie.tscn"),
 	'swooshymooshy': preload("res://monsters/swooshymooshy.tscn"),
-	'foofeefoofee': preload("res://monsters/foofeefoofee.tscn")
+	'foofeefoofee': preload("res://monsters/foofeefoofee.tscn"),
+	'puffpuffiepuff': preload("res://monsters/puffpuffiepuff.tscn")
 }
 
 var cowardmessage = [

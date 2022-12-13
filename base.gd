@@ -151,9 +151,18 @@ func _input(event):
 		else:
 			update_state('play')
 			
+			
 	if Input.is_action_just_pressed("pause") && !pause.on:
-		pause.turnon()
-		update_pause(pause.on)
+		
+		if inventory.visible:
+			inventory.visible = false
+			shade.visible = false
+			update_state('play')
+		else:
+			pause.turnon()
+			update_pause(pause.on)
+
+	
 #		if inventory.visible:
 #			update_state("inv")
 #		else:

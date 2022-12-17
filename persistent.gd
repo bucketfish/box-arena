@@ -3,9 +3,10 @@ extends Node
 onready var player = get_node("/root/base/player")
 onready var base = get_node("/root/base")
 
+var firstload = false
 var endgames = []
 
-var coords = Vector2(-1, 0)
+var coords = Vector2(0, 0)
 var places = {
 			Vector2(0, 0) :[],
 			Vector2(1, 0): ['cookie'],
@@ -109,6 +110,7 @@ func load_game():
 	
 	var save_game = File.new()
 	if not save_game.file_exists("user://saves.save"):
+		firstload = true
 		return # Error! We don't have a save to load.
 
 	# Load the file line by line and process that dictionary to restore

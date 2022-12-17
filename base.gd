@@ -79,9 +79,15 @@ func start_game():
 	propagate_call("reset_item")
 	
 	
+	if Persistent.firstload:
+		intro()
+	
+	
+	
 	yield(get_tree(), "idle_frame")
 	
-	
+func intro():
+	pass
 	
 func save_and_quit():
 	update_pause(true)

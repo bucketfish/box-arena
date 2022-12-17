@@ -1606,7 +1606,7 @@ alignment = 2
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 72.0
-margin_right = 5834.0
+margin_right = 6858.0
 margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
@@ -1631,7 +1631,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 5834.0
+margin_right = 6858.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -1764,7 +1764,6 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="inventory" type="Control" parent="gui"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 7 )
@@ -1791,7 +1790,7 @@ __meta__ = {
 }
 
 [node name="rowbox" type="VBoxContainer" parent="gui/inventory/scroll"]
-margin_right = 460.0
+margin_right = 450.0
 margin_bottom = 992.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1902,7 +1901,8 @@ margin_bottom = 77.0
 rect_min_size = Vector2( 0, 40 )
 
 [node name="values" type="HBoxContainer" parent="gui/inventory/info/holder"]
-margin_right = 200.0
+margin_left = 57.0
+margin_right = 142.0
 margin_bottom = 38.4
 rect_min_size = Vector2( 0, 38.4 )
 custom_constants/separation = 30
@@ -1911,6 +1911,7 @@ __meta__ = {
 }
 
 [node name="damage" parent="gui/inventory/info/holder/values" instance=ExtResource( 12 )]
+visible = false
 margin_bottom = 38.0
 
 [node name="value" parent="gui/inventory/info/holder/values/damage" index="1"]
@@ -1943,11 +1944,10 @@ scale = Vector2( 0.14, 0.14 )
 texture = ExtResource( 13 )
 
 [node name="value" parent="gui/inventory/info/holder/values/health" index="1"]
-text = "1"
+text = "100000
+"
 
 [node name="max_health" parent="gui/inventory/info/holder/values" instance=ExtResource( 12 )]
-margin_left = 115.0
-margin_right = 200.0
 margin_bottom = 38.0
 
 [node name="sprite" parent="gui/inventory/info/holder/values/max_health" index="0"]
@@ -1956,7 +1956,7 @@ scale = Vector2( 0.14, 0.14 )
 texture = ExtResource( 14 )
 
 [node name="value" parent="gui/inventory/info/holder/values/max_health" index="1"]
-text = "1"
+text = "100000"
 
 [node name="itemdesc" type="Label" parent="gui/inventory/info"]
 margin_top = 79.0

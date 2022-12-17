@@ -12,7 +12,7 @@ config_version=4
 
 config/name="box arena"
 run/main_scene="res://base.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/player/player_0001.png"
 
 [autoload]
 

@@ -1599,15 +1599,14 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 60.0
-margin_top = 600.0
-margin_right = 774.0
-margin_bottom = 840.0
+margin_right = -250.0
+margin_bottom = 240.0
 grow_vertical = 0
 alignment = 2
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 72.0
-margin_right = 4810.0
+margin_right = 5834.0
 margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
@@ -1632,7 +1631,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 4810.0
+margin_right = 5834.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -2080,6 +2079,29 @@ position = Vector2( 64, 66 )
 scale = Vector2( 0.07, 0.07 )
 texture = ExtResource( 30 )
 
+[node name="action" parent="gui/minimap" instance=ExtResource( 25 )]
+margin_right = 128.0
+margin_bottom = 128.0
+control_button = "map"
+show_label = false
+check_canuse = false
+autoprep = true
+
+[node name="SmallButton" parent="gui/minimap/action" index="0"]
+position = Vector2( 102, 143.4 )
+
+[node name="actionname" parent="gui/minimap/action" index="1"]
+margin_left = -20.0
+margin_top = 124.4
+margin_right = 71.0
+margin_bottom = 157.4
+
+[node name="actionkey" parent="gui/minimap/action" index="2"]
+margin_left = 82.0
+margin_top = 126.4
+margin_right = 122.0
+margin_bottom = 159.4
+
 [node name="map" type="Control" parent="gui"]
 visible = false
 margin_left = 248.0
@@ -2364,5 +2386,6 @@ one_shot = true
 [editable path="gui/inventory/info/holder/values/energy"]
 [editable path="gui/inventory/info/holder/values/health"]
 [editable path="gui/inventory/info/holder/values/max_health"]
+[editable path="gui/minimap/action"]
 [editable path="gui/pause/options"]
 [editable path="gui/mainmenu/options"]

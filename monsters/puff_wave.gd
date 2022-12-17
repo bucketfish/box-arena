@@ -24,5 +24,4 @@ func throw_knife():
 	global_rotation = oripos.angle_to_point(playerpos)
 	tween.start()
 	yield(tween, "tween_completed")
-	print("done")
 	queue_free()

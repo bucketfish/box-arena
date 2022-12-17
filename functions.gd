@@ -77,6 +77,30 @@ func count_array(array: Array) -> Dictionary:
 			dict[item] = 1
 	return dict
 		
+func mapicon_num(curloc: Vector2) -> int:
+	var find = ['sol', 'nyam', 'pionk', 'flickflack', 'kickee', 'ticktack', 'conkydonk', 'fishymoo', 'tictactoe', 'slurpydoo', 'poinkydirtie', 'swooshymooshy', 'foofeefoofee', "puffpuffiepuff"]
+	var frame = 17
+	
+	
+	
+	if curloc == Persistent.coords:
+		frame = 16
+
+	elif curloc in Persistent.genbosses.keys():
+		if Persistent.genbosses[curloc]['alive'] == true:
+			frame = find.find(Persistent.genbosses[curloc]['name'])
+		else:
+			frame = 18
+	
+	elif abs(curloc.x) in Data.fightplaces or abs(curloc.y) in Data.fightplaces:
+		frame = 14
+		
+	elif curloc in Persistent.places.keys():
+		if Persistent.places[curloc] == []:
+			frame = 18
+			
+
+	return frame
 
 func sort_inventory(items) -> Dictionary:
 	var dict = count_array(items)

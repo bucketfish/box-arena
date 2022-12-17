@@ -21,6 +21,7 @@ onready var mainmenu = $gui/mainmenu
 
 onready var keyhints = $gui/keyhints
 onready var minimap = $gui/minimap
+onready var map = $gui/map
 
 var curroom
 var comefrom
@@ -151,11 +152,24 @@ func _input(event):
 		else:
 			update_state('play')
 			
+	
+	if !trans && !paused && Input.is_action_just_pressed("map"):
+		map.toggle()
+		shade.visible = map.visible
+		if map.visible:
+			update_state("map")
+		else:
+			update_state('play')
+			
 			
 	if Input.is_action_just_pressed("pause") && !pause.on:
 		
 		if inventory.visible:
 			inventory.visible = false
+			shade.visible = false
+			update_state('play')
+		elif map.visible:
+			map.visible = false
 			shade.visible = false
 			update_state('play')
 		else:

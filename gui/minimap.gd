@@ -64,7 +64,38 @@ func update_minimap():
 		var curloc = Persistent.coords + locs[i]
 		var frame = 15
 		if sprites[i].visible:
-			sprites[i].frame = Functions.mapicon_num(curloc)
+			if curloc in Persistent.genbosses.keys():
+				if Persistent.genbosses[curloc]['alive'] == true:
+					frame = find.find(Persistent.genbosses[curloc]['name'])
+				else:
+					frame = 16
+			
+			elif abs(curloc.x) in Data.fightplaces or abs(curloc.y) in Data.fightplaces:
+				frame = 14
+				
+			elif curloc in Persistent.places.keys():
+				if Persistent.places[curloc] == []:
+					frame = 16
+			
+			
+					
+			sprites[i].frame = frame
 		
 					
 					
+					
+		
+	
+		
+		
+		
+#	if Persistent.coords == Vector2(10, 10):
+#		texture.position = 
+		
+	# 1. check what's in each room
+	# 2. do we need .. . like monster icons... argh i guess so
+	# icon for LOOT
+	# and then show either icon or LOOT. or NOTHING
+	# and a generic 'monster' icon for big maps, for rooms you haven't encountered
+	# sigh ok another set of things to do i guess!
+	# then in each monster's database we need to insert the icons again

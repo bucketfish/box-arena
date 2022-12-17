@@ -141,9 +141,8 @@ func load_game():
 	save_game.close()
 	print("loaded!")
 	#emit_signal("finish_load")
-
-
 	sort_inv(carrying)
+	yield(get_tree(), "idle_frame")
 
 
 

@@ -56,18 +56,31 @@ func _ready():
 	
 	
 func start_game():
-	Persistent.load_game()
+	yield(Persistent.load_game(), "completed")
 	
+	
+	
+
+	bossui.animon = false
+	coordslabel.text = str(Persistent.coords.x) + " " + str(Persistent.coords.y)
+
+	# update player position (new door)
+	player.position = Vector2(512, 300)
+	curroom.queue_free()
+	
+	curroom = room.instance()
+	add_child(curroom)
+	
+	#update minimap
+	minimap.update_minimap()
 	
 	update_pause(false)
 	update_state("play")
 	propagate_call("reset_item")
 	
 	
-	minimap.update_minimap()
-	bossui.animon = false
-	coordslabel.text = str(Persistent.coords.x) + " " + str(Persistent.coords.y)
-	# check if got save or not
+	yield(get_tree(), "idle_frame")
+	
 	
 	
 func save_and_quit():
@@ -76,7 +89,10 @@ func save_and_quit():
 	Persistent.save_game()
 	mainmenu.returnto()
 	
+func open_room():
+	bossui.animon = false
 	
+
 func goto(dirfrom):
 	update_trans(true)
 	# update new room coordinates
@@ -92,6 +108,7 @@ func goto(dirfrom):
 	comefrom = dirfrom
 	
 	#save current room // todo!
+	# wait does it not do this lol.  but it does??? huh. what. ok it does. i don't need to do this.
 	
 	#deactivate prev room stuff
 	bossui.animon = false

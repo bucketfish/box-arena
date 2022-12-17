@@ -31,8 +31,10 @@ func returnto(): #return to main menu, after saving
 
 
 func _on_play_pressed():
+	
+	yield(base.start_game(), "completed")
+	
 	hide_menu()
-	base.start_game()
 
 
 

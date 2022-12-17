@@ -56,6 +56,9 @@ func _ready():
 	
 	
 func start_game():
+	Persistent.load_game()
+	
+	
 	update_pause(false)
 	update_state("play")
 	propagate_call("reset_item")
@@ -67,10 +70,10 @@ func start_game():
 	# check if got save or not
 	
 	
-	
 func save_and_quit():
 	update_pause(true)
 	update_state("paused")
+	Persistent.save_game()
 	mainmenu.returnto()
 	
 	
@@ -176,13 +179,6 @@ func _input(event):
 			pause.turnon()
 			update_pause(pause.on)
 			
-			
-
-	
-#		if inventory.visible:
-#			update_state("inv")
-#		else:
-#			update_state('play')
 			
 			
 func update_state(newstate):

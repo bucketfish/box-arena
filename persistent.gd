@@ -102,6 +102,11 @@ func save_game():
 	
 
 func load_game():
+	var veckeys = ["genbosses", "places"]
+	var vecarr = ["beenplaces"]
+	var vecsingle = ["coords"]
+	
+	
 	var save_game = File.new()
 	if not save_game.file_exists("user://saves.save"):
 		return # Error! We don't have a save to load.
@@ -114,9 +119,24 @@ func load_game():
 	var vals = parse_json(save_game.get_line())
 	
 	for i in vals.keys():
-		print(i, vals[i])
+		if i in veckeys:
+			set(i, {})
+			for key in vals[i].keys():
+				get(i)[str2var("Vector2" + key)] = vals[i][key]
+			
+		elif i in vecarr:
+			set(i, [])
+			for item in vals[i]:
+				get(i).append(str2var("Vector2" + item))
+				
+		elif i in vecsingle:
+			set(i, str2var("Vector2" + vals[i]))
 		
-		set(i, vals[i])
+			
+		else:
+			print(i, vals[i])
+			
+			set(i, vals[i])
 
 	save_game.close()
 	print("loaded!")

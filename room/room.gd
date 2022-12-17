@@ -6,6 +6,7 @@ export(Array, NodePath) var doors := []
 onready var anim = $AnimationPlayer
 
 const item = preload("res://items/item.tscn")
+const starting = preload("res://room/starting.tscn")
 const layouts = {
 	"middle": preload("res://room/layouts/middle.tscn"),
 	"up": preload("res://room/layouts/up.tscn"),
@@ -16,7 +17,6 @@ const layouts = {
 	"rightup": preload("res://room/layouts/rightup.tscn"),
 	"leftdown": preload("res://room/layouts/leftdown.tscn"),
 	"rightdown": preload("res://room/layouts/rightdown.tscn")
-	
 }
 
 var roomtype = "loot"
@@ -47,6 +47,12 @@ func _ready():
 		layout = "middle"
 	
 	add_child(layouts[layout].instance())
+	
+	
+	if Persistent.coords == Vector2(0, 0):
+		add_child(starting.instance())
+	
+	
 		
 
 func generate_loot():

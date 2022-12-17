@@ -37,7 +37,7 @@ var canuse = {
 	"fuse": false,
 	"take": false,
 	"attack": false,
-	"inventory": true
+	"inventory": true,
 }
 # states: play, inv, pause
 
@@ -175,6 +175,8 @@ func _input(event):
 		else:
 			pause.turnon()
 			update_pause(pause.on)
+			
+			
 
 	
 #		if inventory.visible:

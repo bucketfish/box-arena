@@ -144,7 +144,7 @@ func goto(dirfrom):
 		boss_room(Persistent.genbosses[Persistent.coords]['name'])
 	
 func _input(event):
-	if !trans && !paused && Input.is_action_just_pressed("inventory"):
+	if !trans && !paused && state in ["play", "inv"] && Input.is_action_just_pressed("inventory"):
 		inventory.toggle()
 		shade.visible = inventory.visible
 		if inventory.visible:
@@ -153,7 +153,7 @@ func _input(event):
 			update_state('play')
 			
 	
-	if !trans && !paused && Input.is_action_just_pressed("map"):
+	if !trans && !paused && state in ["play", "map"] && Input.is_action_just_pressed("map"):
 		map.toggle()
 		shade.visible = map.visible
 		if map.visible:

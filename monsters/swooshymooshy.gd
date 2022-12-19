@@ -8,7 +8,7 @@ var spawn_scene = preload("res://monsters/swooshymooshy_spawn.tscn")
 onready var timer = $timer
 
 func _ready():
-	timer.wait_time = rand_range(2, 6)
+	timer.wait_time = rand_range(1, 3)
 	timer.start()
 
 func take_damage(damageval):
@@ -21,5 +21,5 @@ func spawn_child():
 
 func _on_timer_timeout():
 	spawn_child()
-	timer.wait_time = rand_range(2, 7)
+	timer.wait_time = rand_range(1, 3)
 	timer.start()

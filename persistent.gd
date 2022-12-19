@@ -111,6 +111,7 @@ func load_game():
 	var save_game = File.new()
 	if not save_game.file_exists("user://saves.save"):
 		firstload = true
+		yield(get_tree(), "idle_frame")
 		return # Error! We don't have a save to load.
 
 	# Load the file line by line and process that dictionary to restore

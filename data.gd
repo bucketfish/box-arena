@@ -15,7 +15,7 @@ var loot = {
 	'9':['silver katana', 'diamond hoe', 'golden carrot'],
 		}
 		
-const itemsorder = ["healing drop", "health pot", "health potion", "iron heart", "cookie", "choco cookie", "apple pie", "steak", "golden apple", "grilled porkchop", "pumpkin pie", "cake", "golden carrot", "fishcow", "heart of the ocean", "clothes", "leather padding", "iron armor", "chainmail armor", "nano-vest", "wooden stick", "wooden sword", "stone sword", "stone axe", "sharp flint", "battle axe", "spiked mace", "iron rapier", "silver katana", "diamond hoe", "ruby scythe", "emerald greatsword", "sapphire saber", "axe of perun", "blade of fire", "elemental blade"]
+const itemsorder = ["healing drop", "health pot", "health potion", "iron heart", "cookie", "choco cookie", "apple pie", "steak", "golden apple", "grilled porkchop", "pumpkin pie", "cake", "golden carrot", "fishcow", "heart of the ocean", 'wind soup', "clothes", "leather padding", "iron armor", "chainmail armor", "nano-vest", 'artifact casing', "wooden stick", "wooden sword", "stone sword", "stone axe", "sharp flint", "battle axe", "spiked mace", "iron rapier", "silver katana", "diamond hoe", "ruby scythe", "emerald greatsword", "sapphire saber", "axe of perun", "blade of fire", "elemental blade"]
 
 var items = {
 	#level 1 itms
@@ -255,8 +255,17 @@ var items = {
 					"health": 1000,
 					"desc": "yum. full health!"
 					},
-
-
+	
+	"artifact casing": {
+					"total_health": 50,
+					"desc": "it's dirty and ugly, but they say this stuff works wonders at keeping fragile things intact for centuries. probably works on you too."
+	},
+	
+	"wind soup": {
+					"energy": 100,
+					"desc": "can you taste with all the colors of the wind?"
+	},
+	
 	#elemental blade
 	'elemental blade':{
 					'damage': 100,
@@ -385,6 +394,7 @@ var bosses = {
 				'speed': 50,
 				'knockback': 1000,
 				'level':'endgame',
+				'drop': ['artifact casing'],
 				'desc':'young man, hand knife rock door gun.'},
 
 	'swooshymooshy':{
@@ -393,7 +403,7 @@ var bosses = {
 				'speed': 70,
 				'knockback': 1000,
 				'level':'endgame',
-				'drop': ['heart of the ocean', 'heart of the ocean'],
+				'drop': ['heart of the ocean'],
 				'desc':'OH GOD THERE ARE SO MANY OF THEM.'},
 				
 	'swooshymooshy_spawn':{
@@ -419,6 +429,7 @@ var bosses = {
 				'speed': 50,
 				'knockback': 900,
 				'level':'endgame',
+				'drop': ['wind soup'],
 				'desc':'it will blow you away. maybe you should run.'}
 	}
 

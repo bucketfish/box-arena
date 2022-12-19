@@ -33,7 +33,7 @@ var items = {
 					},
 
 	'cookie':      {
-					'energy': 10,
+					'energy': 8,
 					'desc': 'this game uses cookies to give you a better user experience.',
 					},
 
@@ -53,7 +53,7 @@ var items = {
 					},
 
 	'choco cookie':{
-					'energy': 20,
+					'energy': 16,
 					'desc': 'it\'s a cookie, just that it has chocolate on it. congrats. you now have a choco cookie.',
 					},
 
@@ -79,7 +79,7 @@ var items = {
 					},
 
 	'apple pie':    {
-					'energy': 20,
+					'energy': 16,
 					'health':2,
 					'desc': 'it might just smell vaguely of happiness if you just hold your breath.',
 					},
@@ -110,7 +110,7 @@ var items = {
 					},
 
 	'steak':{
-					'energy': 30,
+					'energy': 25,
 					'desc': 'finally, some good ol\' overcooked steak.',
 					},
 
@@ -135,7 +135,7 @@ var items = {
 					},
 
 	'grilled porkchop':{
-					'energy': 40,
+					'energy': 30,
 					'desc': 'it\'s grilled, it\'s pork, and it\'s a chop. pretty self-explanatory, if you ask me.',
 					},
 
@@ -155,7 +155,7 @@ var items = {
 					},
 
 	'pumpkin pie':  {
-					'energy': 50,
+					'energy': 40,
 					'desc': 'if the taste of apple pies doesn\'t suit you, this definitely won\'t!',
 					},
 
@@ -180,7 +180,7 @@ var items = {
 					},
 
 	'cake':         {
-					'energy': 66,
+					'energy': 40,
 					'health': 7,
 					'desc': 'is a lie and marie antoinette is the liar.',
 					},
@@ -203,7 +203,7 @@ var items = {
 					},
 
 	'golden carrot':{
-					'energy': 30,
+					'energy': 25,
 					'health': 10,
 					'desc': 'oink oink you capitalist pig. bring back the guillotine.',
 					},
@@ -257,7 +257,7 @@ var items = {
 					},
 	
 	"artifact casing": {
-					"total_health": 50,
+					"total_health": 200,
 					"desc": "it's dirty and ugly, but they say this stuff works wonders at keeping fragile things intact for centuries. probably works on you too."
 	},
 	

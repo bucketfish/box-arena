@@ -6,6 +6,7 @@ onready var base = get_node("/root/base")
 var firstload = false
 var endgames = []
 
+var carrying = ["elemental blade"] setget sort_inv
 var coords = Vector2(9, -9)
 var places = {
 			Vector2(0, 0) :[],
@@ -26,7 +27,7 @@ var genbosses = {
 				Vector2(-10, -10): {'name': 'puffpuffiepuff', 'alive': true}}
 var seenbosses = []
 
-var carrying = [] setget sort_inv
+
 
 var health = 5 setget update_health
 var energy = 5 setget update_energy

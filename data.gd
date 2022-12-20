@@ -15,7 +15,7 @@ var loot = {
 	'9':['silver katana', 'diamond hoe', 'golden carrot'],
 		}
 		
-const itemsorder = ["healing drop", "health pot", "health potion", "iron heart", "cookie", "choco cookie", "apple pie", "steak", "golden apple", "grilled porkchop", "pumpkin pie", "cake", "golden carrot", "fishcow", "heart of the ocean", 'wind soup', "clothes", "leather padding", "iron armor", "chainmail armor", "nano-vest", 'artifact casing', "wooden stick", "wooden sword", "stone sword", "stone axe", "sharp flint", "battle axe", "spiked mace", "iron rapier", "silver katana", "diamond hoe", "ruby scythe", "emerald greatsword", "sapphire saber", "axe of perun", "blade of fire", "elemental blade"]
+const itemsorder = ["healing drop", "health pot", "health potion", "iron heart", "cookie", "choco cookie", "apple pie", "steak", "golden apple", "grilled porkchop", "pumpkin pie", "cake", "golden carrot", "fishcow", "heart of the ocean", 'wind soup', "clothes", "leather padding", "iron armor", "chainmail armor", "nano-vest", 'artifact casing', "wooden stick", "wooden sword", "stone sword", "stone axe", "sharp flint", "battle axe", "spiked mace", "iron rapier", "silver katana", "diamond hoe", "ruby scythe", "emerald greatsword", "sapphire saber", "axe of perun", "blade of fire", "fire key", "earth key", "water key", "air key", "elemental blade"]
 
 var items = {
 	#level 1 itms
@@ -266,6 +266,24 @@ var items = {
 					"desc": "can you taste with all the colors of the wind?"
 	},
 	
+	# keys
+	
+	'fire key': {
+				'desc': "fire"
+	},
+	
+	'water key': {
+				'desc': "water"
+	},
+	
+	'air key': {
+				'desc': "air"
+	},
+	
+	'earth key': {
+				'desc': "earth"
+	},
+	
 	#elemental blade
 	'elemental blade':{
 					'damage': 100,
@@ -280,7 +298,7 @@ var items = {
 					'health': -10,
 					'energy': 15,
 					'desc': 'why.',
-					}
+					},
 }
 
 var bosslist = {
@@ -394,7 +412,7 @@ var bosses = {
 				'speed': 50,
 				'knockback': 1000,
 				'level':'endgame',
-				'drop': ['artifact casing'],
+				'drop': ['artifact casing', 'earth key'],
 				'desc':'young man, hand knife rock door gun.'},
 
 	'swooshymooshy':{
@@ -403,7 +421,7 @@ var bosses = {
 				'speed': 70,
 				'knockback': 1000,
 				'level':'endgame',
-				'drop': ['heart of the ocean'],
+				'drop': ['heart of the ocean', 'water key'],
 				'desc':'OH GOD THERE ARE SO MANY OF THEM.'},
 				
 	'swooshymooshy_spawn':{
@@ -420,7 +438,7 @@ var bosses = {
 				'speed': 90,
 				'knockback': 1000, 
 				'level':'endgame',
-				'drop':['blade of fire'],
+				'drop':['blade of fire', 'fire key'],
 				'desc':'it all changed when the fire nation attacked.'},
 
 	'puffpuffiepuff':{
@@ -429,7 +447,7 @@ var bosses = {
 				'speed': 50,
 				'knockback': 900,
 				'level':'endgame',
-				'drop': ['wind soup'],
+				'drop': ['wind soup', 'air key'],
 				'desc':'it will blow you away. maybe you should run.'}
 	}
 

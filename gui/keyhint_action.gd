@@ -11,9 +11,16 @@ export var show_label = true
 export var highlight = false
 export var check_canuse = true
 export var autoprep = false
+
+export var custom_name = ""
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	label.text = control_button
+	
+	if custom_name == "":
+		label.text = control_button
+	else:
+		label.text = custom_name
 	
 	if !show_label:
 		label.visible = false
@@ -35,15 +42,18 @@ func prep_button():
 		}
 		
 	var keystroke = InputMap.get_action_list(control_button)[0].as_text()
-	print(keystroke)
 	if keystroke in thing.keys():
 		keystroke = thing[keystroke]
+			
 			
 	key.text = keystroke.to_lower()
 
 func show_button():
 	if check_canuse:
-		visible = base.canuse[control_button]
+		if custom_name == "":
+			visible = base.canuse[control_button]
+		else:
+			visible = base.canuse[custom_name]
 	else:
 		visible = true
 

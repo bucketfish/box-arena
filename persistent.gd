@@ -6,8 +6,15 @@ onready var base = get_node("/root/base")
 var firstload = false
 var endgames = []
 
-var carrying = ["elemental blade"] setget sort_inv
-var coords = Vector2(9, -9)
+
+var id_keep = {
+	"firekey": false,
+	"airkey": false,
+	"waterkey": false,
+	"earthkey": false
+} setget update_keeps
+var carrying = ["elemental blade", "fire key", "earth key", "water key", "air key"] setget sort_inv
+var coords = Vector2(0, 0)
 var places = {
 			Vector2(0, 0) :[],
 			Vector2(1, 0): ['cookie'],
@@ -71,6 +78,11 @@ func _ready():
 	sort_inv(carrying)
 
 
+func update_keeps(new_keep):
+	id_keep = new_keep
+	
+	if id_keep["firekey"] && id_keep["airkey"] && id_keep["waterkey"]  && id_keep["earthkey"]:
+		print("IMPLEMENT ENDING!!!")
 
 func save_game():
 	#prepares the file
@@ -93,7 +105,8 @@ func save_game():
 		"defeated": defeated,
 		"coward": coward,
 		"isCoward": isCoward,
-		"weapon": weapon
+		"weapon": weapon,
+		'id_keep': id_keep,
 	}
 
 	saves.store_line(to_json(vals))
@@ -138,8 +151,6 @@ func load_game():
 		
 			
 		else:
-			print(i, vals[i])
-			
 			set(i, vals[i])
 
 	save_game.close()

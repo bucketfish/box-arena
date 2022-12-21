@@ -12,4 +12,4 @@ func _ready():
 
 
 func take_damage():
-	print("ENEMY OUCH")
+	pass

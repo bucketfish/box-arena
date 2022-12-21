@@ -38,6 +38,7 @@ var canuse = {
 	"take": false,
 	"attack": false,
 	"inventory": true,
+	"place key": false,
 }
 # states: play, inv, pause
 
@@ -47,9 +48,7 @@ func _ready():
 	# DEBUG
 	OS.set_current_screen(0)
 	
-	
-	
-	print(Data.bosses.keys().size())
+
 	curroom = $room
 	update_pause(true)
 	update_state("paused")

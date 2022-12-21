@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://gui/action.tscn" type="PackedScene" id=1]
 [ext_resource path="res://room/welcome.png" type="Texture" id=2]
+[ext_resource path="res://room/interact.tscn" type="PackedScene" id=3]
 
 [node name="starting" type="Node2D"]
 
@@ -50,5 +51,29 @@ check_canuse = false
 autoprep = true
 
 [node name="Welcome" type="Sprite" parent="."]
-position = Vector2( 341, 421 )
+position = Vector2( 624, 381 )
+scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 2 )
+
+[node name="fire" parent="." instance=ExtResource( 3 )]
+hint_text = "place key"
+object = "fire key"
+id = "firekey"
+
+[node name="air" parent="." instance=ExtResource( 3 )]
+position = Vector2( 225, 475 )
+hint_text = "place key"
+object = "air key"
+id = "airkey"
+
+[node name="earth" parent="." instance=ExtResource( 3 )]
+position = Vector2( 804, 475 )
+hint_text = "place key"
+object = "earth key"
+id = "earthkey"
+
+[node name="water" parent="." instance=ExtResource( 3 )]
+position = Vector2( 804, 135 )
+hint_text = "place key"
+object = "water key"
+id = "waterkey"

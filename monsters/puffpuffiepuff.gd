@@ -9,7 +9,7 @@ var puff_wave = preload("res://monsters/puff_wave.tscn")
 func _ready():
 	pass # hitbox.damage = damage
 
-func take_damage(damageval):
+func take_damage(damageval, damagesource = "player"):
 	hurt(damageval)
 
 func throw_knife():

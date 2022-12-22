@@ -9,7 +9,7 @@ extends "res://monsters/monster.gd"
 func _ready():
 	fliph = false
 
-func take_damage(damageval):
+func take_damage(damageval, damagesource = "player"):
 	hurt(damageval)
 	
 func _physics_process(delta):

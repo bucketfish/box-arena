@@ -7,7 +7,7 @@ func _ready():
 
 func _on_hurtbox_area_entered(area):
 	if area.is_in_group("hitbox"):
-		get_parent().take_damage(area.damage)
+		get_parent().take_damage(area.damage, area.damage_source)
 		
 func start_invincibility(time):
 	set_deferred("monitoring", false)

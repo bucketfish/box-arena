@@ -257,7 +257,7 @@ var items = {
 					},
 	
 	"artifact casing": {
-					"total_health": 200,
+					"total_health": 100,
 					"desc": "it's dirty and ugly, but they say this stuff works wonders at keeping fragile things intact for centuries. probably works on you too."
 	},
 	

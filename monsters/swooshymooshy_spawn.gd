@@ -54,7 +54,7 @@ func hurt(damageval):
 func die():
 	queue_free()
 	
-func take_damage(damageval):
+func take_damage(damageval, damagesource = "player"):
 	hurt(damageval)
 
 

@@ -11,7 +11,7 @@ func _ready():
 	timer.wait_time = rand_range(1, 3)
 	timer.start()
 
-func take_damage(damageval):
+func take_damage(damageval, damagesource = "player"):
 	hurt(damageval)
 
 func spawn_child():

@@ -146,9 +146,10 @@ func update_weapon():
 		weapon.texture = null
 		hitbox.damage = 0
 
-func take_damage(damageval):
+func take_damage(damageval, damagesource):
 	if base.paused == false:
 		hurtanim.play("hurt")
+		Persistent.damagesource = damagesource
 		Persistent.health -= damageval
 	#	bars.update_bars()
 		hurtbox.start_invincibility(0.8)

@@ -6,7 +6,7 @@ onready var base = get_node("/root/base")
 var firstload = false
 var endgames = []
 
-
+var damagesource = ""
 var id_keep = {
 	"firekey": false,
 	"airkey": false,
@@ -85,6 +85,7 @@ func reset():
 	max_health = 5 
 	defeated = false
 	weapon = ""
+	damagesource = ""
 	
 	save_game()
 	
@@ -95,7 +96,7 @@ func update_health(newval):
 	base.bars.update_bars()
 	
 	if health <= 0:
-		base.die()
+		base.die(damagesource)
 
 func update_energy(newval):
 	energy = newval

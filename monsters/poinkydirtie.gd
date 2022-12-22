@@ -14,7 +14,7 @@ func _ready():
 	hitboxknife.damage = damage
 	hitbox3.damage = damage
 
-func take_damage(damageval):
+func take_damage(damageval, damagesource = "player"):
 	hurt(damageval)
 
 func _physics_process(delta):

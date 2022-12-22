@@ -36,6 +36,7 @@ func _ready():
 	knockback_val = Data.bosses[type]['knockback']
 	
 	hitbox.damage = damage
+	hitbox.damage_source = type
 	
 	
 func call_pause(ispaused):

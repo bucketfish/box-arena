@@ -29,10 +29,8 @@ func death(cause):
 func _on_restart_pressed():
 	Persistent.reset()
 	base.start_game()
-	visible = false
 
 
 func _on_main_menu_pressed():
 	Persistent.reset()
 	base.save_and_quit(false)
-	visible = false

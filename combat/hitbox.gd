@@ -6,6 +6,7 @@ extends Area2D
 # var b = "text"
 
 export(int) var damage
+export(String) var damage_source
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

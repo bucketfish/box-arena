@@ -4,5 +4,5 @@ extends "res://monsters/monster.gd"
 func _ready():
 	pass # Replace with function body.
 
-func take_damage(val):
-	hurt(val)
+func take_damage(damageval, damagesource = "player"):
+	hurt(damageval)

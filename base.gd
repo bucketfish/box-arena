@@ -276,9 +276,9 @@ func _on_goto_screen(name):
 	# WHAT IS THIS>
 
 
-func die():
+func die(damagesource):
 	player.canmove = false
 	update_pause(true)
 	
 	shade.visible = true
-	death.death("nyam")
+	death.death(damagesource)

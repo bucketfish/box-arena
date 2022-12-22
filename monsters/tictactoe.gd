@@ -51,7 +51,7 @@ func handle_collision(collision : KinematicCollision2D):
 	velocity = velocity.bounce(collision.normal).rotated(rng.randf_range(-PI / 4, PI / 4))
 
 	
-func take_damage(damageval):
+func take_damage(damageval, damagesource = "player"):
 	hurt(damageval)
 
 #

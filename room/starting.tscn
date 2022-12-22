@@ -7,10 +7,10 @@
 [node name="starting" type="Node2D"]
 
 [node name="up" parent="." instance=ExtResource( 1 )]
-margin_left = 281.0
-margin_top = 187.0
-margin_right = 541.0
-margin_bottom = 235.0
+margin_left = 282.0
+margin_top = 219.0
+margin_right = 542.0
+margin_bottom = 267.0
 control_button = "up"
 show_label = false
 highlight = true
@@ -18,10 +18,10 @@ check_canuse = false
 autoprep = true
 
 [node name="down" parent="." instance=ExtResource( 1 )]
-margin_left = 281.0
-margin_top = 373.0
-margin_right = 541.0
-margin_bottom = 421.0
+margin_left = 282.0
+margin_top = 341.0
+margin_right = 542.0
+margin_bottom = 389.0
 control_button = "down"
 show_label = false
 highlight = true
@@ -29,9 +29,9 @@ check_canuse = false
 autoprep = true
 
 [node name="left" parent="." instance=ExtResource( 1 )]
-margin_left = 152.0
+margin_left = 200.0
 margin_top = 274.0
-margin_right = 412.0
+margin_right = 460.0
 margin_bottom = 322.0
 control_button = "left"
 show_label = false
@@ -40,9 +40,9 @@ check_canuse = false
 autoprep = true
 
 [node name="right" parent="." instance=ExtResource( 1 )]
-margin_left = 420.0
+margin_left = 364.0
 margin_top = 274.0
-margin_right = 680.0
+margin_right = 624.0
 margin_bottom = 322.0
 control_button = "right"
 show_label = false
@@ -51,29 +51,30 @@ check_canuse = false
 autoprep = true
 
 [node name="Welcome" type="Sprite" parent="."]
-position = Vector2( 624, 381 )
+position = Vector2( 594, 164 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 2 )
 
 [node name="fire" parent="." instance=ExtResource( 3 )]
+position = Vector2( 305, 215 )
 hint_text = "place key"
 object = "fire key"
 id = "firekey"
 
 [node name="air" parent="." instance=ExtResource( 3 )]
-position = Vector2( 225, 475 )
+position = Vector2( 305, 395 )
 hint_text = "place key"
 object = "air key"
 id = "airkey"
 
 [node name="earth" parent="." instance=ExtResource( 3 )]
-position = Vector2( 804, 475 )
+position = Vector2( 724, 395 )
 hint_text = "place key"
 object = "earth key"
 id = "earthkey"
 
 [node name="water" parent="." instance=ExtResource( 3 )]
-position = Vector2( 804, 135 )
+position = Vector2( 724, 215 )
 hint_text = "place key"
 object = "water key"
 id = "waterkey"

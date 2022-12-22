@@ -269,19 +269,19 @@ var items = {
 	# keys
 	
 	'fire key': {
-				'desc': "fire"
+				'desc': "burning hot to touch. but it's really shiny. so bring it back to the center."
 	},
 	
 	'water key': {
-				'desc': "water"
+				'desc': "if you look really closely in the reflection, you'll see the face of a fool. bring this back to the center!"
 	},
 	
 	'air key': {
-				'desc': "air"
+				'desc': "better bring this back to the center before it evaporates."
 	},
 	
 	'earth key': {
-				'desc': "earth"
+				'desc': "growing moss on a key does feel a little sketchy, but i promise it's for the aesthetic. hope it reaches the center before the moss falls off."
 	},
 	
 	#elemental blade
@@ -315,10 +315,10 @@ var deathliners = [
 	'major skill issue.',
 	'L + ratio.',
 	'maybe it\'s time to get good.',
-	'common player L',
+	'common player L.',
 	'maybe take a nap first.',
 	'go touch some grass.',
-	'why do you always die!',
+	'just don\'t die, smh.',
 	'messed up real bad...',
 	'F for respects.',
 	'don\'t blame lag for it.'
@@ -385,7 +385,8 @@ var bosses = {
 				'speed': 200,
 				'knockback': 1500,
 				'drop':['chainmail armor', 'spiked mace', 'iron heart', 'iron heart'],
-				'desc': 'its skin is sharp enough to be made into armour (for the masochist).'},
+				'desc': 'its skin is sharp enough to be made into armour (for the masochist).',
+				"death": ['guess this player accidentally got turned into a shield. to be pierced.']},
 
 	'kickee':{
 				'damage': 2,
@@ -394,7 +395,8 @@ var bosses = {
 				'speed': 120,
 				'knockback': 1200,
 				'drop':['cake', 'cake', 'cake', 'cake', 'cake'],
-				'desc': 'its legs are entirely made out of cake. don\'t ask me how i know this.'},
+				'desc': 'its legs are entirely made out of cake. don\'t ask me how i know this.',
+				"death": ['you loved cake so much that you got kicked to death... condolences.']},
 
 	#level 10 bosses
 	'slurpydoo':{

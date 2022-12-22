@@ -190,7 +190,7 @@ func _input(event):
 			update_state('play')
 			
 			
-	if Input.is_action_just_pressed("pause") && !pause.on:
+	if Input.is_action_just_pressed("pause") && !pause.on && state != "respawn":
 		
 		if inventory.visible:
 			inventory.visible = false
@@ -279,6 +279,7 @@ func _on_goto_screen(name):
 func die(damagesource):
 	player.canmove = false
 	update_pause(true)
+	update_state("respawn")
 	
 	shade.visible = true
 	death.death(damagesource)

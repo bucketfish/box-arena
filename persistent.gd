@@ -13,7 +13,7 @@ var id_keep = {
 	"waterkey": false,
 	"earthkey": false
 } setget update_keeps
-var carrying = ["elemental blade", "fire key", "earth key", "water key", "air key"] setget sort_inv
+var carrying = ["elemental blade", "fire key", "earth key", "water key", "air key", "fishcow"] setget sort_inv
 var coords = Vector2(0, 0)
 var places = {
 			Vector2(0, 0) :[],

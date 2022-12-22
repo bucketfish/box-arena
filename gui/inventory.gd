@@ -227,6 +227,7 @@ func use_item():
 		
 		# trying to remove health
 		elif usething['health'] < 0:
+			Persistent.damagesource = item
 			Persistent.health += usething['health']
 			use = true
 			# check if you died after removing health

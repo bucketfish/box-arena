@@ -311,6 +311,24 @@ var bosslist = {
 		"puffpuffiepuff" #air
 		] }
 		
+var deathliners = [
+	'major skill issue.',
+	'L + ratio.',
+	'maybe it\'s time to get good.',
+	'common player L',
+	'maybe take a nap first.',
+	'go touch some grass.',
+	'why do you always die!',
+	'messed up real bad...',
+	'F for respects.',
+	'don\'t blame lag for it.'
+]
+
+var fishcow_death = [
+	"ate too much weird fish concoction. why are you so hungry for fishcow anyway??",
+	"i told you to not trust strange hybrids of nature. don't eat the fishcow."
+]
+		
 var bosses = {
 	#level 3 bosses
 	'nyam':{
@@ -320,7 +338,11 @@ var bosses = {
 				'speed': 200,
 				'knockback': 1500,
 				'drop':['steak', 'steak', 'steak', 'health pot', 'choco cookie'],
-				'desc': 'it eats a lot. not that we\'re judging, or anything.'},
+				'desc': 'it eats a lot. not that we\'re judging, or anything.',
+				"death": ["uh oh, this player got absolutely OWNED by a little guy who eats steak. c'mon."]
+				
+				},
+				
 
 	'sol':{
 				'damage': 4,
@@ -329,7 +351,9 @@ var bosses = {
 				'knockback': 800,
 				'level': 1,
 				'drop':['golden apple', 'clothes'],
-				'desc': 'its future is almost blinding. a pity you have to cut it short.'},
+				'desc': 'its future is almost blinding. a pity you have to cut it short.',
+				"death": ['sigh... it isn\'t that hard to kill something with with two health points.']
+				},
 
 	'pionk':{
 				'damage': 1,
@@ -338,7 +362,10 @@ var bosses = {
 				'speed': 100,
 				'knockback': 700,
 				'drop':['wooden stick', 'wooden stick', 'wooden stick', 'cookie', 'healing drop'],
-				'desc': 'just... be nice and pretend its hits hurt.'},
+				'desc': 'just... be nice and pretend its hits hurt.',
+				"death": ['ow, you REALLY pretended that its hits hurt, huh? even went and died by it.']
+				
+				},
 
 	#level 6 bosses
 	'flickflack':{
@@ -348,7 +375,8 @@ var bosses = {
 				'speed': 120,
 				'knockback': 800,
 				'drop':['sharp flint', 'sharp flint', 'sharp flint', 'steak'],
-				'desc': 'it\'s like a slap bracelet. vibrant and pointless.'},
+				'desc': 'it\'s like a slap bracelet. vibrant and pointless.',
+				"death": ['ow, you REALLY pretended that its hits hurt, huh? even went and died by it.']},
 
 	'ticktack':{
 				'damage':7,

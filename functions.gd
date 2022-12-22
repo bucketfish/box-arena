@@ -82,24 +82,26 @@ func mapicon_num(curloc: Vector2) -> int:
 	var frame = 17
 	
 	
-	
 	if curloc == Persistent.coords:
 		frame = 16
+		
+		
 
 	elif curloc in Persistent.genbosses.keys():
 		if Persistent.genbosses[curloc]['alive'] == true:
 			frame = find.find(Persistent.genbosses[curloc]['name'])
-		else:
+		elif Persistent.places[curloc] == []:
 			frame = 18
-	
-	elif abs(curloc.x) in Data.fightplaces or abs(curloc.y) in Data.fightplaces:
+		else:
+			frame = 17
+			
+	elif abs(curloc.x) in Data.fightplaces or abs(curloc.y) in Data.fightplaces && !(curloc in Persistent.places):
 		frame = 14
 		
-	elif curloc in Persistent.places.keys():
+	elif curloc in Persistent.places:
 		if Persistent.places[curloc] == []:
 			frame = 18
-			
-
+		
 	return frame
 
 func sort_inventory(items) -> Dictionary:

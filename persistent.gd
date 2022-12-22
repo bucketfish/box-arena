@@ -47,9 +47,55 @@ var isCoward = false
 
 var weapon = "" setget set_weapon
 
+
+func reset():
+		
+	firstload = false
+	endgames = []
+	id_keep = {
+		"firekey": false,
+		"airkey": false,
+		"waterkey": false,
+		"earthkey": false
+	}
+	carrying = []
+	coords = Vector2(0, 0)
+	places = {
+				Vector2(0, 0) :[],
+				Vector2(1, 0): ['cookie'],
+				Vector2(1, 1): ['wooden stick'],
+				Vector2(0, 1): ['cookie'],
+				Vector2(0, -1): ['wooden stick'],
+				Vector2(-1, -1): ['wooden stick'],
+				Vector2(-1, 0): ['healing drop'],
+				Vector2(-1, 1):['cookie'],
+				Vector2(1, -1):['healing drop']}
+
+	beenplaces  = [Vector2()]
+	genbosses = {
+					Vector2(10, -10): {'name': 'poinkydirtie', 'alive': true},
+					Vector2(10, 10): {'name': 'swooshymooshy', 'alive': true},
+					Vector2(-10, 10): {'name': 'foofeefoofee', 'alive': true},
+					Vector2(-10, -10): {'name': 'puffpuffiepuff', 'alive': true}}
+	seenbosses = []
+
+	health = 5 
+	energy = 5 
+	damage = 0
+	max_health = 5 
+	defeated = false
+	weapon = ""
+	
+	save_game()
+	
+	
+
 func update_health(newval):
 	health = newval
 	base.bars.update_bars()
+	
+	if health <= 0:
+		base.die()
 
 func update_energy(newval):
 	energy = newval
@@ -83,6 +129,7 @@ func update_keeps(new_keep):
 	
 	if id_keep["firekey"] && id_keep["airkey"] && id_keep["waterkey"]  && id_keep["earthkey"]:
 		print("IMPLEMENT ENDING!!!")
+
 
 func save_game():
 	#prepares the file

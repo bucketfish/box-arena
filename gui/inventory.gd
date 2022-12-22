@@ -38,7 +38,8 @@ func toggle():
 	
 	focus_on(row[0].col[0])
 	
-	
+func reset_item():
+	visible = false
 	
 
 func _on_focus_change():

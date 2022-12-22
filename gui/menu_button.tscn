@@ -44,9 +44,6 @@ custom_fonts/font = SubResource( 1 )
 text = "inventory"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="key" type="Control" parent="."]
 margin_left = 560.0

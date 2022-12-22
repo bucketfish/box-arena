@@ -23,6 +23,8 @@ onready var keyhints = $gui/keyhints
 onready var minimap = $gui/minimap
 onready var map = $gui/map
 
+onready var death = $gui/death
+
 var curroom
 var comefrom
 var trans = false setget update_trans
@@ -55,9 +57,9 @@ func _ready():
 	
 	
 func start_game():
+	shade.visible = false
+	
 	yield(Persistent.load_game(), "completed")
-	
-	
 	
 
 	bossui.animon = false
@@ -88,10 +90,11 @@ func start_game():
 func intro():
 	pass
 	
-func save_and_quit():
+func save_and_quit(save = true):
 	update_pause(true)
 	update_state("paused")
-	Persistent.save_game()
+	if save:
+		Persistent.save_game()
 	mainmenu.returnto()
 	
 func open_room():
@@ -203,12 +206,15 @@ func _input(event):
 			
 			
 			
+			
 func update_state(newstate):
 	if newstate == "play":
 		player.canmove = true
-
 	else:
 		player.canmove = false
+		
+	
+		
 	state = newstate
 	
 func update_weapon():
@@ -223,6 +229,7 @@ func update_pickup(can): #whether player is able to pick up anything
 	keyhints.update_keyhints()
 	
 var bossmove_prev = true
+
 func update_pause(newpause):
 	if newpause == false:
 		player.canmove = true
@@ -230,14 +237,19 @@ func update_pause(newpause):
 		if bossmove_prev:
 			boss_move = true
 		bosspause_timer.paused = false
+		
+		if paused:
+			propagate_call("call_pause", [false])
 			
 	else: #is paused
+		propagate_call("call_pause", [true])
 		player.canmove = false
 		bossmove_prev = boss_move
 		bosspause_timer.paused = true
 		boss_move = false
 
 	paused = newpause
+		
 	
 func update_trans(newval):
 	if newval:
@@ -262,3 +274,11 @@ func _on_bosspause_timer_timeout():
 func _on_goto_screen(name):
 	pass # Replace with function body.
 	# WHAT IS THIS>
+
+
+func die():
+	player.canmove = false
+	update_pause(true)
+	
+	shade.visible = true
+	death.death("nyam")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://room/room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -32,6 +32,9 @@
 [ext_resource path="res://assets/player/player0002.png" type="Texture" id=30]
 [ext_resource path="res://assets/gui/monster_icons.png" type="Texture" id=31]
 [ext_resource path="res://gui/map.gd" type="Script" id=32]
+[ext_resource path="res://assets/gui/menu_back.png" type="Texture" id=33]
+[ext_resource path="res://assets/decoration/dead.png" type="Texture" id=34]
+[ext_resource path="res://gui/death.gd" type="Script" id=35]
 
 [sub_resource type="DynamicFont" id=12]
 size = 28
@@ -1446,7 +1449,7 @@ tracks/1/keys = {
 }
 
 [node name="base" type="Node2D"]
-pause_mode = 1
+pause_mode = 2
 script = ExtResource( 3 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
@@ -1467,8 +1470,10 @@ position = Vector2( 169, 300 )
 position = Vector2( 855, 300 )
 
 [node name="gui" type="CanvasLayer" parent="."]
+pause_mode = 2
 
 [node name="bars" type="Control" parent="gui"]
+pause_mode = 2
 anchor_right = 0.673828
 anchor_bottom = 0.0966667
 margin_left = -20.0
@@ -1589,6 +1594,7 @@ margin_bottom = 40.0
 size_flags_horizontal = 3
 
 [node name="boss" type="Control" parent="gui"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 17 )
@@ -1599,15 +1605,14 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 60.0
-margin_top = 600.0
-margin_right = 774.0
-margin_bottom = 840.0
+margin_right = -250.0
+margin_bottom = 240.0
 grow_vertical = 0
 alignment = 2
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 72.0
-margin_right = 714.0
+margin_right = 6858.0
 margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
@@ -1632,7 +1637,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 714.0
+margin_right = 6858.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -1716,6 +1721,7 @@ wait_time = 4.0
 one_shot = true
 
 [node name="keyhints" type="Control" parent="gui"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 26 )
@@ -1758,6 +1764,7 @@ control_button = "inventory"
 text = "inventory"
 
 [node name="minimap" type="MarginContainer" parent="gui"]
+pause_mode = 2
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -186.0
@@ -1877,6 +1884,7 @@ margin_right = 122.0
 margin_bottom = 159.4
 
 [node name="shade" type="Control" parent="gui"]
+pause_mode = 2
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1890,6 +1898,7 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="inventory" type="Control" parent="gui"]
+pause_mode = 2
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -2111,6 +2120,7 @@ align = 1
 [node name="invtween" type="Tween" parent="gui/inventory"]
 
 [node name="map" type="Control" parent="gui"]
+pause_mode = 2
 visible = false
 margin_left = 248.0
 margin_top = 36.0
@@ -2153,10 +2163,12 @@ custom_constants/hseparation = 32
 columns = 21
 
 [node name="intro" type="Control" parent="gui"]
+pause_mode = 2
 margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="pause" type="Control" parent="gui"]
+pause_mode = 2
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -2251,6 +2263,98 @@ offset = Vector2( 0, -50 )
 autoplay = "bounce"
 anims/RESET = SubResource( 26 )
 anims/bounce = SubResource( 27 )
+
+[node name="death" type="Control" parent="gui"]
+pause_mode = 2
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 35 )
+
+[node name="MenuBack" type="Sprite" parent="gui/death"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="pic" type="Sprite" parent="gui/death"]
+position = Vector2( 309.632, 308.686 )
+rotation = -0.261799
+scale = Vector2( 0.415259, 0.415259 )
+texture = ExtResource( 34 )
+offset = Vector2( 0, -50 )
+
+[node name="paused" type="Label" parent="gui/death"]
+anchor_bottom = 0.74905
+margin_left = 299.0
+margin_top = 87.0
+margin_right = 739.0
+margin_bottom = 222.0
+custom_colors/font_color_shadow = Color( 0.635294, 0.839216, 0.976471, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+custom_fonts/font = SubResource( 21 )
+text = "you died :("
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="gui/death"]
+margin_left = 395.0
+margin_top = 211.0
+margin_right = 818.0
+margin_bottom = 365.0
+custom_constants/separation = 16
+alignment = 1
+
+[node name="cause" type="Label" parent="gui/death/VBoxContainer"]
+margin_right = 423.0
+margin_bottom = 105.0
+custom_fonts/font = ExtResource( 4 )
+text = "ate too much weird fish concoction. why are you so hungry for fishcow anyway??"
+autowrap = true
+
+[node name="mock" type="Label" parent="gui/death/VBoxContainer"]
+margin_top = 121.0
+margin_right = 423.0
+margin_bottom = 154.0
+custom_fonts/font = ExtResource( 4 )
+text = "don't blame lag for it."
+autowrap = true
+
+[node name="restart" parent="gui/death" instance=ExtResource( 18 )]
+margin_left = 216.0
+margin_top = 387.0
+margin_right = 776.0
+margin_bottom = 611.0
+focus_neighbour_left = NodePath("../main menu")
+focus_neighbour_right = NodePath("../main menu")
+button_text = "restart"
+
+[node name="Label" parent="gui/death/restart" index="0"]
+text = "restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="key" parent="gui/death/restart/key/Sprite" index="0"]
+text = "x"
+
+[node name="main menu" parent="gui/death" instance=ExtResource( 18 )]
+margin_left = 529.0
+margin_top = 387.0
+margin_right = 1089.0
+margin_bottom = 611.0
+focus_neighbour_left = NodePath("../restart")
+focus_neighbour_right = NodePath("../restart")
+button_text = "main menu"
+
+[node name="Label" parent="gui/death/main menu" index="0"]
+text = "restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="key" parent="gui/death/main menu/key/Sprite" index="0"]
+text = "x"
+
+[node name="anim" type="AnimationPlayer" parent="gui/death"]
 
 [node name="mainmenu" type="Control" parent="gui"]
 pause_mode = 2
@@ -2347,6 +2451,7 @@ focus_neighbour_bottom = NodePath("../play")
 button_text = "quit"
 
 [node name="fade" type="CanvasLayer" parent="."]
+pause_mode = 2
 
 [node name="ColorRect" type="ColorRect" parent="fade"]
 visible = false
@@ -2384,6 +2489,8 @@ one_shot = true
 [connection signal="goto_screen" from="gui/pause/options/controls_screen/back" to="gui/pause" method="_on_goto_screen"]
 [connection signal="goto_screen" from="gui/pause/options/controls" to="gui/pause" method="_on_goto_screen"]
 [connection signal="goto_screen" from="gui/pause/options/back" to="gui/pause" method="_on_goto_screen"]
+[connection signal="pressed" from="gui/death/restart" to="gui/death" method="_on_restart_pressed"]
+[connection signal="pressed" from="gui/death/main menu" to="gui/death" method="_on_main_menu_pressed"]
 [connection signal="focus_entered" from="gui/mainmenu/options/controls_screen/scroll/Control/use" to="gui/mainmenu/options/controls_screen" method="_on_focus_entered"]
 [connection signal="goto_screen" from="gui/mainmenu/options/controls_screen/back" to="gui/mainmenu" method="_on_goto_screen"]
 [connection signal="goto_screen" from="gui/mainmenu/options/controls" to="gui/mainmenu" method="_on_goto_screen"]
@@ -2400,4 +2507,6 @@ one_shot = true
 [editable path="gui/inventory/info/holder/values/health"]
 [editable path="gui/inventory/info/holder/values/max_health"]
 [editable path="gui/pause/options"]
+[editable path="gui/death/restart"]
+[editable path="gui/death/main menu"]
 [editable path="gui/mainmenu/options"]

@@ -38,6 +38,14 @@ func _ready():
 	hitbox.damage = damage
 	
 	
+func call_pause(ispaused):
+	print(ispaused)
+	
+	if ispaused:
+		$anim.stop(false)
+	else:
+		$anim.play()
+		
 func hurt(damageval):
 	knockback = player.knockback_vector * knockback_val
 	hurtanim.play("hurt")
@@ -60,8 +68,6 @@ func die():
 	Persistent.genbosses[Persistent.coords]['alive'] = false
 	
 	queue_free()
-
-
 
 func _physics_process(delta):
 	if !call_phyproc:

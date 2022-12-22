@@ -8,3 +8,8 @@ func _ready():
 func take_damage(damageval):
 	hurt(damageval)
 	
+func call_pause(ispaused):
+	if ispaused:
+		$AnimationPlayer.stop(false)
+	else:
+		$AnimationPlayer.play()

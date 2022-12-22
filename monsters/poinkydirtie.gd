@@ -13,6 +13,8 @@ func _ready():
 	hitbox2.damage = damage
 	hitboxknife.damage = damage
 	hitbox3.damage = damage
+	hitbox2.damage_source = type
+	hitbox3.damage_source = type
 
 func take_damage(damageval, damagesource = "player"):
 	hurt(damageval)

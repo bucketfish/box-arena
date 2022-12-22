@@ -18,14 +18,14 @@ func reset_item():
 	
 func death(cause):
 	if cause in Data.bosses:
-		causetext.text = Data.bosses[cause]["death"][rand_range(0, Data.bosses[cause]["death"].size() - 1)]
+		causetext.text = Data.bosses[cause]["death"][randi() % Data.bosses[cause]["death"].size()]
 		
 	elif cause == "fishcow":
-		causetext.text = Data.fishcow_death[rand_range(0, Data.fishcow_death.size() - 1)]
+		causetext.text = Data.fishcow_death[randi() % Data.fishcow_death.size()]
 		
 	visible = true
 
-	mocktext.text = Data.deathliners[rand_range(0, Data.deathliners.size() - 1)]
+	mocktext.text = Data.deathliners[randi() % Data.deathliners.size()]
 	
 	yield(get_tree().create_timer(0.1), "timeout")
 	restart.grab_focus()

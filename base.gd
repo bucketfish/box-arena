@@ -51,6 +51,7 @@ func _ready():
 	OS.set_current_screen(0)
 	
 
+	randomize()
 	curroom = $room
 	update_pause(true)
 	update_state("paused")

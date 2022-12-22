@@ -321,7 +321,9 @@ var deathliners = [
 	'just don\'t die, smh.',
 	'messed up real bad...',
 	'F for respects.',
-	'don\'t blame lag for it.'
+	'don\'t blame lag for it.',
+	'imagine dying.',
+	'take your L and leave.'
 ]
 
 var fishcow_death = [
@@ -406,7 +408,9 @@ var bosses = {
 				'speed': 150,
 				'knockback': 800,
 				'drop':['silver katana','silver katana', 'nano-vest', 'iron heart', 'ruby scythe'],
-				'desc': 'consuming metal you can\'t digest probably isn\'t the best of ideas, but neither is consuming swords that could slice you in half. it does both.'},
+				'desc': 'consuming metal you can\'t digest probably isn\'t the best of ideas, but neither is consuming swords that could slice you in half. it does both.',
+				"death": ['cat\'ts got your tongue! more like tongue\'s got your life!',
+				'this player forgot to check behind their back for a certain suspicious tongue.']},
 
 	'conkydonk':{
 				'damage':15,
@@ -415,7 +419,8 @@ var bosses = {
 				'speed': 180,
 				'knockback': 1500,
 				'drop':['emerald greatsword','ruby scythe'],
-				'desc': 'if you beat it up, it\'ll help you beat other monsters up. beat it up.'},
+				'desc': 'if you beat it up, it\'ll help you beat other monsters up. beat it up.',
+				"death": ['ha, you got DUNKED on. you got CONKYDONKED on. you DIED.']},
 
 	'tictactoe':{
 				'damage':3,
@@ -424,7 +429,8 @@ var bosses = {
 				'speed': 200,
 				'knockback': 1000,
 				'drop':['ruby scythe', 'golden carrot', 'golden carrot'],
-				'desc': 'it\'s won ten carrot-eating competitions, and the fame\'s really gotten to his head.'},
+				'desc': 'it\'s won ten carrot-eating competitions, and the fame\'s really gotten to his head.',
+				"death": ['never thought you\'d lose to a game of tic tac toe, did you?']},
 
 	'fishymoo':{
 				'damage':42,
@@ -433,7 +439,8 @@ var bosses = {
 				'speed': 180,
 				'knockback': 1300,
 				'drop':['fishcow', 'fishcow', 'fishcow'],
-				'desc': 'it go moo..mo.. m m mooo......'},
+				'desc': 'it go moo..mo.. m m mooo......',
+				"death": ['i know the rainbow words are tempting, but do not go near the fishymoo beast.']},
 
 	#endgame
 	'poinkydirtie':{
@@ -443,7 +450,8 @@ var bosses = {
 				'knockback': 1000,
 				'level':'endgame',
 				'drop': ['artifact casing', 'earth key'],
-				'desc':'young man, hand knife rock door gun.'},
+				'desc':'young man, hand knife rock door gun.',
+				"death": ['ouch, turns out that knives are... sharp. hopefully you\'ll learn!']},
 
 	'swooshymooshy':{
 				'damage':30,
@@ -452,7 +460,8 @@ var bosses = {
 				'knockback': 1000,
 				'level':'endgame',
 				'drop': ['heart of the ocean', 'water key'],
-				'desc':'OH GOD THERE ARE SO MANY OF THEM.'},
+				'desc':'OH GOD THERE ARE SO MANY OF THEM.',
+				"death": ['guess you can say that you are a little bit... washed out.']},
 				
 	'swooshymooshy_spawn':{
 				'damage':2,
@@ -460,7 +469,8 @@ var bosses = {
 				'speed': 150,
 				'knockback': 2000,
 				'level':'endgame',
-				'desc':''},
+				'desc':'',
+				"death": ['oh come on, got killed by the little one? smaller than you?']},
 
 	'foofeefoofee':{
 				'damage':50,
@@ -469,7 +479,8 @@ var bosses = {
 				'knockback': 1000, 
 				'level':'endgame',
 				'drop':['blade of fire', 'fire key'],
-				'desc':'it all changed when the fire nation attacked.'},
+				'desc':'it all changed when the fire nation attacked.',
+				"death": ['it\'s literally just a blob. of ash. surely you can kill that.']},
 
 	'puffpuffiepuff':{
 				'damage':30,
@@ -478,7 +489,8 @@ var bosses = {
 				'knockback': 900,
 				'level':'endgame',
 				'drop': ['wind soup', 'air key'],
-				'desc':'it will blow you away. maybe you should run.'}
+				'desc':'it will blow you away. maybe you should run.',
+				"death": ['you wouldn\'t survive the wolf attack from three little pigs.']}
 	}
 
 var boss_scenes = {

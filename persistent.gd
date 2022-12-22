@@ -58,7 +58,7 @@ func reset():
 		"waterkey": false,
 		"earthkey": false
 	}
-	carrying = []
+	carrying = ["fishcow"]
 	coords = Vector2(0, 0)
 	places = {
 				Vector2(0, 0) :[],

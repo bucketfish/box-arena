@@ -30,7 +30,7 @@
 [ext_resource path="res://assets/gui/mapback.png" type="Texture" id=28]
 [ext_resource path="res://assets/gui/button_frame.png" type="Texture" id=29]
 [ext_resource path="res://assets/player/player0002.png" type="Texture" id=30]
-[ext_resource path="res://gui/monster_icons.png" type="Texture" id=31]
+[ext_resource path="res://assets/gui/monster_icons.png" type="Texture" id=31]
 [ext_resource path="res://gui/map.gd" type="Script" id=32]
 
 [sub_resource type="DynamicFont" id=12]
@@ -1607,7 +1607,7 @@ alignment = 2
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 72.0
-margin_right = 6858.0
+margin_right = 714.0
 margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
@@ -1632,7 +1632,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 6858.0
+margin_right = 714.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 

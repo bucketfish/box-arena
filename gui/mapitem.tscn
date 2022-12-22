@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://gui/monster_icons.png" type="Texture" id=1]
+[ext_resource path="res://assets/gui/monster_icons.png" type="Texture" id=1]
 
 [node name="mapitem" type="Control"]
 

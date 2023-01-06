@@ -45,17 +45,17 @@ var canuse = {
 	"inventory": true,
 	"place key": false,
 }
-# states: play, inv, pause
+# states: play, inv, pause, cutscene, dialogue
 
 
 
 func _ready():
-	# DEBUG
+	# DEBUG - DELETE FOR PRODUCTION
 	OS.set_current_screen(0)
 	
 
+	# normal stuff
 	randomize()
-	curroom = $room
 	update_pause(true)
 	update_state("paused")
 	
@@ -71,7 +71,6 @@ func start_game():
 
 	# update player position (new door)
 	player.position = Vector2(512, 300)
-	curroom.queue_free()
 	
 	curroom = room.instance()
 	add_child(curroom)
@@ -85,7 +84,11 @@ func start_game():
 	
 	
 	if Persistent.firstload:
+		intro.visible = true
 		intro()
+		Persistent.firstload = false
+	else:
+		intro.visible = false
 		
 	yield(get_tree(), "idle_frame")
 	

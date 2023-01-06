@@ -47,6 +47,7 @@ func get_input():
 func move(direction, delta):
 	if !canmove: # make it not move if the player isn't supposed to
 		velocity = Vector2()
+		state = "idle"
 	
 	# if the player is moving
 	elif direction.length() > 0:

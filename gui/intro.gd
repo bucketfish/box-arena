@@ -27,6 +27,7 @@ func _ready():
 	label.text = '\n'.join(text)
 
 
+
 func start_intro():
 #	print("starting intro")
 	curcount = 0

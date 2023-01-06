@@ -11,9 +11,12 @@ var id_keep = {
 	"firekey": false,
 	"airkey": false,
 	"waterkey": false,
-	"earthkey": false
+	"earthkey": false,
+	'outoffirstroom': false 
 } setget update_keeps
 var carrying = ["elemental blade", "fire key", "earth key", "water key", "air key", "fishcow"] setget sort_inv
+
+signal endgame
 var coords = Vector2(0, 0)
 var places = {
 			Vector2(0, 0) :[],
@@ -47,16 +50,20 @@ var isCoward = false
 
 var weapon = "" setget set_weapon
 
-
+# WHEN ADDING A NEW VARIABLE:
+# 1. create variable
+# 2. allow it to be reset. if needed
+# 3. allow it to be saved
+# 4. allow it to be loaded
 func reset():
 		
-	firstload = false
 	endgames = []
 	id_keep = {
 		"firekey": false,
 		"airkey": false,
 		"waterkey": false,
-		"earthkey": false
+		"earthkey": false,
+		'outoffirstroom': false
 	}
 	carrying = []
 	coords = Vector2(0, 0)
@@ -128,8 +135,9 @@ func _ready():
 func update_keeps(new_keep):
 	id_keep = new_keep
 	
-	if id_keep["firekey"] && id_keep["airkey"] && id_keep["waterkey"]  && id_keep["earthkey"]:
-		print("IMPLEMENT ENDING!!!")
+	if id_keep["firekey"] && id_keep["airkey"] && id_keep["waterkey"]  && id_keep["earthkey"] && !defeated:
+		defeated = true
+		emit_signal("endgame")
 
 
 func save_game():
@@ -155,6 +163,7 @@ func save_game():
 		"isCoward": isCoward,
 		"weapon": weapon,
 		'id_keep': id_keep,
+		'firstload': firstload,
 	}
 
 	saves.store_line(to_json(vals))
@@ -172,7 +181,6 @@ func load_game():
 	
 	var save_game = File.new()
 	if not save_game.file_exists("user://saves.save"):
-		firstload = true
 		yield(get_tree(), "idle_frame")
 		return # Error! We don't have a save to load.
 

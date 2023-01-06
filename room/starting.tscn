@@ -1,12 +1,256 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://gui/action.tscn" type="PackedScene" id=1]
 [ext_resource path="res://room/welcome.png" type="Texture" id=2]
 [ext_resource path="res://room/interact.tscn" type="PackedScene" id=3]
+[ext_resource path="res://room/starting.gd" type="Script" id=4]
+[ext_resource path="res://assets/items/air key.png" type="Texture" id=5]
+[ext_resource path="res://assets/items/water key.png" type="Texture" id=6]
+[ext_resource path="res://assets/items/fire key.png" type="Texture" id=7]
+[ext_resource path="res://assets/items/earth key.png" type="Texture" id=8]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("spin:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("spin/fire_sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -207, -85 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("spin/water_sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 212, -85 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("spin/air_sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -207, 95 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("spin/earth_sprite:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 212, 95 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("spin/fire_sprite:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("spin/water_sprite:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("spin/air_sprite:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("spin/earth_sprite:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "end"
+length = 3.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("spin/water_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.6, 3.1, 3.4, 3.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 212, -85 ), Vector2( 20, -20 ), Vector2( 20, -20 ), Vector2( 5, -5 ), Vector2( 500, -500 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("spin/earth_sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.6, 3.1, 3.4, 3.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 212, 95 ), Vector2( 20, 20 ), Vector2( 20, 20 ), Vector2( 5, 5 ), Vector2( 500, 500 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("spin/air_sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.6, 3.1, 3.4, 3.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -207, 95 ), Vector2( -20, 20 ), Vector2( -20, 20 ), Vector2( -5, 5 ), Vector2( -500, 500 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("spin/fire_sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.6, 3.1, 3.4, 3.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -207, -85 ), Vector2( -20, -20 ), Vector2( -20, -20 ), Vector2( -5, -5 ), Vector2( -500, -500 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("spin:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1080.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("spin/fire_sprite:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 3.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -1080.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("spin/water_sprite:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 3.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -1080.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("spin/air_sprite:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 3.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -1080.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("spin/earth_sprite:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 3.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -1080.0 ]
+}
+tracks/9/type = "method"
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 3.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "spawn_blade"
+} ]
+}
 
 [node name="starting" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="up" parent="." instance=ExtResource( 1 )]
+visible = false
 margin_left = 282.0
 margin_top = 219.0
 margin_right = 542.0
@@ -18,6 +262,7 @@ check_canuse = false
 autoprep = true
 
 [node name="down" parent="." instance=ExtResource( 1 )]
+visible = false
 margin_left = 282.0
 margin_top = 341.0
 margin_right = 542.0
@@ -29,6 +274,7 @@ check_canuse = false
 autoprep = true
 
 [node name="left" parent="." instance=ExtResource( 1 )]
+visible = false
 margin_left = 200.0
 margin_top = 274.0
 margin_right = 460.0
@@ -40,6 +286,7 @@ check_canuse = false
 autoprep = true
 
 [node name="right" parent="." instance=ExtResource( 1 )]
+visible = false
 margin_left = 364.0
 margin_top = 274.0
 margin_right = 624.0
@@ -78,3 +325,32 @@ position = Vector2( 724, 215 )
 hint_text = "place key"
 object = "water key"
 id = "waterkey"
+
+[node name="spin" type="Node2D" parent="."]
+position = Vector2( 512, 300 )
+
+[node name="fire_sprite" type="Sprite" parent="spin"]
+position = Vector2( -207, -85 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 7 )
+
+[node name="water_sprite" type="Sprite" parent="spin"]
+position = Vector2( 212, -85 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 6 )
+
+[node name="air_sprite" type="Sprite" parent="spin"]
+position = Vector2( -207, 95 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 5 )
+
+[node name="earth_sprite" type="Sprite" parent="spin"]
+position = Vector2( 212, 95 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/end = SubResource( 1 )
+
+[editable path="fire"]

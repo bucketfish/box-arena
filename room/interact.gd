@@ -19,7 +19,7 @@ func _ready():
 
 
 func prepare():
-	if Persistent.id_keep[id]:
+	if Persistent.id_keep[id] && !Persistent.defeated:
 		display.texture = load("res://assets/items/" + object + ".png")
 		
 		anim.play("bounce")
@@ -46,10 +46,14 @@ func _input(event):
 		Persistent.carrying.erase(object)
 		Persistent.sort_inv(Persistent.carrying)
 		
-		display.texture = load("res://assets/items/" + object + ".png")
-		anim.play("bounce")
-	
+		if !Persistent.defeated:
+			display.texture = load("res://assets/items/" + object + ".png")
+			anim.play("bounce")
 		
+
+	
+func clear():
+	display.texture = null
 			
 		
 			

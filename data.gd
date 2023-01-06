@@ -316,14 +316,17 @@ var deathliners = [
 	'L + ratio.',
 	'maybe it\'s time to get good.',
 	'common player L.',
-	'maybe take a nap first.',
+	'just... take a nap first.',
 	'go touch some grass.',
 	'just don\'t die, smh.',
 	'messed up real bad...',
 	'F for respects.',
 	'don\'t blame lag for it.',
 	'imagine dying.',
-	'take your L and leave.'
+	'take your L and leave.',
+	'death.fall.accident.water',
+	'not like you lost real progress.',
+	'skull emoji clown emoji'
 ]
 
 var fishcow_death = [

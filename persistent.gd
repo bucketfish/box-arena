@@ -3,7 +3,7 @@ extends Node
 onready var player = get_node("/root/base/player")
 onready var base = get_node("/root/base")
 
-var firstload = false
+var firstload = true
 var endgames = []
 
 var damagesource = ""
@@ -58,7 +58,7 @@ func reset():
 		"waterkey": false,
 		"earthkey": false
 	}
-	carrying = ["fishcow"]
+	carrying = []
 	coords = Vector2(0, 0)
 	places = {
 				Vector2(0, 0) :[],

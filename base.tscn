@@ -2275,7 +2275,6 @@ anims/bounce = SubResource( 27 )
 
 [node name="death" type="Control" parent="gui"]
 pause_mode = 2
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 35 )
@@ -2306,15 +2305,15 @@ text = "you died :("
 align = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="gui/death"]
-margin_left = 395.0
+margin_left = 387.0
 margin_top = 211.0
-margin_right = 818.0
+margin_right = 819.0
 margin_bottom = 365.0
 custom_constants/separation = 16
 alignment = 1
 
 [node name="cause" type="Label" parent="gui/death/VBoxContainer"]
-margin_right = 423.0
+margin_right = 432.0
 margin_bottom = 105.0
 custom_fonts/font = ExtResource( 4 )
 text = "ate too much weird fish concoction. why are you so hungry for fishcow anyway??"
@@ -2322,10 +2321,11 @@ autowrap = true
 
 [node name="mock" type="Label" parent="gui/death/VBoxContainer"]
 margin_top = 121.0
-margin_right = 423.0
-margin_bottom = 154.0
+margin_right = 432.0
+margin_bottom = 190.0
 custom_fonts/font = ExtResource( 4 )
-text = "don't blame lag for it."
+text = "death.fall.accident.water
+"
 autowrap = true
 
 [node name="restart" parent="gui/death" instance=ExtResource( 18 )]

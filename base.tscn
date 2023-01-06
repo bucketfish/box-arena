@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://room/room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -35,6 +35,7 @@
 [ext_resource path="res://assets/gui/menu_back.png" type="Texture" id=33]
 [ext_resource path="res://assets/decoration/dead.png" type="Texture" id=34]
 [ext_resource path="res://gui/death.gd" type="Script" id=35]
+[ext_resource path="res://gui/intro.gd" type="Script" id=36]
 
 [sub_resource type="DynamicFont" id=12]
 size = 28
@@ -2174,11 +2175,6 @@ custom_constants/vseparation = 32
 custom_constants/hseparation = 32
 columns = 21
 
-[node name="intro" type="Control" parent="gui"]
-pause_mode = 2
-margin_right = 40.0
-margin_bottom = 40.0
-
 [node name="pause" type="Control" parent="gui"]
 pause_mode = 2
 visible = false
@@ -2366,6 +2362,39 @@ text = "x"
 
 [node name="anim" type="AnimationPlayer" parent="gui/death"]
 
+[node name="intro" type="Control" parent="gui"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 36 )
+
+[node name="ColorRect" type="ColorRect" parent="gui/intro"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="gui/intro"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -7.0
+margin_right = 20.0
+margin_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = ExtResource( 4 )
+text = "the gate is hanging loosely off its hinges
+leading into dark stairs into darker rooms
+the door is wide open - the only question that remains
+adventurer, is whether you will step through it
+and into the box arena."
+align = 1
+valign = 1
+
+[node name="Tween" type="Tween" parent="gui/intro"]
+
 [node name="mainmenu" type="Control" parent="gui"]
 pause_mode = 2
 anchor_right = 1.0
@@ -2469,7 +2498,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 476.0
 margin_bottom = 200.0
-color = Color( 0.505882, 0.611765, 0.756863, 1 )
+color = Color( 0.505882, 0.611765, 0.756863, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -18,12 +18,15 @@ const room = preload("res://room/room.tscn")
 
 onready var pause = $gui/pause
 onready var mainmenu = $gui/mainmenu
+onready var intro = $gui/intro
 
 onready var keyhints = $gui/keyhints
 onready var minimap = $gui/minimap
 onready var map = $gui/map
 
 onready var death = $gui/death
+
+signal next
 
 var curroom
 var comefrom
@@ -83,13 +86,13 @@ func start_game():
 	
 	if Persistent.firstload:
 		intro()
-	
-	
-	
+		
 	yield(get_tree(), "idle_frame")
 	
 func intro():
-	pass
+	update_state("cutscene")
+	intro.start_intro()
+	
 	
 func save_and_quit(save = true):
 	update_pause(true)
@@ -191,8 +194,7 @@ func _input(event):
 			update_state('play')
 			
 			
-	if Input.is_action_just_pressed("pause") && !pause.on && state != "respawn":
-		
+	if Input.is_action_just_pressed("pause") && !pause.on && !(state in ["respawn", "cutscene"]):
 		if inventory.visible:
 			inventory.visible = false
 			shade.visible = false
@@ -205,6 +207,9 @@ func _input(event):
 			pause.turnon()
 			update_pause(pause.on)
 			
+			
+	if Input.is_action_just_pressed("ui_accept") && state in ['cutscene', 'dialogue']:
+		emit_signal("next")
 			
 			
 			

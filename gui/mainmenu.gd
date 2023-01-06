@@ -23,7 +23,6 @@ func start_show():
 func hide_menu():
 	backanim.play("hide")
 	get_tree().paused = false
-	base.start_game()
 	curscreen = "none"
 
 func returnto(): #return to main menu, after saving
@@ -31,7 +30,6 @@ func returnto(): #return to main menu, after saving
 
 
 func _on_play_pressed():
-	
 	yield(base.start_game(), "completed")
 	
 	hide_menu()

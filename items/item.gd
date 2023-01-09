@@ -44,6 +44,9 @@ func _input(event):
 		
 		Persistent.places[Persistent.coords].erase(itemname)
 		
+		if itemname == "elemental blade":
+			base.endgame()
+		
 		# item disappearing animation
 		tween.interpolate_property(self, "global_position",
 				self.global_position, player.global_position, 0.1,
@@ -51,4 +54,6 @@ func _input(event):
 		tween.start()
 		yield(tween, "tween_all_completed")
 		
+		
 		queue_free()
+		

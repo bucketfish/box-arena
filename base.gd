@@ -292,3 +292,7 @@ func die(damagesource):
 	
 	shade.visible = true
 	death.death(damagesource)
+
+
+func endgame():
+	print("the end.")

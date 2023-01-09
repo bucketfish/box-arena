@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://base.gd" type="Script" id=3]
@@ -1319,6 +1319,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ false ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("fade/dark:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "fade"
@@ -1337,6 +1349,34 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("fade/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=37]
+resource_name = "fade_dark"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("fade/dark:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.505882, 0.611765, 0.756863, 0 ), Color( 0.211765, 0.215686, 0.305882, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fade/dark:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -1463,6 +1503,8 @@ tracks/1/keys = {
 [node name="base" type="Node2D"]
 pause_mode = 2
 script = ExtResource( 3 )
+
+[node name="WORKING ON ending" type="Node2D" parent="."]
 
 [node name="player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 741, 302 )
@@ -1615,15 +1657,14 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 60.0
-margin_top = 600.0
-margin_right = 774.0
-margin_bottom = 840.0
+margin_right = -250.0
+margin_bottom = 240.0
 grow_vertical = 0
 alignment = 2
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 72.0
-margin_right = 4810.0
+margin_right = 5834.0
 margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
@@ -1648,7 +1689,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 4810.0
+margin_right = 5834.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -2497,9 +2538,14 @@ anchor_bottom = 1.0
 margin_right = 476.0
 margin_bottom = 200.0
 color = Color( 0.505882, 0.611765, 0.756863, 0 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="dark" type="ColorRect" parent="fade"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 476.0
+margin_bottom = 200.0
+color = Color( 0.505882, 0.611765, 0.756863, 0 )
 
 [node name="Polygon2D" type="Polygon2D" parent="fade"]
 position = Vector2( -80, -810 )
@@ -2511,6 +2557,7 @@ polygon = PoolVector2Array( 61, -59, 1064, -163, 882, 484, -110, 563 )
 pause_mode = 2
 anims/RESET = SubResource( 1 )
 anims/fade = SubResource( 2 )
+anims/fade_dark = SubResource( 37 )
 anims/fromdown = SubResource( 4 )
 anims/fromleft = SubResource( 5 )
 anims/fromright = SubResource( 3 )

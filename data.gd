@@ -289,7 +289,7 @@ var items = {
 					'damage': 100,
 					'energy': 0,
 					'weapon': true,
-					'desc': 'it kept balance between the elements...but all that changed when the fire nation attacked...',
+					'desc': 'it kept balance between the elements... at last, the door is open.',
 					},
 
 

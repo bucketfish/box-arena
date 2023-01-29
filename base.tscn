@@ -1,5 +1,6 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=102 format=2]
 
+[ext_resource path="res://gui/ending.gd" type="Script" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://base.gd" type="Script" id=3]
 [ext_resource path="res://font.tres" type="DynamicFont" id=4]
@@ -35,6 +36,22 @@
 [ext_resource path="res://assets/decoration/dead.png" type="Texture" id=34]
 [ext_resource path="res://gui/death.gd" type="Script" id=35]
 [ext_resource path="res://gui/intro.gd" type="Script" id=36]
+[ext_resource path="res://assets/items/elemental blade.png" type="Texture" id=37]
+[ext_resource path="res://assets/gui/small_button.png" type="Texture" id=38]
+[ext_resource path="res://assets/ending/player0001.png" type="Texture" id=39]
+[ext_resource path="res://assets/ending/glow.png" type="Texture" id=40]
+[ext_resource path="res://assets/ending/door.png" type="Texture" id=41]
+[ext_resource path="res://assets/ending/player0002.png" type="Texture" id=42]
+[ext_resource path="res://assets/ending/player0000.png" type="Texture" id=43]
+[ext_resource path="res://assets/ending/film.png" type="Texture" id=44]
+[ext_resource path="res://creds_big.tres" type="DynamicFont" id=45]
+[ext_resource path="res://credits/ara.png" type="Texture" id=46]
+[ext_resource path="res://creds_font.tres" type="DynamicFont" id=47]
+[ext_resource path="res://docs/assets/cute2.png" type="Texture" id=48]
+[ext_resource path="res://assets/ending/frame.png" type="Texture" id=49]
+[ext_resource path="res://docs/assets/cake.png" type="Texture" id=50]
+[ext_resource path="res://credits/kl.jpg" type="Texture" id=51]
+[ext_resource path="res://credits/fern.png" type="Texture" id=52]
 
 [sub_resource type="DynamicFont" id=12]
 size = 28
@@ -770,10 +787,331 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 20 ), Vector2( 0, -20 ) ]
 }
 
+[sub_resource type="DynamicFont" id=42]
+size = 80
+font_data = ExtResource( 10 )
+fallback/0 = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=41]
+size = 32
+font_data = ExtResource( 10 )
+fallback/0 = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=43]
+size = 24
+font_data = ExtResource( 10 )
+fallback/0 = ExtResource( 23 )
+
+[sub_resource type="CanvasItemMaterial" id=45]
+blend_mode = 1
+
+[sub_resource type="SpriteFrames" id=46]
+animations = [ {
+"frames": [ ExtResource( 43 ), ExtResource( 39 ), ExtResource( 42 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
+
 [sub_resource type="DynamicFont" id=29]
 size = 120
 font_data = ExtResource( 10 )
 fallback/0 = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=48]
+size = 36
+font_data = ExtResource( 10 )
+fallback/0 = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=49]
+size = 64
+font_data = ExtResource( 10 )
+fallback/0 = ExtResource( 23 )
+
+[sub_resource type="Animation" id=39]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("curscene/Doorway:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("curscene/DoorGlow:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("curscene/player:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("curscene:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("info:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("credits:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("credits:rect_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("credits/TextureRect:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("credits/Label2:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("ColorRect2:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("curscene:rect_position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=44]
+resource_name = "continue"
+
+[sub_resource type="Animation" id=50]
+resource_name = "credits"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("credits:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 29.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -2200 ) ]
+}
+
+[sub_resource type="Animation" id=47]
+resource_name = "cutscene"
+tracks/0/type = "value"
+tracks/0/path = NodePath("curscene/Doorway:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.686275, 0.686275, 0.686275, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("curscene/DoorGlow:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.643137 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("curscene/player:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("curscene:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=38]
+resource_name = "fade"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("info:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=51]
+resource_name = "stats"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("credits/TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("credits/Label2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=30]
 length = 0.001
@@ -1664,7 +2002,7 @@ alignment = 2
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 72.0
-margin_right = 5834.0
+margin_right = 714.0
 margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
@@ -1689,7 +2027,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 5834.0
+margin_right = 714.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -2310,6 +2648,7 @@ anims/bounce = SubResource( 27 )
 
 [node name="death" type="Control" parent="gui"]
 pause_mode = 2
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 35 )
@@ -2401,8 +2740,349 @@ text = "x"
 
 [node name="anim" type="AnimationPlayer" parent="gui/death"]
 
+[node name="ending" type="Control" parent="gui"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="gui/ending"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0 )
+
+[node name="info" type="Control" parent="gui/ending"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 1024, 600 )
+
+[node name="Label" type="Label" parent="gui/ending/info"]
+margin_left = 299.0
+margin_top = 97.0
+margin_right = 713.0
+margin_bottom = 204.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.635294, 0.839216, 0.976471, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+custom_fonts/font = SubResource( 42 )
+text = "you did it."
+align = 1
+valign = 1
+
+[node name="Label3" type="Label" parent="gui/ending/info"]
+margin_left = 475.798
+margin_top = 264.798
+margin_right = 832.798
+margin_bottom = 351.798
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 41 )
+text = "elemental blade"
+
+[node name="Label4" type="Label" parent="gui/ending/info"]
+margin_left = 475.798
+margin_top = 325.798
+margin_right = 832.798
+margin_bottom = 465.798
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 43 )
+text = "it kept balance between the elements... at last, the door is open."
+autowrap = true
+
+[node name="ButtonFrame" type="Sprite" parent="gui/ending/info"]
+position = Vector2( 310.798, 354.798 )
+scale = Vector2( 1.14998, 1.14998 )
+texture = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="gui/ending/info"]
+position = Vector2( 310.798, 355.798 )
+scale = Vector2( 0.326667, 0.326667 )
+texture = ExtResource( 37 )
+
+[node name="curscene" type="Control" parent="gui/ending"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Doorway" type="Sprite" parent="gui/ending/curscene"]
+texture = ExtResource( 41 )
+centered = false
+
+[node name="DoorGlow" type="Sprite" parent="gui/ending/curscene"]
+modulate = Color( 1, 1, 1, 0 )
+material = SubResource( 45 )
+texture = ExtResource( 40 )
+centered = false
+
+[node name="player" type="AnimatedSprite" parent="gui/ending/curscene"]
+position = Vector2( 403, 261 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 46 )
+frame = 1
+playing = true
+centered = false
+
+[node name="credits" type="Control" parent="gui/ending"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 2366.0
+rect_min_size = Vector2( 1024, 1000 )
+
+[node name="ColorRect" type="ColorRect" parent="gui/ending/credits"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.321569, 0.356863, 0.411765, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="gui/ending/credits"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 539.0
+margin_top = -351.0
+margin_right = 1763.0
+margin_bottom = 4673.0
+rect_rotation = 30.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 44 )
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="gui/ending/credits"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 577.0
+margin_top = 492.0
+margin_right = 991.0
+margin_bottom = 599.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.635294, 0.839216, 0.976471, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+custom_fonts/font = SubResource( 42 )
+text = "the end."
+align = 2
+valign = 1
+autowrap = true
+
+[node name="title" type="Label" parent="gui/ending/credits"]
+anchor_bottom = 0.0484162
+margin_left = 431.0
+margin_top = 612.0
+margin_right = 992.0
+margin_bottom = 704.368
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.211765, 0.215686, 0.305882, 0.827451 )
+custom_constants/shadow_offset_x = 10
+custom_constants/line_spacing = -70
+custom_constants/shadow_offset_y = 10
+custom_fonts/font = SubResource( 29 )
+text = "box
+arena"
+align = 1
+
+[node name="game by" type="Label" parent="gui/ending/credits"]
+margin_left = 412.0
+margin_top = 876.0
+margin_right = 1013.0
+margin_bottom = 924.0
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_fonts/font = SubResource( 48 )
+text = "a game by"
+align = 1
+autowrap = true
+
+[node name="bucketfish" type="RichTextLabel" parent="gui/ending/credits"]
+margin_left = 409.0
+margin_top = 916.0
+margin_right = 1017.0
+margin_bottom = 1030.0
+custom_colors/font_color_shadow = Color( 0.211765, 0.215686, 0.305882, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_fonts/normal_font = ExtResource( 45 )
+bbcode_enabled = true
+bbcode_text = "[center][wave amp=20 freq=10][rainbow freq=0.15 sat=0.3  val=1]bucketfish[/rainbow][/wave][/center]"
+text = "bucketfish"
+scroll_active = false
+
+[node name="writing" type="Label" parent="gui/ending/credits"]
+margin_left = 56.0
+margin_top = 1175.0
+margin_right = 657.0
+margin_bottom = 1223.0
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_fonts/font = SubResource( 48 )
+text = "writing"
+align = 1
+autowrap = true
+
+[node name="names" type="RichTextLabel" parent="gui/ending/credits"]
+margin_left = 55.0
+margin_top = 1216.0
+margin_right = 663.0
+margin_bottom = 1330.0
+custom_colors/font_color_shadow = Color( 0.211765, 0.215686, 0.305882, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_fonts/normal_font = ExtResource( 45 )
+bbcode_enabled = true
+bbcode_text = "[center][wave amp=20 freq=10][rainbow freq=0.15 sat=0.3  val=1]gabriel[/rainbow][/wave][/center]"
+text = "gabriel"
+scroll_active = false
+
+[node name="additional writing" type="Label" parent="gui/ending/credits"]
+margin_left = 2.0
+margin_top = 1590.0
+margin_right = 1018.0
+margin_bottom = 1648.0
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_fonts/font = SubResource( 48 )
+text = "additional writing & design"
+align = 1
+autowrap = true
+
+[node name="names2" type="RichTextLabel" parent="gui/ending/credits"]
+margin_left = 69.0
+margin_top = 1629.0
+margin_right = 959.0
+margin_bottom = 1843.0
+custom_colors/font_color_shadow = Color( 0.211765, 0.215686, 0.305882, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_fonts/normal_font = ExtResource( 45 )
+bbcode_enabled = true
+bbcode_text = "[center][wave amp=20 freq=10][rainbow freq=0.15 sat=0.3  val=1]ilo kali, ara, oolimry, giraffe, kai[/rainbow][/wave][/center]"
+text = "ilo kali, ara, oolimry, giraffe, kai"
+scroll_active = false
+
+[node name="credits art" type="Label" parent="gui/ending/credits"]
+margin_left = 422.0
+margin_top = 1863.36
+margin_right = 1023.0
+margin_bottom = 1911.36
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_fonts/font = SubResource( 48 )
+text = "credits art"
+align = 1
+autowrap = true
+
+[node name="names3" type="RichTextLabel" parent="gui/ending/credits"]
+margin_left = 422.0
+margin_top = 1902.36
+margin_right = 1023.0
+margin_bottom = 2116.36
+custom_colors/font_color_shadow = Color( 0.211765, 0.215686, 0.305882, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_fonts/normal_font = ExtResource( 45 )
+bbcode_enabled = true
+bbcode_text = "[center][wave amp=20 freq=10][rainbow freq=0.15 sat=0.3  val=1]kl, fern, ara[/rainbow][/wave][/center]"
+text = "kl, fern, ara"
+scroll_active = false
+
+[node name="thank" type="Label" parent="gui/ending/credits"]
+margin_top = 2604.0
+margin_right = 1024.0
+margin_bottom = 2691.0
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_fonts/font = SubResource( 49 )
+text = "thank you for playing!"
+align = 1
+autowrap = true
+
+[node name="Frame" type="Sprite" parent="gui/ending/credits"]
+position = Vector2( 754, 1292 )
+rotation = -0.261799
+scale = Vector2( 0.73, 0.73 )
+texture = ExtResource( 49 )
+
+[node name="Ara" type="Sprite" parent="gui/ending/credits/Frame"]
+show_behind_parent = true
+position = Vector2( 0.322937, -36.2831 )
+scale = Vector2( 0.728265, 0.728265 )
+texture = ExtResource( 46 )
+
+[node name="Label" type="Label" parent="gui/ending/credits/Frame"]
+margin_left = -221.208
+margin_top = 211.601
+margin_right = 233.792
+margin_bottom = 259.601
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 47 )
+text = "ara (@mynameisashlee)"
+
+[node name="Cute2" type="Sprite" parent="gui/ending/credits"]
+position = Vector2( 406, 1417 )
+scale = Vector2( 0.401176, 0.401176 )
+texture = ExtResource( 48 )
+
+[node name="Cake" type="Sprite" parent="gui/ending/credits/Cute2"]
+position = Vector2( -443.695, 12.4631 )
+scale = Vector2( 0.757576, 0.757576 )
+texture = ExtResource( 50 )
+
+[node name="Frame2" type="Sprite" parent="gui/ending/credits"]
+position = Vector2( 251, 2039.36 )
+rotation = 0.261799
+scale = Vector2( 0.73, 0.73 )
+texture = ExtResource( 49 )
+
+[node name="kl" type="Sprite" parent="gui/ending/credits/Frame2"]
+show_behind_parent = true
+position = Vector2( -0.175253, -36.7813 )
+scale = Vector2( 0.983056, 0.983056 )
+texture = ExtResource( 51 )
+
+[node name="Label" type="Label" parent="gui/ending/credits/Frame2"]
+margin_left = -221.208
+margin_top = 211.601
+margin_right = 233.792
+margin_bottom = 259.601
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 47 )
+text = "ig: @arkwardarts.bykl"
+
+[node name="Frame3" type="Sprite" parent="gui/ending/credits"]
+position = Vector2( 736, 2260.36 )
+rotation = -0.261799
+scale = Vector2( 0.73, 0.73 )
+texture = ExtResource( 49 )
+
+[node name="fern" type="Sprite" parent="gui/ending/credits/Frame3"]
+show_behind_parent = true
+position = Vector2( 0.577593, -36.0284 )
+scale = Vector2( 0.859507, 0.859507 )
+texture = ExtResource( 52 )
+
+[node name="Label" type="Label" parent="gui/ending/credits/Frame3"]
+margin_left = -221.208
+margin_top = 211.601
+margin_right = 233.792
+margin_bottom = 259.601
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 47 )
+text = "twt: @itsffernn"
+
+[node name="ColorRect2" type="ColorRect" parent="gui/ending"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="anim" type="AnimationPlayer" parent="gui/ending"]
+anims/RESET = SubResource( 39 )
+anims/continue = SubResource( 44 )
+anims/credits = SubResource( 50 )
+anims/cutscene = SubResource( 47 )
+anims/fade = SubResource( 38 )
+anims/stats = SubResource( 51 )
+
 [node name="intro" type="Control" parent="gui"]
 pause_mode = 2
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 36 )

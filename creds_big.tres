@@ -1,0 +1,9 @@
+[gd_resource type="DynamicFont" load_steps=3 format=2]
+
+[ext_resource path="res://Retron2000.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://MPLUSRounded1c-ExtraBold.ttf" type="DynamicFontData" id=2]
+
+[resource]
+size = 64
+font_data = ExtResource( 1 )
+fallback/0 = ExtResource( 2 )

@@ -813,6 +813,11 @@ animations = [ {
 "speed": 6.0
 } ]
 
+[sub_resource type="DynamicFont" id=52]
+size = 32
+font_data = ExtResource( 10 )
+fallback/0 = ExtResource( 23 )
+
 [sub_resource type="DynamicFont" id=29]
 size = 120
 font_data = ExtResource( 10 )
@@ -974,9 +979,18 @@ tracks/11/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
-
-[sub_resource type="Animation" id=44]
-resource_name = "continue"
+tracks/12/type = "value"
+tracks/12/path = NodePath("credits/stats:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=50]
 resource_name = "credits"
@@ -1111,6 +1125,18 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("credits/stats:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=30]
@@ -1842,7 +1868,7 @@ tracks/1/keys = {
 pause_mode = 2
 script = ExtResource( 3 )
 
-[node name="WORKING ON ending" type="Node2D" parent="."]
+[node name="WORKING ON timer" type="Node2D" parent="."]
 
 [node name="player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 741, 302 )
@@ -2002,7 +2028,7 @@ alignment = 2
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 72.0
-margin_right = 714.0
+margin_right = 1738.0
 margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
@@ -2027,7 +2053,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 714.0
+margin_right = 1738.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -2648,7 +2674,6 @@ anims/bounce = SubResource( 27 )
 
 [node name="death" type="Control" parent="gui"]
 pause_mode = 2
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 35 )
@@ -2693,7 +2718,7 @@ custom_fonts/font = ExtResource( 4 )
 text = "ate too much weird fish concoction. why are you so hungry for fishcow anyway??"
 autowrap = true
 
-[node name="mock" type="Label" parent="gui/death/VBoxContainer"]
+[node name="timer" type="Label" parent="gui/death/VBoxContainer"]
 margin_top = 121.0
 margin_right = 432.0
 margin_bottom = 190.0
@@ -2803,6 +2828,8 @@ texture = ExtResource( 37 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = 1024.0
+margin_bottom = 600.0
 
 [node name="Doorway" type="Sprite" parent="gui/ending/curscene"]
 texture = ExtResource( 41 )
@@ -2826,13 +2853,28 @@ centered = false
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = 2366.0
+margin_right = 1024.0
+margin_bottom = 2966.0
 rect_min_size = Vector2( 1024, 1000 )
 
 [node name="ColorRect" type="ColorRect" parent="gui/ending/credits"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.321569, 0.356863, 0.411765, 1 )
+margin_right = -1024.0
+color = Color( 0.505882, 0.611765, 0.756863, 1 )
+
+[node name="stats" type="Label" parent="gui/ending/credits"]
+margin_left = 645.0
+margin_top = 424.0
+margin_right = 1007.0
+margin_bottom = 523.0
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_fonts/font = SubResource( 52 )
+text = "clear rooms - 00.0%
+time - 00:00.000"
+align = 1
+autowrap = true
 
 [node name="TextureRect" type="TextureRect" parent="gui/ending/credits"]
 modulate = Color( 1, 1, 1, 0 )
@@ -2849,7 +2891,7 @@ stretch_mode = 2
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 577.0
 margin_top = 492.0
-margin_right = 991.0
+margin_right = 1007.0
 margin_bottom = 599.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -3074,7 +3116,6 @@ anchor_bottom = 1.0
 
 [node name="anim" type="AnimationPlayer" parent="gui/ending"]
 anims/RESET = SubResource( 39 )
-anims/continue = SubResource( 44 )
 anims/credits = SubResource( 50 )
 anims/cutscene = SubResource( 47 )
 anims/fade = SubResource( 38 )

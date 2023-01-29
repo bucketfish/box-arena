@@ -5,6 +5,7 @@ onready var anim = $anim
 onready var base = $"../.."
 onready var cutscene = $curscene
 onready var credits = $credits
+onready var stats = $credits/stats
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,6 +20,7 @@ func endgame():
 	yield(base, 'next')
 	base.anim.play("fade")
 	yield(base.anim, "animation_finished")
+	visible = true
 	cutscene.visible = true
 	base.anim.play_backwards("fade")
 	yield(base.anim, "animation_finished")
@@ -26,6 +28,7 @@ func endgame():
 	yield(anim, "animation_finished")
 	yield(base, "next")
 	credits.visible = true
+	stats.text = "clear rooms - %s\ntime - %s" % [Functions.get_room_percent(), Functions.make_time(Persistent.timer)]
 	
 	anim.play("stats")
 	yield(anim, "animation_finished")
@@ -34,6 +37,10 @@ func endgame():
 	anim.play("credits")
 	yield(anim, "animation_finished")
 	yield(base, "next")
+	
 	base.anim.play("fade")
+	yield(base.anim, "animation_finished")
+	visible = false
+	base.anim.play_backwards("fade")
 	yield(base.anim, "animation_finished")
 	

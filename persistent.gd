@@ -6,6 +6,8 @@ onready var base = get_node("/root/base")
 var firstload = true
 var endgames = []
 
+var timer:float = 0 # timer in seconds
+
 var damagesource = ""
 var id_keep = {
 	"firekey": false,
@@ -54,7 +56,7 @@ var weapon = "" setget set_weapon
 # 1. create variable
 # 2. allow it to be reset. if needed
 # 3. allow it to be saved
-# 4. allow it to be loaded
+# 4. check that it can be loaded
 func reset():
 		
 	endgames = []
@@ -93,6 +95,7 @@ func reset():
 	defeated = false
 	weapon = ""
 	damagesource = ""
+	timer = 0
 	
 	save_game()
 	
@@ -164,6 +167,7 @@ func save_game():
 		"weapon": weapon,
 		'id_keep': id_keep,
 		'firstload': firstload,
+		'timer': timer
 	}
 
 	saves.store_line(to_json(vals))

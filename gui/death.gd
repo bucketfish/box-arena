@@ -6,7 +6,7 @@ extends Control
 # var b = "text"
 
 onready var causetext = $VBoxContainer/cause
-onready var mocktext = $VBoxContainer/mock
+onready var timertext = $VBoxContainer/timer
 onready var restart = $restart
 onready var base = get_node("/root/base")
 # Called when the node enters the scene tree for the first time.
@@ -25,7 +25,7 @@ func death(cause):
 		
 	visible = true
 
-	mocktext.text = Data.deathliners[randi() % Data.deathliners.size()]
+	timertext.text = "you survived for " + Functions.make_time(Persistent.timer) + "."
 	
 	yield(get_tree().create_timer(0.1), "timeout")
 	restart.grab_focus()
@@ -34,6 +34,7 @@ func death(cause):
 
 func _on_restart_pressed():
 	Persistent.reset()
+	base.curroom.queue_free()
 	base.start_game()
 
 

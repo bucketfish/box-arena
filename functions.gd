@@ -4,7 +4,35 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	rng.randomize()
 
-
+func get_room_percent():
+	var room_count = 0
+	
+	for room in Persistent.places: # vector2 of coord
+		if Persistent.places[room] == []:
+			if !(room in Persistent.genbosses):
+				room_count += 1
+			else:
+				if Persistent.genbosses[room]["alive"] == false:
+					room_count += 1
+					
+	print(room_count)
+	return "%03.1f%%" % ((float(room_count) / 411) * 100)
+	
+	
+func make_time(timetaken):
+	var taken = stepify(timetaken, 0.01)
+	
+	var hr = floor(taken/3600)
+	var mn = floor(taken/60) - (hr * 60)
+	var sc = floor(taken) - (mn*60) - (hr*3600)
+	var mls = fmod(taken,1) * 1000
+	
+	if hr == 0:
+		return "%02d:%02d.%03d" % [mn, sc, mls]
+	else:
+		return "%d:%02d:%02d.%03d" % [hr, mn, sc, mls]
+		
+		
 func generate_loot(coords):#contents
 	if coords in Persistent.places:
 		return Persistent.places[coords]

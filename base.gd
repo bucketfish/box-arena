@@ -60,6 +60,10 @@ func _ready():
 	update_pause(true)
 	update_state("paused")
 	
+
+func _process(delta):
+	if state == "play" && !paused:
+		Persistent.timer += delta
 	
 func start_game():
 	shade.visible = false
@@ -306,4 +310,8 @@ func endgame():
 	player.canmove=false
 	update_pause(true)
 	update_state("cutscene")
-	ending.endgame()
+	yield(ending.endgame(), "completed")
+	player.canmove = true
+	update_pause(false)
+	update_state("play")
+	

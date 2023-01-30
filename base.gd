@@ -38,6 +38,9 @@ var paused = false setget update_pause
 
 var boss_move = true
 
+onready var ost = $ost
+const soundtracks = [preload("res://audio/ost/skitterdaddle.wav"), preload("res://audio/ost/depths.wav"),  ]
+
 var canuse = {
 	"use": false,
 	"fuse": false,
@@ -57,10 +60,22 @@ func _ready():
 
 	# normal stuff
 	randomize()
+	ost()
 	update_pause(true)
 	update_state("paused")
 	
+	
+func ost():
+	while true:
+		for audio in soundtracks:
+			ost.stream = audio
+			ost.playing = true
+			yield(ost, "finished")
+	
 
+
+
+	
 func _process(delta):
 	if state == "play" && !paused:
 		Persistent.timer += delta

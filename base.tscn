@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=2]
+[gd_scene load_steps=103 format=2]
 
 [ext_resource path="res://gui/ending.gd" type="Script" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -52,6 +52,7 @@
 [ext_resource path="res://docs/assets/cake.png" type="Texture" id=50]
 [ext_resource path="res://credits/kl.jpg" type="Texture" id=51]
 [ext_resource path="res://credits/fern.png" type="Texture" id=52]
+[ext_resource path="res://audio/ost/skitterdaddle.wav" type="AudioStream" id=53]
 
 [sub_resource type="DynamicFont" id=12]
 size = 28
@@ -591,10 +592,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.15 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1263, -18 ), Vector2( 401, -18 ) ]
+"values": [ Vector2( 1263, -18 ), Vector2( 401, -18 ), Vector2( 401, -18 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("less:position")
@@ -603,10 +604,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.15 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -1429, -18 ), Vector2( -755, -18 ) ]
+"values": [ Vector2( -1429, -18 ), Vector2( -755, -18 ), Vector2( -755, -18 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("paused:anchor_top")
@@ -666,10 +667,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.25, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 401, -18 ), Vector2( 1263, -18 ) ]
+"values": [ Vector2( 401, -18 ), Vector2( 401, -18 ), Vector2( 1263, -18 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("less:position")
@@ -678,10 +679,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.25, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -755, -18 ), Vector2( -1429, -18 ) ]
+"values": [ Vector2( -755, -18 ), Vector2( -755, -18 ), Vector2( -1429, -18 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("paused:anchor_top")
@@ -745,10 +746,10 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0.4 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true, false ]
 }
 
 [sub_resource type="DynamicFont" id=21]
@@ -1870,6 +1871,10 @@ script = ExtResource( 3 )
 
 [node name="WORKING ON timer" type="Node2D" parent="."]
 
+[node name="ost" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 53 )
+bus = "OST"
+
 [node name="player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 741, 302 )
 
@@ -2028,7 +2033,7 @@ alignment = 2
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 72.0
-margin_right = 1738.0
+margin_right = 714.0
 margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
@@ -2053,7 +2058,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 1738.0
+margin_right = 714.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -2635,7 +2640,7 @@ __meta__ = {
 margin_left = 665.0
 margin_top = -200.0
 margin_right = 1225.0
-margin_bottom = 24.0001
+margin_bottom = 24.0
 focus_neighbour_top = NodePath("../exit")
 focus_neighbour_bottom = NodePath("../options")
 button_text = "continue"
@@ -2644,7 +2649,7 @@ button_text = "continue"
 margin_left = 561.0
 margin_top = -200.0
 margin_right = 1121.0
-margin_bottom = 24.0001
+margin_bottom = 24.0
 focus_neighbour_top = NodePath("../continue")
 focus_neighbour_bottom = NodePath("../exit")
 button_text = "options"
@@ -3287,6 +3292,8 @@ anims/fromup = SubResource( 6 )
 [node name="bosspause_timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="audio_tween" type="Tween" parent="."]
 
 [connection signal="pressed" from="gui/pause/main/continue" to="gui/pause" method="_on_continue_pressed"]
 [connection signal="goto_screen" from="gui/pause/main/options" to="gui/pause" method="_on_goto_screen"]

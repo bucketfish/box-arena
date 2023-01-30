@@ -61,6 +61,14 @@ func _on_quit_pressed():
 	quit_game()
 	
 func quit_game():
+	var audio_tween = $"../../audio_tween"
+	var ost = $"../../ost"
+
+	audio_tween.interpolate_property(ost, "volume_db", 0, -60, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	audio_tween.start()
+
 	fadeanim.play("fade")
 	yield(fadeanim, "animation_finished")
+	yield(audio_tween, "tween_completed")
+#	yield(base.audio_fadeout(), "completed")
 	get_tree().quit()

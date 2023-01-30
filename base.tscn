@@ -1980,9 +1980,6 @@ margin_left = -33.0
 margin_top = 5.0
 margin_right = 7.0
 margin_bottom = 45.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="icon" type="Control" parent="gui/bars/health/hbox"]
 margin_right = 40.0
@@ -2006,9 +2003,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="plus" type="Control" parent="gui/bars/health/hbox"]
+[node name="low_health" type="RichTextLabel" parent="gui/bars/health/hbox"]
 margin_left = 67.0
-margin_right = 67.0
+margin_top = 2.0
+margin_right = 227.0
+margin_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 160, 0 )
+rect_clip_content = false
+size_flags_vertical = 5
+custom_colors/font_color_shadow = Color( 0.211765, 0.215686, 0.305882, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[wave amp=20 freq=10][rainbow freq=0.15 sat=0.3  val=1]LOW HEALTH![/rainbow][/wave]"
+text = "LOW HEALTH!"
+scroll_active = false
+deselect_on_focus_loss_enabled = false
+
+[node name="plus" type="Control" parent="gui/bars/health/hbox"]
+margin_left = 231.0
+margin_right = 231.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 
@@ -2729,6 +2746,7 @@ anims/bounce = SubResource( 27 )
 
 [node name="death" type="Control" parent="gui"]
 pause_mode = 2
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 35 )

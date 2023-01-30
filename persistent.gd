@@ -102,11 +102,18 @@ func reset():
 	
 
 func update_health(newval):
+	var oldhealth = health
 	health = newval
 	base.bars.update_bars()
 	
 	if health <= 0:
 		base.die(damagesource)
+		base.low_health.return_to_normal()
+		
+	elif health <= min(0.2 * max_health, 5):
+		base.low_health.low_health()
+	else:
+		base.low_health.return_to_normal()
 
 func update_energy(newval):
 	energy = newval

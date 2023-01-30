@@ -23,6 +23,7 @@ onready var intro = $gui/intro
 onready var keyhints = $gui/keyhints
 onready var minimap = $gui/minimap
 onready var map = $gui/map
+onready var low_health = $gui/low_health
 
 onready var death = $gui/death
 

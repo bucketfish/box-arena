@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=2]
+[gd_scene load_steps=107 format=2]
 
 [ext_resource path="res://gui/ending.gd" type="Script" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -53,6 +53,40 @@
 [ext_resource path="res://credits/kl.jpg" type="Texture" id=51]
 [ext_resource path="res://credits/fern.png" type="Texture" id=52]
 [ext_resource path="res://audio/ost/skitterdaddle.wav" type="AudioStream" id=53]
+[ext_resource path="res://gui/low_health.gd" type="Script" id=54]
+[ext_resource path="res://assets/gui/low_health.png" type="Texture" id=55]
+
+[sub_resource type="Animation" id=53]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=54]
+resource_name = "pulse"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="DynamicFont" id=12]
 size = 28
@@ -1892,6 +1926,22 @@ position = Vector2( 855, 300 )
 
 [node name="gui" type="CanvasLayer" parent="."]
 pause_mode = 2
+
+[node name="low_health" type="Control" parent="gui"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 54 )
+
+[node name="Sprite" type="Sprite" parent="gui/low_health"]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 55 )
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="gui/low_health"]
+anims/RESET = SubResource( 53 )
+anims/pulse = SubResource( 54 )
+
+[node name="Tween" type="Tween" parent="gui/low_health"]
 
 [node name="bars" type="Control" parent="gui"]
 pause_mode = 2

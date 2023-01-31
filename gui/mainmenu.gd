@@ -2,6 +2,7 @@ extends Control
 
 onready var anim = $anim
 onready var backanim = $backanim
+onready var saves = $saves
 
 onready var base = get_node("/root/base")
 onready var fadeanim = $"../../anim"
@@ -30,18 +31,27 @@ func returnto(): #return to main menu, after saving
 	start_show()
 
 
-func _on_play_pressed():
+func save_selected(save_num):
+	Persistent.savenum = save_num
 	yield(base.start_game(), "completed")
-	
 	hide_menu()
 
 
 
 func _on_goto_screen(scenename):
+	if scenename == "saves":
+		saves.prepare_saves()
+		backanim.play("hide_title")
+		saves.play_label.visible = false
+	
 	if curscreen != "none":
 		anim.play_backwards(curscreen)
 		yield(anim, "animation_finished")
 	anim.play(scenename)
+	if curscreen == "saves":
+		backanim.play_backwards('hide_title')
+		saves.prepare_saves()
+		
 	curscreen = scenename
 	
 	
@@ -51,11 +61,11 @@ func _input(event):
 		var nextscreen = "main"
 		if curscreen == "controls" || curscreen == "audio":
 			nextscreen = "options"
-			
-		anim.play_backwards(curscreen)
-		yield(anim, "animation_finished")
-		anim.play(nextscreen)
-		curscreen = nextscreen
+		
+		_on_goto_screen(nextscreen)
+		
+	if Input.is_action_pressed("ui_cancel"):
+		print("AAA")
 
 
 func _on_quit_pressed():
@@ -73,3 +83,6 @@ func quit_game():
 	yield(audio_tween, "tween_completed")
 #	yield(base.audio_fadeout(), "completed")
 	get_tree().quit()
+
+
+

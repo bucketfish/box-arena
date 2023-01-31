@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=2]
+[gd_scene load_steps=112 format=2]
 
 [ext_resource path="res://gui/ending.gd" type="Script" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -55,6 +55,9 @@
 [ext_resource path="res://audio/ost/skitterdaddle.wav" type="AudioStream" id=53]
 [ext_resource path="res://gui/low_health.gd" type="Script" id=54]
 [ext_resource path="res://assets/gui/low_health.png" type="Texture" id=55]
+[ext_resource path="res://gui/save.tscn" type="PackedScene" id=56]
+[ext_resource path="res://gui/saves.gd" type="Script" id=57]
+[ext_resource path="res://assets/gui/small_button_focus.png" type="Texture" id=58]
 
 [sub_resource type="Animation" id=53]
 length = 0.001
@@ -1332,6 +1335,78 @@ tracks/12/keys = {
 "update": 0,
 "values": [ Vector2( 545, -200 ) ]
 }
+tracks/13/type = "value"
+tracks/13/path = NodePath("saves/save:rect_position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 177, -437 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("saves/save2:rect_position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 431, -437 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("saves/save3:rect_position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 685, -437 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("saves/play:rect_position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 58, -309 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("saves/RichTextLabel:rect_position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -250, 42 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("saves/RichTextLabel:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=31]
 resource_name = "controls"
@@ -1498,6 +1573,97 @@ tracks/3/keys = {
 } ]
 }
 
+[sub_resource type="Animation" id=55]
+resource_name = "saves"
+length = 0.25
+step = 0.025
+tracks/0/type = "value"
+tracks/0/path = NodePath("saves/save3:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.075, 0.2, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 685, -437 ), Vector2( 685, -437 ), Vector2( 685, 173 ), Vector2( 685, 123 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("saves/save2:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.175, 0.225 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 431, -437 ), Vector2( 431, -437 ), Vector2( 431, 173 ), Vector2( 431, 123 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("saves/save:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.025, 0.15, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 177, -437 ), Vector2( 177, -437 ), Vector2( 177, 173 ), Vector2( 177, 123 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("saves/RichTextLabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("saves/play:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.125, 0.175 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 58, -309 ), Vector2( 58, 300 ), Vector2( 58, 250 ) ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("saves/save")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.025 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "grab_focus"
+} ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("saves/RichTextLabel:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.15 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 177, 42 ) ]
+}
+
 [sub_resource type="Animation" id=34]
 length = 0.001
 tracks/0/type = "value"
@@ -1587,46 +1753,51 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( -755, -18 ), Vector2( -1429, -18 ) ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("title:anchor_top")
+tracks/2/type = "method"
+tracks/2/path = NodePath("anim")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.05, -0.5, -0.5 ]
-}
-tracks/3/type = "method"
-tracks/3/path = NodePath("anim")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
-"args": [ "main", -1 ],
+"args": [ "saves", -1 ],
 "method": "play_backwards"
 }, {
 "args": [ "RESET", -1, 1.0, false ],
 "method": "play"
 } ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath(".:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 0.4 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+
+[sub_resource type="Animation" id=56]
+resource_name = "hide_title"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("title:anchor_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.05, -0.5, -0.5 ]
 }
 
 [sub_resource type="Animation" id=35]
@@ -1903,7 +2074,7 @@ tracks/1/keys = {
 pause_mode = 2
 script = ExtResource( 3 )
 
-[node name="WORKING ON timer" type="Node2D" parent="."]
+[node name="WORKING ON multiple saves" type="Node2D" parent="."]
 
 [node name="ost" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 53 )
@@ -2035,9 +2206,6 @@ margin_left = 88.0
 margin_top = 70.0
 margin_right = 128.0
 margin_bottom = 110.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="anim" type="AnimationPlayer" parent="gui/bars/energy"]
 anims/RESET = SubResource( 13 )
@@ -2101,7 +2269,7 @@ alignment = 2
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 72.0
-margin_right = 714.0
+margin_right = 5834.0
 margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
@@ -2126,7 +2294,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 714.0
+margin_right = 5834.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -2902,8 +3070,8 @@ texture = ExtResource( 37 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_right = 7168.0
+margin_bottom = 4200.0
 
 [node name="Doorway" type="Sprite" parent="gui/ending/curscene"]
 texture = ExtResource( 41 )
@@ -2927,8 +3095,8 @@ centered = false
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1024.0
-margin_bottom = 2966.0
+margin_right = 7168.0
+margin_bottom = 6566.0
 rect_min_size = Vector2( 1024, 1000 )
 
 [node name="ColorRect" type="ColorRect" parent="gui/ending/credits"]
@@ -3251,7 +3419,7 @@ color = Color( 0.211765, 0.215686, 0.305882, 1 )
 polygon = PoolVector2Array( 200, 0, 1064, 0, 800, 500, -118.368, 500 )
 
 [node name="title" type="Label" parent="gui/mainmenu"]
-anchor_bottom = 0.0484162
+anchor_bottom = 0.05
 margin_left = 19.0
 margin_top = 18.0
 margin_right = 468.0
@@ -3276,10 +3444,12 @@ anims/RESET = SubResource( 30 )
 anims/controls = SubResource( 31 )
 anims/main = SubResource( 32 )
 anims/options = SubResource( 33 )
+anims/saves = SubResource( 55 )
 
 [node name="backanim" type="AnimationPlayer" parent="gui/mainmenu"]
 anims/RESET = SubResource( 34 )
 anims/hide = SubResource( 36 )
+anims/hide_title = SubResource( 56 )
 anims/show = SubResource( 35 )
 
 [node name="main" type="Control" parent="gui/mainmenu"]
@@ -3294,6 +3464,7 @@ margin_bottom = 24.0001
 focus_neighbour_top = NodePath("../quit")
 focus_neighbour_bottom = NodePath("../options")
 button_text = "play"
+nextmenu = "saves"
 
 [node name="options" parent="gui/mainmenu/main" instance=ExtResource( 18 )]
 margin_left = 561.0
@@ -3318,10 +3489,77 @@ button_text = "credits"
 margin_left = 432.0
 margin_top = -200.0
 margin_right = 992.0
-margin_bottom = 24.0002
+margin_bottom = 24.0001
 focus_neighbour_top = NodePath("../credits")
 focus_neighbour_bottom = NodePath("../play")
 button_text = "quit"
+
+[node name="saves" type="Control" parent="gui/mainmenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 57 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="gui/mainmenu/saves"]
+visible = false
+margin_left = -250.0
+margin_top = 42.0
+margin_bottom = 96.0
+custom_colors/font_color_shadow = Color( 0.211765, 0.215686, 0.305882, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_fonts/normal_font = ExtResource( 47 )
+bbcode_enabled = true
+bbcode_text = "[center][wave amp=20 freq=10][rainbow freq=0.15 sat=0.3  val=1]play![/rainbow][/wave][/center]"
+text = "play!"
+scroll_active = false
+
+[node name="Tween" type="Tween" parent="gui/mainmenu/saves/RichTextLabel"]
+
+[node name="play" parent="gui/mainmenu/saves" instance=ExtResource( 18 )]
+margin_left = 58.0
+margin_top = -309.0
+margin_right = 282.0
+margin_bottom = -85.0
+focus_neighbour_left = NodePath("../save3")
+focus_neighbour_right = NodePath("../save")
+texture_normal = ExtResource( 38 )
+texture_pressed = ExtResource( 58 )
+texture_hover = ExtResource( 58 )
+texture_focused = ExtResource( 58 )
+button_text = "<-"
+nextmenu = "main"
+
+[node name="Label" parent="gui/mainmenu/saves/play" index="0"]
+margin_right = 224.0
+text = "<-"
+
+[node name="save" parent="gui/mainmenu/saves" instance=ExtResource( 56 )]
+margin_left = 177.0
+margin_top = -437.0
+margin_right = 427.0
+margin_bottom = -86.9999
+focus_neighbour_left = NodePath("../play")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath("../save2")
+focus_neighbour_bottom = NodePath(".")
+
+[node name="save2" parent="gui/mainmenu/saves" instance=ExtResource( 56 )]
+margin_left = 431.0
+margin_top = -437.0
+margin_right = 681.0
+margin_bottom = -87.0
+focus_neighbour_left = NodePath("../save")
+focus_neighbour_right = NodePath("../save3")
+save_num = 1
+
+[node name="save3" parent="gui/mainmenu/saves" instance=ExtResource( 56 )]
+margin_left = 685.0
+margin_top = -437.0
+margin_right = 935.0
+margin_bottom = -87.0
+focus_neighbour_left = NodePath("../save2")
+focus_neighbour_right = NodePath("../play")
+save_num = 2
 
 [node name="fade" type="CanvasLayer" parent="."]
 pause_mode = 2
@@ -3376,9 +3614,14 @@ one_shot = true
 [connection signal="goto_screen" from="gui/mainmenu/options/controls_screen/back" to="gui/mainmenu" method="_on_goto_screen"]
 [connection signal="goto_screen" from="gui/mainmenu/options/controls" to="gui/mainmenu" method="_on_goto_screen"]
 [connection signal="goto_screen" from="gui/mainmenu/options/back" to="gui/mainmenu" method="_on_goto_screen"]
-[connection signal="pressed" from="gui/mainmenu/main/play" to="gui/mainmenu" method="_on_play_pressed"]
+[connection signal="goto_screen" from="gui/mainmenu/main/play" to="gui/mainmenu" method="_on_goto_screen"]
 [connection signal="goto_screen" from="gui/mainmenu/main/options" to="gui/mainmenu" method="_on_goto_screen"]
 [connection signal="pressed" from="gui/mainmenu/main/quit" to="gui/mainmenu" method="_on_quit_pressed"]
+[connection signal="focus_entered" from="gui/mainmenu/saves/play" to="gui/mainmenu/saves" method="_on_play_focus_entered"]
+[connection signal="goto_screen" from="gui/mainmenu/saves/play" to="gui/mainmenu" method="_on_goto_screen"]
+[connection signal="focus_entered" from="gui/mainmenu/saves/save" to="gui/mainmenu/saves" method="_on_save_focus_entered"]
+[connection signal="focus_entered" from="gui/mainmenu/saves/save2" to="gui/mainmenu/saves" method="_on_save2_focus_entered"]
+[connection signal="focus_entered" from="gui/mainmenu/saves/save3" to="gui/mainmenu/saves" method="_on_save3_focus_entered"]
 [connection signal="timeout" from="bosspause_timer" to="." method="_on_bosspause_timer_timeout"]
 
 [editable path="gui/keyhints/VBoxContainer/inventory"]
@@ -3391,3 +3634,4 @@ one_shot = true
 [editable path="gui/death/restart"]
 [editable path="gui/death/main menu"]
 [editable path="gui/mainmenu/options"]
+[editable path="gui/mainmenu/saves/play"]

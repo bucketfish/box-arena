@@ -8,6 +8,11 @@ var endgames = []
 
 var timer:float = 0 # timer in seconds
 
+var savenum = 0 setget update_savepath
+var savepath = "user://saves%d.save" % savenum
+var thumbnailpath = "user://thumbnail.save"
+var thumbnails = {0: {}, 1: {}, 2: {}}
+
 var damagesource = ""
 var id_keep = {
 	"firekey": false,
@@ -57,6 +62,11 @@ var weapon = "" setget set_weapon
 # 2. allow it to be reset. if needed
 # 3. allow it to be saved
 # 4. check that it can be loaded
+
+func update_savepath(new):
+	savenum = new
+	savepath = "user://saves%d.save" % savenum
+	
 func reset():
 		
 	endgames = []
@@ -140,6 +150,7 @@ func sort_inv(newval):
 	
 func _ready():
 	sort_inv(carrying)
+	load_thumbnails()
 
 
 func update_keeps(new_keep):
@@ -149,11 +160,61 @@ func update_keeps(new_keep):
 		defeated = true
 		emit_signal("endgame")
 
+func load_thumbnails():
+	var save = File.new()
+	if not save.file_exists(thumbnailpath):
+		yield(get_tree(), "idle_frame")
+		return {0: {}, 1: {}, 2: {}} # Error! We don't have a save to load.
+
+	# Load the file line by line and process that dictionary to restore
+	# the object it represents.
+	save.open(thumbnailpath, File.READ)
+
+	# Get the saved dictionary from the next line in the save file
+	var vals = parse_json(save.get_line())
+	
+	for i in vals.keys(): 
+		"""
+		Store the keys as variables
+		- 0weapon
+		- 0health
+		- 0energy
+		- 0time (seconds played)
+		"""
+		
+		thumbnails[int(i.left(1))][i.right(1)] = vals[i]
+		
+#	print(thumbnails)
+	
+	return thumbnails
+		
+func save_thumbnail():
+	var save = File.new()
+	save.open(thumbnailpath, File.WRITE)
+	
+	thumbnails[savenum]["weapon"] = weapon
+	thumbnails[savenum]["health"] = health
+	thumbnails[savenum]["max_health"] = max_health
+	thumbnails[savenum]["energy"] = energy
+	thumbnails[savenum]["timer"] = timer
+	
+	var vals = {}
+	
+	for i in thumbnails.keys():
+		for j in thumbnails[i].keys():
+			vals[str(i) + j] = thumbnails[i][j]
+			
+	save.store_line(to_json(vals))
+	save.close()
+	
 
 func save_game():
+	save_thumbnail()
+	
+	
 	#prepares the file
 	var saves = File.new()
-	saves.open("user://saves.save", File.WRITE)
+	saves.open(savepath, File.WRITE)
 	
 	#vars to save
 	var vals = {
@@ -191,13 +252,13 @@ func load_game():
 	
 	
 	var save_game = File.new()
-	if not save_game.file_exists("user://saves.save"):
+	if not save_game.file_exists(savepath):
 		yield(get_tree(), "idle_frame")
 		return # Error! We don't have a save to load.
 
 	# Load the file line by line and process that dictionary to restore
 	# the object it represents.
-	save_game.open("user://saves.save", File.READ)
+	save_game.open(savepath, File.READ)
 
 	# Get the saved dictionary from the next line in the save file
 	var vals = parse_json(save_game.get_line())

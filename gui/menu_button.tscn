@@ -27,9 +27,6 @@ texture_pressed = ExtResource( 1 )
 texture_hover = ExtResource( 1 )
 texture_focused = ExtResource( 1 )
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label" type="Label" parent="."]
 margin_top = 16.0

@@ -53,6 +53,9 @@ func hurt(damageval):
 	hurtbox.start_invincibility(0.6)
 	
 	health -= damageval
+	
+	base.bossui.boss_health(health, Data.bosses[type]["health"])
+	
 	if health <= 0:
 		die()
 	

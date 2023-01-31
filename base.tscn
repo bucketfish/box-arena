@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=2]
+[gd_scene load_steps=116 format=2]
 
 [ext_resource path="res://gui/ending.gd" type="Script" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -58,6 +58,7 @@
 [ext_resource path="res://gui/save.tscn" type="PackedScene" id=56]
 [ext_resource path="res://gui/saves.gd" type="Script" id=57]
 [ext_resource path="res://assets/gui/small_button_focus.png" type="Texture" id=58]
+[ext_resource path="res://assets/gui/monster_icons_old.png" type="Texture" id=59]
 
 [sub_resource type="Animation" id=53]
 length = 0.001
@@ -132,6 +133,26 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="StyleBoxFlat" id=57]
+bg_color = Color( 0.956863, 0.509804, 0.509804, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=58]
+bg_color = Color( 1, 0.752941, 0.752941, 1 )
+border_color = Color( 1, 0.752941, 0.752941, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [sub_resource type="DynamicFont" id=15]
 size = 64
 font_data = ExtResource( 10 )
@@ -190,6 +211,72 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( 714, 105 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("HBoxContainer2:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 60, 344 ) ]
+}
+
+[sub_resource type="Animation" id=59]
+resource_name = "hide"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBoxContainer:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 60, 600 ), Vector2( 60, 310 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("VBoxContainer/desc:rect_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 714, 33 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "lower_boss_bar"
+} ]
+}
 
 [sub_resource type="Animation" id=18]
 resource_name = "show"
@@ -229,6 +316,20 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 714, 33 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "position_boss_bar"
+} ]
 }
 
 [sub_resource type="DynamicFont" id=8]
@@ -2074,7 +2175,7 @@ tracks/1/keys = {
 pause_mode = 2
 script = ExtResource( 3 )
 
-[node name="WORKING ON multiple saves" type="Node2D" parent="."]
+[node name="WORKING ON nothing" type="Node2D" parent="."]
 
 [node name="ost" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 53 )
@@ -2256,6 +2357,43 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 17 )
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="gui/boss"]
+margin_left = 60.0
+margin_top = 344.0
+margin_right = 774.0
+margin_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 56 )
+
+[node name="Control" type="Control" parent="gui/boss/HBoxContainer2"]
+margin_right = 48.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 48, 56 )
+
+[node name="Sprite" type="Sprite" parent="gui/boss/HBoxContainer2/Control"]
+position = Vector2( -8, 0 )
+texture = ExtResource( 59 )
+centered = false
+hframes = 5
+vframes = 3
+
+[node name="Control2" type="Control" parent="gui/boss/HBoxContainer2"]
+margin_left = 52.0
+margin_right = 52.0
+margin_bottom = 56.0
+
+[node name="ProgressBar" type="ProgressBar" parent="gui/boss/HBoxContainer2/Control2"]
+margin_left = 4.0
+margin_top = 12.0
+margin_right = 204.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 200, 32 )
+custom_styles/fg = SubResource( 57 )
+custom_styles/bg = SubResource( 58 )
+value = 100.0
+percent_visible = false
+
 [node name="VBoxContainer" type="VBoxContainer" parent="gui/boss"]
 modulate = Color( 1, 1, 1, 0 )
 anchor_top = 1.0
@@ -2268,33 +2406,33 @@ grow_vertical = 0
 alignment = 2
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
-margin_top = 72.0
-margin_right = 14026.0
-margin_bottom = 159.0
+margin_top = 36.0
+margin_right = 714.0
+margin_bottom = 123.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
 custom_constants/shadow_offset_x = 4
 custom_constants/shadow_offset_y = 4
 custom_constants/shadow_as_outline = 0
 custom_fonts/font = SubResource( 15 )
-text = "dfhsjdksf"
+text = "djkghjsd"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="desc" type="Label" parent="gui/boss/VBoxContainer"]
-margin_top = 163.0
+margin_top = 127.0
 margin_right = 714.0
-margin_bottom = 268.0
+margin_bottom = 232.0
 custom_fonts/font = SubResource( 16 )
-text = "j"
+text = "jjhgfjhkghgfglgkhjkgkfkjkdfhgisudgkjsflgjnsfljsnfdkg"
 valign = 2
 autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 14026.0
+margin_right = 714.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -2371,11 +2509,14 @@ size_flags_horizontal = 3
 
 [node name="anim" type="AnimationPlayer" parent="gui/boss"]
 anims/RESET = SubResource( 17 )
+anims/hide = SubResource( 59 )
 anims/show = SubResource( 18 )
 
 [node name="animtimer" type="Timer" parent="gui/boss"]
 wait_time = 4.0
 one_shot = true
+
+[node name="Tween" type="Tween" parent="gui/boss"]
 
 [node name="keyhints" type="Control" parent="gui"]
 pause_mode = 2
@@ -3087,6 +3228,7 @@ centered = false
 position = Vector2( 403, 261 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 46 )
+frame = 1
 playing = true
 centered = false
 

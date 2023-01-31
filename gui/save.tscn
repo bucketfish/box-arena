@@ -142,6 +142,30 @@ tracks/9/keys = {
 "update": 0,
 "values": [ Vector2( 456, 656 ) ]
 }
+tracks/10/type = "value"
+tracks/10/path = NodePath("new_save:rect_size")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("box:rect_size")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "empty"
@@ -384,14 +408,14 @@ modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -32.0
-margin_right = 500.0
-margin_bottom = 668.0
+margin_right = -250.0
+margin_bottom = -382.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="box"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -500.0
-margin_bottom = -700.0
+margin_right = 250.0
+margin_bottom = 350.0
 texture = ExtResource( 8 )
 patch_margin_left = 40
 patch_margin_top = 40
@@ -399,12 +423,13 @@ patch_margin_right = 40
 patch_margin_bottom = 40
 
 [node name="highlight" type="NinePatchRect" parent="box"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 11.0
 margin_top = 12.0
-margin_right = -283.0
-margin_bottom = -382.0
+margin_right = 467.0
+margin_bottom = 668.0
 rect_scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
 patch_margin_left = 100
@@ -541,14 +566,14 @@ modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 384.0
-margin_right = 500.0
-margin_bottom = 1084.0
+margin_right = -250.0
+margin_bottom = 34.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="new_save"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -500.0
-margin_bottom = -700.0
+margin_right = 250.0
+margin_bottom = 350.0
 texture = ExtResource( 8 )
 patch_margin_left = 40
 patch_margin_top = 40
@@ -561,8 +586,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 11.0
 margin_top = 11.0
-margin_right = -283.0
-margin_bottom = -383.0
+margin_right = 467.0
+margin_bottom = 667.0
 rect_scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
 patch_margin_left = 100

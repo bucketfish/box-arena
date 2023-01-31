@@ -5,6 +5,9 @@ extends TextureButton
 # var a = 2
 # var b = "text"
 onready var highlight = $box/highlight
+onready var newsave_highlight = $new_save/highlight
+
+
 onready var weapon = $box/player/weapon
 onready var health = $box/VBoxContainer/hbox/value
 onready var energy = $box/VBoxContainer/hbox2/value
@@ -34,12 +37,15 @@ var deleting = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	highlight.visible = false
+	newsave_highlight.visible = false
 	set_process(false)
 	save_label.text = "save %d" % (save_num + 1)
 
-func display_thumbnail(data):
+func display_thumbnail(data, firsttime = true):
 	has_save = true
-	anim.play("existing")
+	if firsttime:
+		anim.play("existing")
 	
 	"""
 	data = {
@@ -101,6 +107,7 @@ func stop_deleting():
 
 func _on_save_focus_entered():
 	highlight.visible = true
+	newsave_highlight.visible = true
 	set_process(true)
 	if has_save:
 		card = box
@@ -120,6 +127,7 @@ func _on_save_focus_entered():
 
 func _on_save_focus_exited():
 	highlight.visible = false
+	newsave_highlight.visible = false
 	set_process(false)
 	
 	if has_save:
@@ -153,7 +161,7 @@ func create_new_save():
 	
 	Persistent.create_save(save_num)
 	
-	display_thumbnail(Persistent.thumbnails[save_num])
+	display_thumbnail(Persistent.thumbnails[save_num], false)
 	
 
 func delete_save():

@@ -30,6 +30,8 @@ func death(cause):
 	yield(get_tree().create_timer(0.1), "timeout")
 	restart.grab_focus()
 	
+	Persistent.delete_save(Persistent.savenum)
+	
 
 
 func _on_restart_pressed():
@@ -39,5 +41,5 @@ func _on_restart_pressed():
 
 
 func _on_main_menu_pressed():
-	Persistent.reset()
+#	Persistent.reset()
 	base.save_and_quit(false)

@@ -21,7 +21,7 @@ var id_keep = {
 	"earthkey": false,
 	'outoffirstroom': false 
 } setget update_keeps
-var carrying = ["elemental blade", "fire key", "earth key", "water key", "air key", "fishcow"] setget sort_inv
+var carrying = [] setget sort_inv
 
 signal endgame
 var coords = Vector2(0, 0)

@@ -124,6 +124,7 @@ func save_and_quit(save = true):
 	if save:
 		Persistent.save_game()
 	mainmenu.returnto()
+	curroom.queue_free()
 	
 func open_room():
 	bossui.animon = false

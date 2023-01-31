@@ -11,7 +11,7 @@ var timer:float = 0 # timer in seconds
 var savenum = 0 setget update_savepath
 var savepath = "user://saves%d.save" % savenum
 var thumbnailpath = "user://thumbnail.save"
-var thumbnails = {0: {}, 1: {}, 2: {}}
+var thumbnails = {0: {}, 1: {}, 2: {}} # how do i actually delete the save. a
 
 var damagesource = ""
 var id_keep = {
@@ -63,7 +63,29 @@ var weapon = "" setget set_weapon
 # 3. allow it to be saved
 # 4. check that it can be loaded
 
+
+func create_save(num):
+	print(num)
+	update_savepath(num)
+	reset()
+
+	
+func delete_save(num):
+	"""
+	1. clear thumbnail
+	2. delete file
+	3. ?? profit.
+	"""
+	
+	thumbnails[num] = {}
+	
+	var dir = Directory.new()
+	dir.remove("user://saves%d.save" % num)
+	
+	save_thumbnail(false)
+
 func update_savepath(new):
+
 	savenum = new
 	savepath = "user://saves%d.save" % savenum
 	
@@ -188,15 +210,16 @@ func load_thumbnails():
 	
 	return thumbnails
 		
-func save_thumbnail():
+func save_thumbnail(update_curgame = true):
 	var save = File.new()
 	save.open(thumbnailpath, File.WRITE)
 	
-	thumbnails[savenum]["weapon"] = weapon
-	thumbnails[savenum]["health"] = health
-	thumbnails[savenum]["max_health"] = max_health
-	thumbnails[savenum]["energy"] = energy
-	thumbnails[savenum]["timer"] = timer
+	if update_curgame:
+		thumbnails[savenum]["weapon"] = weapon
+		thumbnails[savenum]["health"] = health
+		thumbnails[savenum]["max_health"] = max_health
+		thumbnails[savenum]["energy"] = energy
+		thumbnails[savenum]["timer"] = timer
 	
 	var vals = {}
 	
@@ -210,7 +233,6 @@ func save_thumbnail():
 
 func save_game():
 	save_thumbnail()
-	
 	
 	#prepares the file
 	var saves = File.new()

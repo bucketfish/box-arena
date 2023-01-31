@@ -12,11 +12,11 @@ func _init():
 	resource_name = "RichTextTurnColor"
 	
 func _process_custom_fx(char_fx):
-	var speed = char_fx.env.get("time", 2.0) # time to turn entire text into the color
+	var speed = char_fx.env.get("time") # time to turn entire text into the color
 	var chars = char_fx.env.get("chars", 10)
 	var color = char_fx.env.get("color", "#F48282")
-	
-	if speed * (float(char_fx.relative_index) / chars) < char_fx.elapsed_time:
+		
+	if speed * (float(char_fx.relative_index) / (chars - 1)) <= char_fx.elapsed_time:
 		char_fx.color = color
 		return true
 	

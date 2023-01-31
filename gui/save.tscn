@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Retron2000.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/gui/clock.png" type="Texture" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://assets/gui/health.png" type="Texture" id=4]
 [ext_resource path="res://assets/player/player0002.png" type="Texture" id=5]
 [ext_resource path="res://creds_font.tres" type="DynamicFont" id=6]
-[ext_resource path="res://assets/items/wooden stick.png" type="Texture" id=7]
 [ext_resource path="res://assets/gui/small_button.png" type="Texture" id=8]
 [ext_resource path="res://gui/savecard.gd" type="Script" id=9]
 [ext_resource path="res://assets/gui/highlight.png" type="Texture" id=10]
@@ -21,6 +20,334 @@ script = ExtResource( 12 )
 size = 25
 font_data = ExtResource( 1 )
 
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("new_save:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 384 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("new_save:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("box:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -32 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("delete:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -128 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("box:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("delete:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("box/NinePatchRect:rect_size")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 250, 350 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("box/highlight:rect_size")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 456, 656 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("new_save/NinePatchRect:rect_size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 250, 350 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("new_save/highlight:rect_size")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 456, 656 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "empty"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("new_save:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("box:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -464 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("new_save:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("box:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("delete:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "existing"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("box:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("new_save:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 384 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("new_save:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("box:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("delete:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "new_save"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("new_save:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 384 ), Vector2( 0, -82 ), Vector2( 0, -32 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("new_save:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("box:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.05, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -32 ), Vector2( 0, 10 ), Vector2( 0, -464 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("delete:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -128 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("box:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("delete:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.01, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="save" type="TextureButton"]
 margin_right = 250.0
 margin_bottom = 350.0
@@ -30,9 +357,10 @@ script = ExtResource( 9 )
 [node name="Tween" type="Tween" parent="."]
 
 [node name="delete" type="Control" parent="."]
-margin_top = -24.0
+modulate = Color( 1, 1, 1, 0 )
+margin_top = -128.0
 margin_right = 40.0
-margin_bottom = 16.0
+margin_bottom = -88.0
 
 [node name="text" type="RichTextLabel" parent="delete"]
 margin_left = 11.0
@@ -52,14 +380,18 @@ custom_effects = [ SubResource( 2 ) ]
 [node name="delete_timer" type="Timer" parent="delete"]
 
 [node name="box" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -24.0
-margin_bottom = -24.0
+margin_top = -32.0
+margin_right = 500.0
+margin_bottom = 668.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="box"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = -500.0
+margin_bottom = -700.0
 texture = ExtResource( 8 )
 patch_margin_left = 40
 patch_margin_top = 40
@@ -67,13 +399,12 @@ patch_margin_right = 40
 patch_margin_bottom = 40
 
 [node name="highlight" type="NinePatchRect" parent="box"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 11.0
-margin_top = 11.0
-margin_right = 217.0
-margin_bottom = 317.0
+margin_top = 12.0
+margin_right = -283.0
+margin_bottom = -382.0
 rect_scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
 patch_margin_left = 100
@@ -101,7 +432,6 @@ show_behind_parent = true
 position = Vector2( -132, 24 )
 rotation = -0.523598
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 7 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="box"]
 margin_left = 25.0
@@ -206,7 +536,77 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="new_save" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 384.0
+margin_right = 500.0
+margin_bottom = 1084.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="new_save"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -500.0
+margin_bottom = -700.0
+texture = ExtResource( 8 )
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 40
+
+[node name="highlight" type="NinePatchRect" parent="new_save"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = 11.0
+margin_right = -283.0
+margin_bottom = -383.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="new_save"]
+margin_left = 25.0
+margin_top = 120.0
+margin_right = 226.0
+margin_bottom = 224.0
+custom_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="new_save/VBoxContainer"]
+margin_right = 201.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 6 )
+text = "empty"
+align = 1
+valign = 1
+
+[node name="value" type="Label" parent="new_save/VBoxContainer"]
+margin_top = 48.0
+margin_right = 201.0
+margin_bottom = 106.0
+custom_colors/font_color = Color( 0.752941, 0.776471, 0.847059, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.211765, 0.215686, 0.305882, 1 )
+custom_constants/line_spacing = -10
+custom_fonts/font = SubResource( 1 )
+text = "create a new save!"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 6 )
+anims/empty = SubResource( 3 )
+anims/existing = SubResource( 4 )
+anims/new_save = SubResource( 5 )
 
 [node name="delete_tween" type="Tween" parent="."]
 

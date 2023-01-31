@@ -44,12 +44,19 @@ func set_boss(boss):
 func anim_on(newval):
 	if newval == false && animon == true:
 		anim.play_backwards("hide")
+		hide_boss_bar()
 	animon = newval
 
 func show_boss_bar():
 	bossbar.visible = true
 	
 func hide_boss_bar():
+	
+	
+	var tween = $Tween
+	tween.interpolate_property(bossbar, "rect_global_position", bossbar.rect_global_position,  Vector2(bossbar.rect_global_position.x, 600), 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween.start()
+	yield(tween, "tween_completed")
 	bossbar.visible = false
 
 func boss_health(health, maxhealth):

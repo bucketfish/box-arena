@@ -6,6 +6,7 @@ onready var energy = $energy/hbox/value
 onready var health_plus = $health/hbox/plus
 onready var energy_plus = $energy/hbox/plus
 onready var anim = $energy/anim
+onready var healthbar = $health/hbox/value/healthbar
 
 var add = preload("res://effects/bar_add_val.tscn")
 
@@ -21,6 +22,8 @@ func _ready():
 
 func update_bars():
 	health.text = str(Persistent.health) + '/' + str(Persistent.max_health)
+	healthbar.value = Persistent.health
+	healthbar.max_value = Persistent.max_health
 	energy.text = str(Persistent.energy)
 	
 	if Persistent.health != curhealth:

@@ -8,6 +8,7 @@ onready var player = get_node("/root/base/player")
 onready var base = get_node("/root/base")
 onready var tween = $Tween
 
+var exists = true
 var isitem = false setget is_show
 
 func _ready():
@@ -37,7 +38,8 @@ func _on_Area2D_area_exited(area):
 
 # picking up items
 func _input(event):
-	if Input.is_action_just_pressed("take") && isitem && base.state == "play" && base.paused == false:
+	if Input.is_action_just_pressed("take") && isitem && base.state == "play" && base.paused == false && exists:
+		exists = false
 		anim.play_backwards("highlight")
 		Persistent.carrying.insert(0, itemname)
 		Persistent.sort_inv(Persistent.carrying)

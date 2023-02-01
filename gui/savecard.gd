@@ -41,6 +41,8 @@ func _ready():
 	newsave_highlight.visible = false
 	set_process(false)
 	save_label.text = "save %d" % (save_num + 1)
+	
+	anim.play("RESET")
 
 func display_thumbnail(data, firsttime = true):
 	has_save = true
@@ -152,16 +154,15 @@ func _on_save_pressed():
 		create_new_save()
 		
 func create_new_save():
+	Persistent.create_save(save_num)
+	display_thumbnail(Persistent.thumbnails[save_num], false)
+	
 	anim.play_backwards("new_save")
 	has_save = true
 	yield(anim, "animation_finished")
 	delete_tween.interpolate_property(delete, "rect_position", delete.rect_position, Vector2(0, -24), 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	delete_tween.start()
 	
-	
-	Persistent.create_save(save_num)
-	
-	display_thumbnail(Persistent.thumbnails[save_num], false)
 	
 
 func delete_save():

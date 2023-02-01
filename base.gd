@@ -87,7 +87,7 @@ func start_game():
 	yield(Persistent.load_game(), "completed")
 	
 
-	bossui.animon = false
+	bossui.hide_all()
 	coordslabel.text = str(Persistent.coords.x) + " " + str(Persistent.coords.y)
 
 	# update player position (new door)
@@ -126,10 +126,6 @@ func save_and_quit(save = true):
 	mainmenu.returnto()
 	curroom.queue_free()
 	
-func open_room():
-	bossui.animon = false
-	
-
 func goto(dirfrom):
 	update_trans(true)
 	# update new room coordinates
@@ -148,7 +144,7 @@ func goto(dirfrom):
 	# wait does it not do this lol.  but it does??? huh. what. ok it does. i don't need to do this.
 	
 	#deactivate prev room stuff
-	bossui.animon = false
+	bossui.slow_hide_all()
 	
 	# run "fade-out" animation
 	if dirfrom == "up":
@@ -179,6 +175,9 @@ func goto(dirfrom):
 	#update minimap
 	minimap.update_minimap()
 	
+#	if !(curroom.roomtype == "boss" && Persistent.genbosses[Persistent.coords]["alive"] == true):
+		
+			
 	# "fade-in" transition
 	if dirfrom == "up":
 		anim.play_backwards("fromdown")
@@ -219,7 +218,7 @@ func _input(event):
 			update_state('play')
 			
 			
-	if Input.is_action_just_pressed("pause") && !pause.on && !(state in ["respawn", "cutscene"]):
+	if Input.is_action_just_pressed("pause") && !pause.on && !(state in ["respawn", "cutscene"]) && mainmenu.visible == false:
 		if inventory.visible:
 			inventory.visible = false
 			shade.visible = false

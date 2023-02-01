@@ -35,9 +35,13 @@ func death(cause):
 
 
 func _on_restart_pressed():
+	base.anim.play("fade")
+	yield(base.anim, "animation_finished")
 	Persistent.reset()
 	base.curroom.queue_free()
-	base.start_game()
+	yield(base.start_game(), "completed")
+	base.anim.play_backwards("fade")
+#	yield(base.anim, "animation_finished")
 
 
 func _on_main_menu_pressed():

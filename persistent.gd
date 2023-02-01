@@ -65,7 +65,6 @@ var weapon = "" setget set_weapon
 
 
 func create_save(num):
-	print(num)
 	update_savepath(num)
 	reset()
 
@@ -155,6 +154,11 @@ func update_maxhealth(newval):
 	max_health = newval
 	base.bars.update_bars()
 	
+	if health <= min(0.2 * max_health, 5):
+		base.low_health.low_health()
+	else:
+		base.low_health.return_to_normal()
+	
 func set_weapon(newval):
 	weapon = newval
 	player.update_weapon()
@@ -205,8 +209,6 @@ func load_thumbnails():
 		"""
 		
 		thumbnails[int(i.left(1))][i.right(1)] = vals[i]
-		
-#	print(thumbnails)
 	
 	return thumbnails
 		

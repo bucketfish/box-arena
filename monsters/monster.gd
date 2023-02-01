@@ -40,7 +40,6 @@ func _ready():
 	
 	
 func call_pause(ispaused):
-	print(ispaused)
 	
 	if ispaused:
 		$anim.stop(false)

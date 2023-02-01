@@ -29,7 +29,6 @@ func _ready():
 
 
 func start_intro():
-#	print("starting intro")
 	curcount = 0
 	curt = 0
 	label.percent_visible = 0

@@ -10,7 +10,6 @@ const item = preload("res://items/item.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(Persistent.id_keep)
 	Persistent.connect("endgame", self, "cutscene")
 	$spin.visible = false
 	if !Persistent.id_keep['outoffirstroom']:

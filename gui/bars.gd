@@ -7,6 +7,7 @@ onready var health_plus = $health/hbox/plus
 onready var energy_plus = $energy/hbox/plus
 onready var anim = $energy/anim
 onready var healthbar = $health/hbox/value/healthbar
+onready var healthbar_tween = $health/hbox/Tween
 
 var add = preload("res://effects/bar_add_val.tscn")
 
@@ -22,7 +23,10 @@ func _ready():
 
 func update_bars():
 	health.text = str(Persistent.health) + '/' + str(Persistent.max_health)
-	healthbar.value = Persistent.health
+
+	healthbar_tween.interpolate_property(healthbar, "value", healthbar.value, Persistent.health, 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	healthbar_tween.start()
+	
 	healthbar.max_value = Persistent.max_health
 	energy.text = str(Persistent.energy)
 	

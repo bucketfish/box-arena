@@ -33,6 +33,7 @@ func returnto(): #return to main menu, after saving
 
 func save_selected(save_num):
 	Persistent.savenum = save_num
+	saves.play_label.visible = false
 	yield(base.start_game(), "completed")
 	hide_menu()
 
@@ -63,9 +64,6 @@ func _input(event):
 			nextscreen = "options"
 		
 		_on_goto_screen(nextscreen)
-		
-	if Input.is_action_pressed("ui_cancel"):
-		print("AAA")
 
 
 func _on_quit_pressed():

@@ -19,7 +19,6 @@ func _ready():
 
 func prepare_saves():
 	Persistent.load_thumbnails()
-	print(Persistent.thumbnails)
 	for i in Persistent.thumbnails.keys():
 		if 'weapon' in Persistent.thumbnails[i].keys(): # save exists
 			cards[i].display_thumbnail(Persistent.thumbnails[i])

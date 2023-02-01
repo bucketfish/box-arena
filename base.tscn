@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=2]
+[gd_scene load_steps=117 format=2]
 
 [ext_resource path="res://gui/ending.gd" type="Script" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -224,6 +224,46 @@ tracks/4/keys = {
 "values": [ Vector2( 60, 344 ) ]
 }
 
+[sub_resource type="Animation" id=60]
+resource_name = "hidden"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBoxContainer:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 60, 600 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("VBoxContainer/desc:rect_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 714, 33 ) ]
+}
+
 [sub_resource type="Animation" id=59]
 resource_name = "hide"
 length = 0.3
@@ -276,6 +316,18 @@ tracks/3/keys = {
 "args": [  ],
 "method": "lower_boss_bar"
 } ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:on")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.29 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=18]
@@ -330,6 +382,18 @@ tracks/3/keys = {
 "args": [  ],
 "method": "position_boss_bar"
 } ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:on")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.00542474 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="DynamicFont" id=8]
@@ -2311,6 +2375,8 @@ margin_right = 104.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 
+[node name="Tween" type="Tween" parent="gui/bars/health/hbox"]
+
 [node name="energy" type="Control" parent="gui/bars"]
 margin_left = 88.0
 margin_top = 70.0
@@ -2367,6 +2433,7 @@ anchor_bottom = 1.0
 script = ExtResource( 17 )
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="gui/boss"]
+visible = false
 margin_left = 60.0
 margin_top = 344.0
 margin_right = 774.0
@@ -2415,9 +2482,9 @@ grow_vertical = 0
 alignment = 2
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
-margin_top = 36.0
-margin_right = 714.0
-margin_bottom = 123.0
+margin_top = 72.0
+margin_right = 2762.0
+margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
 custom_constants/shadow_offset_x = 4
@@ -2431,9 +2498,9 @@ __meta__ = {
 }
 
 [node name="desc" type="Label" parent="gui/boss/VBoxContainer"]
-margin_top = 127.0
+margin_top = 163.0
 margin_right = 714.0
-margin_bottom = 232.0
+margin_bottom = 268.0
 custom_fonts/font = SubResource( 16 )
 text = "jjhgfjhkghgfglgkhjkgkfkjkdfhgisudgkjsflgjnsfljsnfdkg"
 valign = 2
@@ -2441,7 +2508,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 714.0
+margin_right = 2762.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -2518,6 +2585,7 @@ size_flags_horizontal = 3
 
 [node name="anim" type="AnimationPlayer" parent="gui/boss"]
 anims/RESET = SubResource( 17 )
+anims/hidden = SubResource( 60 )
 anims/hide = SubResource( 59 )
 anims/show = SubResource( 18 )
 
@@ -3158,6 +3226,7 @@ text = "x"
 [node name="anim" type="AnimationPlayer" parent="gui/death"]
 
 [node name="ending" type="Control" parent="gui"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -3220,8 +3289,8 @@ texture = ExtResource( 37 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 15360.0
-margin_bottom = 9000.0
+margin_right = 17408.0
+margin_bottom = 10200.0
 
 [node name="Doorway" type="Sprite" parent="gui/ending/curscene"]
 texture = ExtResource( 41 )
@@ -3237,7 +3306,6 @@ centered = false
 position = Vector2( 403, 261 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 46 )
-frame = 2
 playing = true
 centered = false
 
@@ -3245,8 +3313,8 @@ centered = false
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 15360.0
-margin_bottom = 11366.0
+margin_right = 17408.0
+margin_bottom = 12566.0
 rect_min_size = Vector2( 1024, 1000 )
 
 [node name="ColorRect" type="ColorRect" parent="gui/ending/credits"]
@@ -3447,7 +3515,8 @@ margin_right = 233.792
 margin_bottom = 259.601
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 47 )
-text = "ara (@mynameisashlee)"
+text = "ig: @mynameisashlee"
+align = 1
 
 [node name="Cute2" type="Sprite" parent="gui/ending/credits"]
 position = Vector2( 406, 1417 )
@@ -3478,7 +3547,7 @@ margin_right = 233.792
 margin_bottom = 259.601
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 47 )
-text = "ig: @arkwardarts.bykl"
+text = "ig: @awkwardarts.bykl"
 
 [node name="Frame3" type="Sprite" parent="gui/ending/credits"]
 position = Vector2( 736, 2260.36 )

@@ -404,7 +404,6 @@ custom_effects = [ SubResource( 2 ) ]
 [node name="delete_timer" type="Timer" parent="delete"]
 
 [node name="box" type="Control" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -32.0

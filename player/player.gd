@@ -20,6 +20,7 @@ onready var hurtbox = $hurtbox
 
 onready var base = get_node("/root/base")
 onready var bars = get_node("/root/base/gui/bars")
+onready var door_collision = $door_collision
 
 var fx_swing = preload("res://effects/swinganim.tscn")
 
@@ -105,11 +106,19 @@ func check_items():
 		base.update_pickup(false)
 	
 	
+func check_doors():
+	if canmove:
+		if door_collision.get_overlapping_areas().size() > 0:
+			if door_collision.get_overlapping_areas()[0].is_in_group("door"):
+				base.goto(door_collision.get_overlapping_areas()[0].doorpos)
+		
+	
 func _physics_process(delta):
 	var direction = get_input()
 	move(direction, delta)
 	
 	check_items()
+#	check_doors()
 	
 	
 func swing():

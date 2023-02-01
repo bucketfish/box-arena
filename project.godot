@@ -155,6 +155,7 @@ delete={
 2d_physics/layer_6="enemy hitbox"
 2d_physics/layer_7="player"
 2d_physics/layer_8="boss container room"
+2d_physics/layer_9="door"
 
 [physics]
 

@@ -254,6 +254,7 @@ height = 60.0
 [node name="player" type="KinematicBody2D" groups=["player"]]
 z_index = 10
 collision_layer = 64
+collision_mask = 257
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -316,6 +317,13 @@ monitorable = false
 
 [node name="CollisionShape2D" parent="hitbox" index="0"]
 shape = SubResource( 19 )
+
+[node name="door_collision" type="Area2D" parent="."]
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_collision"]
+position = Vector2( 0, 2.5 )
+shape = SubResource( 1 )
 
 [editable path="hurtbox"]
 [editable path="hitbox"]

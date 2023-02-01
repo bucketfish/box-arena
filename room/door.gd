@@ -15,3 +15,4 @@ func _on_door_body_entered(body):
 	if body.is_in_group("player"):
 		if body.canmove:
 			base.goto(doorpos)
+#			pass

@@ -2476,16 +2476,15 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 60.0
-margin_top = 600.0
-margin_right = 774.0
-margin_bottom = 840.0
+margin_right = -250.0
+margin_bottom = 240.0
 grow_vertical = 0
 alignment = 2
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
-margin_top = 36.0
-margin_right = 714.0
-margin_bottom = 123.0
+margin_top = 72.0
+margin_right = 1738.0
+margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
 custom_constants/shadow_offset_x = 4
@@ -2499,9 +2498,9 @@ __meta__ = {
 }
 
 [node name="desc" type="Label" parent="gui/boss/VBoxContainer"]
-margin_top = 127.0
+margin_top = 163.0
 margin_right = 714.0
-margin_bottom = 232.0
+margin_bottom = 268.0
 custom_fonts/font = SubResource( 16 )
 text = "jjhgfjhkghgfglgkhjkgkfkjkdfhgisudgkjsflgjnsfljsnfdkg"
 valign = 2
@@ -2509,7 +2508,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 714.0
+margin_right = 1738.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -3307,7 +3306,7 @@ centered = false
 position = Vector2( 403, 261 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 46 )
-frame = 2
+frame = 1
 playing = true
 centered = false
 

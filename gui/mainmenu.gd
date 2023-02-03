@@ -40,20 +40,28 @@ func save_selected(save_num):
 
 
 func _on_goto_screen(scenename):
+	var oldscreen = curscreen
+	curscreen = scenename
+	
 	if scenename == "saves":
 		saves.prepare_saves()
 		backanim.play("hide_title")
 		saves.play_label.visible = false
 	
-	if curscreen != "none":
-		anim.play_backwards(curscreen)
+	if oldscreen == "saves":
+		saves.play_label.visible = false
+		
+	if oldscreen != "none":
+		anim.play_backwards(oldscreen)
 		yield(anim, "animation_finished")
-	anim.play(scenename)
-	if curscreen == "saves":
+		
+	if oldscreen == "saves":
 		backanim.play_backwards('hide_title')
 		saves.prepare_saves()
 		
-	curscreen = scenename
+	anim.play(scenename)
+		
+#	curscreen = scenename
 	
 	
 

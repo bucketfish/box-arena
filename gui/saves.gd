@@ -37,7 +37,8 @@ func place_playlabel(cardnum):
 		label_tween.interpolate_property(play_label, "rect_global_position", play_label.rect_global_position, Vector2(cards[cardnum].rect_global_position.x, cards[cardnum].rect_global_position.y - 81), 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		label_tween.start()
 		
-	play_label.visible = true
+	if mainmenu.curscreen == "saves":
+		play_label.visible = true
 
 func _on_save_focus_entered():
 	place_playlabel(0)

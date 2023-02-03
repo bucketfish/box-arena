@@ -144,10 +144,54 @@ margin_right = 969.0
 margin_bottom = 24.0
 focus_neighbour_top = NodePath("../scroll/Control/right")
 focus_neighbour_bottom = NodePath("../scroll/Control/use")
-button_text = "back"
+button_text = "<-"
 nextmenu = "options"
 
 [node name="scrolltween" type="Tween" parent="controls_screen"]
+
+[node name="audio_screen" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="music" parent="audio_screen" instance=ExtResource( 4 )]
+margin_left = 684.0
+margin_top = 52.0
+margin_right = 1244.0
+margin_bottom = 276.0
+focus_neighbour_top = NodePath("../back")
+focus_neighbour_bottom = NodePath("../sfx")
+button_text = "music"
+slider_button = true
+
+[node name="sfx" parent="audio_screen" instance=ExtResource( 4 )]
+margin_left = 628.0
+margin_top = 183.0
+margin_right = 1188.0
+margin_bottom = 407.0
+focus_neighbour_top = NodePath("../music")
+focus_neighbour_bottom = NodePath("../master")
+button_text = "sfx"
+slider_button = true
+
+[node name="master" parent="audio_screen" instance=ExtResource( 4 )]
+margin_left = 557.0
+margin_top = 311.0
+margin_right = 1117.0
+margin_bottom = 535.0
+focus_neighbour_top = NodePath("../sfx")
+focus_neighbour_bottom = NodePath("../back")
+button_text = "master"
+slider_button = true
+
+[node name="back" parent="audio_screen" instance=ExtResource( 4 )]
+margin_left = 457.0
+margin_top = 441.0
+margin_right = 1017.0
+margin_bottom = 665.0
+focus_neighbour_top = NodePath("../master")
+focus_neighbour_bottom = NodePath("../music")
+button_text = "<-"
+nextmenu = "options"
 
 [node name="controls" parent="." instance=ExtResource( 4 )]
 margin_left = 657.0
@@ -175,7 +219,7 @@ margin_right = 1048.0
 margin_bottom = 24.0001
 focus_neighbour_top = NodePath("../audio")
 focus_neighbour_bottom = NodePath("../controls")
-button_text = "back"
+button_text = "<-"
 nextmenu = "main"
 
 [connection signal="focus_entered" from="controls_screen/scroll/Control/use" to="controls_screen" method="_on_focus_changed"]

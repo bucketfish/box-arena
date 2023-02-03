@@ -8,6 +8,7 @@ export var width = 0.4
 const item = preload("res://items/item.tscn")
 onready var base = get_node("/root/base")
 onready var player = get_node("/root/base/player")
+onready var hurt_particle = $Particles2D
 
 var call_phyproc = true
 var fliph = true
@@ -47,9 +48,15 @@ func call_pause(ispaused):
 		$anim.play()
 		
 func hurt(damageval):
+	var damage_tween = $damage_tween
+
 	knockback = player.knockback_vector * knockback_val
+	hurt_particle.rotation = knockback.angle()
+	
+	
 	hurtanim.play("hurt")
 	hurtbox.start_invincibility(0.6)
+	base.freeze_engine(0.25)
 	
 	health -= damageval
 	
@@ -97,5 +104,6 @@ func _physics_process(delta):
 		else:
 			sprite.scale.x = width
 			
+	
 	velocity = move_and_slide(velocity)
 

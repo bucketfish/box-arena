@@ -30,6 +30,8 @@ onready var death = $gui/death
 onready var ending = $gui/ending
 signal next
 
+var freeze_timescale = 0.07
+
 var curroom
 var comefrom
 var trans = false setget update_trans
@@ -331,3 +333,8 @@ func endgame():
 	update_pause(false)
 	update_state("play")
 	
+
+func freeze_engine(time):
+	Engine.time_scale = freeze_timescale
+	yield(get_tree().create_timer(freeze_timescale * time), "timeout")
+	Engine.time_scale = 1

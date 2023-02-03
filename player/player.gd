@@ -159,6 +159,7 @@ func update_weapon():
 func take_damage(damageval, damagesource):
 	if base.paused == false:
 		hurtanim.play("hurt")
+		base.low_health.pulse_once()
 		Persistent.damagesource = damagesource
 		Persistent.health -= damageval
 	#	bars.update_bars()

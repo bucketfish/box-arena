@@ -24,3 +24,8 @@ func return_to_normal():
 	anim.get_animation("pulse").loop = false
 	low_health.visible = false
 
+func pulse_once():
+	if anim.get_animation("pulse").loop == true:
+		pass
+	else:
+		anim.play("pulse")

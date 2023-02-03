@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=2]
+[gd_scene load_steps=119 format=2]
 
 [ext_resource path="res://gui/ending.gd" type="Script" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -555,6 +555,73 @@ tracks/11/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ -861.0 ]
+}
+
+[sub_resource type="Animation" id=62]
+resource_name = "audio"
+length = 0.25
+step = 0.003
+tracks/0/type = "value"
+tracks/0/path = NodePath("options/audio_screen/music:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.171, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 680, -200 ), Vector2( 680, 128 ), Vector2( 680, 65 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("options/audio_screen/sfx:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.033, 0.204, 0.225 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 617, -200 ), Vector2( 617, -200 ), Vector2( 617, 220 ), Vector2( 617, 186 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("options/audio_screen/back:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.078, 0.231, 0.249 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 472, -200 ), Vector2( 472, -200 ), Vector2( 472, 460 ), Vector2( 472, 435 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("options/audio_screen/music")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "grab_focus"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("options/audio_screen/master:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.048, 0.219, 0.234261 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 545, -200 ), Vector2( 545, -200 ), Vector2( 545, 350 ), Vector2( 545, 309 ) ]
 }
 
 [sub_resource type="Animation" id=28]
@@ -1572,6 +1639,121 @@ tracks/18/keys = {
 "update": 0,
 "values": [ false ]
 }
+tracks/19/type = "value"
+tracks/19/path = NodePath("options/audio_screen/music:rect_position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 680, -200 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("options/audio_screen/sfx:rect_position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 617, -200 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("options/audio_screen/master:rect_position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 545, -200 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("options/audio_screen/back:rect_position")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 472, -200 ) ]
+}
+
+[sub_resource type="Animation" id=61]
+resource_name = "audio"
+length = 0.25
+step = 0.003
+tracks/0/type = "value"
+tracks/0/path = NodePath("options/audio_screen/music:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.171, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 680, -200 ), Vector2( 680, 128 ), Vector2( 680, 65 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("options/audio_screen/sfx:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.033, 0.204, 0.225 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 617, -200 ), Vector2( 617, -200 ), Vector2( 617, 220 ), Vector2( 617, 186 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("options/audio_screen/back:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.078, 0.231, 0.249 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 472, -200 ), Vector2( 472, -200 ), Vector2( 472, 460 ), Vector2( 472, 435 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("options/audio_screen/music")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "grab_focus"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("options/audio_screen/master:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.048, 0.219, 0.234261 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 545, -200 ), Vector2( 545, -200 ), Vector2( 545, 350 ), Vector2( 545, 309 ) ]
+}
 
 [sub_resource type="Animation" id=31]
 resource_name = "controls"
@@ -2239,7 +2421,7 @@ tracks/1/keys = {
 pause_mode = 2
 script = ExtResource( 3 )
 
-[node name="WORKING ON nothing" type="Node2D" parent="."]
+[node name="WORKING ON audio settings" type="Node2D" parent="."]
 
 [node name="ost" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 53 )
@@ -2476,14 +2658,15 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 60.0
-margin_right = -250.0
-margin_bottom = 240.0
+margin_top = 600.0
+margin_right = 774.0
+margin_bottom = 840.0
 grow_vertical = 0
 alignment = 2
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 72.0
-margin_right = 1738.0
+margin_right = 8906.0
 margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
@@ -2508,7 +2691,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 1738.0
+margin_right = 8906.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -3058,6 +3241,7 @@ polygon = PoolVector2Array( 200, 0, 1064, 0, 800, 500, -118.368, 500 )
 
 [node name="anim" type="AnimationPlayer" parent="gui/pause"]
 anims/RESET = SubResource( 19 )
+anims/audio = SubResource( 62 )
 anims/controls = SubResource( 28 )
 anims/main = SubResource( 20 )
 anims/options = SubResource( 25 )
@@ -3119,6 +3303,33 @@ focus_neighbour_bottom = NodePath("../continue")
 button_text = "exit"
 
 [node name="options" parent="gui/pause" instance=ExtResource( 21 )]
+
+[node name="music" parent="gui/pause/options/audio_screen" index="0"]
+margin_left = 680.0
+margin_top = -200.0
+margin_right = 1240.0
+margin_bottom = 24.0
+
+[node name="sfx" parent="gui/pause/options/audio_screen" index="1"]
+margin_left = 617.0
+margin_top = -200.0
+margin_right = 1177.0
+margin_bottom = 24.0
+
+[node name="master" parent="gui/pause/options/audio_screen" index="2"]
+margin_left = 545.0
+margin_top = -200.0
+margin_right = 1105.0
+margin_bottom = 24.0
+
+[node name="back" parent="gui/pause/options/audio_screen" index="3"]
+margin_left = 472.0
+margin_top = -200.0
+margin_right = 1032.0
+margin_bottom = 24.0
+
+[node name="audio" parent="gui/pause/options" index="3"]
+nextmenu = "audio"
 
 [node name="Sleep" type="Sprite" parent="gui/pause"]
 position = Vector2( 221, -252 )
@@ -3289,8 +3500,8 @@ texture = ExtResource( 37 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 20480.0
-margin_bottom = 12000.0
+margin_right = 28672.0
+margin_bottom = 16800.0
 
 [node name="Doorway" type="Sprite" parent="gui/ending/curscene"]
 texture = ExtResource( 41 )
@@ -3306,7 +3517,7 @@ centered = false
 position = Vector2( 403, 261 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 46 )
-frame = 1
+frame = 2
 playing = true
 centered = false
 
@@ -3314,8 +3525,8 @@ centered = false
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 20480.0
-margin_bottom = 14366.0
+margin_right = 28672.0
+margin_bottom = 19166.0
 rect_min_size = Vector2( 1024, 1000 )
 
 [node name="ColorRect" type="ColorRect" parent="gui/ending/credits"]
@@ -3659,8 +3870,36 @@ __meta__ = {
 
 [node name="options" parent="gui/mainmenu" instance=ExtResource( 21 )]
 
+[node name="music" parent="gui/mainmenu/options/audio_screen" index="0"]
+margin_left = 680.0
+margin_top = -200.0
+margin_right = 1240.0
+margin_bottom = 24.0
+
+[node name="sfx" parent="gui/mainmenu/options/audio_screen" index="1"]
+margin_left = 617.0
+margin_top = -200.0
+margin_right = 1177.0
+margin_bottom = 24.0
+
+[node name="master" parent="gui/mainmenu/options/audio_screen" index="2"]
+margin_left = 545.0
+margin_top = -200.0
+margin_right = 1105.0
+margin_bottom = 24.0002
+
+[node name="back" parent="gui/mainmenu/options/audio_screen" index="3"]
+margin_left = 472.0
+margin_top = -200.0
+margin_right = 1032.0
+margin_bottom = 24.0
+
+[node name="audio" parent="gui/mainmenu/options" index="3"]
+nextmenu = "audio"
+
 [node name="anim" type="AnimationPlayer" parent="gui/mainmenu"]
 anims/RESET = SubResource( 30 )
+anims/audio = SubResource( 61 )
 anims/controls = SubResource( 31 )
 anims/main = SubResource( 32 )
 anims/options = SubResource( 33 )
@@ -3680,7 +3919,7 @@ anchor_bottom = 1.0
 margin_left = 665.0
 margin_top = -200.0
 margin_right = 1225.0
-margin_bottom = 24.0001
+margin_bottom = 24.0
 focus_neighbour_top = NodePath("../quit")
 focus_neighbour_bottom = NodePath("../options")
 button_text = "play"
@@ -3700,7 +3939,7 @@ nextmenu = "options"
 margin_left = 545.0
 margin_top = -200.0
 margin_right = 1105.0
-margin_bottom = 24.0
+margin_bottom = 24.0001
 focus_neighbour_top = NodePath("../options")
 focus_neighbour_bottom = NodePath("../quit")
 button_text = "credits"
@@ -3838,13 +4077,17 @@ one_shot = true
 [connection signal="goto_screen" from="gui/pause/main/options" to="gui/pause" method="_on_goto_screen"]
 [connection signal="pressed" from="gui/pause/main/exit" to="gui/pause" method="_on_exit_pressed"]
 [connection signal="goto_screen" from="gui/pause/options/controls_screen/back" to="gui/pause" method="_on_goto_screen"]
+[connection signal="goto_screen" from="gui/pause/options/audio_screen/back" to="gui/pause" method="_on_goto_screen"]
 [connection signal="goto_screen" from="gui/pause/options/controls" to="gui/pause" method="_on_goto_screen"]
+[connection signal="goto_screen" from="gui/pause/options/audio" to="gui/pause" method="_on_goto_screen"]
 [connection signal="goto_screen" from="gui/pause/options/back" to="gui/pause" method="_on_goto_screen"]
 [connection signal="pressed" from="gui/death/restart" to="gui/death" method="_on_restart_pressed"]
 [connection signal="pressed" from="gui/death/main menu" to="gui/death" method="_on_main_menu_pressed"]
 [connection signal="focus_entered" from="gui/mainmenu/options/controls_screen/scroll/Control/use" to="gui/mainmenu/options/controls_screen" method="_on_focus_entered"]
 [connection signal="goto_screen" from="gui/mainmenu/options/controls_screen/back" to="gui/mainmenu" method="_on_goto_screen"]
+[connection signal="goto_screen" from="gui/mainmenu/options/audio_screen/back" to="gui/mainmenu" method="_on_goto_screen"]
 [connection signal="goto_screen" from="gui/mainmenu/options/controls" to="gui/mainmenu" method="_on_goto_screen"]
+[connection signal="goto_screen" from="gui/mainmenu/options/audio" to="gui/mainmenu" method="_on_goto_screen"]
 [connection signal="goto_screen" from="gui/mainmenu/options/back" to="gui/mainmenu" method="_on_goto_screen"]
 [connection signal="goto_screen" from="gui/mainmenu/main/play" to="gui/mainmenu" method="_on_goto_screen"]
 [connection signal="goto_screen" from="gui/mainmenu/main/options" to="gui/mainmenu" method="_on_goto_screen"]

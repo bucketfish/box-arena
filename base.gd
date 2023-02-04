@@ -62,6 +62,7 @@ func _ready():
 	
 
 	# normal stuff
+	Options.load_options()
 	randomize()
 	ost()
 	update_pause(true)

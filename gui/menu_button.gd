@@ -60,15 +60,10 @@ func prep_button():
 				
 		keytext.text = keystroke.to_lower()
 	
-	if button_text in Options.config:
+	if button_text in Options.config && slider_button:
 		slider_val = Options.config[button_text]
-		label.text = button_text + ": " + str(Options.config[button_text])
+		label.text = button_text + ": " + str(slider_val)
 		
-	if slider_button:
-		pass
-
-		
-
 
 func _on_play_pressed():
 	if nextmenu:
@@ -87,6 +82,8 @@ func _input(event):
 		InputMap.action_add_event(button_text, event)
 		prep_button()
 		
+		Options.keybinds[button_text] = event.scancode
+		
 		
 		yield(get_tree().create_timer(0.01), "timeout")
 		keyhighlight.visible = false
@@ -102,6 +99,8 @@ func _input(event):
 		yield(left_tween, "tween_completed")
 		left_tween.interpolate_property(left, "rect_position:x", left.rect_position.x,-62, gotime)
 		left_tween.start()
+		
+		Options.config[button_text] = slider_val
 #		yield(left_tween, "tween_completed")
 		
 	elif Input.is_action_just_pressed("ui_right") && has_focus() && slider_button:
@@ -114,4 +113,6 @@ func _input(event):
 		yield(right_tween, "tween_completed")
 		right_tween.interpolate_property(right, "rect_position:x", right.rect_position.x, 562, gotime)
 		right_tween.start()
+		
+		Options.config[button_text] = slider_val
 		

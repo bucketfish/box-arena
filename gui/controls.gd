@@ -35,3 +35,7 @@ func _on_focus_changed():
 
 func _on_use_focus_entered():
 	propagate_call("prep_button")
+
+
+func _on_music_focus_entered():
+	get_parent().propagate_call("prep_button")

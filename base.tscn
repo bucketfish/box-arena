@@ -2612,6 +2612,7 @@ size_flags_horizontal = 3
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = -260.0
 script = ExtResource( 17 )
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="gui/boss"]
@@ -2658,16 +2659,15 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 60.0
-margin_top = 600.0
-margin_right = 774.0
-margin_bottom = 840.0
+margin_right = 10.0
+margin_bottom = 240.0
 grow_vertical = 0
 alignment = 2
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
-margin_top = 72.0
-margin_right = 1738.0
-margin_bottom = 159.0
+margin_top = 36.0
+margin_right = 714.0
+margin_bottom = 123.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
 custom_constants/shadow_offset_x = 4
@@ -2681,9 +2681,9 @@ __meta__ = {
 }
 
 [node name="desc" type="Label" parent="gui/boss/VBoxContainer"]
-margin_top = 163.0
+margin_top = 127.0
 margin_right = 714.0
-margin_bottom = 268.0
+margin_bottom = 196.0
 custom_fonts/font = SubResource( 16 )
 text = "jjhgfjhkghgfglgkhjkgkfkjkdfhgisudgkjsflgjnsfljsnfdkg"
 valign = 2
@@ -2691,7 +2691,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 1738.0
+margin_right = 714.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -3500,8 +3500,8 @@ texture = ExtResource( 37 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 29696.0
-margin_bottom = 17400.0
+margin_right = 30720.0
+margin_bottom = 18000.0
 
 [node name="Doorway" type="Sprite" parent="gui/ending/curscene"]
 texture = ExtResource( 41 )
@@ -3525,8 +3525,8 @@ centered = false
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 29696.0
-margin_bottom = 19766.0
+margin_right = 30720.0
+margin_bottom = 20366.0
 rect_min_size = Vector2( 1024, 1000 )
 
 [node name="ColorRect" type="ColorRect" parent="gui/ending/credits"]

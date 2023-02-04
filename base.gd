@@ -94,7 +94,7 @@ func start_game():
 	coordslabel.text = str(Persistent.coords.x) + " " + str(Persistent.coords.y)
 
 	# update player position (new door)
-	player.position = Vector2(512, 300)
+	player.position = $up.position
 	
 	curroom = room.instance()
 	add_child(curroom)
@@ -114,6 +114,10 @@ func start_game():
 	else:
 		intro.visible = false
 		
+	if curroom.roomtype == "boss" && Persistent.genbosses[Persistent.coords]["alive"] == true:
+		boss_room(Persistent.genbosses[Persistent.coords]['name'])
+		
+	update_trans(false)
 	yield(get_tree(), "idle_frame")
 	
 func intro():
@@ -310,10 +314,6 @@ func boss_room(boss):
 func _on_bosspause_timer_timeout():
 	boss_move = true
 
-
-func _on_goto_screen(name):
-	pass # Replace with function body.
-	# WHAT IS THIS>
 
 
 func die(damagesource):

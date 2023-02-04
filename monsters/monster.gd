@@ -56,7 +56,7 @@ func hurt(damageval):
 	
 	hurtanim.play("hurt")
 	hurtbox.start_invincibility(0.6)
-	base.freeze_engine(0.25)
+	base.freeze_engine(0.2)
 	
 	health -= damageval
 	

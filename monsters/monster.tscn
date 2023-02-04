@@ -66,7 +66,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Curve" id=5]
-_data = [ Vector2( 0, 1 ), 0.0, -0.378301, 0, 0, Vector2( 0.998088, 0 ), -2.08814, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 1 ), 0.0, -0.0725415, 0, 0, Vector2( 0.99044, 0.00019145 ), -2.76557, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=6]
 curve = SubResource( 5 )
@@ -81,7 +81,7 @@ gravity = Vector3( 0, 0, 0 )
 initial_velocity = 600.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale = 0.3
+scale = 0.4
 scale_curve = SubResource( 6 )
 
 [node name="monster2" type="KinematicBody2D" groups=["monster"]]

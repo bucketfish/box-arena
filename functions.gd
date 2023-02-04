@@ -15,7 +15,6 @@ func get_room_percent():
 				if Persistent.genbosses[room]["alive"] == false:
 					room_count += 1
 					
-	print(room_count)
 	return "%03.1f%%" % ((float(room_count) / 411) * 100)
 	
 	

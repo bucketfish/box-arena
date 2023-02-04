@@ -247,8 +247,6 @@ func _input(event):
 		var image = get_viewport().get_texture().get_data()
 		image.flip_y()
 		image.save_png("/Users/tongyu/Desktop/screenshot.png")
-
-			
 			
 			
 func update_state(newstate):

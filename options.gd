@@ -31,7 +31,6 @@ func save_options():
 	saves.store_line(to_json(vals))
 	
 	print("settings saved!")
-	print(vals)
 	saves.close()
 	#emit_signal("finish_save")
 	

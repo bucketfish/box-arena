@@ -2421,7 +2421,7 @@ tracks/1/keys = {
 pause_mode = 2
 script = ExtResource( 3 )
 
-[node name="WORKING ON audio settings" type="Node2D" parent="."]
+[node name="WORKING ON nothing" type="Node2D" parent="."]
 
 [node name="ost" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 53 )
@@ -2683,7 +2683,7 @@ __meta__ = {
 [node name="desc" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 127.0
 margin_right = 714.0
-margin_bottom = 196.0
+margin_bottom = 232.0
 custom_fonts/font = SubResource( 16 )
 text = "jjhgfjhkghgfglgkhjkgkfkjkdfhgisudgkjsflgjnsfljsnfdkg"
 valign = 2
@@ -3437,7 +3437,6 @@ text = "x"
 [node name="anim" type="AnimationPlayer" parent="gui/death"]
 
 [node name="ending" type="Control" parent="gui"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -3517,7 +3516,6 @@ centered = false
 position = Vector2( 403, 261 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 46 )
-frame = 1
 playing = true
 centered = false
 
@@ -3721,10 +3719,10 @@ scale = Vector2( 0.728265, 0.728265 )
 texture = ExtResource( 46 )
 
 [node name="Label" type="Label" parent="gui/ending/credits/Frame"]
-margin_left = -221.208
-margin_top = 211.601
-margin_right = 233.792
-margin_bottom = 259.601
+margin_left = -221.0
+margin_top = 212.0
+margin_right = 224.0
+margin_bottom = 260.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 47 )
 text = "ig: @mynameisashlee"
@@ -3753,13 +3751,14 @@ scale = Vector2( 0.983056, 0.983056 )
 texture = ExtResource( 51 )
 
 [node name="Label" type="Label" parent="gui/ending/credits/Frame2"]
-margin_left = -221.208
-margin_top = 211.601
-margin_right = 233.792
-margin_bottom = 259.601
+margin_left = -221.0
+margin_top = 212.0
+margin_right = 226.0
+margin_bottom = 260.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 47 )
 text = "ig: @awkwardarts.bykl"
+align = 1
 
 [node name="Frame3" type="Sprite" parent="gui/ending/credits"]
 position = Vector2( 736, 2260.36 )
@@ -3774,13 +3773,14 @@ scale = Vector2( 0.859507, 0.859507 )
 texture = ExtResource( 52 )
 
 [node name="Label" type="Label" parent="gui/ending/credits/Frame3"]
-margin_left = -221.208
-margin_top = 211.601
-margin_right = 233.792
-margin_bottom = 259.601
+margin_left = -221.0
+margin_top = 212.0
+margin_right = 224.0
+margin_bottom = 260.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 47 )
-text = "twt: @itsffernn"
+text = "ffernn-dev.github.io"
+align = 1
 
 [node name="ColorRect2" type="ColorRect" parent="gui/ending"]
 modulate = Color( 1, 1, 1, 0 )

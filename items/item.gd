@@ -7,6 +7,7 @@ onready var sprite = $sprite
 onready var player = get_node("/root/base/player")
 onready var base = get_node("/root/base")
 onready var tween = $Tween
+onready var pickup = $pickup
 
 var exists = true
 var isitem = false setget is_show
@@ -41,6 +42,7 @@ func _input(event):
 	if Input.is_action_just_pressed("take") && isitem && base.state == "play" && base.paused == false && exists:
 		exists = false
 		anim.play_backwards("highlight")
+		pickup.play()
 		Persistent.carrying.insert(0, itemname)
 		Persistent.sort_inv(Persistent.carrying)
 		

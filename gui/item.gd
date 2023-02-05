@@ -19,6 +19,7 @@ var up
 var down
 
 var focused = false setget highlight
+onready var click = $click
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,5 +39,7 @@ func prep_display():
 	
 
 func highlight(value):
+	if true:
+		click.play()
 	highlight.visible = value
 	focused = value

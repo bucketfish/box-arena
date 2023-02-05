@@ -18,6 +18,8 @@ onready var sprite = $Sprite
 onready var hurtanim = $damage_anim
 onready var hurtbox = $hurtbox
 
+var dropsound = preload("res://audio/sfx/monsters/boss_drop.wav")
+
 var velocity = Vector2()
 var knockback = Vector2()
 
@@ -67,6 +69,13 @@ func hurt(damageval):
 	
 
 func die():
+	
+	var drop_sound = AudioStreamPlayer2D.new()
+	drop_sound.bus = "SFX"
+	drop_sound.stream = dropsound
+	drop_sound.global_position = self.global_position
+	base.add_child(drop_sound)
+	drop_sound.play()
 	for i in Data.bosses[type]["drop"]:
 		var curitem = item.instance()
 		curitem.itemname = i

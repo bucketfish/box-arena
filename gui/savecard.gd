@@ -24,6 +24,8 @@ onready var save_label = $box/Label
 onready var anim = $AnimationPlayer
 
 onready var base = get_node("/root/base")
+onready var focusaudio = $focusaudio
+onready var clickaudio = $clickaudio
 
 
 onready var card = box
@@ -108,6 +110,7 @@ func stop_deleting():
 
 
 func _on_save_focus_entered():
+	
 	highlight.visible = true
 	newsave_highlight.visible = true
 	set_process(true)
@@ -128,6 +131,7 @@ func _on_save_focus_entered():
 	
 
 func _on_save_focus_exited():
+	focusaudio.play()
 	highlight.visible = false
 	newsave_highlight.visible = false
 	set_process(false)
@@ -148,6 +152,7 @@ func _on_save_focus_exited():
 
 
 func _on_save_pressed():
+	clickaudio.play()
 	if has_save:
 		base.mainmenu.save_selected(save_num)
 	else:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=2]
+[gd_scene load_steps=125 format=2]
 
 [ext_resource path="res://gui/ending.gd" type="Script" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -59,6 +59,12 @@
 [ext_resource path="res://gui/saves.gd" type="Script" id=57]
 [ext_resource path="res://assets/gui/small_button_focus.png" type="Texture" id=58]
 [ext_resource path="res://assets/gui/monster_icons_old.png" type="Texture" id=59]
+[ext_resource path="res://audio/sfx/gui/inv.wav" type="AudioStream" id=60]
+[ext_resource path="res://audio/sfx/gui/inv_close.wav" type="AudioStream" id=61]
+[ext_resource path="res://audio/sfx/gui/equip.wav" type="AudioStream" id=62]
+[ext_resource path="res://audio/sfx/cutscenes/typing.wav" type="AudioStream" id=63]
+[ext_resource path="res://audio/sfx/gui/close_map.wav" type="AudioStream" id=64]
+[ext_resource path="res://audio/sfx/gui/open_map.wav" type="AudioStream" id=65]
 
 [sub_resource type="Animation" id=53]
 length = 0.001
@@ -2661,13 +2667,14 @@ anchor_bottom = 1.0
 margin_left = 60.0
 margin_right = 10.0
 margin_bottom = 240.0
+grow_horizontal = 2
 grow_vertical = 0
 alignment = 2
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
-margin_top = 36.0
-margin_right = 714.0
-margin_bottom = 123.0
+margin_top = 72.0
+margin_right = 2242.0
+margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
 custom_constants/shadow_offset_x = 4
@@ -2681,9 +2688,9 @@ __meta__ = {
 }
 
 [node name="desc" type="Label" parent="gui/boss/VBoxContainer"]
-margin_top = 127.0
+margin_top = 163.0
 margin_right = 714.0
-margin_bottom = 232.0
+margin_bottom = 268.0
 custom_fonts/font = SubResource( 16 )
 text = "jjhgfjhkghgfglgkhjkgkfkjkdfhgisudgkjsflgjnsfljsnfdkg"
 valign = 2
@@ -2691,7 +2698,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 714.0
+margin_right = 2242.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -3177,6 +3184,21 @@ align = 1
 
 [node name="invtween" type="Tween" parent="gui/inventory"]
 
+[node name="open" type="AudioStreamPlayer" parent="gui/inventory"]
+stream = ExtResource( 60 )
+volume_db = -12.0
+bus = "SFX"
+
+[node name="close" type="AudioStreamPlayer" parent="gui/inventory"]
+stream = ExtResource( 61 )
+volume_db = -12.0
+bus = "SFX"
+
+[node name="use" type="AudioStreamPlayer" parent="gui/inventory"]
+stream = ExtResource( 62 )
+volume_db = -5.0
+bus = "SFX"
+
 [node name="map" type="Control" parent="gui"]
 pause_mode = 2
 visible = false
@@ -3219,6 +3241,18 @@ margin_bottom = 526.0
 custom_constants/vseparation = 32
 custom_constants/hseparation = 32
 columns = 21
+
+[node name="open_map" type="AudioStreamPlayer" parent="gui/map"]
+stream = ExtResource( 65 )
+volume_db = -6.0
+pitch_scale = 1.5
+bus = "SFX"
+
+[node name="close_map" type="AudioStreamPlayer" parent="gui/map"]
+stream = ExtResource( 64 )
+volume_db = -6.0
+pitch_scale = 1.5
+bus = "SFX"
 
 [node name="pause" type="Control" parent="gui"]
 pause_mode = 2
@@ -3437,6 +3471,7 @@ text = "x"
 [node name="anim" type="AnimationPlayer" parent="gui/death"]
 
 [node name="ending" type="Control" parent="gui"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -3499,8 +3534,8 @@ texture = ExtResource( 37 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 30720.0
-margin_bottom = 18000.0
+margin_right = 40960.0
+margin_bottom = 24000.0
 
 [node name="Doorway" type="Sprite" parent="gui/ending/curscene"]
 texture = ExtResource( 41 )
@@ -3523,8 +3558,8 @@ centered = false
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 30720.0
-margin_bottom = 20366.0
+margin_right = 40960.0
+margin_bottom = 26366.0
 rect_min_size = Vector2( 1024, 1000 )
 
 [node name="ColorRect" type="ColorRect" parent="gui/ending/credits"]
@@ -3828,6 +3863,10 @@ valign = 1
 
 [node name="Tween" type="Tween" parent="gui/intro"]
 
+[node name="typing" type="AudioStreamPlayer" parent="gui/intro"]
+stream = ExtResource( 63 )
+bus = "SFX"
+
 [node name="mainmenu" type="Control" parent="gui"]
 pause_mode = 2
 anchor_right = 1.0
@@ -4083,6 +4122,7 @@ one_shot = true
 [connection signal="goto_screen" from="gui/pause/options/back" to="gui/pause" method="_on_goto_screen"]
 [connection signal="pressed" from="gui/death/restart" to="gui/death" method="_on_restart_pressed"]
 [connection signal="pressed" from="gui/death/main menu" to="gui/death" method="_on_main_menu_pressed"]
+[connection signal="tween_completed" from="gui/intro/Tween" to="gui/intro" method="_on_Tween_tween_completed"]
 [connection signal="focus_entered" from="gui/mainmenu/options/controls_screen/scroll/Control/use" to="gui/mainmenu/options/controls_screen" method="_on_focus_entered"]
 [connection signal="goto_screen" from="gui/mainmenu/options/controls_screen/back" to="gui/mainmenu" method="_on_goto_screen"]
 [connection signal="goto_screen" from="gui/mainmenu/options/audio_screen/back" to="gui/mainmenu" method="_on_goto_screen"]

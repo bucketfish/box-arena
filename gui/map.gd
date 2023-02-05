@@ -5,6 +5,8 @@ extends Control
 # var a = 2
 # var b = "text"
 var mapitem = preload("res://gui/mapitem.tscn")
+onready var open_map = $open_map
+onready var close_map = $close_map
 
 onready var grid = $GridContainer
 # Called when the node enters the scene tree for the first time.
@@ -17,6 +19,10 @@ func toggle():
 	
 	if visible:
 		show_map()
+		open_map.play()
+	else:
+		close_map.play()
+		
 		
 		
 func show_map():

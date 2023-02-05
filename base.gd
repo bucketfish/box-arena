@@ -4,7 +4,6 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
 onready var player = $player
 onready var anim = $anim
 
@@ -61,12 +60,16 @@ func _ready():
 	OS.set_current_screen(0)
 	
 
+
 	# normal stuff
+	
 	Options.load_options()
 	randomize()
 	ost()
 	update_pause(true)
 	update_state("paused")
+	
+	
 	
 	
 func ost():
@@ -113,11 +116,12 @@ func start_game():
 		Persistent.firstload = false
 	else:
 		intro.visible = false
+		update_trans(false)
 		
 	if curroom.roomtype == "boss" && Persistent.genbosses[Persistent.coords]["alive"] == true:
 		boss_room(Persistent.genbosses[Persistent.coords]['name'])
 		
-	update_trans(false)
+	
 	yield(get_tree(), "idle_frame")
 	
 func intro():
@@ -238,8 +242,8 @@ func _input(event):
 			pause.turnon()
 			update_pause(pause.on)
 			
-			
 	if Input.is_action_just_pressed("ui_accept") && state in ['cutscene', 'dialogue']:
+		
 		emit_signal("next")
 		
 		
@@ -254,8 +258,6 @@ func update_state(newstate):
 		player.canmove = true
 	else:
 		player.canmove = false
-		
-	
 		
 	state = newstate
 	

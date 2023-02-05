@@ -15,12 +15,16 @@ onready var right = $right
 
 onready var left_tween = $left_tween
 onready var right_tween = $right_tween
+onready var clickaudio = $clickaudio
+onready var focusaudio = $focusaudio
 
 
 signal goto_screen(name)
 
 var selecting = false
 var slider_val = 5
+
+var clicked_on = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -66,6 +70,10 @@ func prep_button():
 		
 
 func _on_play_pressed():
+	clickaudio.play()
+	
+	clicked_on = true
+	
 	if nextmenu:
 		emit_signal("goto_screen", nextmenu)
 		
@@ -74,9 +82,13 @@ func _on_play_pressed():
 		release_focus()
 		keytext.text = "?"
 		keyhighlight.visible = true
+	
 		
 func _input(event):
 	if event is InputEventKey && selecting:
+		clickaudio.play()
+		clicked_on = true
+		
 		selecting = false
 		InputMap.action_erase_event(button_text, InputMap.get_action_list(button_text)[0])
 		InputMap.action_add_event(button_text, event)
@@ -91,6 +103,7 @@ func _input(event):
 		
 	var gotime = 0.07
 	if Input.is_action_just_pressed("ui_left") && has_focus() && slider_button:
+		clickaudio.play()
 		slider_val = max(0, slider_val - 1)
 		label.text = button_text + ": " + str(slider_val)
 		
@@ -104,6 +117,7 @@ func _input(event):
 #		yield(left_tween, "tween_completed")
 		
 	elif Input.is_action_just_pressed("ui_right") && has_focus() && slider_button:
+		clickaudio.play()
 		slider_val = min(10, slider_val + 1)
 		label.text = button_text + ": " + str(slider_val)
 		
@@ -116,3 +130,12 @@ func _input(event):
 		
 		Options.config[button_text] = slider_val
 		
+
+
+func _on_play_focus_exited():
+	if !clicked_on:
+		focusaudio.play()
+
+
+func _on_play_focus_entered():
+	clicked_on = false

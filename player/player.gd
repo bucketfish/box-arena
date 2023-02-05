@@ -21,6 +21,7 @@ onready var hurtbox = $hurtbox
 onready var base = get_node("/root/base")
 onready var bars = get_node("/root/base/gui/bars")
 onready var door_collision = $door_collision
+onready var no_energy = $no_energy
 
 var fx_swing = preload("res://effects/swinganim.tscn")
 
@@ -75,6 +76,10 @@ func move(direction, delta):
 		
 	elif Input.is_action_just_pressed('attack') && canmove && Persistent.weapon && Persistent.energy < abs(Data.items[Persistent.weapon]["energy"]) && Persistent.energy > 0:
 		bars.no_energy()
+		no_energy.play()
+	
+	elif Input.is_action_just_pressed('attack') && canmove && Persistent.weapon && Persistent.energy < abs(Data.items[Persistent.weapon]["energy"]):
+		no_energy.play()
 
 		
 	anim.travel(state)

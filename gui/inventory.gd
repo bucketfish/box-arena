@@ -25,6 +25,9 @@ onready var scroll = $scroll
 onready var scrolltween = $invtween
 
 onready var instructions = $instructions
+onready var audio_stream_player = $open
+onready var close = $close
+onready var use_sound = $use
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,6 +40,11 @@ func toggle():
 	display()
 	
 	focus_on(row[0].col[0])
+	
+	if visible:
+		audio_stream_player.play()
+	else:
+		close.play()
 	
 func reset_item():
 	visible = false
@@ -200,6 +208,8 @@ func clear_info():
 		
 
 func use_item():
+	
+	
 	var item = curhighlight.itemname
 	if !item:
 		return
@@ -210,7 +220,9 @@ func use_item():
 	# set item as hand weapon
 	if 'weapon' in usething.keys():
 		Persistent.weapon = item
+		use_sound.play()
 		use = false
+		
 
 	if 'health' in usething.keys():
 
@@ -243,6 +255,7 @@ func use_item():
 			
 	if use:
 #		bars.update_bars()
+		use_sound.play()
 		Persistent.carrying.erase(item)
 		Persistent.sort_inv(Persistent.carrying)
 		
@@ -262,4 +275,5 @@ func fuse_item():
 		
 		Persistent.sort_inv(Persistent.carrying)
 		
+		use_sound.play()
 		display()

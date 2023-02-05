@@ -17,6 +17,7 @@ func _ready():
 
 	
 func start_show():
+
 	get_tree().paused = true
 	backanim.play("show")
 	curscreen = "main"
@@ -28,6 +29,8 @@ func hide_menu():
 	curscreen = "none"
 
 func returnto(): #return to main menu, after saving
+	base.update_pause(true)
+	base.update_state("paused")
 	start_show()
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Retron2000.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/gui/clock.png" type="Texture" id=2]
@@ -6,11 +6,13 @@
 [ext_resource path="res://assets/gui/health.png" type="Texture" id=4]
 [ext_resource path="res://assets/player/player0002.png" type="Texture" id=5]
 [ext_resource path="res://creds_font.tres" type="DynamicFont" id=6]
+[ext_resource path="res://audio/sfx/gui/click.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/gui/small_button.png" type="Texture" id=8]
 [ext_resource path="res://gui/savecard.gd" type="Script" id=9]
 [ext_resource path="res://assets/gui/highlight.png" type="Texture" id=10]
 [ext_resource path="res://font.tres" type="DynamicFont" id=11]
 [ext_resource path="res://turn_red.gd" type="Script" id=12]
+[ext_resource path="res://audio/sfx/gui/clickante.wav" type="AudioStream" id=13]
 
 [sub_resource type="RichTextEffect" id=2]
 resource_name = "RichTextTurnColor"
@@ -404,6 +406,7 @@ custom_effects = [ SubResource( 2 ) ]
 [node name="delete_timer" type="Timer" parent="delete"]
 
 [node name="box" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -32.0
@@ -633,6 +636,16 @@ anims/existing = SubResource( 4 )
 anims/new_save = SubResource( 5 )
 
 [node name="delete_tween" type="Tween" parent="."]
+
+[node name="focusaudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -20.0
+bus = "SFX"
+
+[node name="clickaudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -3.0
+bus = "SFX"
 
 [connection signal="focus_entered" from="." to="." method="_on_save_focus_entered"]
 [connection signal="focus_exited" from="." to="." method="_on_save_focus_exited"]

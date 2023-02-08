@@ -9,6 +9,7 @@ onready var row = [$scroll/rowbox/row, $scroll/rowbox/row2, $scroll/rowbox/row3,
 var row_scene = preload("res://gui/row.tscn")
 
 onready var curhighlight = $scroll/rowbox/row/item
+var curweapon:Control
 onready var itemdesc = $info/itemdesc
 onready var itemdisplay_name = $info/itemname
 onready var itemdisplay_sprite = $itemdisplay/sprite
@@ -222,6 +223,14 @@ func use_item():
 		Persistent.weapon = item
 		use_sound.play()
 		use = false
+		
+		if curweapon:
+			curweapon.selected_weapon(false)
+			
+		curweapon = curhighlight
+		curhighlight.selected_weapon(true)
+		
+		
 		
 
 	if 'health' in usething.keys():

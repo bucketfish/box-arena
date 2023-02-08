@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/gui/highlight.png" type="Texture" id=1]
 [ext_resource path="res://audio/sfx/gui/click.wav" type="AudioStream" id=2]
 [ext_resource path="res://font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://gui/item.gd" type="Script" id=4]
+[ext_resource path="res://assets/gui/weapon_sel.png" type="Texture" id=5]
 
 [node name="item" type="Control" groups=["inv_item"]]
 margin_right = 112.0
@@ -16,8 +17,15 @@ position = Vector2( 56, 56 )
 scale = Vector2( 0.18, 0.18 )
 
 [node name="highlight" type="Sprite" parent="."]
+visible = false
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
+centered = false
+
+[node name="weapon_sel" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
 centered = false
 
 [node name="count" type="Label" parent="."]

@@ -20,6 +20,7 @@ var down
 
 var focused = false setget highlight
 onready var click = $click
+onready var weapon_sel = $weapon_sel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,6 +37,10 @@ func prep_display():
 		count.text = ""
 	else:
 		count.text = str(countint)
+		
+	if Persistent.weapon == itemname:
+		inv.curweapon = self
+		selected_weapon(true)
 	
 
 func highlight(value):
@@ -43,3 +48,7 @@ func highlight(value):
 		click.play()
 	highlight.visible = value
 	focused = value
+
+func selected_weapon(value):
+	weapon_sel.visible = value
+	

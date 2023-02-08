@@ -11,6 +11,7 @@ var curscreen = "main"
 var onscreen = true
 
 func _ready():
+	
 	visible = true
 	anim.play("RESET")
 	start_show()

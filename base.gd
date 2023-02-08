@@ -41,6 +41,8 @@ var paused = false setget update_pause
 var boss_move = true
 
 onready var ost = $ost
+onready var roomsound = $fade/room
+
 const soundtracks = [preload("res://audio/ost/skitterdaddle.wav"), preload("res://audio/ost/depths.wav"),  ]
 
 var canuse = {
@@ -156,6 +158,7 @@ func goto(dirfrom):
 	
 	#deactivate prev room stuff
 	bossui.slow_hide_all()
+	roomsound.play()
 	
 	# run "fade-out" animation
 	if dirfrom == "up":

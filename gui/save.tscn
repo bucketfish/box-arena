@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Retron2000.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/gui/clock.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://font.tres" type="DynamicFont" id=11]
 [ext_resource path="res://turn_red.gd" type="Script" id=12]
 [ext_resource path="res://audio/sfx/gui/clickante.wav" type="AudioStream" id=13]
+[ext_resource path="res://audio/sfx/player/swing.wav" type="AudioStream" id=14]
 
 [sub_resource type="RichTextEffect" id=2]
 resource_name = "RichTextTurnColor"
@@ -646,6 +647,10 @@ bus = "SFX"
 stream = ExtResource( 13 )
 volume_db = -3.0
 bus = "SFX"
+
+[node name="deleteaudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -8.0
 
 [connection signal="focus_entered" from="." to="." method="_on_save_focus_entered"]
 [connection signal="focus_exited" from="." to="." method="_on_save_focus_exited"]

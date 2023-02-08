@@ -26,6 +26,7 @@ onready var anim = $AnimationPlayer
 onready var base = get_node("/root/base")
 onready var focusaudio = $focusaudio
 onready var clickaudio = $clickaudio
+onready var deleteaudio = $deleteaudio
 
 
 onready var card = box
@@ -171,6 +172,7 @@ func create_new_save():
 	
 
 func delete_save():
+	deleteaudio.play()
 	anim.play("new_save")
 	has_save = false
 

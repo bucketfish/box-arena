@@ -4,6 +4,7 @@ extends Area2D
 onready var base = get_node("/root/base")
 onready var display = $display
 onready var anim = $AnimationPlayer
+onready var audio = $audio
 
 var in_range = false
 var has_item = false
@@ -42,6 +43,8 @@ func _on_interact_body_exited(body):
 		
 func _input(event):
 	if Input.is_action_just_pressed("take") && in_range && !Persistent.id_keep[id] && object in Persistent.carrying:
+		audio.play()
+		
 		Persistent.id_keep[id] = true
 		Persistent.carrying.erase(object)
 		Persistent.sort_inv(Persistent.carrying)

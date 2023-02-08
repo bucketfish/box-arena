@@ -9,6 +9,7 @@ onready var causetext = $VBoxContainer/cause
 onready var timertext = $VBoxContainer/timer
 onready var restart = $restart
 onready var base = get_node("/root/base")
+onready var deathsound = $death
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	visible = false
@@ -17,6 +18,7 @@ func reset_item():
 	visible = false
 	
 func death(cause):
+	deathsound.play()
 	if cause in Data.bosses:
 		causetext.text = Data.bosses[cause]["death"][randi() % Data.bosses[cause]["death"].size()]
 		

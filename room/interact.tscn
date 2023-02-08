@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/room/keyhole.png" type="Texture" id=1]
 [ext_resource path="res://room/interact.gd" type="Script" id=2]
+[ext_resource path="res://audio/sfx/key.wav" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 40.0
@@ -57,6 +58,11 @@ anims/bounce = SubResource( 2 )
 [node name="display" type="Sprite" parent="."]
 position = Vector2( 0, -32 )
 scale = Vector2( 0.15, 0.15 )
+
+[node name="audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = 8.0
+bus = "SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_interact_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_interact_body_exited"]

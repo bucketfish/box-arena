@@ -39,7 +39,7 @@ func prep_display():
 	
 
 func highlight(value):
-	if true:
+	if value:
 		click.play()
 	highlight.visible = value
 	focused = value

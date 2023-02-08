@@ -11,6 +11,7 @@ onready var contbutton = $main/continue
 onready var base = get_node("/root/base")
 
 var curscreen = "none"
+onready var roomsound = $"../../fade/room"
 
 var on = false
 
@@ -27,11 +28,14 @@ func reset_item():
 	
 func turnon():
 	visible = true
+	roomsound.play()
 	backanim.play("pause")
 	curscreen = "main"
 	on = true
 	
+	
 func turnoff():
+	roomsound.play()
 	backanim.play("unpause")
 	curscreen = "none"
 	yield(anim, "animation_finished")

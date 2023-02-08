@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=2]
+[gd_scene load_steps=127 format=2]
 
 [ext_resource path="res://gui/ending.gd" type="Script" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -65,6 +65,8 @@
 [ext_resource path="res://audio/sfx/cutscenes/typing.wav" type="AudioStream" id=63]
 [ext_resource path="res://audio/sfx/gui/close_map.wav" type="AudioStream" id=64]
 [ext_resource path="res://audio/sfx/gui/open_map.wav" type="AudioStream" id=65]
+[ext_resource path="res://audio/sfx/room.wav" type="AudioStream" id=66]
+[ext_resource path="res://audio/sfx/player/death.wav" type="AudioStream" id=67]
 
 [sub_resource type="Animation" id=53]
 length = 0.001
@@ -2427,7 +2429,7 @@ tracks/1/keys = {
 pause_mode = 2
 script = ExtResource( 3 )
 
-[node name="WORKING ON nothing" type="Node2D" parent="."]
+[node name="WORKING ON sfx" type="Node2D" parent="."]
 
 [node name="ost" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 53 )
@@ -2672,9 +2674,9 @@ grow_vertical = 0
 alignment = 2
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
-margin_top = 72.0
-margin_right = 2242.0
-margin_bottom = 159.0
+margin_top = 36.0
+margin_right = 714.0
+margin_bottom = 123.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
 custom_constants/shadow_offset_x = 4
@@ -2688,9 +2690,9 @@ __meta__ = {
 }
 
 [node name="desc" type="Label" parent="gui/boss/VBoxContainer"]
-margin_top = 163.0
+margin_top = 127.0
 margin_right = 714.0
-margin_bottom = 268.0
+margin_bottom = 232.0
 custom_fonts/font = SubResource( 16 )
 text = "jjhgfjhkghgfglgkhjkgkfkjkdfhgisudgkjsflgjnsfljsnfdkg"
 valign = 2
@@ -2698,7 +2700,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 2242.0
+margin_right = 714.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -3470,6 +3472,11 @@ text = "x"
 
 [node name="anim" type="AnimationPlayer" parent="gui/death"]
 
+[node name="death" type="AudioStreamPlayer" parent="gui/death"]
+stream = ExtResource( 67 )
+volume_db = 8.0
+bus = "SFX"
+
 [node name="ending" type="Control" parent="gui"]
 visible = false
 anchor_right = 1.0
@@ -3534,8 +3541,8 @@ texture = ExtResource( 37 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 40960.0
-margin_bottom = 24000.0
+margin_right = 46080.0
+margin_bottom = 27000.0
 
 [node name="Doorway" type="Sprite" parent="gui/ending/curscene"]
 texture = ExtResource( 41 )
@@ -3551,6 +3558,7 @@ centered = false
 position = Vector2( 403, 261 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 46 )
+frame = 1
 playing = true
 centered = false
 
@@ -3558,8 +3566,8 @@ centered = false
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 40960.0
-margin_bottom = 26366.0
+margin_right = 46080.0
+margin_bottom = 29366.0
 rect_min_size = Vector2( 1024, 1000 )
 
 [node name="ColorRect" type="ColorRect" parent="gui/ending/credits"]
@@ -4095,6 +4103,10 @@ position = Vector2( -80, -810 )
 scale = Vector2( 1.25879, 1.27934 )
 color = Color( 0.635294, 0.839216, 0.976471, 1 )
 polygon = PoolVector2Array( 61, -59, 1064, -163, 882, 484, -110, 563 )
+
+[node name="room" type="AudioStreamPlayer" parent="fade"]
+stream = ExtResource( 66 )
+volume_db = -11.0
 
 [node name="anim" type="AnimationPlayer" parent="."]
 pause_mode = 2

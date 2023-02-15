@@ -38,9 +38,19 @@ func prep_display():
 	else:
 		count.text = str(countint)
 		
-	if Persistent.weapon == itemname:
-		inv.curweapon = self
-		selected_weapon(true)
+		
+	
+		
+	if itemname == "" || itemname == null || Persistent.weapon == "" || Persistent.weapon == null:
+		weapon_sel.visible = false
+		print("NO")
+		
+	elif Persistent.weapon == itemname:
+#		inv.curweapon = self
+		weapon_sel.visible = true
+		print("EUES")
+	else:
+		weapon_sel.visible = false
 	
 
 func highlight(value):
@@ -49,6 +59,12 @@ func highlight(value):
 	highlight.visible = value
 	focused = value
 
-func selected_weapon(value):
-	weapon_sel.visible = value
+func selected_weapon():
+	if itemname == "" || itemname == null || Persistent.weapon == "" || Persistent.weapon == null:
+		weapon_sel.visible = false
+		
+	elif Persistent.weapon == itemname:
+		weapon_sel.visible = true
+	else:
+		weapon_sel.visible = false
 	

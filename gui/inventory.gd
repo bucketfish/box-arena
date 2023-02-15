@@ -224,12 +224,11 @@ func use_item():
 		use_sound.play()
 		use = false
 		
-		if curweapon:
-			curweapon.selected_weapon(false)
-			
-		curweapon = curhighlight
-		curhighlight.selected_weapon(true)
+#		curweapon.selected_weapon()
+#		curhighlight.selected_weapon()
 		
+		get_tree().call_group("inv_item", "selected_weapon")
+#		get_tree().call_group("inv_item", "sel")
 		
 		
 

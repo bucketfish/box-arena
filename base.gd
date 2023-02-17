@@ -248,12 +248,7 @@ func _input(event):
 	if Input.is_action_just_pressed("ui_accept") && state in ['cutscene', 'dialogue']:
 		
 		emit_signal("next")
-		
-		
-	if Input.is_action_just_pressed("test"):
-		var image = get_viewport().get_texture().get_data()
-		image.flip_y()
-		image.save_png("/Users/tongyu/Desktop/screenshot.png")
+	
 			
 			
 func update_state(newstate):

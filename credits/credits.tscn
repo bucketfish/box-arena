@@ -1,0 +1,301 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Retron2000.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://MPLUSRounded1c-ExtraBold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://credits/kl.jpg" type="Texture" id=3]
+[ext_resource path="res://creds_big.tres" type="DynamicFont" id=4]
+[ext_resource path="res://docs/assets/cute2.png" type="Texture" id=5]
+[ext_resource path="res://docs/assets/cake.png" type="Texture" id=6]
+[ext_resource path="res://creds_font.tres" type="DynamicFont" id=7]
+[ext_resource path="res://assets/ending/film.png" type="Texture" id=8]
+[ext_resource path="res://credits/ara.png" type="Texture" id=9]
+[ext_resource path="res://assets/ending/frame.png" type="Texture" id=10]
+[ext_resource path="res://credits/fern.png" type="Texture" id=11]
+
+[sub_resource type="DynamicFont" id=52]
+size = 32
+font_data = ExtResource( 1 )
+fallback/0 = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=42]
+size = 80
+font_data = ExtResource( 1 )
+fallback/0 = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=29]
+size = 120
+font_data = ExtResource( 1 )
+fallback/0 = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=48]
+size = 36
+font_data = ExtResource( 1 )
+fallback/0 = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=49]
+size = 64
+font_data = ExtResource( 1 )
+fallback/0 = ExtResource( 2 )
+
+[node name="credits" type="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 52224.0
+margin_bottom = 32966.0
+rect_min_size = Vector2( 1024, 1000 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1024.0
+color = Color( 0.505882, 0.611765, 0.756863, 1 )
+
+[node name="stats" type="Label" parent="."]
+margin_left = 645.0
+margin_top = 424.0
+margin_right = 1007.0
+margin_bottom = 523.0
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_fonts/font = SubResource( 52 )
+text = "clear rooms - 00.0%
+time - 00:00.000"
+align = 1
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 539.0
+margin_top = -351.0
+margin_right = 1763.0
+margin_bottom = 4673.0
+rect_rotation = 30.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 8 )
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 577.0
+margin_top = 492.0
+margin_right = 1007.0
+margin_bottom = 599.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.635294, 0.839216, 0.976471, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+custom_fonts/font = SubResource( 42 )
+text = "the end."
+align = 2
+valign = 1
+autowrap = true
+
+[node name="title" type="Label" parent="."]
+anchor_bottom = 0.0484162
+margin_left = 431.0
+margin_top = 612.0
+margin_right = 992.0
+margin_bottom = 704.368
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.211765, 0.215686, 0.305882, 0.827451 )
+custom_constants/shadow_offset_x = 10
+custom_constants/line_spacing = -70
+custom_constants/shadow_offset_y = 10
+custom_fonts/font = SubResource( 29 )
+text = "box
+arena"
+align = 1
+
+[node name="game by" type="Label" parent="."]
+margin_left = 412.0
+margin_top = 876.0
+margin_right = 1013.0
+margin_bottom = 924.0
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_fonts/font = SubResource( 48 )
+text = "a game by"
+align = 1
+autowrap = true
+
+[node name="bucketfish" type="RichTextLabel" parent="."]
+margin_left = 409.0
+margin_top = 916.0
+margin_right = 1017.0
+margin_bottom = 1030.0
+custom_colors/font_color_shadow = Color( 0.211765, 0.215686, 0.305882, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center][wave amp=20 freq=10][rainbow freq=0.15 sat=0.3  val=1]bucketfish[/rainbow][/wave][/center]"
+text = "bucketfish"
+scroll_active = false
+
+[node name="writing" type="Label" parent="."]
+margin_left = 56.0
+margin_top = 1175.0
+margin_right = 657.0
+margin_bottom = 1223.0
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_fonts/font = SubResource( 48 )
+text = "writing"
+align = 1
+autowrap = true
+
+[node name="names" type="RichTextLabel" parent="."]
+margin_left = 55.0
+margin_top = 1216.0
+margin_right = 663.0
+margin_bottom = 1330.0
+custom_colors/font_color_shadow = Color( 0.211765, 0.215686, 0.305882, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center][wave amp=20 freq=10][rainbow freq=0.15 sat=0.3  val=1]gabriel[/rainbow][/wave][/center]"
+text = "gabriel"
+scroll_active = false
+
+[node name="additional writing" type="Label" parent="."]
+margin_left = 2.0
+margin_top = 1590.0
+margin_right = 1018.0
+margin_bottom = 1648.0
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_fonts/font = SubResource( 48 )
+text = "additional writing & design"
+align = 1
+autowrap = true
+
+[node name="names2" type="RichTextLabel" parent="."]
+margin_left = 69.0
+margin_top = 1629.0
+margin_right = 959.0
+margin_bottom = 1843.0
+custom_colors/font_color_shadow = Color( 0.211765, 0.215686, 0.305882, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center][wave amp=20 freq=10][rainbow freq=0.15 sat=0.3  val=1]ilo kali, ara, oolimry, giraffe, kai[/rainbow][/wave][/center]"
+text = "ilo kali, ara, oolimry, giraffe, kai"
+scroll_active = false
+
+[node name="credits art" type="Label" parent="."]
+margin_left = 422.0
+margin_top = 1863.36
+margin_right = 1023.0
+margin_bottom = 1911.36
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_fonts/font = SubResource( 48 )
+text = "credits art"
+align = 1
+autowrap = true
+
+[node name="names3" type="RichTextLabel" parent="."]
+margin_left = 422.0
+margin_top = 1902.36
+margin_right = 1023.0
+margin_bottom = 2116.36
+custom_colors/font_color_shadow = Color( 0.211765, 0.215686, 0.305882, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center][wave amp=20 freq=10][rainbow freq=0.15 sat=0.3  val=1]kl, fern, ara[/rainbow][/wave][/center]"
+text = "kl, fern, ara"
+scroll_active = false
+
+[node name="thank" type="Label" parent="."]
+margin_top = 2604.0
+margin_right = 1024.0
+margin_bottom = 2691.0
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_fonts/font = SubResource( 49 )
+text = "thank you for playing!"
+align = 1
+autowrap = true
+
+[node name="Frame" type="Sprite" parent="."]
+position = Vector2( 754, 1292 )
+rotation = -0.261799
+scale = Vector2( 0.73, 0.73 )
+texture = ExtResource( 10 )
+
+[node name="Ara" type="Sprite" parent="Frame"]
+show_behind_parent = true
+position = Vector2( 0.322937, -36.2831 )
+scale = Vector2( 0.728265, 0.728265 )
+texture = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Frame"]
+margin_left = -221.0
+margin_top = 212.0
+margin_right = 224.0
+margin_bottom = 260.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "ig: @mynameisashlee"
+align = 1
+
+[node name="Cute2" type="Sprite" parent="."]
+position = Vector2( 406, 1417 )
+scale = Vector2( 0.401176, 0.401176 )
+texture = ExtResource( 5 )
+
+[node name="Cake" type="Sprite" parent="Cute2"]
+position = Vector2( -443.695, 12.4631 )
+scale = Vector2( 0.757576, 0.757576 )
+texture = ExtResource( 6 )
+
+[node name="Frame2" type="Sprite" parent="."]
+position = Vector2( 251, 2039.36 )
+rotation = 0.261799
+scale = Vector2( 0.73, 0.73 )
+texture = ExtResource( 10 )
+
+[node name="kl" type="Sprite" parent="Frame2"]
+show_behind_parent = true
+position = Vector2( -0.175253, -36.7813 )
+scale = Vector2( 0.983056, 0.983056 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Frame2"]
+margin_left = -221.0
+margin_top = 212.0
+margin_right = 226.0
+margin_bottom = 260.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "ig: @awkwardarts.bykl"
+align = 1
+
+[node name="Frame3" type="Sprite" parent="."]
+position = Vector2( 736, 2260.36 )
+rotation = -0.261799
+scale = Vector2( 0.73, 0.73 )
+texture = ExtResource( 10 )
+
+[node name="fern" type="Sprite" parent="Frame3"]
+show_behind_parent = true
+position = Vector2( 0.577593, -36.0284 )
+scale = Vector2( 0.859507, 0.859507 )
+texture = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="Frame3"]
+margin_left = -221.0
+margin_top = 212.0
+margin_right = 224.0
+margin_bottom = 260.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "ffernn-dev.github.io"
+align = 1

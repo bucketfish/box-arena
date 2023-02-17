@@ -96,3 +96,25 @@ func quit_game():
 
 
 
+
+
+func _on_credits_pressed():
+	get_focus_owner().release_focus()
+	fadeanim.play("fade")
+	yield(fadeanim, "animation_finished")
+	
+	$credits.visible = true
+	fadeanim.play_backwards("fade")
+	yield(fadeanim, "animation_finished")
+	
+	$credits/creditsanim.play("credits")
+	yield($credits/creditsanim, "animation_finished")
+	
+	fadeanim.play("fade")
+	yield(fadeanim, "animation_finished")
+	$credits.visible = false
+	fadeanim.play_backwards("fade")
+	yield(fadeanim, "animation_finished")
+	$main/credits.grab_focus()
+	
+	

@@ -14,7 +14,32 @@ func update_keybinds(new):
 	
 func update_config(new):
 	config = new
+	
+	update_audio_volume()
+	
 	save_options()
+	
+func update_audio_volume():
+	
+	
+	for bus in ["master", "sfx", "music"]:
+		
+		if !(bus in config):
+			config[bus] = 5
+			
+		var curbus:int
+
+		match bus:
+			"master":
+				curbus = 0
+			"sfx":
+				curbus = 2
+			"music":
+				curbus = 1
+		
+		AudioServer.set_bus_volume_db(curbus, linear2db(config[bus] / 10))
+#	AudioServer.set_bus_volume_db(_bus, linear2db(value))
+
 	
 func save_options():
 	
@@ -53,5 +78,6 @@ func load_options():
 		set(i, vals[i])
 
 	save_game.close()
+	update_audio_volume()
 	print("settings loaded!")
 	yield(get_tree(), "idle_frame")

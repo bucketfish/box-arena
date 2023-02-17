@@ -106,7 +106,7 @@ text = ">"
 
 [node name="focusaudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-volume_db = -20.0
+volume_db = -15.0
 bus = "SFX"
 
 [node name="clickaudio" type="AudioStreamPlayer" parent="."]

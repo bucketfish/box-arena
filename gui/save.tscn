@@ -411,8 +411,7 @@ modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -32.0
-margin_right = -250.0
-margin_bottom = -382.0
+margin_bottom = -32.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="box"]
 anchor_right = 1.0
@@ -569,8 +568,7 @@ modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 384.0
-margin_right = -250.0
-margin_bottom = 34.0
+margin_bottom = 384.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="new_save"]
 anchor_right = 1.0
@@ -640,7 +638,7 @@ anims/new_save = SubResource( 5 )
 
 [node name="focusaudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -20.0
+volume_db = -15.0
 bus = "SFX"
 
 [node name="clickaudio" type="AudioStreamPlayer" parent="."]

@@ -43,12 +43,10 @@ func prep_display():
 		
 	if itemname == "" || itemname == null || Persistent.weapon == "" || Persistent.weapon == null:
 		weapon_sel.visible = false
-		print("NO")
 		
 	elif Persistent.weapon == itemname:
 #		inv.curweapon = self
 		weapon_sel.visible = true
-		print("EUES")
 	else:
 		weapon_sel.visible = false
 	

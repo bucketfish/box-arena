@@ -35,6 +35,7 @@ func endgame():
 	yield(base, "next")
 	
 	anim.play("credits")
+	Persistent.save_game()
 	yield(anim, "animation_finished")
 	yield(base, "next")
 	

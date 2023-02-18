@@ -243,7 +243,7 @@ margin_right = 224.0
 margin_bottom = 260.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 7 )
-text = "ig: @mynameisashlee"
+text = "ig: @mynameisashllee"
 align = 1
 
 [node name="Cute2" type="Sprite" parent="."]

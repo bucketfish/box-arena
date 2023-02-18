@@ -2669,7 +2669,7 @@ alignment = 2
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
 margin_top = 72.0
-margin_right = 2242.0
+margin_right = 3006.0
 margin_bottom = 159.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
@@ -2694,7 +2694,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 2242.0
+margin_right = 3006.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -3472,7 +3472,6 @@ volume_db = 8.0
 bus = "SFX"
 
 [node name="ending" type="Control" parent="gui"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -3483,7 +3482,6 @@ anchor_bottom = 1.0
 color = Color( 1, 1, 1, 0 )
 
 [node name="info" type="Control" parent="gui/ending"]
-visible = false
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 1024.0
 margin_bottom = 600.0
@@ -3536,8 +3534,8 @@ texture = ExtResource( 37 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 53248.0
-margin_bottom = 31200.0
+margin_right = 55296.0
+margin_bottom = 32400.0
 
 [node name="Doorway" type="Sprite" parent="gui/ending/curscene"]
 texture = ExtResource( 41 )
@@ -3557,8 +3555,8 @@ playing = true
 centered = false
 
 [node name="credits" parent="gui/ending" instance=ExtResource( 44 )]
-margin_right = 53248.0
-margin_bottom = 33566.0
+margin_right = 55296.0
+margin_bottom = 34766.0
 
 [node name="ColorRect2" type="ColorRect" parent="gui/ending"]
 modulate = Color( 1, 1, 1, 0 )
@@ -3646,9 +3644,15 @@ custom_fonts/font = SubResource( 29 )
 text = "box
 arena"
 align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="Label" type="Label" parent="gui/mainmenu/title"]
+margin_left = 352.0
+margin_top = 95.0
+margin_right = 502.0
+margin_bottom = 143.0
+custom_fonts/font = ExtResource( 47 )
+text = "v0.2"
+valign = 1
 
 [node name="options" parent="gui/mainmenu" instance=ExtResource( 21 )]
 

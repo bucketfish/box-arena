@@ -11,11 +11,10 @@ func get_room_percent():
 		if Persistent.places[room] == []:
 			if !(room in Persistent.genbosses):
 				room_count += 1
-			else:
-				if Persistent.genbosses[room]["alive"] == false:
-					room_count += 1
+			elif Persistent.genbosses[room]["alive"] == false:
+				room_count += 1
 					
-	return "%03.1f%%" % ((float(room_count) / 411) * 100)
+	return "%03.1f%%" % ((float(room_count) / 441) * 100)
 	
 	
 func make_time(timetaken):

@@ -38,7 +38,7 @@ func prep_button():
 		"Up":"↑",
 		"Down":"↓",
 		"Shift": "⇧",
-		"Tab": "⇥"
+		"Tab": "↹"
 		}
 		
 	var keystroke = InputMap.get_action_list(control_button)[0].as_text()

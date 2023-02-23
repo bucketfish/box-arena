@@ -59,6 +59,13 @@ func save_options():
 	saves.close()
 	#emit_signal("finish_save")
 	
+func update_controls_keybinds():
+	for keybind in keybinds:
+		InputMap.action_erase_event(keybind, InputMap.get_action_list(keybind)[0])
+		
+		var event = InputEventKey.new()
+		event.scancode = keybinds[keybind]
+		InputMap.action_add_event(keybind, event)
 
 func load_options():
 	
@@ -79,5 +86,6 @@ func load_options():
 
 	save_game.close()
 	update_audio_volume()
+	update_controls_keybinds()
 	print("settings loaded!")
 	yield(get_tree(), "idle_frame")

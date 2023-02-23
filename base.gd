@@ -59,11 +59,14 @@ var canuse = {
 
 func _ready():
 	# DEBUG - DELETE FOR PRODUCTION
-	OS.set_current_screen(0)
+#	OS.set_current_screen(0)
 	
 
 
+	
+	
 	# normal stuff
+	
 	
 	Options.load_options()
 	randomize()

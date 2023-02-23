@@ -337,3 +337,7 @@ func freeze_engine(time):
 	Engine.time_scale = freeze_timescale
 	yield(get_tree().create_timer(freeze_timescale * time), "timeout")
 	Engine.time_scale = 1
+
+
+func update_keymaps():
+	keyhints.update_keys()

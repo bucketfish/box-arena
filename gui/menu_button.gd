@@ -18,6 +18,8 @@ onready var right_tween = $right_tween
 onready var clickaudio = $clickaudio
 onready var focusaudio = $focusaudio
 
+onready var base = get_node("/root/base")
+
 
 signal goto_screen(name)
 
@@ -49,18 +51,11 @@ func prep_button():
 		InputMap.action_add_event(button_text, event)
 
 	if control_button:
-		var thing = {
-			"Left": "←",
-			"Right":"→",
-			"Up":"↑",
-			"Down":"↓",
-			"Shift": "⇧",
-			"Tab": "↹"
-			}
+	
 			
 		var keystroke = InputMap.get_action_list(button_text)[0].as_text()
-		if keystroke in thing.keys():
-			keystroke = thing[keystroke]
+		if keystroke in Data.input_symbols.keys():
+			keystroke = Data.input_symbols[keystroke]
 				
 		keytext.text = keystroke.to_lower()
 	
@@ -92,7 +87,16 @@ func _input(event):
 		selecting = false
 		InputMap.action_erase_event(button_text, InputMap.get_action_list(button_text)[0])
 		InputMap.action_add_event(button_text, event)
-		prep_button()
+#		prep_button()
+
+
+		var keystroke = event.as_text()
+
+		if keystroke in Data.input_symbols.keys():
+			keystroke = Data.input_symbols[keystroke]
+				
+		keytext.text = keystroke.to_lower()
+	
 		
 		Options.keybinds[button_text] = event.scancode
 		
@@ -100,6 +104,9 @@ func _input(event):
 		yield(get_tree().create_timer(0.01), "timeout")
 		keyhighlight.visible = false
 		grab_focus()
+		
+		
+		base.update_keymaps()
 		
 	var gotime = 0.07
 	if Input.is_action_just_pressed("ui_left") && has_focus() && slider_button:

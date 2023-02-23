@@ -2,7 +2,18 @@ extends Node
 
 const roomsize = 10
 
+
+var input_symbols = {
+			"Left": "←",
+			"Right":"→",
+			"Up":"↑",
+			"Down":"↓",
+			"Shift": "⇧",
+			"Tab": "↹"
+			}
+			
 #loot tables
+
 var loot = {
 	'1':['wooden stick', 'healing drop', 'cookie'],
 	'2':['wooden sword', 'health pot', 'choco cookie', 'clothes'],

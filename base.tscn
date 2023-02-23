@@ -2661,8 +2661,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 60.0
-margin_right = 10.0
-margin_bottom = 240.0
+margin_top = 600.0
+margin_right = 774.0
+margin_bottom = 840.0
 grow_horizontal = 2
 grow_vertical = 0
 alignment = 2
@@ -3534,8 +3535,8 @@ texture = ExtResource( 37 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 55296.0
-margin_bottom = 32400.0
+margin_right = 56320.0
+margin_bottom = 33000.0
 
 [node name="Doorway" type="Sprite" parent="gui/ending/curscene"]
 texture = ExtResource( 41 )
@@ -3556,8 +3557,8 @@ playing = true
 centered = false
 
 [node name="credits" parent="gui/ending" instance=ExtResource( 44 )]
-margin_right = 55296.0
-margin_bottom = 34766.0
+margin_right = 56320.0
+margin_bottom = 35366.0
 
 [node name="ColorRect2" type="ColorRect" parent="gui/ending"]
 modulate = Color( 1, 1, 1, 0 )

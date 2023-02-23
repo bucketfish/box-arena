@@ -85,7 +85,7 @@ tracks/0/keys = {
 a = Vector2( 1, -73 )
 b = Vector2( 1, 65 )
 
-[node name="room" type="Node2D"]
+[node name="room" type="Node2D" groups=["room"]]
 pause_mode = 1
 script = ExtResource( 2 )
 

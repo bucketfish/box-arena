@@ -140,7 +140,10 @@ func save_and_quit(save = true):
 	if save:
 		Persistent.save_game()
 	mainmenu.returnto()
+	
 	curroom.queue_free()
+	get_tree().call_group("room", "queue_free")
+
 	
 func goto(dirfrom):
 	update_trans(true)
@@ -179,6 +182,7 @@ func goto(dirfrom):
 	
 	yield(anim, "animation_finished")
 	curroom.queue_free()
+	get_tree().call_group("room", "queue_free")
 	
 	# update coordinates tag
 	coordslabel.text = str(Persistent.coords.x) + " " + str(Persistent.coords.y)

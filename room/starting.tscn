@@ -246,7 +246,7 @@ tracks/9/keys = {
 } ]
 }
 
-[node name="starting" type="Node2D"]
+[node name="starting" type="Node2D" groups=["room"]]
 script = ExtResource( 4 )
 
 [node name="up" parent="." instance=ExtResource( 1 )]

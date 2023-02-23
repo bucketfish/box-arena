@@ -50,7 +50,7 @@ func _ready():
 	
 	
 	if Persistent.coords == Vector2(0, 0):
-		add_child(starting.instance())
+		self.add_child(starting.instance())
 	
 	
 		

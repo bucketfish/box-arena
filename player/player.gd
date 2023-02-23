@@ -71,14 +71,14 @@ func move(direction, delta):
 		state = "idle"
 	
 	# attack animation
-	if Input.is_action_just_pressed('attack') && Persistent.weapon && Persistent.energy >= abs(Data.items[Persistent.weapon]["energy"]):
+	if Input.is_action_just_pressed('attack') && Persistent.weapon && Persistent.energy >= abs(Data.items[Persistent.weapon]["energy"]) && canmove:
 		state = "attack"
 		
-	elif Input.is_action_just_pressed('attack') && Persistent.weapon && Persistent.energy < abs(Data.items[Persistent.weapon]["energy"]) && Persistent.energy > 0:
+	elif Input.is_action_just_pressed('attack') && Persistent.weapon && Persistent.energy < abs(Data.items[Persistent.weapon]["energy"]) && Persistent.energy > 0 && canmove:
 		bars.no_energy()
 		no_energy.play()
 	
-	elif Input.is_action_just_pressed('attack') && Persistent.weapon && Persistent.energy < abs(Data.items[Persistent.weapon]["energy"]):
+	elif Input.is_action_just_pressed('attack') && Persistent.weapon && Persistent.energy < abs(Data.items[Persistent.weapon]["energy"]) && canmove:
 		no_energy.play()
 
 		

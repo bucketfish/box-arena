@@ -30,6 +30,9 @@ onready var audio_stream_player = $open
 onready var close = $close
 onready var use_sound = $use
 
+var use_key = ""
+var fuse_key = ""
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	visible = false
@@ -83,20 +86,25 @@ func display():
 		"Shift": "⇧",
 		"Tab": "↹"
 	}
-	var usee = InputMap.get_action_list("use")[0].as_text()
-	var fusee = InputMap.get_action_list("fuse")[0].as_text()
-	if usee in thing.keys():
-		usee = thing[usee]
-	if fusee in thing.keys():
-		fusee = thing[fusee]
-		
-	instructions.text = "%s to use/equip, %s to fuse" % [usee.to_lower(), fusee.to_lower()]
+	use_key = InputMap.get_action_list("use")[0].as_text()
+	fuse_key = InputMap.get_action_list("fuse")[0].as_text()
+	if use_key in thing.keys():
+		use_key = thing[use_key]
+	if fuse_key in thing.keys():
+		fuse_key = thing[fuse_key]
+	
+	
+	
+#	instructions.text = "%s to use/equip, %s to fuse" % [use_key.to_lower(), fuse_key.to_lower()]
+	
+	instructions.text = ""
 	
 	var items = Persistent.carrying
 	var items_dict = Functions.sort_inventory(items)
 	var rowc = 0
 	var colc = 0
 	var count = 0
+	
 	
 	for i in items_dict.keys():
 		row[rowc].col[colc].itemname = i
@@ -160,6 +168,9 @@ func focus_on(newfocus):
 	
 func update_info():
 	if curhighlight.itemname:
+		
+		instructions.text = ""
+		
 		itemdesc.text = Data.items[curhighlight.itemname]["desc"]
 		
 		itemdisplay_sprite.texture = load("res://assets/items/" + curhighlight.itemname + ".png")
@@ -181,9 +192,14 @@ func update_info():
 		else:
 			val_health.visible = false
 			
+		if "energy" in Data.items[curhighlight.itemname] || "health" in Data.items[curhighlight.itemname]:
+			instructions.text = "%s to use" % [use_key.to_lower()]
+			
 		if "damage" in Data.items[curhighlight.itemname].keys():
 			val_damage.visible = true
 			val_damage.text.text = str(Data.items[curhighlight.itemname]["damage"])
+			
+			instructions.text = "%s to equip"  % [use_key.to_lower()]
 		else:
 			val_damage.visible = false
 			
@@ -191,9 +207,14 @@ func update_info():
 		if "total_health" in Data.items[curhighlight.itemname].keys():
 			val_maxh.visible = true
 			val_maxh.text.text = str(Data.items[curhighlight.itemname]["total_health"])
+			instructions.text = "%s to use" % [use_key.to_lower()]
 		else:
 			val_maxh.visible = false
 			
+		if "fusion" in Data.items[curhighlight.itemname]:
+			instructions.text += ", %s to fuse (%d/%d)" % [fuse_key.to_lower(), curhighlight.countint, 3]
+			
+		
 	else:
 		clear_info()
 		

@@ -59,8 +59,8 @@ margin_bottom = 523.0
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
 custom_fonts/font = SubResource( 52 )
-text = "clear rooms - 00.0%
-time - 00:00.000"
+text = "clear rooms: 00.0%
+time: 00:00.000"
 align = 1
 autowrap = true
 

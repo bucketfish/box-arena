@@ -20,7 +20,7 @@ func endgame():
 	yield(base, 'next')
 	base.anim.play("fade")
 	yield(base.anim, "animation_finished")
-	visible = true
+
 	cutscene.visible = true
 	base.anim.play_backwards("fade")
 	yield(base.anim, "animation_finished")
@@ -28,7 +28,7 @@ func endgame():
 	yield(anim, "animation_finished")
 	yield(base, "next")
 	credits.visible = true
-	stats.text = "clear rooms - %s\ntime - %s" % [Functions.get_room_percent(), Functions.make_time(Persistent.timer)]
+	stats.text = "clear rooms: %s\ntime: %s" % [Functions.get_room_percent(), Functions.make_time(Persistent.timer)]
 	
 	anim.play("stats")
 	yield(anim, "animation_finished")

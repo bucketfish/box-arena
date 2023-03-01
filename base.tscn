@@ -2776,9 +2776,9 @@ grow_vertical = 0
 alignment = 2
 
 [node name="name" type="Label" parent="gui/boss/VBoxContainer"]
-margin_top = 72.0
-margin_right = 3006.0
-margin_bottom = 159.0
+margin_top = 36.0
+margin_right = 714.0
+margin_bottom = 123.0
 custom_colors/font_color = Color( 0.843137, 0.921569, 0.729412, 1 )
 custom_colors/font_color_shadow = Color( 0.494118, 0.678431, 0.45098, 1 )
 custom_constants/shadow_offset_x = 4
@@ -2792,9 +2792,9 @@ __meta__ = {
 }
 
 [node name="desc" type="Label" parent="gui/boss/VBoxContainer"]
-margin_top = 163.0
+margin_top = 127.0
 margin_right = 714.0
-margin_bottom = 268.0
+margin_bottom = 232.0
 custom_fonts/font = SubResource( 16 )
 text = "jjhgfjhkghgfglgkhjkgkfkjkdfhgisudgkjsflgjnsfljsnfdkg"
 valign = 2
@@ -2802,7 +2802,7 @@ autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="gui/boss/VBoxContainer"]
 margin_top = 200.0
-margin_right = 3006.0
+margin_right = 714.0
 margin_bottom = 240.0
 custom_constants/separation = 50
 
@@ -3759,7 +3759,7 @@ margin_top = 95.0
 margin_right = 502.0
 margin_bottom = 143.0
 custom_fonts/font = ExtResource( 47 )
-text = "v0.2"
+text = "v0.3"
 valign = 1
 
 [node name="options" parent="gui/mainmenu" instance=ExtResource( 21 )]

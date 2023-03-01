@@ -222,6 +222,7 @@ func save_thumbnail(update_curgame = true):
 		thumbnails[savenum]["max_health"] = max_health
 		thumbnails[savenum]["energy"] = energy
 		thumbnails[savenum]["timer"] = timer
+		thumbnails[savenum]["percentage"] = Functions.get_room_percent()
 	
 	var vals = {}
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=2]
+[gd_scene load_steps=119 format=2]
 
 [ext_resource path="res://gui/ending.gd" type="Script" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -44,6 +44,7 @@
 [ext_resource path="res://assets/ending/player0002.png" type="Texture" id=42]
 [ext_resource path="res://assets/ending/player0000.png" type="Texture" id=43]
 [ext_resource path="res://credits/credits.tscn" type="PackedScene" id=44]
+[ext_resource path="res://assets/gui/location.png" type="Texture" id=45]
 [ext_resource path="res://creds_font.tres" type="DynamicFont" id=47]
 [ext_resource path="res://audio/ost/skitterdaddle.wav" type="AudioStream" id=53]
 [ext_resource path="res://gui/low_health.gd" type="Script" id=54]
@@ -2581,10 +2582,15 @@ margin_bottom = 143.0
 rect_scale = Vector2( 1.3, 1.3 )
 script = ExtResource( 16 )
 
+[node name="Sprite" type="Sprite" parent="gui/bars"]
+position = Vector2( 75.3846, 137.692 )
+scale = Vector2( 0.15, 0.14 )
+texture = ExtResource( 45 )
+
 [node name="coords" type="Label" parent="gui/bars"]
-margin_left = 67.0
+margin_left = 97.7692
 margin_top = 117.0
-margin_right = 114.0
+margin_right = 144.769
 margin_bottom = 156.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.752941, 0.776471, 0.847059, 1 )
@@ -3659,6 +3665,7 @@ centered = false
 position = Vector2( 403, 261 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 46 )
+frame = 2
 playing = true
 centered = false
 

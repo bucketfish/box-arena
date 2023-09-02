@@ -3665,7 +3665,6 @@ centered = false
 position = Vector2( 403, 261 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 46 )
-frame = 2
 playing = true
 centered = false
 

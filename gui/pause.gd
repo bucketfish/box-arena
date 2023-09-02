@@ -74,5 +74,6 @@ func _on_goto_screen(scenename):
 
 func _on_exit_pressed():
 	base.save_and_quit()
+	curscreen = "none"
 
 

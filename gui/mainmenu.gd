@@ -8,7 +8,6 @@ onready var base = get_node("/root/base")
 onready var fadeanim = $"../../anim"
 
 var curscreen = "main"
-var onscreen = true
 
 func _ready():
 	

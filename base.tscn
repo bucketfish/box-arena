@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=2]
+[gd_scene load_steps=120 format=2]
 
 [ext_resource path="res://gui/ending.gd" type="Script" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -1504,6 +1504,11 @@ size = 120
 font_data = ExtResource( 10 )
 fallback/0 = ExtResource( 23 )
 
+[sub_resource type="DynamicFont" id=64]
+size = 24
+font_data = ExtResource( 10 )
+fallback/0 = ExtResource( 23 )
+
 [sub_resource type="Animation" id=30]
 length = 0.001
 tracks/0/type = "value"
@@ -2239,7 +2244,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.05, -0.5, -0.5 ]
+"values": [ 0.0, 0.05, -0.7, -0.7 ]
 }
 
 [sub_resource type="Animation" id=35]
@@ -2280,7 +2285,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.1, 0.261466, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -0.5, -0.5, 0.05, 0.0 ]
+"values": [ -0.7, -0.7, 0.05, 0.0 ]
 }
 tracks/3/type = "animation"
 tracks/3/path = NodePath("anim")
@@ -3665,7 +3670,7 @@ centered = false
 position = Vector2( 403, 261 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 46 )
-frame = 2
+frame = 1
 playing = true
 centered = false
 
@@ -3768,6 +3773,19 @@ margin_bottom = 143.0
 custom_fonts/font = ExtResource( 47 )
 text = "v1.0"
 valign = 1
+
+[node name="Label2" type="Label" parent="gui/mainmenu/title"]
+margin_left = 75.0
+margin_top = 221.0
+margin_right = 382.0
+margin_bottom = 320.0
+custom_colors/font_color = Color( 0.211765, 0.215686, 0.305882, 1 )
+custom_constants/line_spacing = -8
+custom_fonts/font = SubResource( 64 )
+text = "use →←↑↓ space to navigate the menu!"
+align = 1
+valign = 1
+autowrap = true
 
 [node name="options" parent="gui/mainmenu" instance=ExtResource( 21 )]
 

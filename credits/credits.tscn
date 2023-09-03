@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Retron2000.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://MPLUSRounded1c-ExtraBold.ttf" type="DynamicFontData" id=2]
@@ -10,7 +10,8 @@
 [ext_resource path="res://assets/ending/film.png" type="Texture" id=8]
 [ext_resource path="res://credits/ara.png" type="Texture" id=9]
 [ext_resource path="res://assets/ending/frame.png" type="Texture" id=10]
-[ext_resource path="res://credits/fern.png" type="Texture" id=11]
+[ext_resource path="res://credits/fern_new.png" type="Texture" id=11]
+[ext_resource path="res://docs/assets/cute1.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=52]
 size = 32
@@ -256,6 +257,10 @@ position = Vector2( -443.695, 12.4631 )
 scale = Vector2( 0.757576, 0.757576 )
 texture = ExtResource( 6 )
 
+[node name="Cute3" type="Sprite" parent="."]
+position = Vector2( 271, 856 )
+texture = ExtResource( 12 )
+
 [node name="Frame2" type="Sprite" parent="."]
 position = Vector2( 251, 2039.36 )
 rotation = 0.261799
@@ -287,7 +292,7 @@ texture = ExtResource( 10 )
 [node name="fern" type="Sprite" parent="Frame3"]
 show_behind_parent = true
 position = Vector2( 0.577593, -36.0284 )
-scale = Vector2( 0.859507, 0.859507 )
+scale = Vector2( 0.65, 0.65 )
 texture = ExtResource( 11 )
 
 [node name="Label" type="Label" parent="Frame3"]

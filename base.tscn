@@ -3665,6 +3665,7 @@ centered = false
 position = Vector2( 403, 261 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 46 )
+frame = 2
 playing = true
 centered = false
 
@@ -3765,7 +3766,7 @@ margin_top = 95.0
 margin_right = 502.0
 margin_bottom = 143.0
 custom_fonts/font = ExtResource( 47 )
-text = "v0.3"
+text = "v1.0"
 valign = 1
 
 [node name="options" parent="gui/mainmenu" instance=ExtResource( 21 )]
